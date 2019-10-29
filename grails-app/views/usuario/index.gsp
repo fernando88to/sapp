@@ -17,12 +17,22 @@
     --}%
 
 
+
+    <div class="row">
+        <div class="col-md-11"></div>
+        <div class="col-md-1">
+            <g:link action="create" >
+                <button type="button" class="btn btn-info">Cadastrar</button>
+            </g:link>
+        </div>
+    </div>
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-block">
                     <div class="card-title-block">
-                        <h3 class="title"> Basic example </h3>
+                        <h3 class="title"> Usuários Cadastrados </h3>
+
                     </div>
                     <section class="example">
                         <table class="table">
@@ -31,16 +41,16 @@
                                 <th>#</th>
                                 <th>Nome</th>
                                 <th>Login</th>
-                                <th>Username</th>
+                                <th>Email</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <g:each in="${this.usuarioList}" var="u">
+                            <g:each in="${usuarioList}" var="u">
                                 <tr>
                                     <th scope="row">${u.id}</th>
                                     <td>${u.nome}</td>
                                     <td>${u.login}</td>
-                                    <td>@mdo</td>
+                                    <td>${u.email}</td>
                                 </tr>
                             </g:each>
 

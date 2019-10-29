@@ -10,8 +10,8 @@ class UsuarioController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def index(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond usuarioService.list(params), model:[usuarioCount: usuarioService.count()]
+        //params.max = Math.min(max ?: 10, 100)
+        model:[usuarioCount: usuarioService.count(), usuarioList: usuarioService.list(params)]
     }
 
     def show(Long id) {
@@ -28,6 +28,7 @@ class UsuarioController {
             return
         }
 
+        usuario.dataCriacao = new Date()
         try {
             usuarioService.save(usuario)
         } catch (ValidationException e) {
