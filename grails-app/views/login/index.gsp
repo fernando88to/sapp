@@ -36,17 +36,29 @@
             </header>
 
             <div class="auth-content">
-                <form id="login-form" action="/index.html" method="GET" novalidate="">
+
+
+                <g:if test="${flash.message}">
+                    <div class="form-group has-error">
+                        <span id="username-error" class="has-error">${flash.message}</span>
+                    </div>
+
+                </g:if>
+
+
+
+
+                <g:form id="login-form"  method="POST" >
                     <div class="form-group">
-                        <label for="username">Login</label>
-                        <input type="email" class="form-control underlined" name="username" id="username"
-                               placeholder="Your email address" required>
+                        <label for="login">Login</label>
+                        <input  class="form-control underlined" name="login"  autofocus id="login"
+                               placeholder="Informe seu login" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="password">Senha</label>
-                        <input type="password" class="form-control underlined" name="password" id="password"
-                               placeholder="Your password" required>
+                        <label for="senha">Senha</label>
+                        <input type="password" class="form-control underlined" name="senha" id="senha"
+                               placeholder="Informe sua senha" required>
                     </div>
 
                     <div class="form-group">
@@ -54,9 +66,9 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-block btn-primary">Login</button>
+                        <g:actionSubmit action="logar" value="Login" class="btn btn-block btn-primary"></g:actionSubmit>
                     </div>
-                </form>
+                </g:form>
             </div>
         </div>
 

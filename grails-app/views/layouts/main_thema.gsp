@@ -33,7 +33,7 @@
 
                     <li class="profile dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                            <span class="name"> John Doe </span>
+                            <span class="name"> ${sapp.GestaoDaSessao.usuarioLogado(session).nome} </span>
                         </a>
                         <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
 
@@ -41,8 +41,8 @@
                             <a class="dropdown-item" href="#">
                                 <i class="fa fa-gear icon"></i> Minha Conta </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="login.html">
-                                <i class="fa fa-power-off icon"></i> Sair </a>
+                            <g:link controller="login" action="sair" class="dropdown-item">
+                                <i class="fa fa-power-off icon"></i> Sair </g:link>
                         </div>
                     </li>
                 </ul>
