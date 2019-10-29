@@ -11,6 +11,8 @@ class BootStrap {
             usuario.nome = "admin"
             usuario.login="admin"
             usuario.senha = "admin".encodeAsSHA256()
+            usuario.dataCriacao = new Date()
+            usuario.email = "email@teste.com.br"
             usuario.save(flush:true)
         }
 

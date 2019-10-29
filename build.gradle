@@ -59,7 +59,7 @@ dependencies {
     testRuntime "org.seleniumhq.selenium:selenium-htmlunit-driver:2.47.1"
     testRuntime "net.sourceforge.htmlunit:htmlunit:2.18"
     testRuntime "org.seleniumhq.selenium:selenium-chrome-driver:2.47.1"
-    testCompile "io.micronaut:micronaut-http-client:2.47.1"//aws
+    //testCompile "io.micronaut:micronaut-http-client:2.47.1"
 }
 
 bootRun {
