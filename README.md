@@ -31,5 +31,15 @@ http://sapp-env.jpzw6tmcfx.us-west-2.elasticbeanstalk.com/
 https://fernando88to.myjetbrains.com/youtrack/agiles/87-7/88-13
 
 
+## Compilar o projeto
+
+Para efetuar alguma alteração no código fonte, pode ser fazer uma cópia do código fonte ou caso queira contribuir para o projeto
+basta enviar um email para fernando.henrique@mail.uft.edu.br.
+
+Para compilar o projeto é necessário o jdk 1.8, git e o  framework grails (https://grails.org/) instalado.
+
+
+
+
 
 
