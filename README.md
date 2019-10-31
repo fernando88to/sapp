@@ -3,8 +3,6 @@
 O Sistema de Acompanhamento de Políticas de Preservação de Documentos Digitais (SAPP) é um sistema web tem por objetivo ser uma ferramenta de  avaliação e acompanhamento da implementação das políticas de preservação de documentos digitais nos sistemas informatizados do Poder Judiciário tocantinense atendendo aos requisitos estabelecidos pelo Sistemas Informatizados de Gestão de Processos e Documentos do Poder Judiciário (MoReq-Jus).
 O SAPP é resultado do desenvolvimento do trabalho de qualificação do aluno Fernando Henrique no Programa de Pós-Graduação Mestrado Profissional em Modelagem Computaciona de Sistema da Universidade Federal do Tocantins (UFT).
  
- 
-## Público Alvo  
 
 ### Pré-Requisitos para instalação do sistema
  - [JDK 1.8.0_91 ](https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html "JDK 1.8")
@@ -50,8 +48,9 @@ Para a programação do código fonte recomenda-se a utilização da linha de co
 Para o desenvolvimento das telas foi utilizado um template open source chamado Modular Admin (https://github.com/modularcode/modular-admin-html
 ).  
 
+## Banco de Dados
 
-
-
+Para o armazenamento dos dados foi utilizado o banco de dados H2 (https://www.h2database.com/html/main.html) o qual é open soure
+relacioal, transacional e permite que o banco de dados seja distribuído junto com a aplicação por meio de um arquivo.
 
 
