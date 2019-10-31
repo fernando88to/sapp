@@ -75,18 +75,11 @@
                             <g:link controller="usuario" action="index">
                                 <i class="fa fa-users"></i> Usuários </g:link>
                         </li>
-                        <li >
-                            <a href="">
-                                <i class="fa fa-th-large"></i> Items Manager <i class="fa arrow"></i>
-                            </a>
-                            <ul class="sidebar-nav">
-                                <li class="active">
-                                    <a href="items-list.html"> Items List </a>
-                                </li>
-                                <li>
-                                    <a href="item-editor.html"> Item Editor </a>
-                                </li>
-                            </ul>
+                        <li id="menu_moreqjusonline">
+                            <g:link controller="moreqJusOnline">
+                                <i class="fa fa-th-large"></i> Moreq-Jus Online
+                            </g:link>
+
                         </li>
                         <li>
                             <a href="">

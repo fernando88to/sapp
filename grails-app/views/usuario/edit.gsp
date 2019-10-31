@@ -47,5 +47,10 @@
 
 
 
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $( "#menu_usuario" ).addClass( "active open" );
+            });
+        </script>
     </body>
 </html>

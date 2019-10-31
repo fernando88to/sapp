@@ -13,7 +13,6 @@ class AuthInterceptor {
         if( GestaoDaSessao.isLogado(session)){
             true
         }else{
-            println("usuario não lgoado")
             redirect(controller: 'login', action: 'index')
             false
 
