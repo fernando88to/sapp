@@ -30,6 +30,9 @@ http://sapp-env.jpzw6tmcfx.us-west-2.elasticbeanstalk.com/
 
 ## Quadro de desenvolvimento
 
+Para o acompanhamento do processo de programação é utilizado a ferramenta abaixo que permite gerenciar
+um quadro das atividades que ainda devem ser desenvolvidas (Open), em desenvolvimento (In Progress) e Finalizadas (Done). 
+
 https://fernando88to.myjetbrains.com/youtrack/agiles/87-7/88-13
 
 
