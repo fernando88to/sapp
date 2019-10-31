@@ -18,14 +18,7 @@ $ java -Dgrails.env=prod -jar distribuicao/sapp-0.1.jar
 
 http://sapp-env.jpzw6tmcfx.us-west-2.elasticbeanstalk.com/
 
-## Funcionalidades do sistema
 
-| Funcionalidade | Situação |
-| ------ | ------ |
-| Login | Finalizada |
-| Cadastro de usuário  | Finalizada |
-| Atualização de senha do usuario logado | Finalizada |
-| Cadastro dos sistemas da instituiçao | Pendente |
 
 
 ## Quadro de desenvolvimento
