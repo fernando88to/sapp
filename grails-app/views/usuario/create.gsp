@@ -7,27 +7,6 @@
     </head>
     <body>
 
-       %{-- <div id="create-usuario" class="content scaffold-create" role="main">
-            <h1><g:message code="default.create.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <g:hasErrors bean="${this.usuario}">
-            <ul class="errors" role="alert">
-                <g:eachError bean="${this.usuario}" var="error">
-                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
-                </g:eachError>
-            </ul>
-            </g:hasErrors>
-            <g:form resource="${this.usuario}" method="POST">
-                <fieldset class="form">
-                    <f:all bean="usuario"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
-                </fieldset>
-            </g:form>
-        </div>--}%
 
 
 
@@ -46,11 +25,21 @@
 
             <div class="form-group">
                 <label class="control-label">Nome</label>
-                <input type="text" name="nome" class="form-control underlined" value="${usuario.nome}">
+                <input type="text" name="nome" class="form-control underlined" value="${usuario.nome}" maxlength="255">
+            </div>
+            <div class="form-group">
+                <label class="control-label">Login</label>
+                <input type="text" name="login" class="form-control underlined" value="${usuario.login}" maxlength="255">
             </div>
 
             <div class="form-group">
-                <g:submitButton name="create" class="btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                <label class="control-label">Email</label>
+                <input type="text" name="email" class="form-control underlined" value="${usuario.email}" maxlength="255">
+            </div>
+
+            <div class="form-group">
+                <g:actionSubmit action="save" name="create" class="btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+                <g:actionSubmit action="index" name="cancelar" class="btn btn-secondary" value="Cancelar"   />
             </div>
 
 
@@ -59,5 +48,12 @@
     </div>
 
 
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $( "#menu_usuario" ).addClass( "active open" );
+        });
+    </script>
+
     </body>
+
 </html>

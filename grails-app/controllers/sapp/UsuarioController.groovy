@@ -29,6 +29,7 @@ class UsuarioController {
         }
 
         usuario.dataCriacao = new Date()
+        usuario.senha= "1234".encodeAsSHA256()
         try {
             usuarioService.save(usuario)
         } catch (ValidationException e) {
@@ -95,6 +96,81 @@ class UsuarioController {
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }
+        }
+    }
+
+
+    /**
+     * Editar o perfil logado
+     */
+    def editPerfilLogado(){
+        respond usuarioService.get(GestaoDaSessao.usuarioLogado(session).id)
+
+
+
+    }
+
+
+    def updatePerfilLogado(Usuario usuario) {
+        if (usuario == null) {
+            notFound()
+            return
+        }
+
+        try {
+            usuarioService.save(usuario)
+        } catch (ValidationException e) {
+            respond usuario.errors, view:'editPerfilLogado'
+            return
+        }
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = 'Usuário atualizado com sucesso'
+                redirect action: 'editPerfilLogado'
+            }
+            '*'{ respond usuario, [status: OK, action: 'editPerfilLogado'] }
+        }
+    }
+
+
+    def editSenhaLogado(){
+        def usuario = usuarioService.get(GestaoDaSessao.usuarioLogado(session).id)
+
+        respond usuario
+
+
+
+    }
+
+
+    def updateSenhaLogado(Usuario usuario) {
+        if (usuario == null) {
+            notFound()
+            return
+        }
+        usuario.senhaConfirmacao= params.senhaConfirmacao
+
+        if (usuario.senha!=usuario.senhaConfirmacao){
+            usuario.errors.rejectValue("senha","senhainvalida","A senha de confirmação deve ser igual a senha")
+            respond usuario.errors, view:'editSenhaLogado'
+            return
+        }
+
+        try {
+            usuario.senha = usuario.senha.encodeAsSHA256()
+            usuarioService.save(usuario)
+        } catch (ValidationException e) {
+            respond usuario.errors, view:'editSenhaLogado'
+            return
+        }
+
+        request.withFormat {
+            form multipartForm {
+                flash.message = 'Senha atualizada com sucessso'
+                redirect action: 'editSenhaLogado'
+            }
+            '*'{ respond usuario, [status: OK, action: 'editSenhaLogado'] }
         }
     }
 }

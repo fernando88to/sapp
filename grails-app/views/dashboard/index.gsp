@@ -10,5 +10,12 @@
 
 </div>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $( "#menu_bash_board" ).addClass( "active open" );
+    });
+</script>
+
+
 </body>
 </html>

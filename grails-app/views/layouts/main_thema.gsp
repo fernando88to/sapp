@@ -12,6 +12,7 @@
     <!-- Place favicon.ico in the root directory -->
     <asset:stylesheet src="vendor.css"/>
     <asset:stylesheet src="app-blue.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -38,8 +39,11 @@
                         <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
 
 
-                            <a class="dropdown-item" href="#">
-                                <i class="fa fa-gear icon"></i> Minha Conta </a>
+                            <g:link controller="usuario" action="editPerfilLogado" class="dropdown-item" href="#">
+                                <i class="fa fa-gear icon"></i> Minha Conta </g:link>
+                            <div class="dropdown-divider"></div>
+                            <g:link controller="usuario" action="editSenhaLogado" class="dropdown-item" href="#">
+                                <i class="fa fa-unlock icon"></i> Atualizar Senha </g:link>
                             <div class="dropdown-divider"></div>
                             <g:link controller="login" action="sair" class="dropdown-item">
                                 <i class="fa fa-power-off icon"></i> Sair </g:link>
@@ -63,9 +67,13 @@
                 </div>
                 <nav class="menu">
                     <ul class="sidebar-menu metismenu" id="sidebar-menu">
-                        <li class="active open">
-                            <a href="index.html">
-                                <i class="fa fa-home"></i> Dashboard </a>
+                        <li id="menu_bash_board">
+                            <g:link controller="dashboard" action="index">
+                                <i class="fa fa-bar-chart-o"></i> Dashboard </g:link>
+                        </li>
+                        <li id="menu_usuario" >
+                            <g:link controller="usuario" action="index">
+                                <i class="fa fa-users"></i> Usuários </g:link>
                         </li>
                         <li >
                             <a href="">

@@ -19,7 +19,7 @@
 
 
     <div class="row">
-        <div class="col-md-11"></div>
+        <div class="col-md-10"></div>
         <div class="col-md-1">
             <g:link action="create" >
                 <button type="button" class="btn btn-info">Cadastrar</button>
@@ -42,6 +42,7 @@
                                 <th>Nome</th>
                                 <th>Login</th>
                                 <th>Email</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -51,6 +52,10 @@
                                     <td>${u.nome}</td>
                                     <td>${u.login}</td>
                                     <td>${u.email}</td>
+                                    <td>
+                                        <g:link controller="usuario" action="edit" params="[id:u.id]"><i class="fa fa-pencil"></i> </g:link>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <g:link controller="usuario" action="show" params="[id:u.id]"><i class="fa fa-eye"></i> </g:link>
+                                    </td>
                                 </tr>
                             </g:each>
 
@@ -73,5 +78,12 @@
                 <g:paginate total="${usuarioCount ?: 0}" />
             </div>
         </div>
+
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $( "#menu_usuario" ).addClass( "active open" );
+            });
+        </script>
     </body>
 </html>
