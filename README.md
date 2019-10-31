@@ -42,8 +42,13 @@ basta enviar um email para fernando.henrique@mail.uft.edu.br.
 
 Para compilar o projeto é necessário o jdk 1.8, git e o  framework grails (https://grails.org/) instalado.
 
+Para a programação do código fonte recomenda-se a utilização da linha de comando e o editor de texto Visual Code Studio (https://code.visualstudio.com/)
+
 
 ## Layout
+
+Para o desenvolvimento das telas foi utilizado um template open source chamado Modular Admin (https://github.com/modularcode/modular-admin-html
+).  
 
 
 
