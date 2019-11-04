@@ -81,6 +81,18 @@
                             </g:link>
 
                         </li>
+                        <li id="menu_instituicao">
+                            <g:link controller="instituicao" action="edit">
+                                <i class="fa fa-th-large"></i> Instituição
+                            </g:link>
+
+                        </li>
+                        <li id="menu_sistemas">
+                            <g:link controller="sistema" action="index">
+                                <i class="fa fa-th-large"></i> Sistemas
+                            </g:link>
+
+                        </li>
                         <li>
                             <a href="">
                                 <i class="fa fa-area-chart"></i> Charts <i class="fa arrow"></i>

@@ -8,6 +8,7 @@ class Usuario implements Serializable {
     Date dataCriacao
     String email
     String senhaConfirmacao
+    Sistema sistema
 
     /**
      * Campo que não é persistido, ele é apenas utilizado no formulario de atualizar senha
@@ -20,6 +21,7 @@ class Usuario implements Serializable {
         senha nullable: false, maxSize: 255
         dataCriacao nullable: false
         email nullable: false, maxSize: 255, email: true, unique: true
+        sistema nullable: true
     }
 
     static mapping = {
