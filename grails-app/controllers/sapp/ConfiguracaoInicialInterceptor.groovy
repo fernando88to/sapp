@@ -15,13 +15,13 @@ class ConfiguracaoInicialInterceptor {
     boolean before() {
         //println "configuração inicial"
 
-        def instituicao = instituicaoService.getInstituicaoPrincipal()
+        /*def instituicao = instituicaoService.getInstituicaoPrincipal()
         if(!instituicao){
             flash.message = "Para começar a utiliza o sistema informe os dados da Instituição"
             redirect(controller: 'instituicao', action: 'edit')
             false
         }
-
+*/
         true
 
 
