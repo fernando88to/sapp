@@ -6,6 +6,7 @@ import static org.springframework.http.HttpStatus.*
 class SistemaController {
 
     SistemaService sistemaService
+    InstituicaoService instituicaoService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -29,7 +30,7 @@ class SistemaController {
         }
 
         try {
-            //sistema.instituicao = Instituicao.get()
+            sistema.instituicao = instituicaoService.getInstituicaoPrincipal()
             sistemaService.save(sistema)
         } catch (ValidationException e) {
             respond sistema.errors, view:'create'

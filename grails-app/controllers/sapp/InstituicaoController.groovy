@@ -10,7 +10,7 @@ class InstituicaoController {
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
     def edit() {
-        def instituicao = Instituicao.get(1l)
+        def instituicao = instituicaoService.getInstituicaoPrincipal()
         if(!instituicao){
             instituicao = new Instituicao()
             instituicao.id= 1l
@@ -21,8 +21,7 @@ class InstituicaoController {
     }
 
     def update() {
-
-        def instituicao  = Instituicao.get(1l)
+        def instituicao  = instituicaoService.getInstituicaoPrincipal()
         if(!instituicao){
             instituicao = new Instituicao(params)
         }

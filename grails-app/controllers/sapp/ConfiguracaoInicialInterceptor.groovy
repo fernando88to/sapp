@@ -2,18 +2,20 @@ package sapp
 
 
 class ConfiguracaoInicialInterceptor {
+    def instituicaoService
 
     ConfiguracaoInicialInterceptor() {
-        matchAll()
+        /*matchAll()
                 .excludes(controller:"login").
-                excludes(controller:"instituicao")
+                excludes(controller:"instituicao")*/
+
 
     }
 
     boolean before() {
         //println "configuração inicial"
 
-        def instituicao = Instituicao.get(1l)
+        def instituicao = instituicaoService.getInstituicaoPrincipal()
         if(!instituicao){
             flash.message = "Para começar a utiliza o sistema informe os dados da Instituição"
             redirect(controller: 'instituicao', action: 'edit')

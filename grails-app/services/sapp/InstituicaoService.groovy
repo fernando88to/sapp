@@ -2,8 +2,17 @@ package sapp
 
 import grails.gorm.services.Service
 
+
 @Service(Instituicao)
-interface InstituicaoService {
+public  abstract  class InstituicaoService implements IInstituicaoService{
+
+    Instituicao getInstituicaoPrincipal(){
+        Instituicao.get(1l)
+    }
+
+}
+
+interface IInstituicaoService {
 
     Instituicao get(Serializable id)
 
@@ -14,5 +23,9 @@ interface InstituicaoService {
     void delete(Serializable id)
 
     Instituicao save(Instituicao instituicao)
+
+
+
+
 
 }

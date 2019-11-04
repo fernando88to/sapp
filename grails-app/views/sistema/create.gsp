@@ -27,12 +27,12 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Sigla</label>
-                <input type="text" name="login" class="form-control underlined" value="${sistema.sigla}" maxlength="255">
+                <input type="text" name="sigla" class="form-control underlined" value="${sistema.sigla}" maxlength="255">
             </div>
 
             <div class="form-group">
                 <label class="control-label">Url</label>
-                <input type="text" name="email" class="form-control underlined" value="${sistema.url}" maxlength="255">
+                <input type="text" name="url" class="form-control underlined" value="${sistema.url}" maxlength="255">
             </div>
 
             <div class="form-group">
