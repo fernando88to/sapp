@@ -1,40 +1,55 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'sistema.label', default: 'Sistema')}" />
-        <title><g:message code="default.edit.label" args="[entityName]" /></title>
-    </head>
-    <body>
-        <a href="#edit-sistema" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-        <div class="nav" role="navigation">
-            <ul>
-                <li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-                <li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-                <li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-            </ul>
-        </div>
-        <div id="edit-sistema" class="content scaffold-edit" role="main">
-            <h1><g:message code="default.edit.label" args="[entityName]" /></h1>
-            <g:if test="${flash.message}">
-            <div class="message" role="status">${flash.message}</div>
-            </g:if>
-            <g:hasErrors bean="${this.sistema}">
+<head>
+    <meta name="layout" content="main_thema" />
+    <g:set var="entityName" value="${message(code: 'sistema.label', default: 'Sistema')}" />
+    <title><g:message code="default.edit.label" args="[entityName]" /></title>
+</head>
+<body>
+
+<div class="card card-block sameheight-item" style="height: 726px;">
+    <div class="title-block">
+        <h3 class="title"> Editar Usuário </h3>
+    </div>
+    <g:form  role="form" resource="${this.sistema}" method="PUT">
+        <g:hiddenField name="version" value="${this.sistema?.version}" />
+        <g:hasErrors bean="${this.sistema}">
             <ul class="errors" role="alert">
                 <g:eachError bean="${this.sistema}" var="error">
-                <li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+                    <li class="has-error" <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
                 </g:eachError>
             </ul>
-            </g:hasErrors>
-            <g:form resource="${this.sistema}" method="PUT">
-                <g:hiddenField name="version" value="${this.sistema?.version}" />
-                <fieldset class="form">
-                    <f:all bean="sistema"/>
-                </fieldset>
-                <fieldset class="buttons">
-                    <input class="save" type="submit" value="${message(code: 'default.button.update.label', default: 'Update')}" />
-                </fieldset>
-            </g:form>
+        </g:hasErrors>
+
+        <div class="form-group">
+            <label class="control-label">Nome</label>
+            <input type="text" name="nome" class="form-control underlined" value="${sistema.nome}" maxlength="255">
         </div>
-    </body>
+        <div class="form-group">
+            <label class="control-label">Sigla</label>
+            <input type="text" name="sigla" class="form-control underlined" value="${sistema.sigla}" maxlength="255">
+        </div>
+
+        <div class="form-group">
+            <label class="control-label">Url</label>
+            <input type="text" name="url" class="form-control underlined" value="${sistema.url}" maxlength="255">
+        </div>
+
+        <div class="form-group">
+            <g:submitButton name="create" class="btn btn-primary" value="${message(code: 'default.button.update.label', default: 'Update')}" />
+            <g:actionSubmit action="index" name="cancelar" class="btn btn-secondary" value="Cancelar"   />
+        </div>
+
+
+
+    </g:form>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $( "#menu_sistemas" ).addClass( "active open" );
+        });
+    </script>
+</body>
 </html>

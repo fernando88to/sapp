@@ -65,7 +65,7 @@ class SistemaController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'sistema.label', default: 'Sistema'), sistema.id])
+                flash.message = "Sistema atualizado com sucesso"
                 redirect sistema
             }
             '*'{ respond sistema, [status: OK] }
