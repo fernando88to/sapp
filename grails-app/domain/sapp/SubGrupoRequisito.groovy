@@ -9,10 +9,12 @@ class SubGrupoRequisito {
     String resumo
     String nome
     GrupoRequisito grupoRequisito
+    List<Requisito> requisitoList
 
 
 
 
+    static transients = ['requisitoList']
 
     static constraints = {
         numeroReferenciaMoreqJus maxSize: 255, unique: true, nullable: false

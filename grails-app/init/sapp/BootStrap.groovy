@@ -25,7 +25,7 @@ class BootStrap {
                     "O Judiciário comumente organiza seus documentos institucionais em documentos\n" +
                     "e processos: judiciais e administrativos."
 
-            grupoRequisito_2.numeroReferenciaMoreqJus="2"
+            grupoRequisito_2.numeroReferenciaMoreqJus=2
             grupoRequisito_2.save(flush:true)
 
         }
@@ -90,7 +90,7 @@ class BootStrap {
             grupoRequisito_3 = new GrupoRequisito()
             grupoRequisito_3.nome = "Captura"
             grupoRequisito_3.resumo = ""
-            grupoRequisito_3.numeroReferenciaMoreqJus="3"
+            grupoRequisito_3.numeroReferenciaMoreqJus=3
             grupoRequisito_3.save(flush:true)
 
         }
@@ -100,7 +100,7 @@ class BootStrap {
             grupoRequisito_4 = new GrupoRequisito()
             grupoRequisito_4.nome = "Armazenamento"
             grupoRequisito_4.resumo = ""
-            grupoRequisito_4.numeroReferenciaMoreqJus="4"
+            grupoRequisito_4.numeroReferenciaMoreqJus=4
             grupoRequisito_4.save(flush:true)
 
         }
@@ -110,7 +110,7 @@ class BootStrap {
             grupoRequisito_5 = new GrupoRequisito()
             grupoRequisito_5.nome = "Preservação"
             grupoRequisito_5.resumo = ""
-            grupoRequisito_5.numeroReferenciaMoreqJus="5"
+            grupoRequisito_5.numeroReferenciaMoreqJus=5
             grupoRequisito_5.save(flush:true)
 
         }
@@ -120,7 +120,7 @@ class BootStrap {
             grupoRequisito_6 = new GrupoRequisito()
             grupoRequisito_6.nome = "Segurança"
             grupoRequisito_6.resumo = ""
-            grupoRequisito_6.numeroReferenciaMoreqJus="6"
+            grupoRequisito_6.numeroReferenciaMoreqJus=6
             grupoRequisito_6.save(flush:true)
 
         }
@@ -130,7 +130,7 @@ class BootStrap {
             grupoRequisito_7 = new GrupoRequisito()
             grupoRequisito_7.nome = "Tramitação e fluxo de trabalho"
             grupoRequisito_7.resumo = ""
-            grupoRequisito_7.numeroReferenciaMoreqJus="7"
+            grupoRequisito_7.numeroReferenciaMoreqJus=7
             grupoRequisito_7.save(flush:true)
 
         }
@@ -140,7 +140,7 @@ class BootStrap {
             grupoRequisito_8 = new GrupoRequisito()
             grupoRequisito_8.nome = "Avaliação e destinação"
             grupoRequisito_8.resumo = ""
-            grupoRequisito_8.numeroReferenciaMoreqJus="8"
+            grupoRequisito_8.numeroReferenciaMoreqJus=8
             grupoRequisito_8.save(flush:true)
 
         }
@@ -151,7 +151,7 @@ class BootStrap {
             grupoRequisito_9 = new GrupoRequisito()
             grupoRequisito_9.nome = "Pesquisa, localização e apresentação de documentos"
             grupoRequisito_9.resumo = ""
-            grupoRequisito_9.numeroReferenciaMoreqJus="9"
+            grupoRequisito_9.numeroReferenciaMoreqJus=9
             grupoRequisito_9.save(flush:true)
 
         }
@@ -162,7 +162,7 @@ class BootStrap {
             grupoRequisito_10 = new GrupoRequisito()
             grupoRequisito_10.nome = "Funções administrativas"
             grupoRequisito_10.resumo = ""
-            grupoRequisito_10.numeroReferenciaMoreqJus="10"
+            grupoRequisito_10.numeroReferenciaMoreqJus=10
             grupoRequisito_10.save(flush:true)
 
         }
@@ -172,7 +172,7 @@ class BootStrap {
             grupoRequisito_11 = new GrupoRequisito()
             grupoRequisito_11.nome = "Usabilidade"
             grupoRequisito_11.resumo = ""
-            grupoRequisito_11.numeroReferenciaMoreqJus="11"
+            grupoRequisito_11.numeroReferenciaMoreqJus=11
             grupoRequisito_11.save(flush:true)
 
         }
@@ -182,7 +182,7 @@ class BootStrap {
             grupoRequisito_12 = new GrupoRequisito()
             grupoRequisito_12.nome = "Interoperabilidade"
             grupoRequisito_12.resumo = ""
-            grupoRequisito_12.numeroReferenciaMoreqJus="12"
+            grupoRequisito_12.numeroReferenciaMoreqJus=12
             grupoRequisito_12.save(flush:true)
 
         }
@@ -192,7 +192,7 @@ class BootStrap {
             grupoRequisito_13 = new GrupoRequisito()
             grupoRequisito_13.nome = "Disponibilidade"
             grupoRequisito_13.resumo = ""
-            grupoRequisito_13.numeroReferenciaMoreqJus="13"
+            grupoRequisito_13.numeroReferenciaMoreqJus=13
             grupoRequisito_13.save(flush:true)
 
         }
@@ -202,7 +202,7 @@ class BootStrap {
             grupoRequisito_14 = new GrupoRequisito()
             grupoRequisito_14.nome = "Desempenho e escalabilidade"
             grupoRequisito_14.resumo = ""
-            grupoRequisito_14.numeroReferenciaMoreqJus="14"
+            grupoRequisito_14.numeroReferenciaMoreqJus=14
             grupoRequisito_14.save(flush:true)
 
         }

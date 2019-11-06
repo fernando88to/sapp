@@ -3,8 +3,12 @@ package sapp
 class GrupoRequisito implements Serializable {
     Long id
     String nome
-    String numeroReferenciaMoreqJus
+    Integer numeroReferenciaMoreqJus
     String resumo
+    List<SubGrupoRequisito> subGrupoRequisitoList
+
+
+    static transients = ['subGrupoRequisitoList']
 
 
     static constraints = {
