@@ -208,8 +208,44 @@ class BootStrap {
         }
 
 
+        cargaTJTO()
 
     }
     def destroy = {
+    }
+
+    def cargaTJTO(){
+        def instituicao = Instituicao.get(1l)
+        if(!instituicao){
+            instituicao = new Instituicao()
+            instituicao.nome ="Tribunal de Justiça do Tocantins"
+            instituicao.sigla = "TJTO"
+            instituicao.endereco = "sem endereço"
+            instituicao.save(flush:true)
+
+            def sistemaEprc = new Sistema()
+            sistemaEprc.nome = "Processo Eletrônico"
+            sistemaEprc.sigla ="EPROC"
+            sistemaEprc.url = "http://eproc.tjto.jus.br/"
+            sistemaEprc.instituicao = instituicao
+            sistemaEprc.save(flush:true)
+
+
+            def sistemaSei = new Sistema()
+            sistemaSei.nome = "Sistema Eletrônicio Administrativo"
+            sistemaSei.sigla ="SEI"
+            sistemaSei.url = "http://sei.tjto.jus.br/"
+            sistemaSei.instituicao = instituicao
+            sistemaSei.save(flush:true)
+
+
+            def sistemaGise = new Sistema()
+            sistemaGise.nome = "Sistema de Gestão das Serventias ExtraJudiciais"
+            sistemaGise.sigla ="GISE"
+            sistemaGise.url = "http://gise.tjto.jus.br/Gise"
+            sistemaGise.instituicao = instituicao
+            sistemaGise.save(flush:true)
+
+        }
     }
 }

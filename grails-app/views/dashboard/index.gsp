@@ -6,8 +6,13 @@
 </head>
 <body>
 
-<div id="content" role="main">
-
+<div class="row">
+    <div class="col-md-10"></div>
+    <div class="col-md-1">
+        <g:link controller="formulario" action="index" >
+            <button type="button" class="btn btn-info">Responder Questionário</button>
+        </g:link>
+    </div>
 </div>
 
 <script type="text/javascript">
