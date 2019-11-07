@@ -10,6 +10,12 @@ class Requisito {
     Boolean obrigatorio
     SubGrupoRequisito subGrupoRequisito
 
+    Integer resposta
+
+    static transients = ['resposta']
+
+
+
     static constraints = {
         numeroReferenciaMoreqJus nullable: false, maxSize: 255
         nome nullable: false, maxSize: 4000
