@@ -15,85 +15,11 @@ class BootStrap {
             usuario.email = "email@teste.com.br"
             usuario.save(flush:true)
         }
-        def grupoRequisito_2 = GrupoRequisito.findByNumeroReferenciaMoreqJus("2")
-        if(!grupoRequisito_2){
-            grupoRequisito_2 = new GrupoRequisito()
-            grupoRequisito_2.nome = "Organização dos documentos institucionais: plano de classificação e manutenção dos documentos"
-            grupoRequisito_2.resumo = "Os documentos institucionais podem ser agregados em processos/dossiês, de\n" +
-                    "forma estruturada. Essa estrutura reflete as funções e atividades da organização,\n" +
-                    "representadas no plano de classificação.\n" +
-                    "O Judiciário comumente organiza seus documentos institucionais em documentos\n" +
-                    "e processos: judiciais e administrativos."
-
-            grupoRequisito_2.numeroReferenciaMoreqJus=2
-            grupoRequisito_2.save(flush:true)
-
-        }
-
-        def subGrupo_2_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.1")
-        if(!subGrupo_2_1){
-            subGrupo_2_1 = new SubGrupoRequisito()
-            subGrupo_2_1.numeroReferenciaMoreqJus="2.1"
-            subGrupo_2_1.nome ="Configuração e administração do plano de classificação no GestãoDoc"
-            subGrupo_2_1.grupoRequisito = grupoRequisito_2
-            subGrupo_2_1.save(flush:true)
-
-        }
-
-        def requisitoRPC2_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.1")
-        if(!requisitoRPC2_1_1){
-            requisitoRPC2_1_1 = new Requisito()
-            requisitoRPC2_1_1.numeroReferenciaMoreqJus = "RPC2.1.1"
-            requisitoRPC2_1_1.obrigatorio = true
-            requisitoRPC2_1_1.nome = "Incluir os instrumentos de classificação de documentos e processos judiciais e administrativos de acordo com as normas vigentes compatíveis com o programa de gestão documental."
-            requisitoRPC2_1_1.subGrupoRequisito = subGrupo_2_1
-            requisitoRPC2_1_1.save(flush:true)
-        }
-
-        def requisitoRPC2_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.2")
-        if(!requisitoRPC2_1_2){
-            requisitoRPC2_1_2 = new Requisito()
-            requisitoRPC2_1_2.numeroReferenciaMoreqJus = "RPC2.1.2"
-            requisitoRPC2_1_2.obrigatorio = true
-            requisitoRPC2_1_2.subGrupoRequisito = subGrupo_2_1
-            requisitoRPC2_1_2.nome = "Garantir a criação de classes, subclasses, grupos e subgrupos nos níveis do plano de classificação e de outros instrumentos de classificação de documentos e processos de acordo com o método de codificação adotado"
-            requisitoRPC2_1_2.save(flush:true)
-        }
 
 
+        cargaGrupo2()
 
-
-        def subGrupo_2_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.2")
-        if(!subGrupo_2_2){
-            subGrupo_2_2 = new SubGrupoRequisito()
-            subGrupo_2_2.numeroReferenciaMoreqJus="2.2"
-            subGrupo_2_2.nome ="Classificacao e metadados dos processos/dossiês"
-            subGrupo_2_2.grupoRequisito = grupoRequisito_2
-            subGrupo_2_2.save(flush:true)
-
-        }
-
-
-
-        def subGrupo_2_3 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.3")
-        def subGrupo_2_4 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.4")
-        def subGrupo_2_5 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.5")
-        def subGrupo_2_6 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.6")
-
-
-
-
-
-
-        def grupoRequisito_3 = GrupoRequisito.findByNumeroReferenciaMoreqJus("3")
-        if(!grupoRequisito_3){
-            grupoRequisito_3 = new GrupoRequisito()
-            grupoRequisito_3.nome = "Captura"
-            grupoRequisito_3.resumo = ""
-            grupoRequisito_3.numeroReferenciaMoreqJus=3
-            grupoRequisito_3.save(flush:true)
-
-        }
+        cargaGrupo3()
 
         def grupoRequisito_4 = GrupoRequisito.findByNumeroReferenciaMoreqJus("4")
         if(!grupoRequisito_4){
@@ -211,7 +137,184 @@ class BootStrap {
         cargaTJTO()
 
     }
+
+
     def destroy = {
+    }
+
+    def cargaGrupo3() {
+        def grupoRequisito_3 = GrupoRequisito.findByNumeroReferenciaMoreqJus("3")
+        if (!grupoRequisito_3) {
+            grupoRequisito_3 = new GrupoRequisito()
+            grupoRequisito_3.nome = "Captura"
+            grupoRequisito_3.resumo = ""
+            grupoRequisito_3.numeroReferenciaMoreqJus = 3
+            grupoRequisito_3.save(flush: true)
+
+        }
+    }
+
+    def cargaGrupo2(){
+        def grupoRequisito_2 = GrupoRequisito.findByNumeroReferenciaMoreqJus("2")
+        if(!grupoRequisito_2){
+            grupoRequisito_2 = new GrupoRequisito()
+            grupoRequisito_2.nome = "Organização dos documentos institucionais: plano de classificação e manutenção dos documentos"
+            grupoRequisito_2.resumo = "Os documentos institucionais podem ser agregados em processos/dossiês, de\n" +
+                    "forma estruturada. Essa estrutura reflete as funções e atividades da organização,\n" +
+                    "representadas no plano de classificação.\n" +
+                    "O Judiciário comumente organiza seus documentos institucionais em documentos\n" +
+                    "e processos: judiciais e administrativos."
+
+            grupoRequisito_2.numeroReferenciaMoreqJus=2
+            grupoRequisito_2.save(flush:true)
+
+        }
+
+        def subGrupo_2_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.1")
+        if(!subGrupo_2_1){
+            subGrupo_2_1 = new SubGrupoRequisito()
+            subGrupo_2_1.numeroReferenciaMoreqJus="2.1"
+            subGrupo_2_1.nome ="Configuração e administração do plano de classificação no GestãoDoc"
+            subGrupo_2_1.grupoRequisito = grupoRequisito_2
+            subGrupo_2_1.save(flush:true)
+
+        }
+
+        def requisitoRPC2_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.1")
+        if(!requisitoRPC2_1_1){
+            requisitoRPC2_1_1 = new Requisito()
+            requisitoRPC2_1_1.numeroReferenciaMoreqJus = "RPC2.1.1"
+            requisitoRPC2_1_1.obrigatorio = true
+            requisitoRPC2_1_1.nome = "Incluir os instrumentos de classificação de documentos e processos judiciais e administrativos de acordo com as normas vigentes compatíveis com o programa de gestão documental."
+            requisitoRPC2_1_1.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_1.save(flush:true)
+        }
+
+        def requisitoRPC2_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.2")
+        if(!requisitoRPC2_1_2){
+            requisitoRPC2_1_2 = new Requisito()
+            requisitoRPC2_1_2.numeroReferenciaMoreqJus = "RPC2.1.2"
+            requisitoRPC2_1_2.obrigatorio = true
+            requisitoRPC2_1_2.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_2.nome = "Garantir a criação de classes, subclasses, grupos e subgrupos nos níveis do plano de classificação e de outros instrumentos de classificação de documentos e processos de acordo com o método de codificação adotado"
+            requisitoRPC2_1_2.save(flush:true)
+        }
+
+
+        def requisitoRPC2_1_3 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.3")
+        if(!requisitoRPC2_1_3){
+            requisitoRPC2_1_3 = new Requisito()
+            requisitoRPC2_1_3.numeroReferenciaMoreqJus = "RPC2.1.3"
+            requisitoRPC2_1_3.obrigatorio = true
+            requisitoRPC2_1_3.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_3.nome = "Garantir a criação de classes, subclasses, grupos e subgrupos nos níveis do plano de classificação e de outros instrumentos de classificação de documentos e processos de acordo com o método de codificação adotado."
+            requisitoRPC2_1_3.save(flush:true)
+        }
+
+        def requisitoRPC2_1_4 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.4")
+        if(!requisitoRPC2_1_4){
+            requisitoRPC2_1_4 = new Requisito()
+            requisitoRPC2_1_4.numeroReferenciaMoreqJus = "RPC2.1.4"
+            requisitoRPC2_1_4.obrigatorio = true
+            requisitoRPC2_1_4.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_4.nome = "Registrar as datas de abertura de uma nova classe, reclassificação, movimentação e modificação da classe no respectivo metadado."
+            requisitoRPC2_1_4.save(flush:true)
+        }
+
+        def requisitoRPC2_1_5 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.5")
+        if(!requisitoRPC2_1_5){
+            requisitoRPC2_1_5 = new Requisito()
+            requisitoRPC2_1_5.numeroReferenciaMoreqJus = "RPC2.1.5"
+            requisitoRPC2_1_5.obrigatorio = true
+            requisitoRPC2_1_5.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_5.nome = "Registrar a mudança de nome de uma classe já existente no respectivo metadado"
+            requisitoRPC2_1_5.save(flush:true)
+        }
+
+
+        def requisitoRPC2_1_6 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.6")
+        if(!requisitoRPC2_1_6){
+            requisitoRPC2_1_6 = new Requisito()
+            requisitoRPC2_1_6.numeroReferenciaMoreqJus = "RPC2.1.6"
+            requisitoRPC2_1_6.obrigatorio = true
+            requisitoRPC2_1_6.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_6.nome = "Permitir o deslocamento de uma classe inteira, incluindo as subclasses, grupos, subgrupos e os documentos ali classificados, para outra localização no plano de classificação. Nesse caso, é necessário fazer o registro do deslocamento nos metadados desses instrumentos."
+            requisitoRPC2_1_6.save(flush:true)
+        }
+
+
+        def requisitoRPC2_1_7 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.7")
+        if(!requisitoRPC2_1_7){
+            requisitoRPC2_1_7 = new Requisito()
+            requisitoRPC2_1_7.numeroReferenciaMoreqJus = "RPC2.1.7"
+            requisitoRPC2_1_7.obrigatorio = true
+            requisitoRPC2_1_7.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_7.nome = "Permitir que o gestor do sistema torne inativa e inacessível aos demais usuários uma classe em que não serão mais classificados documentos."
+            requisitoRPC2_1_7.save(flush:true)
+        }
+
+        def requisitoRPC2_1_8 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.8")
+        if(!requisitoRPC2_1_8){
+            requisitoRPC2_1_8 = new Requisito()
+            requisitoRPC2_1_8.numeroReferenciaMoreqJus = "RPC2.1.8"
+            requisitoRPC2_1_8.obrigatorio = true
+            requisitoRPC2_1_8.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_8.nome = "Impedir a eliminação de uma classe ativa ou inativa."
+            requisitoRPC2_1_8.save(flush:true)
+        }
+
+
+        def requisitoRPC2_1_9 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.9")
+        if(!requisitoRPC2_1_9){
+            requisitoRPC2_1_9 = new Requisito()
+            requisitoRPC2_1_9.numeroReferenciaMoreqJus = "RPC2.1.9"
+            requisitoRPC2_1_9.obrigatorio = true
+            requisitoRPC2_1_9.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_9.nome = "Permitir a associação de metadados às classes e restringir a inclusão e alteração desses mesmos metadados somente a usuários autorizados."
+            requisitoRPC2_1_9.save(flush:true)
+        }
+
+
+
+        def requisitoRPC2_1_10 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.10")
+        if(!requisitoRPC2_1_10){
+            requisitoRPC2_1_10 = new Requisito()
+            requisitoRPC2_1_10.numeroReferenciaMoreqJus = "RPC2.1.9"
+            requisitoRPC2_1_10.obrigatorio = true
+            requisitoRPC2_1_10.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_10.nome = "Disponibilizar pelo menos dois mecanismos de atribuição de\n" +
+                    "identificadores às classes do plano de classificação, prevendo a\n" +
+                    "possibilidade de se utilizar ambos, separadamente ou em\n" +
+                    "conjunto, na mesma aplicação:\n" +
+                    "\u0001 Atribuição de um código numérico ou alfanumérico.\n" +
+                    "\u0001 Atribuição de um termo que identifique cada classe. "
+            requisitoRPC2_1_10.save(flush:true)
+        }
+
+
+
+
+        def subGrupo_2_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.2")
+        if(!subGrupo_2_2){
+            subGrupo_2_2 = new SubGrupoRequisito()
+            subGrupo_2_2.numeroReferenciaMoreqJus="2.2"
+            subGrupo_2_2.nome ="Classificacao e metadados dos processos/dossiês"
+            subGrupo_2_2.grupoRequisito = grupoRequisito_2
+            subGrupo_2_2.save(flush:true)
+
+        }
+
+
+
+        def subGrupo_2_3 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.3")
+        def subGrupo_2_4 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.4")
+        def subGrupo_2_5 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.5")
+        def subGrupo_2_6 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.6")
+
+
+
+
+
     }
 
     def cargaTJTO(){
