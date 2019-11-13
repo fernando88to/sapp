@@ -279,7 +279,7 @@ class BootStrap {
         def requisitoRPC2_1_10 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.10")
         if(!requisitoRPC2_1_10){
             requisitoRPC2_1_10 = new Requisito()
-            requisitoRPC2_1_10.numeroReferenciaMoreqJus = "RPC2.1.9"
+            requisitoRPC2_1_10.numeroReferenciaMoreqJus = "RPC2.1.10"
             requisitoRPC2_1_10.obrigatorio = true
             requisitoRPC2_1_10.subGrupoRequisito = subGrupo_2_1
             requisitoRPC2_1_10.nome = "Disponibilizar pelo menos dois mecanismos de atribuição de\n" +
@@ -290,6 +290,33 @@ class BootStrap {
                     "\u0001 Atribuição de um termo que identifique cada classe. "
             requisitoRPC2_1_10.save(flush:true)
         }
+
+
+        def requisitoRPC2_1_11 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.11")
+        if(!requisitoRPC2_1_11){
+            requisitoRPC2_1_11 = new Requisito()
+            requisitoRPC2_1_11.numeroReferenciaMoreqJus = "RPC2.1.11"
+            requisitoRPC2_1_11.obrigatorio = true
+            requisitoRPC2_1_11.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_11.nome = "Prever atributos associados aos instrumentos de classificação e\n" +
+                    "indexação por assuntos, de modo a não permitir classificações\n" +
+                    "genéricas, nos casos em que a classificação por assuntos não\n" +
+                    "atender ao caso específico.\n" +
+                    "O BRIG .\n" +
+                    "O\n" +
+                    "Com exceção do usuário autorizado, em algumas classes não é\n" +
+                    "permitido incluir documentos. Nesses casos os documentos\n" +
+                    "devem ser classificados apenas nos níveis subordinados.\n" +
+                    "Ex.1 – Na Tabela Unificada de Assuntos do Judiciário brasileiro\n" +
+                    "os processos devem ser classificados no último nível disponível\n" +
+                    "para cada assunto e quando se tratar de um novo assunto, os\n" +
+                    "usuários autorizados podem classificar o processo, apenas\n" +
+                    "provisoriamente, no último nível pertinente, até que se crie o novo\n" +
+                    "assunto solicitado."
+            requisitoRPC2_1_11.save(flush:true)
+        }
+
+
 
 
 

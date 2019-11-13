@@ -28,6 +28,14 @@
                     <h3 class="title">Responder Formulário</h3>
                 </div>
 
+                <g:hasErrors bean="${this.formulario}">
+                    <ul class="errors" role="alert">
+                        <g:eachError bean="${this.formulario}" var="error">
+                            <li class="has-error" <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
+                        </g:eachError>
+                    </ul>
+                </g:hasErrors>
+
 
                 <ul class="nav nav-tabs nav-tabs-bordered">
                     <li class="nav-item">
@@ -110,6 +118,8 @@
                                                     class="btn btn-info" value="Voltar"></g:actionSubmit>
                                     <g:actionSubmit action="avancar"
                                                     class="btn btn-info" value="Avançar"></g:actionSubmit>
+                                    <g:actionSubmit action="finalizar"
+                                                    class="btn btn-info" value="Finalizar"></g:actionSubmit>
                                 </div>
                             </g:form>
 

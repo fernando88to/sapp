@@ -77,7 +77,7 @@
                         </li>
                         <li id="menu_moreqjusonline">
                             <g:link controller="moreqJusOnline">
-                                <i class="fa fa-th-large"></i> Moreq-Jus Online
+                                <i class="fa fa-th-large"></i>Estrutura Moreq-Jus
                             </g:link>
 
                         </li>

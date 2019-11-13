@@ -1,8 +1,6 @@
 package sapp
 
 import grails.converters.JSON
-import grails.validation.ValidationException
-import static org.springframework.http.HttpStatus.*
 
 class FormularioController {
 
@@ -14,10 +12,10 @@ class FormularioController {
 
         def formulario = GestaoDaSessao.getFormulario(session)
 
-        if(!formulario){
+        if (!formulario) {
             formulario = new Formulario()
 
-            formulario.finalizado=false
+            formulario.finalizado = false
             formulario.grupoRequisitoList = GrupoRequisito.createCriteria().list {
                 order("numeroReferenciaMoreqJus")
 
@@ -26,78 +24,141 @@ class FormularioController {
                 order("nome")
             }
 
-            for(GrupoRequisito g in formulario.grupoRequisitoList){
+            for (GrupoRequisito g in formulario.grupoRequisitoList) {
                 g.subGrupoRequisitoList = SubGrupoRequisito.createCriteria().list {
                     eq("grupoRequisito", g)
                     order("numeroReferenciaMoreqJus")
                 }
             }
-            for(GrupoRequisito g in formulario.grupoRequisitoList){
-                for(SubGrupoRequisito sub in g.subGrupoRequisitoList){
+            for (GrupoRequisito g in formulario.grupoRequisitoList) {
+                for (SubGrupoRequisito sub in g.subGrupoRequisitoList) {
                     sub.requisitoList = Requisito.createCriteria().list {
                         eq("subGrupoRequisito", sub)
                     }
                 }
             }
 
-            GestaoDaSessao.salvarFormulario(session,formulario)
+            GestaoDaSessao.salvarFormulario(session, formulario)
         }
 
 
+        def opcaoRespostaList = getOpcoesResposta()
 
-
-
-
-
-        def opcaoRespostaList =[]
-        opcaoRespostaList+=[id:0,descricao:""]
-        opcaoRespostaList+=[id:1,descricao:"Atende"]
-        opcaoRespostaList+=[id:2,descricao:"Não Atende"]
-        opcaoRespostaList+=[id:3,descricao:"Não se aplica"]
-
-        model:[formulario:formulario,opcaoRespostaList:opcaoRespostaList]
+        model:
+        [formulario: formulario, opcaoRespostaList: opcaoRespostaList]
 
     }
 
-    def avancarSelecaoSistema(){
+    private List getOpcoesResposta() {
+        def opcaoRespostaList = []
+        opcaoRespostaList += [id: 0, descricao: ""]
+        opcaoRespostaList += [id: 1, descricao: "Atende"]
+        opcaoRespostaList += [id: 2, descricao: "Não Atende"]
+        opcaoRespostaList += [id: 3, descricao: "Não se aplica"]
+        return opcaoRespostaList
+
+    }
+
+    def avancarSelecaoSistema() {
         def formulario = GestaoDaSessao.getFormulario(session)
         formulario.sistema = Sistema.get(params.long("sistema"))
 
-        GestaoDaSessao.salvarFormulario(session,formulario )
-        redirect(action:"index", params:[menu:"#menu2"])
-
+        GestaoDaSessao.salvarFormulario(session, formulario)
+        redirect(action: "index", params: [menu: "#menu2"])
 
 
     }
 
-    def voltar(){
+    def finalizar() {
+
+
+
+
+        def formulario = GestaoDaSessao.getFormulario(session)
+
+
+        boolean formularioValido = true
+
+        //valida o formulario
+        formulario.clearErrors()
+        for (GrupoRequisito g in formulario.grupoRequisitoList) {
+            for (SubGrupoRequisito sub in g.subGrupoRequisitoList) {
+
+                for (Requisito r in sub.requisitoList) {
+                    //não respondeu
+                    if (r.resposta == null || r.resposta == 0) {
+                        formulario.errors.rejectValue("id", "id.invalido",
+                                "Na aba ${r.subGrupoRequisito.id+1} no item ${r.numeroReferenciaMoreqJus} não foi respondido")
+                    }
+
+                }
+            }
+        }
+
+
+        if (!formularioValido) {
+
+            redirect(action: "index")
+            return
+        }
+
+
+        //salva o formuario
+        formulario.dataFinalizacao = new Date()
+        formulario.usuario = GestaoDaSessao.usuarioLogado(session)
+        formulario.save(flush:true, failOnError:true)
+        //salvos as respostas
+        for (GrupoRequisito g in formulario.grupoRequisitoList) {
+            for (SubGrupoRequisito sub in g.subGrupoRequisitoList) {
+                for (Requisito r in sub.requisitoList) {
+                    def resposta = new RespostaFormulario()
+                    resposta.formulario = formulario
+                    resposta.resposta = r.resposta
+                    resposta.requisito = r
+                    resposta.save(flush:true, failOnError:true)
+
+
+
+                }
+
+            }
+        }
+
+        //limpa o formulario da sessao
+        GestaoDaSessao.salvarFormulario(session, null)
+        redirect(action: "index")
+
+
+    }
+
+    def voltar() {
         def menuatual = params.int("menuatual")
-        def menu_que_vai = "#menu${menuatual-1}";
-        redirect(action:"index", params:[menu:menu_que_vai])
+        def menu_que_vai = "#menu${menuatual - 1}";
+        redirect(action: "index", params: [menu: menu_que_vai])
     }
 
-    def avancar(){
+    def avancar() {
         def menuatual = params.int("menuatual")
-        def menu_que_vai = "#menu${menuatual < 14 ? menuatual+1 : menuatual}"
+        def menu_que_vai = "#menu${menuatual < 14 ? menuatual + 1 : menuatual}"
 
 
-        redirect(action:"index", params:[menu:menu_que_vai])
+        redirect(action: "index", params: [menu: menu_que_vai])
     }
 
-    def salvarRegistro(){
+    def salvarRegistro() {
         def requisitoSelecionado = params.long("requisito")
         def formulario = GestaoDaSessao.getFormulario(session)
-        for(GrupoRequisito g in formulario.grupoRequisitoList){
-            for(SubGrupoRequisito sub in g.subGrupoRequisitoList){
-                for(Requisito r in sub.requisitoList){
-                    if(r.id==requisitoSelecionado){
+        for (GrupoRequisito g in formulario.grupoRequisitoList) {
+            for (SubGrupoRequisito sub in g.subGrupoRequisitoList) {
+                for (Requisito r in sub.requisitoList) {
+                    if (r.id == requisitoSelecionado) {
                         r.resposta = params.int("resposta")
                     }
                 }
             }
         }
-        GestaoDaSessao.salvarFormulario(session,formulario )
-        def retorno = ['mensagem':'oi']
+        GestaoDaSessao.salvarFormulario(session, formulario)
+        def retorno = ['mensagem': 'oi']
         render retorno as JSON
 
     }
