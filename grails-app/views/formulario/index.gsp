@@ -69,22 +69,22 @@
                         <div class="tab-pane container fade" id="menu${i + 2}">
 
                             <div class="form-group">
-                                <h5>${grupoRequisito.nome} - ${grupoRequisito.numeroReferenciaMoreqJus}</h5>
+                                <h3>${grupoRequisito.nome} - ${grupoRequisito.numeroReferenciaMoreqJus}</h3>
                             </div>
 
                             <g:each in="${grupoRequisito.subGrupoRequisitoList}" var="subGrupo">
-                                <p>${subGrupo.numeroReferenciaMoreqJus} ${subGrupo.nome}</p>
+                                <h5>${subGrupo.numeroReferenciaMoreqJus} ${subGrupo.nome}</h5>
 
                                 <table class="table table-striped">
                                     <g:each in="${subGrupo.requisitoList}" var="r">
                                         <g:form class="formulario_envio_requisito" action="salvarRegistro" method="POST">
                                             <g:hiddenField name="requisito" value="${r.id}"/>
                                             <tr>
-                                                <td style="width: 70%">
+                                                <td style="width: 70%;">
                                                               ${r.numeroReferenciaMoreqJus} - ${r.nome.encodeAsRaw()}
                                                 </td>
-                                                <td class="align-middle">${r.obrigatorio ? 'Obrigatório' : 'Opcional'}</td>
-                                                <td class="align-middle"><g:select class="form-control form-control-sm campo_resposta"
+                                                <td style="width: 10%;" class="align-middle">${r.obrigatorio ? 'Obrigatório' : 'Opcional'}</td>
+                                                <td style="width: 20%;" class="align-middle"><g:select class="form-control form-control-sm campo_resposta"
                                                               name="resposta" from="${opcaoRespostaList}" optionKey="id"
                                                               value="${r.resposta}"
                                                               optionValue="descricao"
