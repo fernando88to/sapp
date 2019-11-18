@@ -282,12 +282,16 @@ class BootStrap {
             requisitoRPC2_1_10.numeroReferenciaMoreqJus = "RPC2.1.10"
             requisitoRPC2_1_10.obrigatorio = true
             requisitoRPC2_1_10.subGrupoRequisito = subGrupo_2_1
-            requisitoRPC2_1_10.nome = "Disponibilizar pelo menos dois mecanismos de atribuição de\n" +
-                    "identificadores às classes do plano de classificação, prevendo a\n" +
-                    "possibilidade de se utilizar ambos, separadamente ou em\n" +
-                    "conjunto, na mesma aplicação:\n" +
-                    "\u0001 Atribuição de um código numérico ou alfanumérico.\n" +
-                    "\u0001 Atribuição de um termo que identifique cada classe. "
+            requisitoRPC2_1_10.nome = "<p>Disponibilizar pelo menos dois mecanismos de atribui&ccedil;&atilde;o de identificadores &agrave;s classes do plano de classifica&ccedil;&atilde;o, prevendo a possibilidade de se utilizar ambos, separadamente ou em conjunto, na mesma aplica&ccedil;&atilde;o:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>\n" +
+                    "\t<p>&nbsp;Atribui&ccedil;&atilde;o de um c&oacute;digo num&eacute;rico ou alfanum&eacute;rico.</p>\n" +
+                    "\t</li>\n" +
+                    "\t<li>\n" +
+                    "\t<p>&nbsp;Atribui&ccedil;&atilde;o de um termo que identifique cada classe.</p>\n" +
+                    "\t</li>\n" +
+                    "</ul>"
             requisitoRPC2_1_10.save(flush:true)
         }
 
@@ -298,23 +302,70 @@ class BootStrap {
             requisitoRPC2_1_11.numeroReferenciaMoreqJus = "RPC2.1.11"
             requisitoRPC2_1_11.obrigatorio = true
             requisitoRPC2_1_11.subGrupoRequisito = subGrupo_2_1
-            requisitoRPC2_1_11.nome = "Prever atributos associados aos instrumentos de classificação e\n" +
-                    "indexação por assuntos, de modo a não permitir classificações\n" +
-                    "genéricas, nos casos em que a classificação por assuntos não\n" +
-                    "atender ao caso específico.\n" +
-                    "O BRIG .\n" +
-                    "O\n" +
-                    "Com exceção do usuário autorizado, em algumas classes não é\n" +
-                    "permitido incluir documentos. Nesses casos os documentos\n" +
-                    "devem ser classificados apenas nos níveis subordinados.\n" +
-                    "Ex.1 – Na Tabela Unificada de Assuntos do Judiciário brasileiro\n" +
-                    "os processos devem ser classificados no último nível disponível\n" +
-                    "para cada assunto e quando se tratar de um novo assunto, os\n" +
-                    "usuários autorizados podem classificar o processo, apenas\n" +
-                    "provisoriamente, no último nível pertinente, até que se crie o novo\n" +
-                    "assunto solicitado."
+            requisitoRPC2_1_11.nome = "<p>Prever atributos associados aos instrumentos de classifica&ccedil;&atilde;o e indexa&ccedil;&atilde;o por assuntos, de modo a n&atilde;o permitir classifica&ccedil;&otilde;es gen&eacute;ricas, nos casos em que a classifica&ccedil;&atilde;o por assuntos n&atilde;o atender ao caso espec&iacute;fico.</p>\n" +
+                    "\n" +
+                    "<p>Com exce&ccedil;&atilde;o do usu&aacute;rio autorizado, em algumas classes n&atilde;o &eacute; permitido incluir documentos. Nesses casos os documentos devem ser classificados apenas nos n&iacute;veis subordinados.</p>\n" +
+                    "\n" +
+                    "<p>Ex.1 &ndash; Na Tabela Unificada de Assuntos do Judici&aacute;rio brasileiro os processos devem ser classificados no &uacute;ltimo n&iacute;vel dispon&iacute;vel para cada assunto e quando se tratar de um novo assunto, os usu&aacute;rios autorizados podem classificar o processo, apenas provisoriamente, no &uacute;ltimo n&iacute;vel pertinente, at&eacute; que se crie o novo assunto solicitado.</p>"
             requisitoRPC2_1_11.save(flush:true)
         }
+
+
+        def requisitoRPC2_1_12 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.12")
+        if(!requisitoRPC2_1_12){
+            requisitoRPC2_1_12 = new Requisito()
+            requisitoRPC2_1_12.numeroReferenciaMoreqJus = "RPC2.1.12"
+            requisitoRPC2_1_12.obrigatorio = true
+            requisitoRPC2_1_12.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_12.nome = "<p>Utilizar o termo completo para identificar uma classe. Entende-se por termo completo toda a hierarquia referente &agrave;quela classe.</p>\n" +
+                    "\n" +
+                    "<p>Ex: Tabela Unificada de Assuntos do Judici&aacute;rio</p>\n" +
+                    "\n" +
+                    "<p>Termo de Ades&atilde;o da LC 110/2001 &ndash; Atualiza&ccedil;&atilde;o de Conta FGTS/Fundo de Garantia por Tempo de Servi&ccedil;o &ndash; Entidades Administrativas /Administra&ccedil;&atilde;o P&uacute;blica &ndash; Direito Administrativo e outras mat&eacute;rias do Direito P&uacute;blico.</p>"
+            requisitoRPC2_1_12.save(flush:true)
+        }
+
+
+        def requisitoRPC2_1_13 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.13")
+        if(!requisitoRPC2_1_13){
+            requisitoRPC2_1_13 = new Requisito()
+            requisitoRPC2_1_13.numeroReferenciaMoreqJus = "RPC2.1.13"
+            requisitoRPC2_1_13.obrigatorio = true
+            requisitoRPC2_1_13.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_13.nome = "Assegurar que os termos completos, que identificam cada classe,\n" +
+                    "sejam únicos em um instrumento de classificação de processos\n" +
+                    "ou documentos. "
+            requisitoRPC2_1_13.save(flush:true)
+        }
+
+        def requisitoRPC2_1_14 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.1.14")
+        if(!requisitoRPC2_1_14){
+            requisitoRPC2_1_14 = new Requisito()
+            requisitoRPC2_1_14.numeroReferenciaMoreqJus = "RPC2.1.14"
+            requisitoRPC2_1_14.obrigatorio = false
+            requisitoRPC2_1_14.subGrupoRequisito = subGrupo_2_1
+            requisitoRPC2_1_14.nome = "<p>Prover funcionalidades com vistas &agrave; elabora&ccedil;&atilde;o de relat&oacute;rios para apoiar a gest&atilde;o de um instrumento de classifica&ccedil;&atilde;o de processos ou documentos, incluindo a capacidade de gerar relat&oacute;rio:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>\n" +
+                    "\t<p>Completo de todo o instrumento de classifica&ccedil;&atilde;o de processos ou documentos.</p>\n" +
+                    "\t</li>\n" +
+                    "\t<li>\n" +
+                    "\t<p>&nbsp;Parcial do instrumento de classifica&ccedil;&atilde;o de processos ou documentos a partir de um ponto determinado na hierarquia.&nbsp;</p>\n" +
+                    "\t</li>\n" +
+                    "\t<li>\n" +
+                    "\t<p>&nbsp;Dos documentos ou processos/dossi&ecirc;s classificados em uma ou mais classes do plano de classifica&ccedil;&atilde;o.</p>\n" +
+                    "\t</li>\n" +
+                    "\t<li>\n" +
+                    "\t<p>&nbsp;De documentos classificados por unidade administrativa.</p>\n" +
+                    "\t</li>\n" +
+                    "</ul>\n" +
+                    "\n" +
+                    "<p>&nbsp;</p>"
+            requisitoRPC2_1_14.save(flush:true)
+        }
+
+
 
 
 

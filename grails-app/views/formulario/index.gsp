@@ -75,39 +75,25 @@
                             <g:each in="${grupoRequisito.subGrupoRequisitoList}" var="subGrupo">
                                 <p>${subGrupo.numeroReferenciaMoreqJus} ${subGrupo.nome}</p>
 
-                                <g:each in="${subGrupo.requisitoList}" var="r">
+                                <table class="table table-striped">
+                                    <g:each in="${subGrupo.requisitoList}" var="r">
+                                        <g:form class="formulario_envio_requisito" action="salvarRegistro" method="POST">
+                                            <g:hiddenField name="requisito" value="${r.id}"/>
+                                            <tr>
+                                                <td style="width: 70%">
+                                                              ${r.numeroReferenciaMoreqJus} - ${r.nome.encodeAsRaw()}
+                                                </td>
+                                                <td class="align-middle">${r.obrigatorio ? 'Obrigatório' : 'Opcional'}</td>
+                                                <td class="align-middle"><g:select class="form-control form-control-sm campo_resposta"
+                                                              name="resposta" from="${opcaoRespostaList}" optionKey="id"
+                                                              value="${r.resposta}"
+                                                              optionValue="descricao"
 
-                                    <g:form class="formulario_envio_requisito" action="salvarRegistro" method="POST">
-                                        <g:hiddenField name="requisito" value="${r.id}"/>
-                                        <div class="row form-group">
-                                        <div class="col-7">
-                                            <textarea rows="4" class="form-control"
-                                                      readonly="readonly">${r.numeroReferenciaMoreqJus} - ${r.nome}</textarea>
-                                        </div>
-
-                                        <div class="col-3">
-                                            <input type="text" class="form-control" readonly="readonly"
-                                                   value="${r.obrigatorio ? 'Obrigatório' : 'Opcional'}"/>
-                                        </div>
-
-                                        <div class="col-2">
-                                            <g:select class="form-control form-control-sm campo_resposta"
-                                                      name="resposta" from="${opcaoRespostaList}" optionKey="id"
-                                                value="${r.resposta}"
-                                                optionValue="descricao"
-
-                                             />
-                                            %{--<select class="form-control form-control-sm campo_resposta" name="resposta">
-                                                <option value="0"></option>
-                                                <option value="1">Atende</option>
-                                                <option value="2">Não Atende</option>
-                                                <option value="3">Não se aplica</option>
-
-                                            </select>--}%
-                                        </div>
-                                    </div>
-                                    </g:form>
+                                                /></td>
+                                            </tr>
+                                        </g:form>
                                 </g:each>
+                                </table>
 
                             </g:each>
 
