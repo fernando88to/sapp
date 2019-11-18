@@ -181,6 +181,294 @@ class BootStrap {
 
             requisitoRCA3_1_1.save(flush:true)
         }
+
+        def requisitoRCA3_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.2")
+        if(!requisitoRCA3_1_2){
+            requisitoRCA3_1_2 = new Requisito()
+            requisitoRCA3_1_2.numeroReferenciaMoreqJus = "RCA3.1.2"
+            requisitoRCA3_1_2.obrigatorio = true
+            requisitoRCA3_1_2.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_2.nome = "<p>Capturar documentos digitais das seguintes formas:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;Documento individual produzido em arquivo digital fora do Gest&atilde;oDoc.</li>\n" +
+                    "\t<li>Documento individual produzido em workflow integrado ao Gest&atilde;oDoc.</li>\n" +
+                    "\t<li>&nbsp;Documentos em lote.</li>\n" +
+                    "</ul>"
+
+            requisitoRCA3_1_2.save(flush:true)
+        }
+
+
+        def requisitoRCA3_1_3 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.3")
+        if(!requisitoRCA3_1_3){
+            requisitoRCA3_1_3 = new Requisito()
+            requisitoRCA3_1_3.numeroReferenciaMoreqJus = "RCA3.1.3"
+            requisitoRCA3_1_3.obrigatorio = false
+            requisitoRCA3_1_3.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_3.nome = "Automatizar a produção de documentos por meio da\n" +
+                    "exibição de formulários e modelos predefinidos pelo programa de\n" +
+                    "gestão de processos e documentos."
+
+            requisitoRCA3_1_3.save(flush:true)
+        }
+
+        def requisitoRCA3_1_4 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.4")
+        if(!requisitoRCA3_1_4){
+            requisitoRCA3_1_4 = new Requisito()
+            requisitoRCA3_1_4.numeroReferenciaMoreqJus = "RCA3.1.4"
+            requisitoRCA3_1_4.obrigatorio = true
+            requisitoRCA3_1_4.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_4.nome = "Automatizar a produção de petições eletrônicas por meio da\n" +
+                    "exibição de formulários e modelos predefinidos. "
+
+            requisitoRCA3_1_4.save(flush:true)
+        }
+
+        def requisitoRCA3_1_5 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.5")
+        if(!requisitoRCA3_1_5){
+            requisitoRCA3_1_5 = new Requisito()
+            requisitoRCA3_1_5.numeroReferenciaMoreqJus = "RCA3.1.5"
+            requisitoRCA3_1_5.obrigatorio = true
+            requisitoRCA3_1_5.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_5.nome = "Aceitar o conteúdo do documento, bem como as informações que\n" +
+                    "definem sua apresentação."
+
+            requisitoRCA3_1_5.save(flush:true)
+        }
+
+        def requisitoRCA3_1_6 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.6")
+        if(!requisitoRCA3_1_6){
+            requisitoRCA3_1_6 = new Requisito()
+            requisitoRCA3_1_6.numeroReferenciaMoreqJus = "RCA3.1.6"
+            requisitoRCA3_1_6.obrigatorio = true
+            requisitoRCA3_1_6.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_6.nome = "Os documentos associados a vários objetos digitais devem ser\n" +
+                    "desassociados e capturados individualmente."
+
+            requisitoRCA3_1_6.save(flush:true)
+        }
+
+        def requisitoRCA3_1_7 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.7")
+        if(!requisitoRCA3_1_7){
+            requisitoRCA3_1_7 = new Requisito()
+            requisitoRCA3_1_7.numeroReferenciaMoreqJus = "RCA3.1.7"
+            requisitoRCA3_1_7.obrigatorio = true
+            requisitoRCA3_1_7.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_7.nome = "<p>Permitir a inser&ccedil;&atilde;o de todos os metadados, obrigat&oacute;rios e optativos, definidos em sua configura&ccedil;&atilde;o e garantir que se mantenham associados ao documento. S&atilde;o exemplos de metadados:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;Nome do arquivo digital.</li>\n" +
+                    "\t<li>&nbsp;N&uacute;mero identificador atribu&iacute;do pelo sistema.</li>\n" +
+                    "\t<li>&nbsp;Data e hora de produ&ccedil;&atilde;o e captura.</li>\n" +
+                    "\t<li>&nbsp;Data e hora de transmiss&atilde;o e recebimento.</li>\n" +
+                    "\t<li>&nbsp;T&iacute;tulo ou descri&ccedil;&atilde;o abreviada.</li>\n" +
+                    "\t<li>&nbsp;Formato (g&ecirc;nero / esp&eacute;cie / tipo).</li>\n" +
+                    "\t<li>&nbsp;Usu&aacute;rio cadastrador.</li>\n" +
+                    "\t<li>&nbsp;Unidade respons&aacute;vel pela execu&ccedil;&atilde;o da a&ccedil;&atilde;o.</li>\n" +
+                    "\t<li>&nbsp;Indica&ccedil;&atilde;o de anota&ccedil;&atilde;o.</li>\n" +
+                    "\t<li>&nbsp;Restri&ccedil;&atilde;o de acesso.</li>\n" +
+                    "\t<li>&nbsp;Registro das migra&ccedil;&otilde;es e data em que ocorreram.</li>\n" +
+                    "\t<li>&nbsp;N&uacute;meros das p&aacute;ginas inicial e final do documento.</li>\n" +
+                    "\t<li>&nbsp;Tamanho do documento.</li>\n" +
+                    "\t<li>Checksum.</li>\n" +
+                    "\t<li>&nbsp;Software (nome e vers&atilde;o) sob o qual o documento foi produzido ou no qual foi capturado.</li>\n" +
+                    "\t<li>M&aacute;scaras de formata&ccedil;&atilde;o (template) necess&aacute;rias para interpretar a estrutura do documento.</li>\n" +
+                    "\t<li>&nbsp;Classifica&ccedil;&atilde;o de acordo com os instrumentos de classifica&ccedil;&atilde;o, temporalidade e destina&ccedil;&atilde;o da pol&iacute;tica de gest&atilde;o documental do Judici&aacute;rio brasileiro.</li>\n" +
+                    "</ul>"
+
+            requisitoRCA3_1_7.save(flush:true)
+        }
+
+
+        def requisitoRCA3_1_8 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.8")
+        if(!requisitoRCA3_1_8){
+            requisitoRCA3_1_8 = new Requisito()
+            requisitoRCA3_1_8.numeroReferenciaMoreqJus = "RCA3.1.8"
+            requisitoRCA3_1_8.obrigatorio = true
+            requisitoRCA3_1_8.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_8.nome = "Permitir a inserção dos metadados obrigatórios, previstos em\n" +
+                    "legislação específica do Judiciário brasileiro no momento da\n" +
+                    "captura de documentos e processos/dossiês. "
+
+            requisitoRCA3_1_8.save(flush:true)
+        }
+
+        def requisitoRCA3_1_9 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.9")
+        if(!requisitoRCA3_1_9){
+            requisitoRCA3_1_9 = new Requisito()
+            requisitoRCA3_1_9.numeroReferenciaMoreqJus = "RCA3.1.9"
+            requisitoRCA3_1_9.obrigatorio = true
+            requisitoRCA3_1_9.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_9.nome = "Atribuir um número identificador a cada processo/dossiê e\n" +
+                    "documento capturado, que serve para identificá-lo desde o\n" +
+                    "momento da captura até sua destinação final dentro do\n" +
+                    "GestãoDoc a fim de manter a integridade.  "
+
+            requisitoRCA3_1_9.save(flush:true)
+        }
+
+
+        def requisitoRCA3_1_10 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.10")
+        if(!requisitoRCA3_1_10){
+            requisitoRCA3_1_10 = new Requisito()
+            requisitoRCA3_1_10.numeroReferenciaMoreqJus = "RCA3.1.10"
+            requisitoRCA3_1_10.obrigatorio = true
+            requisitoRCA3_1_10.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_10.nome = "<p>O formato do n&uacute;mero identificador atribu&iacute;do pelo sistema deve ser definido no momento da configura&ccedil;&atilde;o do Gest&atilde;oDoc.</p>\n" +
+                    "\n" +
+                    "<p>O identificador pode ser num&eacute;rico ou alfanum&eacute;rico, ou pode incluir os identificadores encadeados das entidades superiores no ramo apropriado da hierarquia.</p>"
+
+            requisitoRCA3_1_10.save(flush:true)
+        }
+
+
+        def requisitoRCA3_1_11 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.11")
+        if(!requisitoRCA3_1_11){
+            requisitoRCA3_1_11 = new Requisito()
+            requisitoRCA3_1_11.numeroReferenciaMoreqJus = "RCA3.1.11"
+            requisitoRCA3_1_11.obrigatorio = true
+            requisitoRCA3_1_11.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_11.nome = "<p>O identificador atribu&iacute;do pelo sistema deve:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Ser &uacute;nico e gerado automaticamente, vedada sua introdu&ccedil;&atilde;o manual e altera&ccedil;&atilde;o posterior</li>\n" +
+                    "</ul>\n" +
+                    "\n" +
+                    "<p>ou</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Ser atribu&iacute;do pelo usu&aacute;rio e validado pelo sistema antes de ser aceito.</li>\n" +
+                    "</ul>"
+
+            requisitoRCA3_1_11.save(flush:true)
+        }
+
+
+        def requisitoRCA3_1_12 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.12")
+        if(!requisitoRCA3_1_12){
+            requisitoRCA3_1_12 = new Requisito()
+            requisitoRCA3_1_12.numeroReferenciaMoreqJus = "RCA3.1.12"
+            requisitoRCA3_1_12.obrigatorio = true
+            requisitoRCA3_1_12.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_12.nome = "Utilizar o sistema de classificação e indexação de assuntos do\n" +
+                    "Judiciário brasileiro para apoiar a atribuição do metadado\n" +
+                    "assunto/descritor. "
+
+            requisitoRCA3_1_12.save(flush:true)
+        }
+
+        def requisitoRCA3_1_13 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.13")
+        if(!requisitoRCA3_1_13){
+            requisitoRCA3_1_13 = new Requisito()
+            requisitoRCA3_1_13.numeroReferenciaMoreqJus = "RCA3.1.13"
+            requisitoRCA3_1_13.obrigatorio = false
+            requisitoRCA3_1_13.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_13.nome = "Utilizar um tesauro ou vocabulário controlado para apoiar a\n" +
+                    "atribuição do metadado assunto/descritor. "
+
+            requisitoRCA3_1_13.save(flush:true)
+        }
+
+
+        def requisitoRCA3_1_14 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.14")
+        if(!requisitoRCA3_1_14){
+            requisitoRCA3_1_14 = new Requisito()
+            requisitoRCA3_1_14.numeroReferenciaMoreqJus = "RCA3.1.14"
+            requisitoRCA3_1_14.obrigatorio = true
+            requisitoRCA3_1_14.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_14.nome = "Garantir que os metadados associados a um documento sejam\n" +
+                    "alterados somente por usuários autorizados. "
+
+            requisitoRCA3_1_14.save(flush:true)
+        }
+
+        def requisitoRCA3_1_15 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.15")
+        if(!requisitoRCA3_1_15){
+            requisitoRCA3_1_15 = new Requisito()
+            requisitoRCA3_1_15.numeroReferenciaMoreqJus = "RCA3.1.15"
+            requisitoRCA3_1_15.obrigatorio = true
+            requisitoRCA3_1_15.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_15.nome = "<p>Inserir automaticamente os metadados previstos no sistema para o maior n&uacute;mero poss&iacute;vel de documentos.</p>\n" +
+                    "\n" +
+                    "<p>Por exemplo, para diminuir as tarefas do usu&aacute;rio do sistema e garantir maior exatid&atilde;o e efici&ecirc;ncia na inser&ccedil;&atilde;o dos metadados, no caso de documentos com forma padronizada (formul&aacute;rios, modelos de requerimentos, memorandos etc.) alguns metadados podem ser inseridos automaticamente, tais como: n&uacute;mero identificador, t&iacute;tulo, prazo de guarda</p>"
+
+            requisitoRCA3_1_15.save(flush:true)
+        }
+
+
+        def requisitoRCA3_1_16 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.16")
+        if(!requisitoRCA3_1_16){
+            requisitoRCA3_1_16 = new Requisito()
+            requisitoRCA3_1_16.numeroReferenciaMoreqJus = "RCA3.1.16"
+            requisitoRCA3_1_16.obrigatorio = true
+            requisitoRCA3_1_16.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_16.nome = "<p>Garantir a visualiza&ccedil;&atilde;o do registro de entrada do documento dentro do sistema com todos os metadados que possam ser inseridos automaticamente e os demais a serem atribu&iacute;dos pelo usu&aacute;rio.</p>\n" +
+                    "\n" +
+                    "<p>Por exemplo, o sistema pode atribuir automaticamente o n&uacute;mero identificador, a data de captura, o t&iacute;tulo, o originador e requerer que o usu&aacute;rio preencha os demais metadados</p>"
+
+            requisitoRCA3_1_16.save(flush:true)
+        }
+
+
+        def requisitoRCA3_1_17 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.17")
+        if(!requisitoRCA3_1_17){
+            requisitoRCA3_1_17 = new Requisito()
+            requisitoRCA3_1_17.numeroReferenciaMoreqJus = "RCA3.1.17"
+            requisitoRCA3_1_17.obrigatorio = true
+            requisitoRCA3_1_17.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_17.nome = "Garantir a inserção de outros metadados após a captura.\n" +
+                    "Por exemplo, data e hora de alteração e mudança de suporte. "
+
+            requisitoRCA3_1_17.save(flush:true)
+        }
+
+        def requisitoRCA3_1_18 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.18")
+        if(!requisitoRCA3_1_18){
+            requisitoRCA3_1_18 = new Requisito()
+            requisitoRCA3_1_18.numeroReferenciaMoreqJus = "RCA3.1.18"
+            requisitoRCA3_1_18.obrigatorio = false
+            requisitoRCA3_1_18.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_18.nome = "Permitir ao usuário o registro de todas as versões de documento\n" +
+                    "enquanto não for dada publicidade. "
+
+            requisitoRCA3_1_18.save(flush:true)
+        }
+
+        def requisitoRCA3_1_19 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.19")
+        if(!requisitoRCA3_1_19){
+            requisitoRCA3_1_19 = new Requisito()
+            requisitoRCA3_1_19.numeroReferenciaMoreqJus = "RCA3.1.19"
+            requisitoRCA3_1_19.obrigatorio = false
+            requisitoRCA3_1_19.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_19.nome = "Registrar a versão final do documento institucional após ter sido\n" +
+                    "dada publicidade ou assinado digitalmente"
+
+            requisitoRCA3_1_19.save(flush:true)
+        }
+
+        def requisitoRCA3_1_20 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.20")
+        if(!requisitoRCA3_1_20){
+            requisitoRCA3_1_20 = new Requisito()
+            requisitoRCA3_1_20.numeroReferenciaMoreqJus = "RCA3.1.20"
+            requisitoRCA3_1_20.obrigatorio = false
+            requisitoRCA3_1_20.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_20.nome = "<p>Prestar assist&ecirc;ncia aos usu&aacute;rios no que diz respeito &agrave; classifica&ccedil;&atilde;o dos documentos, por meio de algumas ou de todas as a&ccedil;&otilde;es que se seguem:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Tornar acess&iacute;vel ao usu&aacute;rio somente o subconjunto do plano de classifica&ccedil;&atilde;o que diz respeito &agrave; sua atividade.</li>\n" +
+                    "\t<li>Indicar as &uacute;ltimas classifica&ccedil;&otilde;es feitas pelo usu&aacute;rio.</li>\n" +
+                    "\t<li>Indicar dossi&ecirc;s que contenham documentos institucionais relacionados.</li>\n" +
+                    "\t<li>Indicar classifica&ccedil;&otilde;es poss&iacute;veis a partir dos metadados j&aacute; inseridos, como, por exemplo, classe de apela&ccedil;&atilde;o criminal quando se tratar de processo criminal e com apela&ccedil;&atilde;o recebida ou pauta de julgamento.</li>\n" +
+                    "\t<li>Indicar classifica&ccedil;&otilde;es poss&iacute;veis a partir do conte&uacute;do do documento.</li>\n" +
+                    "</ul>"
+
+            requisitoRCA3_1_20.save(flush:true)
+        }
+
+
+
+
     }
 
     def cargaGrupo2(){
