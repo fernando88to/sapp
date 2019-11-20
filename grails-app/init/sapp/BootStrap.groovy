@@ -17,125 +17,170 @@ class BootStrap {
         }
 
 
+        //concluido
         cargaGrupo2()
 
         cargaGrupo3()
 
-        def grupoRequisito_4 = GrupoRequisito.findByNumeroReferenciaMoreqJus("4")
-        if(!grupoRequisito_4){
-            grupoRequisito_4 = new GrupoRequisito()
-            grupoRequisito_4.nome = "Armazenamento"
-            grupoRequisito_4.resumo = ""
-            grupoRequisito_4.numeroReferenciaMoreqJus=4
-            grupoRequisito_4.save(flush:true)
+        cargaGrupo4()
 
-        }
+        cargaGrupo5()
 
-        def grupoRequisito_5 = GrupoRequisito.findByNumeroReferenciaMoreqJus("5")
-        if(!grupoRequisito_5){
-            grupoRequisito_5 = new GrupoRequisito()
-            grupoRequisito_5.nome = "Preservação"
-            grupoRequisito_5.resumo = ""
-            grupoRequisito_5.numeroReferenciaMoreqJus=5
-            grupoRequisito_5.save(flush:true)
+        cargaGrupo6()
 
-        }
+        cargaGrupo7()
 
-        def grupoRequisito_6 = GrupoRequisito.findByNumeroReferenciaMoreqJus("6")
-        if(!grupoRequisito_6){
-            grupoRequisito_6 = new GrupoRequisito()
-            grupoRequisito_6.nome = "Segurança"
-            grupoRequisito_6.resumo = ""
-            grupoRequisito_6.numeroReferenciaMoreqJus=6
-            grupoRequisito_6.save(flush:true)
-
-        }
-
-        def grupoRequisito_7 = GrupoRequisito.findByNumeroReferenciaMoreqJus("7")
-        if(!grupoRequisito_7){
-            grupoRequisito_7 = new GrupoRequisito()
-            grupoRequisito_7.nome = "Tramitação e fluxo de trabalho"
-            grupoRequisito_7.resumo = ""
-            grupoRequisito_7.numeroReferenciaMoreqJus=7
-            grupoRequisito_7.save(flush:true)
-
-        }
-
-        def grupoRequisito_8 = GrupoRequisito.findByNumeroReferenciaMoreqJus("8")
-        if(!grupoRequisito_8){
-            grupoRequisito_8 = new GrupoRequisito()
-            grupoRequisito_8.nome = "Avaliação e destinação"
-            grupoRequisito_8.resumo = ""
-            grupoRequisito_8.numeroReferenciaMoreqJus=8
-            grupoRequisito_8.save(flush:true)
-
-        }
+        cargaGrupo8()
 
 
-        def grupoRequisito_9 = GrupoRequisito.findByNumeroReferenciaMoreqJus("9")
-        if(!grupoRequisito_9){
-            grupoRequisito_9 = new GrupoRequisito()
-            grupoRequisito_9.nome = "Pesquisa, localização e apresentação de documentos"
-            grupoRequisito_9.resumo = ""
-            grupoRequisito_9.numeroReferenciaMoreqJus=9
-            grupoRequisito_9.save(flush:true)
-
-        }
+        cargaGrupo9()
 
 
-        def grupoRequisito_10 = GrupoRequisito.findByNumeroReferenciaMoreqJus("10")
-        if(!grupoRequisito_10){
-            grupoRequisito_10 = new GrupoRequisito()
-            grupoRequisito_10.nome = "Funções administrativas"
-            grupoRequisito_10.resumo = ""
-            grupoRequisito_10.numeroReferenciaMoreqJus=10
-            grupoRequisito_10.save(flush:true)
+        cargaGrupo10()
 
-        }
+        cargaGrupo11()
 
-        def grupoRequisito_11 = GrupoRequisito.findByNumeroReferenciaMoreqJus("11")
-        if(!grupoRequisito_11){
-            grupoRequisito_11 = new GrupoRequisito()
-            grupoRequisito_11.nome = "Usabilidade"
-            grupoRequisito_11.resumo = ""
-            grupoRequisito_11.numeroReferenciaMoreqJus=11
-            grupoRequisito_11.save(flush:true)
+        cargaGrupo12()
 
-        }
+        cargaGrupo13()
 
-        def grupoRequisito_12 = GrupoRequisito.findByNumeroReferenciaMoreqJus("12")
-        if(!grupoRequisito_12){
-            grupoRequisito_12 = new GrupoRequisito()
-            grupoRequisito_12.nome = "Interoperabilidade"
-            grupoRequisito_12.resumo = ""
-            grupoRequisito_12.numeroReferenciaMoreqJus=12
-            grupoRequisito_12.save(flush:true)
-
-        }
-
-        def grupoRequisito_13 = GrupoRequisito.findByNumeroReferenciaMoreqJus("13")
-        if(!grupoRequisito_13){
-            grupoRequisito_13 = new GrupoRequisito()
-            grupoRequisito_13.nome = "Disponibilidade"
-            grupoRequisito_13.resumo = ""
-            grupoRequisito_13.numeroReferenciaMoreqJus=13
-            grupoRequisito_13.save(flush:true)
-
-        }
-
-        def grupoRequisito_14 = GrupoRequisito.findByNumeroReferenciaMoreqJus("14")
-        if(!grupoRequisito_14){
-            grupoRequisito_14 = new GrupoRequisito()
-            grupoRequisito_14.nome = "Desempenho e escalabilidade"
-            grupoRequisito_14.resumo = ""
-            grupoRequisito_14.numeroReferenciaMoreqJus=14
-            grupoRequisito_14.save(flush:true)
-
-        }
+        cargaGrupo14()
 
 
         cargaTJTO()
 
+    }
+
+    def cargaGrupo14() {
+        def grupoRequisito_14 = GrupoRequisito.findByNumeroReferenciaMoreqJus("14")
+        if (!grupoRequisito_14) {
+            grupoRequisito_14 = new GrupoRequisito()
+            grupoRequisito_14.nome = "Desempenho e escalabilidade"
+            grupoRequisito_14.resumo = ""
+            grupoRequisito_14.numeroReferenciaMoreqJus = 14
+            grupoRequisito_14.save(flush: true)
+
+        }
+    }
+
+    def cargaGrupo13() {
+        def grupoRequisito_13 = GrupoRequisito.findByNumeroReferenciaMoreqJus("13")
+        if (!grupoRequisito_13) {
+            grupoRequisito_13 = new GrupoRequisito()
+            grupoRequisito_13.nome = "Disponibilidade"
+            grupoRequisito_13.resumo = ""
+            grupoRequisito_13.numeroReferenciaMoreqJus = 13
+            grupoRequisito_13.save(flush: true)
+
+        }
+    }
+
+    def cargaGrupo12() {
+        def grupoRequisito_12 = GrupoRequisito.findByNumeroReferenciaMoreqJus("12")
+        if (!grupoRequisito_12) {
+            grupoRequisito_12 = new GrupoRequisito()
+            grupoRequisito_12.nome = "Interoperabilidade"
+            grupoRequisito_12.resumo = ""
+            grupoRequisito_12.numeroReferenciaMoreqJus = 12
+            grupoRequisito_12.save(flush: true)
+
+        }
+    }
+
+    def cargaGrupo11() {
+        def grupoRequisito_11 = GrupoRequisito.findByNumeroReferenciaMoreqJus("11")
+        if (!grupoRequisito_11) {
+            grupoRequisito_11 = new GrupoRequisito()
+            grupoRequisito_11.nome = "Usabilidade"
+            grupoRequisito_11.resumo = ""
+            grupoRequisito_11.numeroReferenciaMoreqJus = 11
+            grupoRequisito_11.save(flush: true)
+
+        }
+    }
+
+    def cargaGrupo10() {
+        def grupoRequisito_10 = GrupoRequisito.findByNumeroReferenciaMoreqJus("10")
+        if (!grupoRequisito_10) {
+            grupoRequisito_10 = new GrupoRequisito()
+            grupoRequisito_10.nome = "Funções administrativas"
+            grupoRequisito_10.resumo = ""
+            grupoRequisito_10.numeroReferenciaMoreqJus = 10
+            grupoRequisito_10.save(flush: true)
+
+        }
+    }
+
+    def cargaGrupo9() {
+        def grupoRequisito_9 = GrupoRequisito.findByNumeroReferenciaMoreqJus("9")
+        if (!grupoRequisito_9) {
+            grupoRequisito_9 = new GrupoRequisito()
+            grupoRequisito_9.nome = "Pesquisa, localização e apresentação de documentos"
+            grupoRequisito_9.resumo = ""
+            grupoRequisito_9.numeroReferenciaMoreqJus = 9
+            grupoRequisito_9.save(flush: true)
+
+        }
+    }
+
+    def cargaGrupo8() {
+        def grupoRequisito_8 = GrupoRequisito.findByNumeroReferenciaMoreqJus("8")
+        if (!grupoRequisito_8) {
+            grupoRequisito_8 = new GrupoRequisito()
+            grupoRequisito_8.nome = "Avaliação e destinação"
+            grupoRequisito_8.resumo = ""
+            grupoRequisito_8.numeroReferenciaMoreqJus = 8
+            grupoRequisito_8.save(flush: true)
+
+        }
+    }
+
+    def cargaGrupo7() {
+        def grupoRequisito_7 = GrupoRequisito.findByNumeroReferenciaMoreqJus("7")
+        if (!grupoRequisito_7) {
+            grupoRequisito_7 = new GrupoRequisito()
+            grupoRequisito_7.nome = "Tramitação e fluxo de trabalho"
+            grupoRequisito_7.resumo = ""
+            grupoRequisito_7.numeroReferenciaMoreqJus = 7
+            grupoRequisito_7.save(flush: true)
+
+        }
+    }
+
+    def cargaGrupo6() {
+        def grupoRequisito_6 = GrupoRequisito.findByNumeroReferenciaMoreqJus("6")
+        if (!grupoRequisito_6) {
+            grupoRequisito_6 = new GrupoRequisito()
+            grupoRequisito_6.nome = "Segurança"
+            grupoRequisito_6.resumo = ""
+            grupoRequisito_6.numeroReferenciaMoreqJus = 6
+            grupoRequisito_6.save(flush: true)
+
+        }
+    }
+
+    def cargaGrupo5() {
+        def grupoRequisito_5 = GrupoRequisito.findByNumeroReferenciaMoreqJus("5")
+        if (!grupoRequisito_5) {
+            grupoRequisito_5 = new GrupoRequisito()
+            grupoRequisito_5.nome = "Preservação"
+            grupoRequisito_5.resumo = ""
+            grupoRequisito_5.numeroReferenciaMoreqJus = 5
+            grupoRequisito_5.save(flush: true)
+
+        }
+    }
+
+    def cargaGrupo4() {
+        def grupoRequisito_4 = GrupoRequisito.findByNumeroReferenciaMoreqJus("4")
+        if (!grupoRequisito_4) {
+            grupoRequisito_4 = new GrupoRequisito()
+            grupoRequisito_4.nome = "Armazenamento"
+            grupoRequisito_4.resumo = ""
+            grupoRequisito_4.numeroReferenciaMoreqJus = 4
+            grupoRequisito_4.save(flush: true)
+
+        }
     }
 
 
@@ -387,7 +432,7 @@ class BootStrap {
         if(!requisitoRCA3_1_15){
             requisitoRCA3_1_15 = new Requisito()
             requisitoRCA3_1_15.numeroReferenciaMoreqJus = "RCA3.1.15"
-            requisitoRCA3_1_15.obrigatorio = true
+            requisitoRCA3_1_15.obrigatorio = false
             requisitoRCA3_1_15.subGrupoRequisito = subGrupo_3_1
             requisitoRCA3_1_15.nome = "<p>Inserir automaticamente os metadados previstos no sistema para o maior n&uacute;mero poss&iacute;vel de documentos.</p>\n" +
                     "\n" +
@@ -439,7 +484,7 @@ class BootStrap {
         if(!requisitoRCA3_1_19){
             requisitoRCA3_1_19 = new Requisito()
             requisitoRCA3_1_19.numeroReferenciaMoreqJus = "RCA3.1.19"
-            requisitoRCA3_1_19.obrigatorio = false
+            requisitoRCA3_1_19.obrigatorio = true
             requisitoRCA3_1_19.subGrupoRequisito = subGrupo_3_1
             requisitoRCA3_1_19.nome = "Registrar a versão final do documento institucional após ter sido\n" +
                     "dada publicidade ou assinado digitalmente"
@@ -467,6 +512,336 @@ class BootStrap {
         }
 
 
+        def requisitoRCA3_1_21 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.21")
+        if(!requisitoRCA3_1_21){
+            requisitoRCA3_1_21 = new Requisito()
+            requisitoRCA3_1_21.numeroReferenciaMoreqJus = "RCA3.1.21"
+            requisitoRCA3_1_21.obrigatorio = true
+            requisitoRCA3_1_21.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_21.nome = "Permitir que um usuário disponibilize documentos a outro usuário\n" +
+                    "para complementar o processo de captura, no caso dos\n" +
+                    "procedimentos dessa captura serem executados por vários\n" +
+                    "usuários. "
+
+            requisitoRCA3_1_21.save(flush:true)
+        }
+
+
+        def requisitoRCA3_1_22 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.22")
+        if(!requisitoRCA3_1_22){
+            requisitoRCA3_1_22 = new Requisito()
+            requisitoRCA3_1_22.numeroReferenciaMoreqJus = "RCA3.1.22"
+            requisitoRCA3_1_22.obrigatorio = true
+            requisitoRCA3_1_22.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_22.nome = "<p>No caso de documentos ou processos/dossi&ecirc;s constitu&iacute;dos por mais de um objeto digital:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;Tratar o documento como uma unidade indivis&iacute;vel, assegurando a rela&ccedil;&atilde;o entre os objetos digitais.</li>\n" +
+                    "\t<li>&nbsp;Preservar a integridade do documento, mantendo a rela&ccedil;&atilde;o entre os objetos digitais. \u0001</li>\n" +
+                    "\t<li>Garantir a integridade do documento quando da recupera&ccedil;&atilde;o, visualiza&ccedil;&atilde;o e gest&atilde;o posteriores.</li>\n" +
+                    "\t<li>&nbsp;Gerenciar a destina&ccedil;&atilde;o de todos os objetos digitais que comp&otilde;em o documento como uma unidade indivis&iacute;vel.</li>\n" +
+                    "</ul>"
+
+            requisitoRCA3_1_22.save(flush:true)
+        }
+
+        def requisitoRCA3_1_23 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.23")
+        if(!requisitoRCA3_1_23){
+            requisitoRCA3_1_23 = new Requisito()
+            requisitoRCA3_1_23.numeroReferenciaMoreqJus = "RCA3.1.23"
+            requisitoRCA3_1_23.obrigatorio = true
+            requisitoRCA3_1_23.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_23.nome = "Emitir um aviso caso o usuário tente registrar um documento que\n" +
+                    "já tenha sido registrado no mesmo processo/dossiê.\n" +
+                    "Para realizar a comparação devem ser observados os metadados\n" +
+                    "dos documentos. "
+
+            requisitoRCA3_1_23.save(flush:true)
+        }
+
+
+        def requisitoRCA3_1_24 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.24")
+        if(!requisitoRCA3_1_24){
+            requisitoRCA3_1_24 = new Requisito()
+            requisitoRCA3_1_24.numeroReferenciaMoreqJus = "RCA3.1.24"
+            requisitoRCA3_1_24.obrigatorio = true
+            requisitoRCA3_1_24.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_24.nome = "Impedir a reinserção de documentos digitais que forem\n" +
+                    "detectados como idênticos. "
+
+            requisitoRCA3_1_24.save(flush:true)
+        }
+
+
+        def requisitoRCA3_1_25 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.25")
+        if(!requisitoRCA3_1_25){
+            requisitoRCA3_1_25 = new Requisito()
+            requisitoRCA3_1_25.numeroReferenciaMoreqJus = "RCA3.1.25"
+            requisitoRCA3_1_25.obrigatorio = true
+            requisitoRCA3_1_25.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_25.nome = "Permitir a captura dos documentos não-digitais e/ou híbridos. "
+
+            requisitoRCA3_1_25.save(flush:true)
+        }
+
+        def requisitoRCA3_1_26 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.1.26")
+        if(!requisitoRCA3_1_26){
+            requisitoRCA3_1_26 = new Requisito()
+            requisitoRCA3_1_26.numeroReferenciaMoreqJus = "RCA3.1.26"
+            requisitoRCA3_1_26.obrigatorio = true
+            requisitoRCA3_1_26.subGrupoRequisito = subGrupo_3_1
+            requisitoRCA3_1_26.nome = "Acrescentar aos metadados dos documentos não-digitais\n" +
+                    "informações sobre sua localização."
+
+            requisitoRCA3_1_26.save(flush:true)
+        }
+
+
+
+        def subGrupo_3_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("3.2")
+        if(!subGrupo_3_2){
+            subGrupo_3_2 = new SubGrupoRequisito()
+            subGrupo_3_2.numeroReferenciaMoreqJus="3.2"
+            subGrupo_3_2.nome ="Captura em lote"
+            subGrupo_3_2.grupoRequisito = grupoRequisito_3
+            subGrupo_3_2.save(flush:true)
+
+        }
+
+
+        def requisitoRCA3_2_1 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.2.1")
+        if(!requisitoRCA3_2_1){
+            requisitoRCA3_2_1 = new Requisito()
+            requisitoRCA3_2_1.numeroReferenciaMoreqJus = "RCA3.2.1"
+            requisitoRCA3_2_1.obrigatorio = true
+            requisitoRCA3_2_1.subGrupoRequisito = subGrupo_3_2
+            requisitoRCA3_2_1.nome = "<p>Proporcionar a captura em lote de documentos gerados por outros sistemas. Esse procedimento tem que:&nbsp;</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Permitir importa&ccedil;&atilde;o de transa&ccedil;&otilde;es predefinidas de arquivos em lote.</li>\n" +
+                    "\t<li>Registrar automaticamente cada um dos documentos importados contidos no lote.</li>\n" +
+                    "\t<li>Permitir e controlar a edi&ccedil;&atilde;o do registro dos documentos importados.</li>\n" +
+                    "\t<li>Validar a integridade dos metadados.<br />\n" +
+                    "\tExemplos de lote de documento podem ser: mensagens do sistema de comunica&ccedil;&atilde;o eletr&ocirc;nica, correspond&ecirc;ncia digitalizada por meio de esc&acirc;ner, documentos provenientes de uma unidade administrativa/&oacute;rg&atilde;o, de um grupo ou indiv&iacute;duo, transa&ccedil;&otilde;es de aplica&ccedil;&otilde;es de um computador ou ainda documentos oriundos de um sistema de gest&atilde;o de processos e documentos.</li>\n" +
+                    "</ul>"
+
+            requisitoRCA3_2_1.save(flush:true)
+        }
+
+        def subGrupo_3_3 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("3.3")
+        if(!subGrupo_3_3){
+            subGrupo_3_3 = new SubGrupoRequisito()
+            subGrupo_3_3.numeroReferenciaMoreqJus="3.3"
+            subGrupo_3_3.nome ="Captura de mensagens de sistema de\n" +
+                    "comunicação eletrônica"
+            subGrupo_3_3.grupoRequisito = grupoRequisito_3
+            subGrupo_3_3.save(flush:true)
+
+        }
+
+        def requisitoRCA3_3_1 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.3.1")
+        if(!requisitoRCA3_3_1){
+            requisitoRCA3_3_1 = new Requisito()
+            requisitoRCA3_3_1.numeroReferenciaMoreqJus = "RCA3.3.1"
+            requisitoRCA3_3_1.obrigatorio = true
+            requisitoRCA3_3_1.subGrupoRequisito = subGrupo_3_3
+            requisitoRCA3_3_1.nome = "Permitir a captura de mensagens de sistema de comunicação\n" +
+                    "eletrônica após a seleção de quais serão objeto de registro. "
+
+            requisitoRCA3_3_1.save(flush:true)
+        }
+
+        def requisitoRCA3_3_2 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.3.2")
+        if(!requisitoRCA3_3_2){
+            requisitoRCA3_3_2 = new Requisito()
+            requisitoRCA3_3_2.numeroReferenciaMoreqJus = "RCA3.3.2"
+            requisitoRCA3_3_2.obrigatorio = true
+            requisitoRCA3_3_2.subGrupoRequisito = subGrupo_3_3
+            requisitoRCA3_3_2.nome = "Assegurar a captura dos metadados referentes à mensagem de\n" +
+                    "sistema de comunicação eletrônica, de tal forma que a\n" +
+                    "confiabilidade e a autenticidade estejam garantidas. "
+
+            requisitoRCA3_3_2.save(flush:true)
+        }
+
+
+
+
+        def subGrupo_3_4 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("3.4")
+        if(!subGrupo_3_4){
+            subGrupo_3_4 = new SubGrupoRequisito()
+            subGrupo_3_4.numeroReferenciaMoreqJus="3.4"
+            subGrupo_3_4.nome ="Formato de arquivo e estrutura dos documentos\n" +
+                    "a serem capturados "
+            subGrupo_3_4.grupoRequisito = grupoRequisito_3
+            subGrupo_3_4.save(flush:true)
+
+        }
+
+        def requisitoRCA3_4_1 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.4.1")
+        if(!requisitoRCA3_4_1){
+            requisitoRCA3_4_1 = new Requisito()
+            requisitoRCA3_4_1.numeroReferenciaMoreqJus = "RCA3.4.1"
+            requisitoRCA3_4_1.obrigatorio = true
+            requisitoRCA3_4_1.subGrupoRequisito = subGrupo_3_4
+            requisitoRCA3_4_1.nome = "Possuir a capacidade de capturar documentos nos formatos\n" +
+                    "previamente definidos como padrão. "
+
+            requisitoRCA3_4_1.save(flush:true)
+        }
+
+        def requisitoRCA3_4_2 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.4.2")
+        if(!requisitoRCA3_4_2){
+            requisitoRCA3_4_2 = new Requisito()
+            requisitoRCA3_4_2.numeroReferenciaMoreqJus = "RCA3.4.2"
+            requisitoRCA3_4_2.obrigatorio = false
+            requisitoRCA3_4_2.subGrupoRequisito = subGrupo_3_4
+            requisitoRCA3_4_2.nome = "<p>Capturar, entre outros, os seguintes documentos:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Informa&ccedil;&otilde;es de outros aplicativos: contabilidade, folha de pagamento, desenho assistido por computador (CAD).</li>\n" +
+                    "\t<li>Documentos em papel digitalizados por meio de esc&acirc;ner.</li>\n" +
+                    "\t<li>Documentos sonoros.</li>\n" +
+                    "\t<li>Videoclipes.</li>\n" +
+                    "\t<li>Diagramas e mapas digitais.</li>\n" +
+                    "\t<li>Dados estruturados.</li>\n" +
+                    "</ul>"
+
+            requisitoRCA3_4_2.save(flush:true)
+        }
+
+
+        def requisitoRCA3_4_3 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.4.3")
+        if(!requisitoRCA3_4_3){
+            requisitoRCA3_4_3 = new Requisito()
+            requisitoRCA3_4_3.numeroReferenciaMoreqJus = "RCA3.4.3"
+            requisitoRCA3_4_3.obrigatorio = true
+            requisitoRCA3_4_3.subGrupoRequisito = subGrupo_3_4
+            requisitoRCA3_4_3.nome = "Fornecer recursos que possibilitem o reconhecimento de\n" +
+                    "caracteres a partir de documentos digitalizados, áudio vídeo e\n" +
+                    "outras mídias. "
+
+            requisitoRCA3_4_3.save(flush:true)
+        }
+
+        def requisitoRCA3_4_4 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.4.4")
+        if(!requisitoRCA3_4_4){
+            requisitoRCA3_4_4 = new Requisito()
+            requisitoRCA3_4_4.numeroReferenciaMoreqJus = "RCA3.4.4"
+            requisitoRCA3_4_4.obrigatorio = true
+            requisitoRCA3_4_4.subGrupoRequisito = subGrupo_3_4
+            requisitoRCA3_4_4.nome = "<p>Capturar documentos que se apresentam com as seguintes estruturas:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;Simples: texto, imagens, mensagens sistema de comunica&ccedil;&atilde;o eletr&ocirc;nica, slides digitais, som e v&iacute;deo.</li>\n" +
+                    "\t<li>Composta: mensagens de sistema de comunica&ccedil;&atilde;o eletr&ocirc;nica com anexos, p&aacute;ginas Web e publica&ccedil;&otilde;es eletr&ocirc;nicas.</li>\n" +
+                    "</ul>"
+
+            requisitoRCA3_4_4.save(flush:true)
+        }
+
+        def requisitoRCA3_4_5 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.4.5")
+        if(!requisitoRCA3_4_5){
+            requisitoRCA3_4_5 = new Requisito()
+            requisitoRCA3_4_5.numeroReferenciaMoreqJus = "RCA3.4.5"
+            requisitoRCA3_4_5.obrigatorio = true
+            requisitoRCA3_4_5.subGrupoRequisito = subGrupo_3_4
+            requisitoRCA3_4_5.nome = "<p>Permitir que um documento composto seja capturado de qualquer uma das duas formas seguintes:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;&Uacute;nico documento de arquivo composto.</li>\n" +
+                    "\t<li>&nbsp;S&eacute;rie de documentos de arquivo simples relacionados, um para cada componente do documento composto.</li>\n" +
+                    "</ul>"
+
+            requisitoRCA3_4_5.save(flush:true)
+        }
+
+        def requisitoRCA3_4_6 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.4.6")
+        if(!requisitoRCA3_4_6){
+            requisitoRCA3_4_6 = new Requisito()
+            requisitoRCA3_4_6.numeroReferenciaMoreqJus = "RCA3.4.6"
+            requisitoRCA3_4_6.obrigatorio = true
+            requisitoRCA3_4_6.subGrupoRequisito = subGrupo_3_4
+            requisitoRCA3_4_6.nome = "Incluir novos formatos e arquivos à medida que forem adotados\n" +
+                    "pelo Judiciário brasileiro. "
+
+            requisitoRCA3_4_6.save(flush:true)
+        }
+
+
+        def requisitoRCA3_4_7 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.4.7")
+        if(!requisitoRCA3_4_7){
+            requisitoRCA3_4_7 = new Requisito()
+            requisitoRCA3_4_7.numeroReferenciaMoreqJus = "RCA3.4.7"
+            requisitoRCA3_4_7.obrigatorio = true
+            requisitoRCA3_4_7.subGrupoRequisito = subGrupo_3_4
+            requisitoRCA3_4_7.nome = "Armazenar em formato que desative o código automodificador\n" +
+                    "quando da captura de documento automodificável. "
+            requisitoRCA3_4_7.save(flush:true)
+        }
+
+
+        def subGrupo_3_5 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("3.5")
+        if(!subGrupo_3_5){
+            subGrupo_3_5 = new SubGrupoRequisito()
+            subGrupo_3_5.numeroReferenciaMoreqJus="3.5"
+            subGrupo_3_5.nome ="Estrutura dos procedimentos de gestão "
+            subGrupo_3_5.grupoRequisito = grupoRequisito_3
+            subGrupo_3_5.save(flush:true)
+
+        }
+
+
+        def requisitoRCA3_5_1 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.5.1")
+        if(!requisitoRCA3_5_1){
+            requisitoRCA3_5_1 = new Requisito()
+            requisitoRCA3_5_1.numeroReferenciaMoreqJus = "RCA3.5.1"
+            requisitoRCA3_5_1.obrigatorio = true
+            requisitoRCA3_5_1.subGrupoRequisito = subGrupo_3_5
+            requisitoRCA3_5_1.nome = "Reconhecer três domínios para o controle dos procedimentos de\n" +
+                    "gestão: espaço individual, espaço de grupo e espaço geral. "
+            requisitoRCA3_5_1.save(flush:true)
+        }
+
+
+
+        def requisitoRCA3_5_2 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.5.2")
+        if(!requisitoRCA3_5_2){
+            requisitoRCA3_5_2 = new Requisito()
+            requisitoRCA3_5_2.numeroReferenciaMoreqJus = "RCA3.5.2"
+            requisitoRCA3_5_2.obrigatorio = true
+            requisitoRCA3_5_2.subGrupoRequisito = subGrupo_3_5
+            requisitoRCA3_5_2.nome = "Operacionalizar as regras estabelecidas pelo sistema de gestão\n" +
+                    "de processos e documentos nos três espaços"
+            requisitoRCA3_5_2.save(flush:true)
+        }
+
+
+        def requisitoRCA3_5_3 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.5.3")
+        if(!requisitoRCA3_5_3){
+            requisitoRCA3_5_3 = new Requisito()
+            requisitoRCA3_5_3.numeroReferenciaMoreqJus = "RCA3.5.3"
+            requisitoRCA3_5_3.obrigatorio = true
+            requisitoRCA3_5_3.subGrupoRequisito = subGrupo_3_5
+            requisitoRCA3_5_3.nome = "Impedir que o conteúdo de um documento seja alterado por\n" +
+                    "usuários, gestores e administradores, exceto nos casos em que a\n" +
+                    "alteração fizer parte do processo documental, conforme tratado\n" +
+                    "na seção 6.10 — Alteração e exclusão de documentos\n" +
+                    "institucionais. "
+            requisitoRCA3_5_3.save(flush:true)
+        }
+
+        def requisitoRCA3_5_4 = Requisito.findByNumeroReferenciaMoreqJus("RCA3.5.4")
+        if(!requisitoRCA3_5_4){
+            requisitoRCA3_5_4 = new Requisito()
+            requisitoRCA3_5_4.numeroReferenciaMoreqJus = "RCA3.5.4"
+            requisitoRCA3_5_4.obrigatorio = true
+            requisitoRCA3_5_4.subGrupoRequisito = subGrupo_3_5
+            requisitoRCA3_5_4.nome = "Emitir um aviso, ao se tentar capturar um documento cujos dados\n" +
+                    "estruturados estejam incompletos e impedir quando estiverem\n" +
+                    "inconsistentes. "
+            requisitoRCA3_5_4.save(flush:true)
+        }
 
 
     }
