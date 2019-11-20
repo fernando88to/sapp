@@ -157,6 +157,271 @@ class BootStrap {
             grupoRequisito_6.save(flush: true)
 
         }
+
+        def subGrupo_6_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("6.1")
+        if(!subGrupo_6_1){
+            subGrupo_6_1 = new SubGrupoRequisito()
+            subGrupo_6_1.numeroReferenciaMoreqJus="6.1"
+            subGrupo_6_1.nome ="Cópias de segurança"
+            subGrupo_6_1.grupoRequisito = grupoRequisito_6
+            subGrupo_6_1.save(flush:true)
+
+        }
+
+        def requisitoRSE_6_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.1.1")
+        if(!requisitoRSE_6_1_1){
+            requisitoRSE_6_1_1 = new Requisito()
+            requisitoRSE_6_1_1.numeroReferenciaMoreqJus = "RSE6.1.1"
+            requisitoRSE_6_1_1.obrigatorio = true
+            requisitoRSE_6_1_1.subGrupoRequisito = subGrupo_6_1
+            requisitoRSE_6_1_1.nome = "Cumprir a política de segurança da informação das instituições do\n" +
+                    "Judiciário. "
+            requisitoRSE_6_1_1.save(flush:true)
+        }
+
+        def requisitoRSE_6_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.1.2")
+        if(!requisitoRSE_6_1_2){
+            requisitoRSE_6_1_2 = new Requisito()
+            requisitoRSE_6_1_2.numeroReferenciaMoreqJus = "RSE6.1.2"
+            requisitoRSE_6_1_2.obrigatorio = false
+            requisitoRSE_6_1_2.subGrupoRequisito = subGrupo_6_1
+            requisitoRSE_6_1_2.nome = "Possibilitar o acompanhamento das ações efetivadas de backup e\n" +
+                    "restore."
+            requisitoRSE_6_1_2.save(flush:true)
+        }
+
+
+        def subGrupo_6_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("6.2")
+        if(!subGrupo_6_2){
+            subGrupo_6_2 = new SubGrupoRequisito()
+            subGrupo_6_2.numeroReferenciaMoreqJus="6.2"
+            subGrupo_6_2.nome ="Controle de acesso"
+            subGrupo_6_2.grupoRequisito = grupoRequisito_6
+            subGrupo_6_2.save(flush:true)
+
+        }
+
+        def requisitoRSE_6_2_1 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.1")
+        if(!requisitoRSE_6_2_1){
+            requisitoRSE_6_2_1 = new Requisito()
+            requisitoRSE_6_2_1.numeroReferenciaMoreqJus = "RSE6.2.1"
+            requisitoRSE_6_2_1.obrigatorio = true
+            requisitoRSE_6_2_1.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_1.nome = "<p>Implementar o controle de acesso, mantendo pelo menos os seguintes atributos dos usu&aacute;rios, de acordo com a pol&iacute;tica de seguran&ccedil;a da informa&ccedil;&atilde;o das institui&ccedil;&otilde;es do Judici&aacute;rio:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Identificador do usu&aacute;rio.</li>\n" +
+                    "\t<li>Autoriza&ccedil;&otilde;es de acesso.</li>\n" +
+                    "\t<li>Credenciais de autentica&ccedil;&atilde;o.</li>\n" +
+                    "\t<li>&nbsp;</li>\n" +
+                    "</ul>\n" +
+                    "\n" +
+                    "<p>Senha, chave criptogr&aacute;fica e biometria s&atilde;o exemplos de credenciais de autentica&ccedil;&atilde;o</p>"
+            requisitoRSE_6_2_1.save(flush:true)
+        }
+
+        def requisitoRSE_6_2_2 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.2")
+        if(!requisitoRSE_6_2_2){
+            requisitoRSE_6_2_2 = new Requisito()
+            requisitoRSE_6_2_2.numeroReferenciaMoreqJus = "RSE6.2.2"
+            requisitoRSE_6_2_2.obrigatorio = false
+            requisitoRSE_6_2_2.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_2.nome = "Utilizar, para efeito de autenticação, um sistema de\n" +
+                    "gerenciamento de identidade externo . "
+            requisitoRSE_6_2_2.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_2_3 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.3")
+        if(!requisitoRSE_6_2_3){
+            requisitoRSE_6_2_3 = new Requisito()
+            requisitoRSE_6_2_3.numeroReferenciaMoreqJus = "RSE6.2.3"
+            requisitoRSE_6_2_3.obrigatorio = true
+            requisitoRSE_6_2_3.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_3.nome = "Exigir que o usuário esteja devidamente identificado e autenticado\n" +
+                    "antes que este inicie qualquer operação no sistema."
+            requisitoRSE_6_2_3.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_2_4 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.4")
+        if(!requisitoRSE_6_2_4){
+            requisitoRSE_6_2_4 = new Requisito()
+            requisitoRSE_6_2_4.numeroReferenciaMoreqJus = "RSE6.2.4"
+            requisitoRSE_6_2_4.obrigatorio = true
+            requisitoRSE_6_2_4.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_4.nome = "Garantir que os valores dos atributos de segurança e controle de\n" +
+                    "acesso, associados ao usuário estejam dentro de conjuntos de\n" +
+                    "valores válidos. "
+            requisitoRSE_6_2_4.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_2_5 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.5")
+        if(!requisitoRSE_6_2_5){
+            requisitoRSE_6_2_5 = new Requisito()
+            requisitoRSE_6_2_5.numeroReferenciaMoreqJus = "RSE6.2.5"
+            requisitoRSE_6_2_5.obrigatorio = true
+            requisitoRSE_6_2_5.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_5.nome = "Garantir que as tecnologias de credenciais de autenticação só\n" +
+                    "possam ser modificadas pelo administrador, em conformidade\n" +
+                    "com a política de segurança da informação das instituições do\n" +
+                    "Judiciário."
+            requisitoRSE_6_2_5.save(flush:true)
+        }
+
+        def requisitoRSE_6_2_6 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.6")
+        if(!requisitoRSE_6_2_6){
+            requisitoRSE_6_2_6 = new Requisito()
+            requisitoRSE_6_2_6.numeroReferenciaMoreqJus = "RSE6.2.6"
+            requisitoRSE_6_2_6.obrigatorio = true
+            requisitoRSE_6_2_6.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_6.nome = "Permitir avaliação periódica dos direitos de acesso dos usuários\n" +
+                    "do sistema"
+            requisitoRSE_6_2_6.save(flush:true)
+        }
+
+        def requisitoRSE_6_2_7 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.7")
+        if(!requisitoRSE_6_2_7){
+            requisitoRSE_6_2_7 = new Requisito()
+            requisitoRSE_6_2_7.numeroReferenciaMoreqJus = "RSE6.2.7"
+            requisitoRSE_6_2_7.obrigatorio = true
+            requisitoRSE_6_2_7.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_7.nome = "Permitir avaliação periódica dos direitos de acesso dos usuários\n" +
+                    "do sistema"
+            requisitoRSE_6_2_7.save(flush:true)
+        }
+
+        def requisitoRSE_6_2_8 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.8")
+        if(!requisitoRSE_6_2_8){
+            requisitoRSE_6_2_8 = new Requisito()
+            requisitoRSE_6_2_8.numeroReferenciaMoreqJus = "RSE6.2.8"
+            requisitoRSE_6_2_8.obrigatorio = true
+            requisitoRSE_6_2_8.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_8.nome = "<p>Fornecer uma das seguintes respostas (estabelecidas durante a configura&ccedil;&atilde;o) se o usu&aacute;rio solicitar o acesso ou pesquisa em um documento institucional, volume ou processo/dossi&ecirc; espec&iacute;ficos aos quais n&atilde;o tenha o direito de acesso:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Mostrar determinados dados cadastrais do documento ou processo.</li>\n" +
+                    "\t<li>Demonstrar a exist&ecirc;ncia do processo/dossi&ecirc; ou documento mas n&atilde;o seu conte&uacute;do (exemplo: informa&ccedil;&otilde;es pessoais).</li>\n" +
+                    "\t<li>&nbsp;N&atilde;o mostrar qualquer informa&ccedil;&atilde;o constante do documento, nem indicar sua exist&ecirc;ncia (exemplo: quebra de sigilo telef&ocirc;nico).</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_2_8.save(flush:true)
+        }
+
+        def requisitoRSE_6_2_9 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.9")
+        if(!requisitoRSE_6_2_9){
+            requisitoRSE_6_2_9 = new Requisito()
+            requisitoRSE_6_2_9.numeroReferenciaMoreqJus = "RSE6.2.9"
+            requisitoRSE_6_2_9.obrigatorio = true
+            requisitoRSE_6_2_9.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_9.nome = "Garantir que somente o gestor seja capaz de criar, alterar,\n" +
+                    "remover ou revogar as permissões associadas a perfis de\n" +
+                    "usuários, grupos de usuários ou usuários individuais."
+            requisitoRSE_6_2_9.save(flush:true)
+        }
+
+        def requisitoRSE_6_2_10 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.10")
+        if(!requisitoRSE_6_2_10){
+            requisitoRSE_6_2_10 = new Requisito()
+            requisitoRSE_6_2_10.numeroReferenciaMoreqJus = "RSE6.2.10"
+            requisitoRSE_6_2_10.obrigatorio = false
+            requisitoRSE_6_2_10.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_10.nome = "Implementar imediatamente alterações ou revogações dos\n" +
+                    "atributos de segurança de usuários e de documentos digitais. "
+            requisitoRSE_6_2_10.save(flush:true)
+        }
+
+        def requisitoRSE_6_2_11 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.11")
+        if(!requisitoRSE_6_2_11){
+            requisitoRSE_6_2_11 = new Requisito()
+            requisitoRSE_6_2_11.numeroReferenciaMoreqJus = "RSE6.2.11"
+            requisitoRSE_6_2_11.obrigatorio = true
+            requisitoRSE_6_2_11.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_11.nome = "Oferecer ferramentas de aumento de produtividade ao\n" +
+                    "gestor, tais como: realização de operações sobre lotes ou grupos\n" +
+                    "de usuários e lotes de documentos digitais, agenda de tarefas,\n" +
+                    "análises de trilhas e geração de alarmes. "
+            requisitoRSE_6_2_11.save(flush:true)
+        }
+
+        def requisitoRSE_6_2_12 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.12")
+        if(!requisitoRSE_6_2_12){
+            requisitoRSE_6_2_12 = new Requisito()
+            requisitoRSE_6_2_12.numeroReferenciaMoreqJus = "RSE6.2.12"
+            requisitoRSE_6_2_12.obrigatorio = false
+            requisitoRSE_6_2_12.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_12.nome = "Quando um GestãoDoc controlar o acesso por grupos de\n" +
+                    "usuários, perfis de usuários e usuários individuais obedecer a\n" +
+                    "uma hierarquia de permissões preestabelecida na política de\n" +
+                    "segurança da informação das instituições do Judiciário. "
+            requisitoRSE_6_2_12.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_2_13 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.13")
+        if(!requisitoRSE_6_2_13){
+            requisitoRSE_6_2_13 = new Requisito()
+            requisitoRSE_6_2_13.numeroReferenciaMoreqJus = "RSE6.2.13"
+            requisitoRSE_6_2_13.obrigatorio =
+            requisitoRSE_6_2_13.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_13.nome = "<p>Utilizar os seguintes atributos do usu&aacute;rio ao implementar a pol&iacute;tica de controle de acesso por perfis de usu&aacute;rios sobre documentos:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;Identifica&ccedil;&atilde;o do usu&aacute;rio.</li>\n" +
+                    "\t<li>&nbsp;Perfis associados ao usu&aacute;rio.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_2_13.save(flush:true)
+        }
+
+        def requisitoRSE_6_2_14 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.14")
+        if(!requisitoRSE_6_2_14){
+            requisitoRSE_6_2_14 = new Requisito()
+            requisitoRSE_6_2_14.numeroReferenciaMoreqJus = "RSE6.2.14"
+            requisitoRSE_6_2_14.obrigatorio =
+            requisitoRSE_6_2_14.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_14.nome = "<p>Utilizar os seguintes atributos dos documentos ao implementar a pol&iacute;tica de controle de acesso por perfis:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Identifica&ccedil;&atilde;o do documento.</li>\n" +
+                    "\t<li>&nbsp;Opera&ccedil;&otilde;es permitidas para os v&aacute;rios perfis de usu&aacute;rios, sobre as unidades a que pertence o documento.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_2_14.save(flush:true)
+        }
+
+        def requisitoRSE_6_2_15 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.15")
+        if(!requisitoRSE_6_2_15){
+            requisitoRSE_6_2_15 = new Requisito()
+            requisitoRSE_6_2_15.numeroReferenciaMoreqJus = "RSE6.2.15"
+            requisitoRSE_6_2_15.obrigatorio =
+                    requisitoRSE_6_2_15.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_15.nome = "Conceder acesso a documentos, processos/dossiês\n" +
+                    "somente se a permissão requerida para a operação estiver\n" +
+                    "presente em pelo menos um dos perfis associados ao usuário."
+            requisitoRSE_6_2_15.save(flush:true)
+        }
+
+        def requisitoRSE_6_2_16 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.16")
+        if(!requisitoRSE_6_2_16){
+            requisitoRSE_6_2_16 = new Requisito()
+            requisitoRSE_6_2_16.numeroReferenciaMoreqJus = "RSE6.2.16"
+            requisitoRSE_6_2_16.obrigatorio =
+                    requisitoRSE_6_2_16.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_16.nome = "Impedir que um usuário assuma perfis com direitos\n" +
+                    "conflitantes. Em caso de conflito, prevalece o perfil mais restritivo. "
+            requisitoRSE_6_2_16.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_2_17 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.2.17")
+        if(!requisitoRSE_6_2_17){
+            requisitoRSE_6_2_17 = new Requisito()
+            requisitoRSE_6_2_17.numeroReferenciaMoreqJus = "RSE6.2.17"
+            requisitoRSE_6_2_17.obrigatorio =
+                    requisitoRSE_6_2_17.subGrupoRequisito = subGrupo_6_2
+            requisitoRSE_6_2_17.nome = "Permitir a criação de hierarquias de perfis e o conceito de\n" +
+                    "herança de permissões entre eles."
+            requisitoRSE_6_2_17.save(flush:true)
+        }
     }
 
     def cargaGrupo5() {
@@ -168,6 +433,245 @@ class BootStrap {
             grupoRequisito_5.numeroReferenciaMoreqJus = 5
             grupoRequisito_5.save(flush: true)
 
+        }
+
+        def subGrupo_5_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("5.1")
+        if(!subGrupo_5_1){
+            subGrupo_5_1 = new SubGrupoRequisito()
+            subGrupo_5_1.numeroReferenciaMoreqJus="5.1"
+            subGrupo_5_1.nome ="Aspectos físicos"
+            subGrupo_5_1.grupoRequisito = grupoRequisito_5
+            subGrupo_5_1.save(flush:true)
+
+        }
+
+        def requisitoRPR_5_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.1.1")
+        if(!requisitoRPR_5_1_1){
+            requisitoRPR_5_1_1 = new Requisito()
+            requisitoRPR_5_1_1.numeroReferenciaMoreqJus = "RPR5.1.1"
+            requisitoRPR_5_1_1.obrigatorio = true
+            requisitoRPR_5_1_1.subGrupoRequisito = subGrupo_5_1
+            requisitoRPR_5_1_1.nome = "Os suportes de armazenamento devem ser acondicionados,\n" +
+                    "manipulados e utilizados em condições ambientais compatíveis\n" +
+                    "com sua vida útil prevista e/ou pretendida, dentro das\n" +
+                    "especificações técnicas de seu fabricante e de entidades isentas\n" +
+                    "e com base em estatísticas de utilização"
+            requisitoRPR_5_1_1.save(flush:true)
+        }
+
+        def requisitoRPR_5_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.1.2")
+        if(!requisitoRPR_5_1_2){
+            requisitoRPR_5_1_2 = new Requisito()
+            requisitoRPR_5_1_2.numeroReferenciaMoreqJus = "RPR5.1.2"
+            requisitoRPR_5_1_2.obrigatorio = true
+            requisitoRPR_5_1_2.subGrupoRequisito = subGrupo_5_1
+            requisitoRPR_5_1_2.nome = "Permitir ao administrador especificar a vida útil\n" +
+                    "prevista/pretendida dos suportes."
+            requisitoRPR_5_1_2.save(flush:true)
+        }
+
+
+        def requisitoRPR_5_1_3 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.1.3")
+        if(!requisitoRPR_5_1_3){
+            requisitoRPR_5_1_3 = new Requisito()
+            requisitoRPR_5_1_3.numeroReferenciaMoreqJus = "RPR5.1.3"
+            requisitoRPR_5_1_3.obrigatorio = true
+            requisitoRPR_5_1_3.subGrupoRequisito = subGrupo_5_1
+            requisitoRPR_5_1_3.nome = "Permitir o controle da vida útil dos suportes para auxiliar no\n" +
+                    "processo de rejuvenescimento. "
+            requisitoRPR_5_1_3.save(flush:true)
+        }
+
+        def requisitoRPR_5_1_4 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.1.4")
+        if(!requisitoRPR_5_1_4){
+            requisitoRPR_5_1_4 = new Requisito()
+            requisitoRPR_5_1_4.numeroReferenciaMoreqJus = "RPR5.1.4"
+            requisitoRPR_5_1_4.obrigatorio = true
+            requisitoRPR_5_1_4.subGrupoRequisito = subGrupo_5_1
+            requisitoRPR_5_1_4.nome = "Informar automaticamente quais são os suportes que se\n" +
+                    "encontram próximos do fim de sua vida útil. "
+            requisitoRPR_5_1_4.save(flush:true)
+        }
+
+        def subGrupo_5_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("5.2")
+        if(!subGrupo_5_2){
+            subGrupo_5_2 = new SubGrupoRequisito()
+            subGrupo_5_2.numeroReferenciaMoreqJus="5.2"
+            subGrupo_5_2.nome ="Aspectos lógicos"
+            subGrupo_5_2.grupoRequisito = grupoRequisito_5
+            subGrupo_5_2.save(flush:true)
+
+        }
+
+        def requisitoRPR_5_2_1 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.2.1")
+        if(!requisitoRPR_5_2_1){
+            requisitoRPR_5_2_1 = new Requisito()
+            requisitoRPR_5_2_1.numeroReferenciaMoreqJus = "RPR5.2.1"
+            requisitoRPR_5_2_1.obrigatorio = true
+            requisitoRPR_5_2_1.subGrupoRequisito = subGrupo_5_2
+            requisitoRPR_5_2_1.nome = "<p>Manter c&oacute;pias de seguran&ccedil;a que devem ser guardadas em ambientes adequados segundo a pol&iacute;tica de seguran&ccedil;a da informa&ccedil;&atilde;o.O armazenamento das c&oacute;pias de seguran&ccedil;a deve ser realizado em local diferente de onde se encontra a informa&ccedil;&atilde;o original.</p>\n" +
+                    "\n" +
+                    "<p>As informa&ccedil;&otilde;es mantidas em m&iacute;dia terci&aacute;ria devem ser duplicadas e armazenadas em locais diferentes.</p>"
+            requisitoRPR_5_2_1.save(flush:true)
+        }
+
+
+        def requisitoRPR_5_2_2 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.2.2")
+        if(!requisitoRPR_5_2_2){
+            requisitoRPR_5_2_2 = new Requisito()
+            requisitoRPR_5_2_2.numeroReferenciaMoreqJus = "RPR5.2.2"
+            requisitoRPR_5_2_2.obrigatorio = true
+            requisitoRPR_5_2_2.subGrupoRequisito = subGrupo_5_2
+            requisitoRPR_5_2_2.nome = "<p>Possuir funcionalidades para a verifica&ccedil;&atilde;o peri&oacute;dica dos dados armazenados, visando detec&ccedil;&atilde;o, repara&ccedil;&atilde;o e informa&ccedil;&atilde;o de poss&iacute;veis erros.</p>\n" +
+                    "\n" +
+                    "<p>Nesse caso, recomenda-se a utiliza&ccedil;&atilde;o de um checksum robusto, que permita a constata&ccedil;&atilde;o da integridade dos dados e seja seguro quanto a fraudes.</p>"
+            requisitoRPR_5_2_2.save(flush:true)
+        }
+
+        def requisitoRPR_5_2_3 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.2.3")
+        if(!requisitoRPR_5_2_3){
+            requisitoRPR_5_2_3 = new Requisito()
+            requisitoRPR_5_2_3.numeroReferenciaMoreqJus = "RPR5.2.3"
+            requisitoRPR_5_2_3.obrigatorio = true
+            requisitoRPR_5_2_3.subGrupoRequisito = subGrupo_5_2
+            requisitoRPR_5_2_3.nome = "Permitir ao administrador a reparação dos dados armazenados\n" +
+                    "que apresentarem erros."
+            requisitoRPR_5_2_3.save(flush:true)
+        }
+
+        def requisitoRPR_5_2_4 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.2.4")
+        if(!requisitoRPR_5_2_4){
+            requisitoRPR_5_2_4 = new Requisito()
+            requisitoRPR_5_2_4.numeroReferenciaMoreqJus = "RPR5.2.4"
+            requisitoRPR_5_2_4.obrigatorio = true
+            requisitoRPR_5_2_4.subGrupoRequisito = subGrupo_5_2
+            requisitoRPR_5_2_4.nome = "Manter um histórico dos resultados da verificação periódica dos\n" +
+                    "dados armazenados. "
+            requisitoRPR_5_2_4.save(flush:true)
+        }
+
+
+        def requisitoRPR_5_2_5 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.2.5")
+        if(!requisitoRPR_5_2_5){
+            requisitoRPR_5_2_5 = new Requisito()
+            requisitoRPR_5_2_5.numeroReferenciaMoreqJus = "RPR5.2.5"
+            requisitoRPR_5_2_5.obrigatorio = true
+            requisitoRPR_5_2_5.subGrupoRequisito = subGrupo_5_2
+            requisitoRPR_5_2_5.nome = "Efetivar ações de preservação sempre que verificada\n" +
+                    "obsolescência tecnológica ou quando favoreça a padronização da\n" +
+                    "plataforma tecnológica do Judiciário brasileiro"
+            requisitoRPR_5_2_5.save(flush:true)
+        }
+
+        def requisitoRPR_5_2_6 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.2.6")
+        if(!requisitoRPR_5_2_6){
+            requisitoRPR_5_2_6 = new Requisito()
+            requisitoRPR_5_2_6.numeroReferenciaMoreqJus = "RPR5.2.6"
+            requisitoRPR_5_2_6.obrigatorio = true
+            requisitoRPR_5_2_6.subGrupoRequisito = subGrupo_5_2
+            requisitoRPR_5_2_6.nome = "Suportar a transferência em bloco de documentos e metadados\n" +
+                    "para outros sistemas. "
+            requisitoRPR_5_2_6.save(flush:true)
+        }
+
+
+        def subGrupo_5_3 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("5.3")
+        if(!subGrupo_5_3){
+            subGrupo_5_3 = new SubGrupoRequisito()
+            subGrupo_5_3.numeroReferenciaMoreqJus="5.3"
+            subGrupo_5_3.nome ="Aspectos gerais"
+            subGrupo_5_3.grupoRequisito = grupoRequisito_5
+            subGrupo_5_3.save(flush:true)
+
+        }
+
+        def requisitoRPR_5_3_1 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.3.1")
+        if(!requisitoRPR_5_3_1){
+            requisitoRPR_5_3_1 = new Requisito()
+            requisitoRPR_5_3_1.numeroReferenciaMoreqJus = "RPR5.3.1"
+            requisitoRPR_5_3_1.obrigatorio = true
+            requisitoRPR_5_3_1.subGrupoRequisito = subGrupo_5_3
+            requisitoRPR_5_3_1.nome = "Registrar as operações de preservação realizadas em trilhas de\n" +
+                    "auditoria."
+            requisitoRPR_5_3_1.save(flush:true)
+        }
+
+        def requisitoRPR_5_3_2 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.3.2")
+        if(!requisitoRPR_5_3_2){
+            requisitoRPR_5_3_2 = new Requisito()
+            requisitoRPR_5_3_2.numeroReferenciaMoreqJus = "RPR5.3.2"
+            requisitoRPR_5_3_2.obrigatorio = false
+            requisitoRPR_5_3_2.subGrupoRequisito = subGrupo_5_3
+            requisitoRPR_5_3_2.nome = "Utilizar suportes de armazenamento, recursos de hardware e de\n" +
+                    "software que sejam estáveis no mercado e amplamente\n" +
+                    "disponíveis e que contribuam para a padronização e\n" +
+                    "uniformização da plataforma tecnológica do Judiciário brasileiro"
+            requisitoRPR_5_3_2.save(flush:true)
+        }
+
+        def requisitoRPR_5_3_3 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.3.3")
+        if(!requisitoRPR_5_3_3){
+            requisitoRPR_5_3_3 = new Requisito()
+            requisitoRPR_5_3_3.numeroReferenciaMoreqJus = "RPR5.3.3"
+            requisitoRPR_5_3_3.obrigatorio = true
+            requisitoRPR_5_3_3.subGrupoRequisito = subGrupo_5_3
+            requisitoRPR_5_3_3.nome = "As modificações em um GestãoDoc e em sua base tecnológica\n" +
+                    "devem ser verificadas em um ambiente exclusivo para essa\n" +
+                    "finalidade, de modo a garantir que, após a implantação das\n" +
+                    "alterações, os dados continuem sendo acessados sem alteração\n" +
+                    "de conteúdo."
+            requisitoRPR_5_3_3.save(flush:true)
+        }
+
+        def requisitoRPR_5_3_4 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.3.4")
+        if(!requisitoRPR_5_3_4){
+            requisitoRPR_5_3_4 = new Requisito()
+            requisitoRPR_5_3_4.numeroReferenciaMoreqJus = "RPR5.3.4"
+            requisitoRPR_5_3_4.obrigatorio = false
+            requisitoRPR_5_3_4.subGrupoRequisito = subGrupo_5_3
+            requisitoRPR_5_3_4.nome = "Utilizar normas amplamente aceitas, descritas em especificações\n" +
+                    "abertas e disponíveis publicamente, no que refere a estruturas\n" +
+                    "para codificação, armazenamento e banco de dados. "
+            requisitoRPR_5_3_4.save(flush:true)
+        }
+
+        def requisitoRPR_5_3_5 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.3.5")
+        if(!requisitoRPR_5_3_5){
+            requisitoRPR_5_3_5 = new Requisito()
+            requisitoRPR_5_3_5.numeroReferenciaMoreqJus = "RPR5.3.5"
+            requisitoRPR_5_3_5.obrigatorio = false
+            requisitoRPR_5_3_5.subGrupoRequisito = subGrupo_5_3
+            requisitoRPR_5_3_5.nome = "Evitar a utilização de estruturas proprietárias, para codificação,\n" +
+                    "armazenamento ou banco de dados."
+            requisitoRPR_5_3_5.save(flush:true)
+        }
+
+
+
+        def requisitoRPR_5_3_6 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.3.6")
+        if(!requisitoRPR_5_3_6){
+            requisitoRPR_5_3_6 = new Requisito()
+            requisitoRPR_5_3_6.numeroReferenciaMoreqJus = "RPR5.3.6"
+            requisitoRPR_5_3_6.obrigatorio = true
+            requisitoRPR_5_3_6.subGrupoRequisito = subGrupo_5_3
+            requisitoRPR_5_3_6.nome = "Nos caso em que se utilize estruturas proprietárias, para\n" +
+                    "codificação, armazenamento ou banco de dados, elas devem\n" +
+                    "estar plenamente documentadas (incluindo o motivo para a\n" +
+                    "utilização dessas estruturas proprietárias) e essa documentação,\n" +
+                    "disponível para o administrador."
+            requisitoRPR_5_3_6.save(flush:true)
+        }
+
+
+        def requisitoRPR_5_3_7 = Requisito.findByNumeroReferenciaMoreqJus("RPR5.3.7")
+        if(!requisitoRPR_5_3_7){
+            requisitoRPR_5_3_7 = new Requisito()
+            requisitoRPR_5_3_7.numeroReferenciaMoreqJus = "RPR5.3.7"
+            requisitoRPR_5_3_7.obrigatorio = true
+            requisitoRPR_5_3_7.subGrupoRequisito = subGrupo_5_3
+            requisitoRPR_5_3_7.nome = "Gerir metadados relativos à preservação dos documentos e seus\n" +
+                    "respectivos componentes. "
+            requisitoRPR_5_3_7.save(flush:true)
         }
     }
 
@@ -281,7 +785,7 @@ class BootStrap {
         if(!requisitoRAR4_1_8){
             requisitoRAR4_1_8 = new Requisito()
             requisitoRAR4_1_8.numeroReferenciaMoreqJus = "RAR4.1.8"
-            requisitoRAR4_1_8.obrigatorio = false
+            requisitoRAR4_1_8.obrigatorio = true
             requisitoRAR4_1_8.subGrupoRequisito = subGrupo_4_1
             requisitoRAR4_1_8.nome = "<p>Quando se proceder &agrave; elimina&ccedil;&atilde;o de documentos, as mem&oacute;rias de suporte devem ser devidamente &quot;sanitizadas&quot;, isto &eacute;, ter suas informa&ccedil;&otilde;es efetivamente indisponibilizadas.</p>\n" +
                     "\n" +
@@ -290,6 +794,175 @@ class BootStrap {
                     "<p>Esse requisito aplica-se principalmente &agrave;s mem&oacute;rias secund&aacute;ria e terci&aacute;ria, pela sua caracter&iacute;stica n&atilde;o-vol&aacute;til. As informa&ccedil;&otilde;es devem ser eliminadas de forma irrevers&iacute;vel, incluindo, no caso de mem&oacute;ria terci&aacute;ria, a possibilidade de destrui&ccedil;&atilde;o f&iacute;sica das m&iacute;dias.</p>"
             requisitoRAR4_1_8.save(flush:true)
         }
+
+
+
+        def subGrupo_4_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("4.2")
+        if(!subGrupo_4_2){
+            subGrupo_4_2 = new SubGrupoRequisito()
+            subGrupo_4_2.numeroReferenciaMoreqJus="4.2"
+            subGrupo_4_2.nome ="Capacidade"
+            subGrupo_4_2.grupoRequisito = grupoRequisito_4
+            subGrupo_4_2.save(flush:true)
+
+        }
+
+        def requisitoRAR4_2_1 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.2.1")
+        if(!requisitoRAR4_2_1){
+            requisitoRAR4_2_1 = new Requisito()
+            requisitoRAR4_2_1.numeroReferenciaMoreqJus = "RAR4.2.1"
+            requisitoRAR4_2_1.obrigatorio = true
+            requisitoRAR4_2_1.subGrupoRequisito = subGrupo_4_2
+            requisitoRAR4_2_1.nome = "Possuir capacidade de armazenamento suficiente para a\n" +
+                    "acomodação de todos os documentos, metadados e suas cópias\n" +
+                    "de segurança. "
+            requisitoRAR4_2_1.save(flush:true)
+        }
+
+
+        def requisitoRAR4_2_2 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.2.2")
+        if(!requisitoRAR4_2_2){
+            requisitoRAR4_2_2 = new Requisito()
+            requisitoRAR4_2_2.numeroReferenciaMoreqJus = "RAR4.2.2"
+            requisitoRAR4_2_2.obrigatorio = true
+            requisitoRAR4_2_2.subGrupoRequisito = subGrupo_4_2
+            requisitoRAR4_2_2.nome = "<p>Prever a possibilidade de expans&atilde;o da estrutura de armazenamento.</p>\n" +
+                    "\n" +
+                    "<p>A quantidade de mem&oacute;ria prim&aacute;ria deve ser dimensionada adequadamente no momento da aquisi&ccedil;&atilde;o, a fim de minimizar as indisponibilidades do Gest&atilde;oDoc nas situa&ccedil;&otilde;es de expans&atilde;o desse tipo de mem&oacute;ria.</p>\n" +
+                    "\n" +
+                    "<p>Quando da aquisi&ccedil;&atilde;o de mem&oacute;ria secund&aacute;ria e terci&aacute;ria as possibilidades de expans&atilde;o dos equipamentos de controle devem ser consideradas.</p>"
+            requisitoRAR4_2_2.save(flush:true)
+        }
+
+
+        def requisitoRAR4_2_3 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.2.3")
+        if(!requisitoRAR4_2_3){
+            requisitoRAR4_2_3 = new Requisito()
+            requisitoRAR4_2_3.numeroReferenciaMoreqJus = "RAR4.2.3"
+            requisitoRAR4_2_3.obrigatorio = false
+            requisitoRAR4_2_3.subGrupoRequisito = subGrupo_4_2
+            requisitoRAR4_2_3.nome = "Permitir ao administrador a configuração dos limites de\n" +
+                    "capacidade de armazenamento dos diversos dispositivos. "
+            requisitoRAR4_2_3.save(flush:true)
+        }
+
+        def requisitoRAR4_2_4 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.2.4")
+        if(!requisitoRAR4_2_4){
+            requisitoRAR4_2_4 = new Requisito()
+            requisitoRAR4_2_4.numeroReferenciaMoreqJus = "RAR4.2.4"
+            requisitoRAR4_2_4.obrigatorio = true
+            requisitoRAR4_2_4.subGrupoRequisito = subGrupo_4_2
+            requisitoRAR4_2_4.nome = "<p>Oferecer ao administrador facilidades para a monitora&ccedil;&atilde;o da capacidade de armazenamento.</p>\n" +
+                    "\n" +
+                    "<p>Esse controle indica, por exemplo, capacidade utilizada, capacidade dispon&iacute;vel e taxa de ocupa&ccedil;&atilde;o. Tais informa&ccedil;&otilde;es s&atilde;o &uacute;teis para subsidiar a&ccedil;&otilde;es de expans&atilde;o em tempo h&aacute;bil.</p>"
+            requisitoRAR4_2_4.save(flush:true)
+        }
+
+
+        def requisitoRAR4_2_5 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.2.5")
+        if(!requisitoRAR4_2_5){
+            requisitoRAR4_2_5 = new Requisito()
+            requisitoRAR4_2_5.numeroReferenciaMoreqJus = "RAR4.2.5"
+            requisitoRAR4_2_5.obrigatorio = true
+            requisitoRAR4_2_5.subGrupoRequisito = subGrupo_4_2
+            requisitoRAR4_2_5.nome = "Informar automaticamente ao administrador quando os\n" +
+                    "dispositivos de armazenamento on-line atingirem níveis de alerta\n" +
+                    "e níveis críticos de ocupação. "
+            requisitoRAR4_2_5.save(flush:true)
+        }
+
+        def requisitoRAR4_2_6 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.2.6")
+        if(!requisitoRAR4_2_6){
+            requisitoRAR4_2_6 = new Requisito()
+            requisitoRAR4_2_6.numeroReferenciaMoreqJus = "RAR4.2.6"
+            requisitoRAR4_2_6.obrigatorio = true
+            requisitoRAR4_2_6.subGrupoRequisito = subGrupo_4_2
+            requisitoRAR4_2_6.nome = "<p>Manter estat&iacute;sticas de taxa de crescimento de utiliza&ccedil;&atilde;o de mem&oacute;ria secund&aacute;ria e terci&aacute;ria para fornecer ao administrador previs&otilde;es de exaust&atilde;o de recursos.</p>\n" +
+                    "\n" +
+                    "<p>Esse tipo de estimativa possibilita ao administrador antecipar a&ccedil;&otilde;es de expans&atilde;o antes que a utiliza&ccedil;&atilde;o atinja n&iacute;veis cr&iacute;ticos.</p>"
+            requisitoRAR4_2_6.save(flush:true)
+        }
+
+        def requisitoRAR4_2_7 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.2.7")
+        if(!requisitoRAR4_2_7){
+            requisitoRAR4_2_7 = new Requisito()
+            requisitoRAR4_2_7.numeroReferenciaMoreqJus = "RAR4.2.7"
+            requisitoRAR4_2_7.obrigatorio = false
+            requisitoRAR4_2_7.subGrupoRequisito = subGrupo_4_2
+            requisitoRAR4_2_7.nome = "Permitir a definição de outras estatísticas referentes à capacidade\n" +
+                    "de armazenamento de acordo com as necessidades específicas\n" +
+                    "do Judiciário brasileiro. "
+            requisitoRAR4_2_7.save(flush:true)
+        }
+
+
+        def subGrupo_4_3 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("4.3")
+        if(!subGrupo_4_3){
+            subGrupo_4_3 = new SubGrupoRequisito()
+            subGrupo_4_3.numeroReferenciaMoreqJus="4.3"
+            subGrupo_4_3.nome ="Efetividade de armazenamento"
+            subGrupo_4_3.grupoRequisito = grupoRequisito_4
+            subGrupo_4_3.save(flush:true)
+
+        }
+
+        def requisitoRAR4_3_1 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.3.1")
+        if(!requisitoRAR4_3_1){
+            requisitoRAR4_3_1 = new Requisito()
+            requisitoRAR4_3_1.numeroReferenciaMoreqJus = "RAR4.3.1"
+            requisitoRAR4_3_1.obrigatorio = true
+            requisitoRAR4_3_1.subGrupoRequisito = subGrupo_4_3
+            requisitoRAR4_3_1.nome = "Os dispositivos de armazenamento devem suportar métodos de\n" +
+                    "detecção de erros para leitura e escrita de dados e prover\n" +
+                    "mecanismos automáticos de aviso ao administrador do sistema"
+            requisitoRAR4_3_1.save(flush:true)
+        }
+
+        def requisitoRAR4_3_2 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.3.2")
+        if(!requisitoRAR4_3_2){
+            requisitoRAR4_3_2 = new Requisito()
+            requisitoRAR4_3_2.numeroReferenciaMoreqJus = "RAR4.3.2"
+            requisitoRAR4_3_2.obrigatorio = true
+            requisitoRAR4_3_2.subGrupoRequisito = subGrupo_4_3
+            requisitoRAR4_3_2.nome = "Utilizar técnicas de restauração de dados em caso de falhas. "
+            requisitoRAR4_3_2.save(flush:true)
+        }
+
+
+        def requisitoRAR4_3_3 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.3.3")
+        if(!requisitoRAR4_3_3){
+            requisitoRAR4_3_3 = new Requisito()
+            requisitoRAR4_3_3.numeroReferenciaMoreqJus = "RAR4.3.3"
+            requisitoRAR4_3_3.obrigatorio = true
+            requisitoRAR4_3_3.subGrupoRequisito = subGrupo_4_3
+            requisitoRAR4_3_3.nome = "Utilizar mecanismos de proteção que previnam alterações\n" +
+                    "indevidas e mantenham a integridade dos dados armazenados. "
+            requisitoRAR4_3_3.save(flush:true)
+        }
+
+        def requisitoRAR4_3_4 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.3.4")
+        if(!requisitoRAR4_3_4){
+            requisitoRAR4_3_4 = new Requisito()
+            requisitoRAR4_3_4.numeroReferenciaMoreqJus = "RAR4.3.4"
+            requisitoRAR4_3_4.obrigatorio = false
+            requisitoRAR4_3_4.subGrupoRequisito = subGrupo_4_3
+            requisitoRAR4_3_4.nome = "<p>Prever a utiliza&ccedil;&atilde;o de t&eacute;cnicas para garantir maior confiabilidade e desempenho.</p>\n" +
+                    "\n" +
+                    "<p>As t&eacute;cnicas recomendadas incluem redund&acirc;ncia e paralelismo.</p>"
+            requisitoRAR4_3_4.save(flush:true)
+        }
+
+        def requisitoRAR4_3_5 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.3.5")
+        if(!requisitoRAR4_3_5){
+            requisitoRAR4_3_5 = new Requisito()
+            requisitoRAR4_3_5.numeroReferenciaMoreqJus = "RAR4.3.5"
+            requisitoRAR4_3_5.obrigatorio = true
+            requisitoRAR4_3_5.subGrupoRequisito = subGrupo_4_3
+            requisitoRAR4_3_5.nome = "A integridade dos dispositivos de armazenamento deve ser\n" +
+                    "periodicamente verificada. "
+            requisitoRAR4_3_5.save(flush:true)
+        }
+
     }
 
 
