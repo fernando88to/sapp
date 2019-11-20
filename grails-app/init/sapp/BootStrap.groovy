@@ -181,6 +181,115 @@ class BootStrap {
             grupoRequisito_4.save(flush: true)
 
         }
+
+
+        def subGrupo_4_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("4.1")
+        if(!subGrupo_4_1){
+            subGrupo_4_1 = new SubGrupoRequisito()
+            subGrupo_4_1.numeroReferenciaMoreqJus="4.1"
+            subGrupo_4_1.nome ="Durabilidade "
+            subGrupo_4_1.grupoRequisito = grupoRequisito_4
+            subGrupo_4_1.save(flush:true)
+
+        }
+
+        def requisitoRAR4_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.1.1")
+        if(!requisitoRAR4_1_1){
+            requisitoRAR4_1_1 = new Requisito()
+            requisitoRAR4_1_1.numeroReferenciaMoreqJus = "RAR4.1.1"
+            requisitoRAR4_1_1.obrigatorio = true
+            requisitoRAR4_1_1.subGrupoRequisito = subGrupo_4_1
+            requisitoRAR4_1_1.nome = "<p>Utilizar dispositivos e padr&otilde;es est&aacute;veis no mercado.</p>\n" +
+                    "\n" +
+                    "<p>Utilizar preferencialmente padr&otilde;es abertos de armazenamento (como exemplo: ISO 9660:1988 &mdash; defini&ccedil;&atilde;o do formato de sistema de arquivos para CD-Rom).</p>\n" +
+                    "\n" +
+                    "<p>A escolha dos dispositivos de armazenamento deve contemplar padr&otilde;es est&aacute;veis de mercado e fornecedores consolidados.</p>"
+            requisitoRAR4_1_1.save(flush:true)
+        }
+
+        def requisitoRAR4_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.1.2")
+        if(!requisitoRAR4_1_2){
+            requisitoRAR4_1_2 = new Requisito()
+            requisitoRAR4_1_2.numeroReferenciaMoreqJus = "RAR4.1.2"
+            requisitoRAR4_1_2.obrigatorio = true
+            requisitoRAR4_1_2.subGrupoRequisito = subGrupo_4_1
+            requisitoRAR4_1_2.nome = "Avaliar periodicamente a escolha de dispositivos sempre que a\n" +
+                    "evolução tecnológica indicar mudanças importantes. "
+            requisitoRAR4_1_2.save(flush:true)
+        }
+
+        def requisitoRAR4_1_3 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.1.3")
+        if(!requisitoRAR4_1_3){
+            requisitoRAR4_1_3 = new Requisito()
+            requisitoRAR4_1_3.numeroReferenciaMoreqJus = "RAR4.1.3"
+            requisitoRAR4_1_3.obrigatorio = true
+            requisitoRAR4_1_3.subGrupoRequisito = subGrupo_4_1
+            requisitoRAR4_1_3.nome = "Efetuar migrações preventivas sempre que se tornar patente ou\n" +
+                    "previsível a obsolescência do padrão corrente. "
+            requisitoRAR4_1_3.save(flush:true)
+        }
+
+        def requisitoRAR4_1_4 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.1.4")
+        if(!requisitoRAR4_1_4){
+            requisitoRAR4_1_4 = new Requisito()
+            requisitoRAR4_1_4.numeroReferenciaMoreqJus = "RAR4.1.4"
+            requisitoRAR4_1_4.obrigatorio = true
+            requisitoRAR4_1_4.subGrupoRequisito = subGrupo_4_1
+            requisitoRAR4_1_4.nome = "<p>Manter o registro de MTBF (Mean Time Between Failures) 2 , MTTR (Mean Time To Repair)3 e MTBSI (Mean Time Between Service Incidents)4 para as mem&oacute;rias secund&aacute;rias, bem como as datas de sua aquisi&ccedil;&atilde;o.</p>"
+            requisitoRAR4_1_4.save(flush:true)
+        }
+
+        def requisitoRAR4_1_5 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.1.5")
+        if(!requisitoRAR4_1_5){
+            requisitoRAR4_1_5 = new Requisito()
+            requisitoRAR4_1_5.numeroReferenciaMoreqJus = "RAR4.1.5"
+            requisitoRAR4_1_5.obrigatorio = true
+            requisitoRAR4_1_5.subGrupoRequisito = subGrupo_4_1
+            requisitoRAR4_1_5.nome = "<p>Realizar o gerenciamento das m&iacute;dias por meio do registro de durabilidade prevista, data de aquisi&ccedil;&atilde;o e hist&oacute;rico de utiliza&ccedil;&atilde;o das mem&oacute;rias secund&aacute;ria e terci&aacute;ria.</p>\n" +
+                    "\n" +
+                    "<p>Informa&ccedil;&otilde;es t&eacute;cnicas sobre previsibilidade de dura&ccedil;&atilde;o de m&iacute;dias referidas em RAR4.1.4 devem ser obtidas preferencialmente a partir de &oacute;rg&atilde;os independentes. Quando isso n&atilde;o for poss&iacute;vel, podem ser utilizadas informa&ccedil;&otilde;es de fornecedores.</p>\n" +
+                    "\n" +
+                    "<p>A origem da informa&ccedil;&atilde;o deve ficar registrada em ambos os casos</p>"
+            requisitoRAR4_1_5.save(flush:true)
+        }
+
+        def requisitoRAR4_1_6 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.1.6")
+        if(!requisitoRAR4_1_6){
+            requisitoRAR4_1_6 = new Requisito()
+            requisitoRAR4_1_6.numeroReferenciaMoreqJus = "RAR4.1.6"
+            requisitoRAR4_1_6.obrigatorio = true
+            requisitoRAR4_1_6.subGrupoRequisito = subGrupo_4_1
+            requisitoRAR4_1_6.nome = "Manter estatísticas da durabilidade efetivamente observada das\n" +
+                    "memórias secundária e terciária. "
+            requisitoRAR4_1_6.save(flush:true)
+        }
+
+        def requisitoRAR4_1_7 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.1.7")
+        if(!requisitoRAR4_1_7){
+            requisitoRAR4_1_7 = new Requisito()
+            requisitoRAR4_1_7.numeroReferenciaMoreqJus = "RAR4.1.7"
+            requisitoRAR4_1_7.obrigatorio = false
+            requisitoRAR4_1_7.subGrupoRequisito = subGrupo_4_1
+            requisitoRAR4_1_7.nome = "<p>Utilizar preferencialmente as redes de dados para o acesso &agrave;s informa&ccedil;&otilde;es armazenadas em mem&oacute;ria terci&aacute;ria.</p>\n" +
+                    "\n" +
+                    "<p>O objetivo &eacute; minimizar o acesso f&iacute;sico &agrave;s m&iacute;dias, visando &agrave; diminui&ccedil;&atilde;o do desgaste. A manipula&ccedil;&atilde;o direta das m&iacute;dias dever&aacute; ser realizada preferencialmente por meio de sistemas autom&aacute;ticos de manipula&ccedil;&atilde;o de m&iacute;dias.</p>"
+            requisitoRAR4_1_7.save(flush:true)
+        }
+
+
+        def requisitoRAR4_1_8 = Requisito.findByNumeroReferenciaMoreqJus("RAR4.1.8")
+        if(!requisitoRAR4_1_8){
+            requisitoRAR4_1_8 = new Requisito()
+            requisitoRAR4_1_8.numeroReferenciaMoreqJus = "RAR4.1.8"
+            requisitoRAR4_1_8.obrigatorio = false
+            requisitoRAR4_1_8.subGrupoRequisito = subGrupo_4_1
+            requisitoRAR4_1_8.nome = "<p>Quando se proceder &agrave; elimina&ccedil;&atilde;o de documentos, as mem&oacute;rias de suporte devem ser devidamente &quot;sanitizadas&quot;, isto &eacute;, ter suas informa&ccedil;&otilde;es efetivamente indisponibilizadas.</p>\n" +
+                    "\n" +
+                    "<p>A elimina&ccedil;&atilde;o de um documento n&atilde;o implica a elimina&ccedil;&atilde;o de seus metadados.</p>\n" +
+                    "\n" +
+                    "<p>Esse requisito aplica-se principalmente &agrave;s mem&oacute;rias secund&aacute;ria e terci&aacute;ria, pela sua caracter&iacute;stica n&atilde;o-vol&aacute;til. As informa&ccedil;&otilde;es devem ser eliminadas de forma irrevers&iacute;vel, incluindo, no caso de mem&oacute;ria terci&aacute;ria, a possibilidade de destrui&ccedil;&atilde;o f&iacute;sica das m&iacute;dias.</p>"
+            requisitoRAR4_1_8.save(flush:true)
+        }
     }
 
 
