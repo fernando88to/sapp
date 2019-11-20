@@ -72,27 +72,34 @@
                                 <h3>${grupoRequisito.nome} - ${grupoRequisito.numeroReferenciaMoreqJus}</h3>
                             </div>
 
-                            <g:each in="${grupoRequisito.subGrupoRequisitoList}" var="subGrupo">
-                                <h5>${subGrupo.numeroReferenciaMoreqJus} ${subGrupo.nome}</h5>
+                            <g:each in="${grupoRequisito.subGrupoRequisitoList}" var="subGrupo" status="j">
+                                <h5>${subGrupo.numeroReferenciaMoreqJus} ${subGrupo.nome} <a href="#" class="clickable"
+                                                                                             data-target="#tabela${j}"
+                                                                                             data-toggle="collapse"
+                                ><em
+                                            class="fa fa-unsorted"></em></a></h5>
 
                                 <table class="table table-striped">
+                                    <tbody class="collapse show" id="tabela${j}">
                                     <g:each in="${subGrupo.requisitoList}" var="r">
-                                        <g:form class="formulario_envio_requisito" action="salvarRegistro" method="POST">
+                                        <g:form class="formulario_envio_requisito" action="salvarRegistro"
+                                                method="POST">
                                             <g:hiddenField name="requisito" value="${r.id}"/>
                                             <tr>
                                                 <td style="width: 70%;">
-                                                              ${r.numeroReferenciaMoreqJus} - ${r.nome.encodeAsRaw()}
+                                                    ${r.numeroReferenciaMoreqJus} - ${r.nome.encodeAsRaw()}
                                                 </td>
-                                                <td style="width: 10%;" class="align-middle">${r.obrigatorio ? 'Obrigatório' : 'Opcional'}</td>
-                                                <td style="width: 20%;" class="align-middle"><g:select class="form-control form-control-sm campo_resposta"
-                                                              name="resposta" from="${opcaoRespostaList}" optionKey="id"
-                                                              value="${r.resposta}"
-                                                              optionValue="descricao"
-
-                                                /></td>
+                                                <td style="width: 10%;"
+                                                    class="align-middle">${r.obrigatorio ? 'Obrigatório' : 'Opcional'}</td>
+                                                <td style="width: 20%;" class="align-middle"><g:select
+                                                        class="form-control form-control-sm campo_resposta"
+                                                        name="resposta" from="${opcaoRespostaList}" optionKey="id"
+                                                        value="${r.resposta}"
+                                                        optionValue="descricao"/></td>
                                             </tr>
                                         </g:form>
-                                </g:each>
+                                    </g:each>
+                                    </tbody>
                                 </table>
 
                             </g:each>
