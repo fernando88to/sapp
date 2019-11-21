@@ -422,6 +422,196 @@ class BootStrap {
                     "herança de permissões entre eles."
             requisitoRSE_6_2_17.save(flush:true)
         }
+
+
+        def subGrupo_6_3 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("6.3")
+        if(!subGrupo_6_3){
+            subGrupo_6_3 = new SubGrupoRequisito()
+            subGrupo_6_3.numeroReferenciaMoreqJus="6.3"
+            subGrupo_6_3.nome ="Classificação da informação quanto ao grau de\n" +
+                    "sigilo e restrição de acesso à informação sensível"
+            subGrupo_6_3.grupoRequisito = grupoRequisito_6
+            subGrupo_6_3.save(flush:true)
+
+        }
+
+        def requisitoRSE_6_3_1 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.1")
+        if(!requisitoRSE_6_3_1){
+            requisitoRSE_6_3_1 = new Requisito()
+            requisitoRSE_6_3_1.numeroReferenciaMoreqJus = "RSE6.3.1"
+            requisitoRSE_6_3_1.obrigatorio = true
+                    requisitoRSE_6_3_1.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_1.nome = "Aceitar a definição de graus de sigilo e de perfis de usuários de\n" +
+                    "acordo com as necessidades das instituições do Judiciário. "
+            requisitoRSE_6_3_1.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_3_2 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.2")
+        if(!requisitoRSE_6_3_2){
+            requisitoRSE_6_3_2 = new Requisito()
+            requisitoRSE_6_3_2.numeroReferenciaMoreqJus = "RSE6.3.2"
+            requisitoRSE_6_3_2.obrigatorio = true
+                    requisitoRSE_6_3_2.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_2.nome = "<p>Implementar a classifica&ccedil;&atilde;o de grau de sigilo baseando-se nos seguintes atributos de seguran&ccedil;a para documentos e para usu&aacute;rios:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;Grau de sigilo do documento.</li>\n" +
+                    "\t<li>&nbsp;Credencial de seguran&ccedil;a do usu&aacute;rio.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_3_2.save(flush:true)
+        }
+
+        def requisitoRSE_6_3_3 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.3")
+        if(!requisitoRSE_6_3_3){
+            requisitoRSE_6_3_3 = new Requisito()
+            requisitoRSE_6_3_3.numeroReferenciaMoreqJus = "RSE6.3.3"
+            requisitoRSE_6_3_3.obrigatorio = true
+            requisitoRSE_6_3_3.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_3.nome = "Recusar o acesso de usuários a documentos que possuam um\n" +
+                    "grau de sigilo superior à sua credencial de segurança. "
+            requisitoRSE_6_3_3.save(flush:true)
+        }
+
+        def requisitoRSE_6_3_4 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.4")
+        if(!requisitoRSE_6_3_4){
+            requisitoRSE_6_3_4 = new Requisito()
+            requisitoRSE_6_3_4.numeroReferenciaMoreqJus = "RSE6.3.4"
+            requisitoRSE_6_3_4.obrigatorio = true
+            requisitoRSE_6_3_4.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_4.nome = "Garantir que os documentos sem atribuição de grau de sigilo,\n" +
+                    "importados a partir de fontes externas ao GestãoDoc, estejam\n" +
+                    "sujeitos às políticas de controle de acesso e de sigilo. "
+            requisitoRSE_6_3_4.save(flush:true)
+        }
+
+        def requisitoRSE_6_3_5 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.5")
+        if(!requisitoRSE_6_3_5){
+            requisitoRSE_6_3_5 = new Requisito()
+            requisitoRSE_6_3_5.numeroReferenciaMoreqJus = "RSE6.3.5"
+            requisitoRSE_6_3_5.obrigatorio = true
+            requisitoRSE_6_3_5.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_5.nome = "Manter a marcação de sigilo original durante a importação de\n" +
+                    "documentos marcados com graus de sigilo, a partir de fontes\n" +
+                    "externas ao GestãoDoc."
+            requisitoRSE_6_3_5.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_3_6 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.6")
+        if(!requisitoRSE_6_3_6){
+            requisitoRSE_6_3_6 = new Requisito()
+            requisitoRSE_6_3_6.numeroReferenciaMoreqJus = "RSE6.3.6"
+            requisitoRSE_6_3_6.obrigatorio = false
+            requisitoRSE_6_3_6.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_6.nome = "Garantir a não-ambigüidade na associação entre as marcações\n" +
+                    "de grau de sigilo e os outros atributos de segurança (permissões)\n" +
+                    "do documento importado"
+            requisitoRSE_6_3_6.save(flush:true)
+        }
+
+        def requisitoRSE_6_3_7 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.7")
+        if(!requisitoRSE_6_3_7){
+            requisitoRSE_6_3_7 = new Requisito()
+            requisitoRSE_6_3_7.numeroReferenciaMoreqJus = "RSE6.3.7"
+            requisitoRSE_6_3_7.obrigatorio = true
+            requisitoRSE_6_3_7.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_7.nome = "Garantir que nos casos em que grau de sigilo e atributos de\n" +
+                    "segurança incidam sobre um mesmo documento, o critério de\n" +
+                    "acesso seja o de maior restrição."
+            requisitoRSE_6_3_7.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_3_8 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.8")
+        if(!requisitoRSE_6_3_8){
+            requisitoRSE_6_3_8 = new Requisito()
+            requisitoRSE_6_3_8.numeroReferenciaMoreqJus = "RSE6.3.8"
+            requisitoRSE_6_3_8.obrigatorio = true
+            requisitoRSE_6_3_8.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_8.nome = "Permitir que o usuário autorizado seja capaz de alterar o grau de\n" +
+                    "sigilo de todos os documentos institucionais de um\n" +
+                    "processo/dossiê ou documento, em caso de erro, reavaliação,\n" +
+                    "reclassificação ou redução do grau de sigilo. "
+            requisitoRSE_6_3_8.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_3_9 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.9")
+        if(!requisitoRSE_6_3_9){
+            requisitoRSE_6_3_9 = new Requisito()
+            requisitoRSE_6_3_9.numeroReferenciaMoreqJus = "RSE6.3.9"
+            requisitoRSE_6_3_9.obrigatorio = true
+            requisitoRSE_6_3_9.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_9.nome = "Garantir que o grau de sigilo de um documento importado esteja\n" +
+                    "associado a um usuário autorizado com a credencial de\n" +
+                    "segurança pertinente para receber o documento."
+            requisitoRSE_6_3_9.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_3_10 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.10")
+        if(!requisitoRSE_6_3_10){
+            requisitoRSE_6_3_10 = new Requisito()
+            requisitoRSE_6_3_10.numeroReferenciaMoreqJus = "RSE6.3.10"
+            requisitoRSE_6_3_10.obrigatorio = true
+            requisitoRSE_6_3_10.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_10.nome = "Permitir somente ao gestor a possibilidade de alterar a\n" +
+                    "configuração dos valores predefinidos (default) para os atributos\n" +
+                    "de segurança e marcações de graus de sigilo, quando necessário\n" +
+                    "e apropriado. "
+            requisitoRSE_6_3_10.save(flush:true)
+        }
+
+        def requisitoRSE_6_3_11 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.11")
+        if(!requisitoRSE_6_3_11){
+            requisitoRSE_6_3_11 = new Requisito()
+            requisitoRSE_6_3_11.numeroReferenciaMoreqJus = "RSE6.3.11"
+            requisitoRSE_6_3_11.obrigatorio = true
+            requisitoRSE_6_3_11.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_11.nome = "Permitir somente aos usuários autorizados realizar as ações:\n" +
+                    "criar, alterar, conceder ou revogar credenciais de segurança aos\n" +
+                    "usuários. "
+            requisitoRSE_6_3_11.save(flush:true)
+        }
+
+        def requisitoRSE_6_3_12 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.12")
+        if(!requisitoRSE_6_3_12){
+            requisitoRSE_6_3_12 = new Requisito()
+            requisitoRSE_6_3_12.numeroReferenciaMoreqJus = "RSE6.3.12"
+            requisitoRSE_6_3_12.obrigatorio = true
+            requisitoRSE_6_3_12.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_12.nome = "<p>Prover mecanismos de prote&ccedil;&atilde;o que permitam c&oacute;pias de seguran&ccedil;a de documentos confidenciais, preservando a inviolabilidade da informa&ccedil;&atilde;o.</p>\n" +
+                    "\n" +
+                    "<p>Tais c&oacute;pias poder&atilde;o migrar para sites remotos, fora do controle do Gest&atilde;oDoc. Por isso, os mecanismos citados dever&atilde;o lan&ccedil;ar m&atilde;o de t&eacute;cnicas de criptografia</p>"
+            requisitoRSE_6_3_12.save(flush:true)
+        }
+
+
+
+        def requisitoRSE_6_3_13 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.3.13")
+        if(!requisitoRSE_6_3_13){
+            requisitoRSE_6_3_13 = new Requisito()
+            requisitoRSE_6_3_13.numeroReferenciaMoreqJus = "RSE6.3.13"
+            requisitoRSE_6_3_13.obrigatorio = true
+            requisitoRSE_6_3_13.subGrupoRequisito = subGrupo_6_3
+            requisitoRSE_6_3_13.nome = "Impedir que um documento sigiloso seja eliminado, antes de se\n" +
+                    "tornar ostensivo e ser submetido ao processo de avaliação para\n" +
+                    "definição de sua destinação final, salvo as exceções legais. "
+            requisitoRSE_6_3_13.save(flush:true)
+        }
+
+
+        def subGrupo_6_4 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("6.4")
+        if(!subGrupo_6_4){
+            subGrupo_6_4 = new SubGrupoRequisito()
+            subGrupo_6_4.numeroReferenciaMoreqJus="6.4"
+            subGrupo_6_4.nome ="Trilha de auditoria"
+            subGrupo_6_4.grupoRequisito = grupoRequisito_6
+            subGrupo_6_4.save(flush:true)
+
+        }
+
     }
 
     def cargaGrupo5() {

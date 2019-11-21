@@ -12,7 +12,7 @@
 
     <div class="col-md-1">
         <g:link controller="formulario" action="index">
-            <button type="button" class="btn btn-info">Responder Questionário</button>
+            <button type="button" class="btn btn-info"><g:textoBotaoResponderFormulraio /> </button>
         </g:link>
     </div>
 </div>

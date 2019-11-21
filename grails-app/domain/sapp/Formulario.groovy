@@ -16,7 +16,7 @@ class Formulario {
     static constraints = {
         dataFinalizacao nullable: true
         finalizado nullable: false
-        sistema nullable: false
+        sistema nullable: true
         usuario nullable: true
     }
 

@@ -10,42 +10,10 @@ class FormularioController {
 
     def index() {
 
-        def formulario = GestaoDaSessao.getFormulario(session)
-
-        if (!formulario) {
-            formulario = new Formulario()
-
-            formulario.finalizado = false
-            formulario.grupoRequisitoList = GrupoRequisito.createCriteria().list {
-                order("numeroReferenciaMoreqJus")
-
-            }
-            formulario.sistemaList = Sistema.createCriteria().list {
-                order("nome")
-            }
-
-            for (GrupoRequisito g in formulario.grupoRequisitoList) {
-                g.subGrupoRequisitoList = SubGrupoRequisito.createCriteria().list {
-                    eq("grupoRequisito", g)
-                    order("numeroReferenciaMoreqJus")
-                }
-            }
-            for (GrupoRequisito g in formulario.grupoRequisitoList) {
-                for (SubGrupoRequisito sub in g.subGrupoRequisitoList) {
-                    sub.requisitoList = Requisito.createCriteria().list {
-                        eq("subGrupoRequisito", sub)
-                    }
-                }
-            }
-
-            GestaoDaSessao.salvarFormulario(session, formulario)
-        }
-
-
+        def formulario = formularioService.getFormularioEmTrabalho()
         def opcaoRespostaList = getOpcoesResposta()
 
-        model:
-        [formulario: formulario, opcaoRespostaList: opcaoRespostaList]
+        model:[formulario: formulario, opcaoRespostaList: opcaoRespostaList]
 
     }
 
@@ -60,45 +28,29 @@ class FormularioController {
     }
 
     def avancarSelecaoSistema() {
-        def formulario = GestaoDaSessao.getFormulario(session)
+        def formulario = formularioService.getFormularioEmTrabalho()
         formulario.sistema = Sistema.get(params.long("sistema"))
+        formularioService.salvar(formulario)
 
-        GestaoDaSessao.salvarFormulario(session, formulario)
         redirect(action: "index", params: [menu: "#menu2"])
 
 
     }
 
     def finalizar() {
+        def formulario = formularioService.getFormularioEmTrabalho()
+
+
+        boolean formularioValido = formularioService.validarFormulario(formulario)
 
 
 
 
-        def formulario = GestaoDaSessao.getFormulario(session)
-
-
-        boolean formularioValido = true
-
-        //valida o formulario
-        formulario.clearErrors()
-        for (GrupoRequisito g in formulario.grupoRequisitoList) {
-            for (SubGrupoRequisito sub in g.subGrupoRequisitoList) {
-
-                for (Requisito r in sub.requisitoList) {
-                    //não respondeu
-                    if (r.resposta == null || r.resposta == 0) {
-                        formulario.errors.rejectValue("id", "id.invalido",
-                                "Na aba ${r.subGrupoRequisito.id+1} no item ${r.numeroReferenciaMoreqJus} não foi respondido")
-                    }
-
-                }
-            }
-        }
 
 
         if (!formularioValido) {
-
-            redirect(action: "index")
+            def opcaoRespostaList = getOpcoesResposta()
+            render(view: "index", model:[formulario: formulario, opcaoRespostaList: opcaoRespostaList])
             return
         }
 
@@ -107,25 +59,7 @@ class FormularioController {
         formulario.dataFinalizacao = new Date()
         formulario.usuario = GestaoDaSessao.usuarioLogado(session)
         formulario.save(flush:true, failOnError:true)
-        //salvos as respostas
-        for (GrupoRequisito g in formulario.grupoRequisitoList) {
-            for (SubGrupoRequisito sub in g.subGrupoRequisitoList) {
-                for (Requisito r in sub.requisitoList) {
-                    def resposta = new RespostaFormulario()
-                    resposta.formulario = formulario
-                    resposta.resposta = r.resposta
-                    resposta.requisito = r
-                    resposta.save(flush:true, failOnError:true)
-
-
-
-                }
-
-            }
-        }
-
-        //limpa o formulario da sessao
-        GestaoDaSessao.salvarFormulario(session, null)
+        formularioService.salvar(formulario)
         redirect(action: "index")
 
 
@@ -147,17 +81,8 @@ class FormularioController {
 
     def salvarRegistro() {
         def requisitoSelecionado = params.long("requisito")
-        def formulario = GestaoDaSessao.getFormulario(session)
-        for (GrupoRequisito g in formulario.grupoRequisitoList) {
-            for (SubGrupoRequisito sub in g.subGrupoRequisitoList) {
-                for (Requisito r in sub.requisitoList) {
-                    if (r.id == requisitoSelecionado) {
-                        r.resposta = params.int("resposta")
-                    }
-                }
-            }
-        }
-        GestaoDaSessao.salvarFormulario(session, formulario)
+        def formulario = formularioService.getFormularioEmTrabalho()
+        formularioService.salvarResposta(formulario,  requisitoSelecionado, params.int("resposta"))
         def retorno = ['mensagem': 'oi']
         render retorno as JSON
 
