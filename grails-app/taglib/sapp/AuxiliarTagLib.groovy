@@ -6,8 +6,11 @@ class AuxiliarTagLib {
     //static encodeAsForTags = [tagName: [taglib:'html'], otherTagName: [taglib:'none']]
 
     def textoBotaoResponderFormulraio = { attrs, body ->
-        def formulario  = formularioService.getFormularioEmTrabalho()
-        out << (formulario.finalizado ? 'Responder Questionário' : 'Continuar Questionário')
+        def formulario  = Formulario.createCriteria().get {
+            eq("finalizado", false)
+            maxResults(1)
+        }
+        out << (formulario==null  ? 'Responder Questionário' : 'Continuar Questionário')
 
 
     }

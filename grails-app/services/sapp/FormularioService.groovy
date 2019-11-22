@@ -28,7 +28,6 @@ abstract class FormularioService implements IFormularioService {
             for (SubGrupoRequisito sub in g.subGrupoRequisitoList) {
                 for (Requisito r in sub.requisitoList) {
                     if (r.id == requisitoSelecionado) {
-                        //r.resposta = resposta
                         RespostaFormulario respostaBancoDados = RespostaFormulario.createCriteria().get {
                             eq("formulario", formulario)
                             eq("requisito", r)
@@ -54,6 +53,7 @@ abstract class FormularioService implements IFormularioService {
 
 
     boolean validarFormulario(Formulario formulario) {
+        boolean retorno = true
 
         //valida o formulario
         formulario.clearErrors()
@@ -67,6 +67,7 @@ abstract class FormularioService implements IFormularioService {
                     }
                     if (respostaBancoDados == null || respostaBancoDados.resposta == null ||
                             respostaBancoDados.resposta == 0) {
+                        retorno = false
                         formulario.errors.rejectValue("id", "id.invalido",
                                 "Na aba ${r.subGrupoRequisito.id + 1} no item ${r.numeroReferenciaMoreqJus} não foi respondido")
                     }
@@ -75,6 +76,8 @@ abstract class FormularioService implements IFormularioService {
                 }
             }
         }
+
+        return retorno
 
 
     }

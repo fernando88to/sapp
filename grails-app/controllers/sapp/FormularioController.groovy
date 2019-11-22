@@ -58,9 +58,11 @@ class FormularioController {
         //salva o formuario
         formulario.dataFinalizacao = new Date()
         formulario.usuario = GestaoDaSessao.usuarioLogado(session)
+        formulario.finalizado = true
         formulario.save(flush:true, failOnError:true)
-        formularioService.salvar(formulario)
-        redirect(action: "index")
+        //formularioService.salvar(formulario)
+        flash.message = "Formulário finalizado com sucesso"
+        redirect(controller:"dashboard", action: "index")
 
 
     }

@@ -20,7 +20,7 @@ class BootStrap {
         //concluido
         cargaGrupo2()
 
-        cargaGrupo3()
+        /*cargaGrupo3()
 
         cargaGrupo4()
 
@@ -45,7 +45,7 @@ class BootStrap {
         cargaGrupo13()
 
         cargaGrupo14()
-
+*/
 
         cargaTJTO()
 
@@ -2030,24 +2030,18 @@ class BootStrap {
         }
 
 
-
-
-
-
-
-
-        def subGrupo_2_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.2")
-        if(!subGrupo_2_2){
+       /* def subGrupo_2_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.2")
+        if (!subGrupo_2_2) {
             subGrupo_2_2 = new SubGrupoRequisito()
-            subGrupo_2_2.numeroReferenciaMoreqJus="2.2"
-            subGrupo_2_2.nome ="Classificacao e metadados dos processos/dossiês"
+            subGrupo_2_2.numeroReferenciaMoreqJus = "2.2"
+            subGrupo_2_2.nome = "Classificacao e metadados dos processos/dossiês"
             subGrupo_2_2.grupoRequisito = grupoRequisito_2
-            subGrupo_2_2.save(flush:true)
+            subGrupo_2_2.save(flush: true)
 
         }
 
         def requisitoRPC2_2_1 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.2.1")
-        if(!requisitoRPC2_2_1){
+        if (!requisitoRPC2_2_1) {
             requisitoRPC2_2_1 = new Requisito()
             requisitoRPC2_2_1.numeroReferenciaMoreqJus = "RPC2.2.1"
             requisitoRPC2_2_1.obrigatorio = true
@@ -2055,35 +2049,35 @@ class BootStrap {
             requisitoRPC2_2_1.nome = "Permitir a classificação dos processos/dossiês somente nas classes\n" +
                     "autorizadas.\n" +
                     "Ver RPC2.1.11 e RPC2.3.7 "
-            requisitoRPC2_2_1.save(flush:true)
+            requisitoRPC2_2_1.save(flush: true)
         }
 
 
         def requisitoRPC2_2_2 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.2.2")
-        if(!requisitoRPC2_2_2){
+        if (!requisitoRPC2_2_2) {
             requisitoRPC2_2_2 = new Requisito()
             requisitoRPC2_2_2.numeroReferenciaMoreqJus = "RPC2.2.2"
             requisitoRPC2_2_2.obrigatorio = true
             requisitoRPC2_2_2.subGrupoRequisito = subGrupo_2_2
             requisitoRPC2_2_2.nome = "Permitir a classificação de um número ilimitado de\n" +
                     "processos/dossiês dentro de uma classe. "
-            requisitoRPC2_2_2.save(flush:true)
+            requisitoRPC2_2_2.save(flush: true)
         }
 
         def requisitoRPC2_2_3 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.2.3")
-        if(!requisitoRPC2_2_3){
+        if (!requisitoRPC2_2_3) {
             requisitoRPC2_2_3 = new Requisito()
             requisitoRPC2_2_3.numeroReferenciaMoreqJus = "RPC2.2.3"
             requisitoRPC2_2_3.obrigatorio = true
             requisitoRPC2_2_3.subGrupoRequisito = subGrupo_2_2
             requisitoRPC2_2_3.nome = "Utilizar o termo completo da classe para identificar um\n" +
                     "processo/dossiê, tal como especificado em RPC2.1.12. "
-            requisitoRPC2_2_3.save(flush:true)
+            requisitoRPC2_2_3.save(flush: true)
         }
 
 
         def requisitoRPC2_2_4 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.2.4")
-        if(!requisitoRPC2_2_4){
+        if (!requisitoRPC2_2_4) {
             requisitoRPC2_2_4 = new Requisito()
             requisitoRPC2_2_4.numeroReferenciaMoreqJus = "RPC2.2.4"
             requisitoRPC2_2_4.obrigatorio = true
@@ -2091,25 +2085,24 @@ class BootStrap {
             requisitoRPC2_2_4.nome = "Permitir a associação de metadados aos processos/dossiês e\n" +
                     "restringir a inclusão e alteração desses mesmos metadados\n" +
                     "somente a usuários autorizados. "
-            requisitoRPC2_2_4.save(flush:true)
+            requisitoRPC2_2_4.save(flush: true)
         }
 
 
         def requisitoRPC2_2_5 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.2.5")
-        if(!requisitoRPC2_2_5){
+        if (!requisitoRPC2_2_5) {
             requisitoRPC2_2_5 = new Requisito()
             requisitoRPC2_2_5.numeroReferenciaMoreqJus = "RPC2.2.5"
             requisitoRPC2_2_5.obrigatorio = true
             requisitoRPC2_2_5.subGrupoRequisito = subGrupo_2_2
             requisitoRPC2_2_5.nome = "Associar os metadados dos processos/dossiês conforme\n" +
                     "estabelecido nos elementos de metadados."
-            requisitoRPC2_2_5.save(flush:true)
+            requisitoRPC2_2_5.save(flush: true)
         }
 
 
-
         def requisitoRPC2_2_6 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.2.6")
-        if(!requisitoRPC2_2_6){
+        if (!requisitoRPC2_2_6) {
             requisitoRPC2_2_6 = new Requisito()
             requisitoRPC2_2_6.numeroReferenciaMoreqJus = "RPC2.2.6"
             requisitoRPC2_2_6.obrigatorio = true
@@ -2117,12 +2110,12 @@ class BootStrap {
             requisitoRPC2_2_6.nome = "<p>Permitir que um novo processo/dossi&ecirc; herde, da classe na qual foi classificado, determinados metadados predefinidos.</p>\n" +
                     "\n" +
                     "<p>Exemplos desta heran&ccedil;a s&atilde;o: temporalidade prevista e restri&ccedil;&atilde;o de acesso.</p>"
-            requisitoRPC2_2_6.save(flush:true)
+            requisitoRPC2_2_6.save(flush: true)
         }
 
 
         def requisitoRPC2_2_7 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.2.7")
-        if(!requisitoRPC2_2_7){
+        if (!requisitoRPC2_2_7) {
             requisitoRPC2_2_7 = new Requisito()
             requisitoRPC2_2_7.numeroReferenciaMoreqJus = "RPC2.2.7"
             requisitoRPC2_2_7.obrigatorio = false
@@ -2130,36 +2123,35 @@ class BootStrap {
             requisitoRPC2_2_7.nome = "Relacionar os metadados herdados de forma que uma alteração no\n" +
                     "metadado de uma classe seja automaticamente incorporada ao\n" +
                     "processo/dossiê que herdou esse metadado. "
-            requisitoRPC2_2_7.save(flush:true)
+            requisitoRPC2_2_7.save(flush: true)
         }
 
 
         def requisitoRPC2_2_8 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.2.8")
-        if(!requisitoRPC2_2_8){
+        if (!requisitoRPC2_2_8) {
             requisitoRPC2_2_8 = new Requisito()
             requisitoRPC2_2_8.numeroReferenciaMoreqJus = "RPC2.2.8"
             requisitoRPC2_2_8.obrigatorio = true
             requisitoRPC2_2_8.subGrupoRequisito = subGrupo_2_2
             requisitoRPC2_2_8.nome = "Permitir a alteração conjunta de um determinado metadado em um\n" +
                     "grupo de processos/dossiês previamente selecionado."
-            requisitoRPC2_2_8.save(flush:true)
+            requisitoRPC2_2_8.save(flush: true)
         }
-
 
 
         def subGrupo_2_3 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.3")
 
-        if(!subGrupo_2_3){
+        if (!subGrupo_2_3) {
             subGrupo_2_3 = new SubGrupoRequisito()
-            subGrupo_2_3.numeroReferenciaMoreqJus="2.3"
-            subGrupo_2_3.nome ="Gerenciamento dos processos/dossiês"
+            subGrupo_2_3.numeroReferenciaMoreqJus = "2.3"
+            subGrupo_2_3.nome = "Gerenciamento dos processos/dossiês"
             subGrupo_2_3.grupoRequisito = grupoRequisito_2
-            subGrupo_2_3.save(flush:true)
+            subGrupo_2_3.save(flush: true)
 
         }
 
         def requisitoRPC2_3_1 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.1")
-        if(!requisitoRPC2_3_1){
+        if (!requisitoRPC2_3_1) {
             requisitoRPC2_3_1 = new Requisito()
             requisitoRPC2_3_1.numeroReferenciaMoreqJus = "RPC2.3.1"
             requisitoRPC2_3_1.obrigatorio = true
@@ -2167,23 +2159,23 @@ class BootStrap {
             requisitoRPC2_3_1.nome = "<p>Registrar automaticamente a data de abertura e de encerramento ou baixa do processo/dossi&ecirc;.</p>\n" +
                     "\n" +
                     "<p>Essas datas s&atilde;o par&acirc;metros para aplica&ccedil;&atilde;o dos prazos de guarda e destina&ccedil;&atilde;o do processo/dossi&ecirc;.</p>"
-            requisitoRPC2_3_1.save(flush:true)
+            requisitoRPC2_3_1.save(flush: true)
         }
 
         def requisitoRPC2_3_2 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.2")
-        if(!requisitoRPC2_3_2){
+        if (!requisitoRPC2_3_2) {
             requisitoRPC2_3_2 = new Requisito()
             requisitoRPC2_3_2.numeroReferenciaMoreqJus = "RPC2.3.2"
             requisitoRPC2_3_2.obrigatorio = true
             requisitoRPC2_3_2.subGrupoRequisito = subGrupo_2_3
             requisitoRPC2_3_2.nome = "Permitir que um processo/dossiê seja encerrado, reaberto ou\n" +
                     "baixado mediante procedimentos regulamentares. "
-            requisitoRPC2_3_2.save(flush:true)
+            requisitoRPC2_3_2.save(flush: true)
         }
 
 
         def requisitoRPC2_3_3 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.3")
-        if(!requisitoRPC2_3_3){
+        if (!requisitoRPC2_3_3) {
             requisitoRPC2_3_3 = new Requisito()
             requisitoRPC2_3_3.numeroReferenciaMoreqJus = "RPC2.3.3"
             requisitoRPC2_3_3.obrigatorio = true
@@ -2194,12 +2186,12 @@ class BootStrap {
                     "processos/dossiês e volumes que estão sendo reclassificados, de\n" +
                     "modo a conservar a relação entre os documentos, volumes e\n" +
                     "processos/dossiês."
-            requisitoRPC2_3_3.save(flush:true)
+            requisitoRPC2_3_3.save(flush: true)
         }
 
 
         def requisitoRPC2_3_4 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.4")
-        if(!requisitoRPC2_3_4){
+        if (!requisitoRPC2_3_4) {
             requisitoRPC2_3_4 = new Requisito()
             requisitoRPC2_3_4.numeroReferenciaMoreqJus = "RPC2.3.4"
             requisitoRPC2_3_4.obrigatorio = true
@@ -2207,11 +2199,11 @@ class BootStrap {
             requisitoRPC2_3_4.nome = "Manter o registro de suas posições anteriores à reclassificação,\n" +
                     "quando um processo/dossiê é reclassificado, de forma a obter-se\n" +
                     "um histórico. "
-            requisitoRPC2_3_4.save(flush:true)
+            requisitoRPC2_3_4.save(flush: true)
         }
 
         def requisitoRPC2_3_5 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.5")
-        if(!requisitoRPC2_3_5){
+        if (!requisitoRPC2_3_5) {
             requisitoRPC2_3_5 = new Requisito()
             requisitoRPC2_3_5.numeroReferenciaMoreqJus = "RPC2.3.5"
             requisitoRPC2_3_5.obrigatorio = true
@@ -2219,35 +2211,35 @@ class BootStrap {
             requisitoRPC2_3_5.nome = "Permitir que o usuário autorizado introduza as razões para a\n" +
                     "reclassificação, quando um processo/dossiê ou documento é\n" +
                     "reclassificado. "
-            requisitoRPC2_3_5.save(flush:true)
+            requisitoRPC2_3_5.save(flush: true)
         }
 
 
         def requisitoRPC2_3_6 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.6")
-        if(!requisitoRPC2_3_6){
+        if (!requisitoRPC2_3_6) {
             requisitoRPC2_3_6 = new Requisito()
             requisitoRPC2_3_6.numeroReferenciaMoreqJus = "RPC2.3.6"
             requisitoRPC2_3_6.obrigatorio = true
             requisitoRPC2_3_6.subGrupoRequisito = subGrupo_2_3
             requisitoRPC2_3_6.nome = "Permitir a geração de referências cruzadas para\n" +
                     "processos/dossiês afins. "
-            requisitoRPC2_3_6.save(flush:true)
+            requisitoRPC2_3_6.save(flush: true)
         }
 
 
         def requisitoRPC2_3_7 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.7")
-        if(!requisitoRPC2_3_7){
+        if (!requisitoRPC2_3_7) {
             requisitoRPC2_3_7 = new Requisito()
             requisitoRPC2_3_7.numeroReferenciaMoreqJus = "RPC2.3.7"
             requisitoRPC2_3_7.obrigatorio = true
             requisitoRPC2_3_7.subGrupoRequisito = subGrupo_2_3
             requisitoRPC2_3_7.nome = "Registrar múltiplas entradas para um documento digital em mais\n" +
                     "de um processo/dossiê"
-            requisitoRPC2_3_7.save(flush:true)
+            requisitoRPC2_3_7.save(flush: true)
         }
 
         def requisitoRPC2_3_8 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.8")
-        if(!requisitoRPC2_3_8){
+        if (!requisitoRPC2_3_8) {
             requisitoRPC2_3_8 = new Requisito()
             requisitoRPC2_3_8.numeroReferenciaMoreqJus = "RPC2.3.8"
             requisitoRPC2_3_8.obrigatorio = true
@@ -2255,12 +2247,12 @@ class BootStrap {
             requisitoRPC2_3_8.nome = "<p>Impedir a elimina&ccedil;&atilde;o de um processo/dossi&ecirc; digital ou de qualquer parte de seu conte&uacute;do em qualquer momento, exceto quando se tratar de elimina&ccedil;&atilde;o definitiva, consoante os crit&eacute;rios de classifica&ccedil;&atilde;o e guarda.</p>\n" +
                     "\n" +
                     "<p>A elimina&ccedil;&atilde;o ser&aacute; devidamente registrada em trilha de auditoria.</p>"
-            requisitoRPC2_3_8.save(flush:true)
+            requisitoRPC2_3_8.save(flush: true)
         }
 
 
         def requisitoRPC2_3_9 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.9")
-        if(!requisitoRPC2_3_9){
+        if (!requisitoRPC2_3_9) {
             requisitoRPC2_3_9 = new Requisito()
             requisitoRPC2_3_9.numeroReferenciaMoreqJus = "RPC2.3.9"
             requisitoRPC2_3_9.obrigatorio = true
@@ -2268,23 +2260,23 @@ class BootStrap {
             requisitoRPC2_3_9.nome = "<p>Impedir o acr&eacute;scimo de novos documentos a processos/dossi&ecirc;s j&aacute; encerrados.</p>\n" +
                     "\n" +
                     "<p>Para receber novos documentos, os processos/dossi&ecirc;s encerrados dever&atilde;o ser reabertos.</p>"
-            requisitoRPC2_3_9.save(flush:true)
+            requisitoRPC2_3_9.save(flush: true)
         }
 
 
         def requisitoRPC2_3_10 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.10")
-        if(!requisitoRPC2_3_10){
+        if (!requisitoRPC2_3_10) {
             requisitoRPC2_3_10 = new Requisito()
             requisitoRPC2_3_10.numeroReferenciaMoreqJus = "RPC2.3.10"
             requisitoRPC2_3_10.obrigatorio = true
             requisitoRPC2_3_10.subGrupoRequisito = subGrupo_2_3
             requisitoRPC2_3_10.nome = "Permitir a consulta aos processos/dossiês já encerrados. "
-            requisitoRPC2_3_10.save(flush:true)
+            requisitoRPC2_3_10.save(flush: true)
         }
 
 
         def requisitoRPC2_3_11 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.11")
-        if(!requisitoRPC2_3_11){
+        if (!requisitoRPC2_3_11) {
             requisitoRPC2_3_11 = new Requisito()
             requisitoRPC2_3_11.numeroReferenciaMoreqJus = "RPC2.3.11"
             requisitoRPC2_3_11.obrigatorio = true
@@ -2292,12 +2284,12 @@ class BootStrap {
             requisitoRPC2_3_11.nome = "<p>Garantir a integridade da rela&ccedil;&atilde;o hier&aacute;rquica entre classe, processo/dossi&ecirc;, volume e documento em todos os momentos, independentemente de atividades de manuten&ccedil;&atilde;o, a&ccedil;&otilde;es do usu&aacute;rio ou falha de componentes do sistema.</p>\n" +
                     "\n" +
                     "<p>Em hip&oacute;tese alguma poder&aacute; ocorrer uma situa&ccedil;&atilde;o em que qualquer a&ccedil;&atilde;o do usu&aacute;rio ou falha do sistema d&ecirc; origem a uma inconsist&ecirc;ncia na base de dados do Gest&atilde;oDoc.</p>"
-            requisitoRPC2_3_11.save(flush:true)
+            requisitoRPC2_3_11.save(flush: true)
         }
 
 
         def requisitoRPC2_3_12 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.3.12")
-        if(!requisitoRPC2_3_12){
+        if (!requisitoRPC2_3_12) {
             requisitoRPC2_3_12 = new Requisito()
             requisitoRPC2_3_12.numeroReferenciaMoreqJus = "RPC2.3.12"
             requisitoRPC2_3_12.obrigatorio = true
@@ -2306,40 +2298,34 @@ class BootStrap {
                     "tais como: abertura e encerramento de processos/dossiês e seus\n" +
                     "respectivos volumes, reclassificação, citação/intimação,\n" +
                     "sentença/decisão/despacho, etc. "
-            requisitoRPC2_3_12.save(flush:true)
+            requisitoRPC2_3_12.save(flush: true)
         }
 
 
-
-
-
-
-
-
         def subGrupo_2_4 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.4")
-        if(!subGrupo_2_4){
+        if (!subGrupo_2_4) {
             subGrupo_2_4 = new SubGrupoRequisito()
-            subGrupo_2_4.numeroReferenciaMoreqJus="2.4"
-            subGrupo_2_4.nome ="Processos "
+            subGrupo_2_4.numeroReferenciaMoreqJus = "2.4"
+            subGrupo_2_4.nome = "Processos "
             subGrupo_2_4.grupoRequisito = grupoRequisito_2
-            subGrupo_2_4.save(flush:true)
+            subGrupo_2_4.save(flush: true)
 
         }
 
         def requisitoRPC2_4_1 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.4.1")
-        if(!requisitoRPC2_4_1){
+        if (!requisitoRPC2_4_1) {
             requisitoRPC2_4_1 = new Requisito()
             requisitoRPC2_4_1.numeroReferenciaMoreqJus = "RPC2.4.1"
             requisitoRPC2_4_1.obrigatorio = true
             requisitoRPC2_4_1.subGrupoRequisito = subGrupo_2_4
             requisitoRPC2_4_1.nome = "Prever a formação/autuação de processos conforme estabelecido\n" +
                     "nas leis e regulamentações vigentes. "
-            requisitoRPC2_4_1.save(flush:true)
+            requisitoRPC2_4_1.save(flush: true)
         }
 
 
         def requisitoRPC2_4_2 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.4.2")
-        if(!requisitoRPC2_4_2){
+        if (!requisitoRPC2_4_2) {
             requisitoRPC2_4_2 = new Requisito()
             requisitoRPC2_4_2.numeroReferenciaMoreqJus = "RPC2.4.2"
             requisitoRPC2_4_2.obrigatorio = true
@@ -2347,12 +2333,12 @@ class BootStrap {
             requisitoRPC2_4_2.nome = "<p>Prever que as pe&ccedil;as integrantes do processo recebam pagina&ccedil;&atilde;o contextualizada de acordo com cada processo relacionado.</p>\n" +
                     "\n" +
                     "<p>Uma mesma contesta&ccedil;&atilde;o juntada a v&aacute;rios processos tem numera&ccedil;&atilde;o diferente de acordo com a numera&ccedil;&atilde;o de cada processo.</p>"
-            requisitoRPC2_4_2.save(flush:true)
+            requisitoRPC2_4_2.save(flush: true)
         }
 
 
         def requisitoRPC2_4_3 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.4.3")
-        if(!requisitoRPC2_4_3){
+        if (!requisitoRPC2_4_3) {
             requisitoRPC2_4_3 = new Requisito()
             requisitoRPC2_4_3.numeroReferenciaMoreqJus = "RPC2.4.3"
             requisitoRPC2_4_3.obrigatorio = true
@@ -2362,12 +2348,12 @@ class BootStrap {
                     "<p>Nos processos judiciais, a apensa&ccedil;&atilde;o ocorre por determina&ccedil;&atilde;o legal ou judicial e nos administrativos, por determina&ccedil;&atilde;o da autoridade competente.</p>\n" +
                     "\n" +
                     "<p>Esse procedimento dever&aacute; ser registrado nos metadados do processo. Quando se tratar de processo judicial, deve-se lan&ccedil;ar o evento correspondente da Tabela Unificada de Movimenta&ccedil;&atilde;o Processual do Judici&aacute;rio Brasileiro (apensamento) e seu complemento obrigat&oacute;rio (n&uacute;mero do processo).</p>"
-            requisitoRPC2_4_3.save(flush:true)
+            requisitoRPC2_4_3.save(flush: true)
         }
 
 
         def requisitoRPC2_4_4 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.4.4")
-        if(!requisitoRPC2_4_4){
+        if (!requisitoRPC2_4_4) {
             requisitoRPC2_4_4 = new Requisito()
             requisitoRPC2_4_4.numeroReferenciaMoreqJus = "RPC2.4.4"
             requisitoRPC2_4_4.obrigatorio = true
@@ -2377,12 +2363,12 @@ class BootStrap {
                     "<p>Nos processos judiciais, via de regra, a desapensa&ccedil;&atilde;o ocorre por decis&atilde;o judicial e nos administrativos, por determina&ccedil;&atilde;o da autoridade competente.</p>\n" +
                     "\n" +
                     "<p>Esse procedimento dever&aacute; ser registrado nos metadados do processo. Quando se tratar de processo judicial, deve-se lan&ccedil;ar o evento correspondente da Tabela Unificada de Movimenta&ccedil;&atilde;o Processual do Judici&aacute;rio Brasileiro (desapensamento) e seu complemento obrigat&oacute;rio (n&uacute;mero do processo).</p>"
-            requisitoRPC2_4_4.save(flush:true)
+            requisitoRPC2_4_4.save(flush: true)
         }
 
 
         def requisitoRPC2_4_5 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.4.5")
-        if(!requisitoRPC2_4_5){
+        if (!requisitoRPC2_4_5) {
             requisitoRPC2_4_5 = new Requisito()
             requisitoRPC2_4_5.numeroReferenciaMoreqJus = "RPC2.4.5"
             requisitoRPC2_4_5.obrigatorio = true
@@ -2390,13 +2376,12 @@ class BootStrap {
             requisitoRPC2_4_5.nome = "<p>Prever procedimentos para desentranhamento de pe&ccedil;as dos processos judiciais em aten&ccedil;&atilde;o &agrave; decis&atilde;o judicial ou segundo a legisla&ccedil;&atilde;o espec&iacute;fica, e dos administrativos, por determina&ccedil;&atilde;o da autoridade competente.</p>\n" +
                     "\n" +
                     "<p>Esse procedimento dever&aacute; ser registrado nos metadados do processo. Quando se tratar de processo judicial, deve-se lan&ccedil;ar o evento correspondente da Tabela Unificada de Movimenta&ccedil;&atilde;o Processual do Judici&aacute;rio Brasileiro (cancelamento de juntada &mdash; desentranhamento) e seu complemento obrigat&oacute;rio (especificar documento).</p>"
-            requisitoRPC2_4_5.save(flush:true)
+            requisitoRPC2_4_5.save(flush: true)
         }
 
 
-
         def requisitoRPC2_4_6 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.4.6")
-        if(!requisitoRPC2_4_6){
+        if (!requisitoRPC2_4_6) {
             requisitoRPC2_4_6 = new Requisito()
             requisitoRPC2_4_6.numeroReferenciaMoreqJus = "RPC2.4.6"
             requisitoRPC2_4_6.obrigatorio = true
@@ -2406,12 +2391,12 @@ class BootStrap {
                     "<p>Nos processos judiciais, sempre ocorre por decis&atilde;o judicial, como no exemplo do art. 46, par&aacute;grafo &uacute;nico, do CPC ou do art. 80, CPP.</p>\n" +
                     "\n" +
                     "<p>Esse procedimento dever&aacute; ser registrado nos metadados do processo.</p>"
-            requisitoRPC2_4_6.save(flush:true)
+            requisitoRPC2_4_6.save(flush: true)
         }
 
 
         def requisitoRPC2_4_7 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.4.7")
-        if(!requisitoRPC2_4_7){
+        if (!requisitoRPC2_4_7) {
             requisitoRPC2_4_7 = new Requisito()
             requisitoRPC2_4_7.numeroReferenciaMoreqJus = "RPC2.4.7"
             requisitoRPC2_4_7.obrigatorio = true
@@ -2420,34 +2405,33 @@ class BootStrap {
                     "organizados em volumes próprios a um determinado processo.\n" +
                     "Esse procedimento deverá ser registrado nos metadados do\n" +
                     "processo. "
-            requisitoRPC2_4_7.save(flush:true)
+            requisitoRPC2_4_7.save(flush: true)
         }
-
 
 
         def subGrupo_2_5 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.5")
 
-        if(!subGrupo_2_5){
+        if (!subGrupo_2_5) {
             subGrupo_2_5 = new SubGrupoRequisito()
-            subGrupo_2_5.numeroReferenciaMoreqJus="2.5"
-            subGrupo_2_5.nome ="Volumes: abertura, encerramento e metadados"
+            subGrupo_2_5.numeroReferenciaMoreqJus = "2.5"
+            subGrupo_2_5.nome = "Volumes: abertura, encerramento e metadados"
             subGrupo_2_5.grupoRequisito = grupoRequisito_2
-            subGrupo_2_5.save(flush:true)
+            subGrupo_2_5.save(flush: true)
         }
 
         def requisitoRPC2_5_1 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.5.1")
-        if(!requisitoRPC2_5_1){
+        if (!requisitoRPC2_5_1) {
             requisitoRPC2_5_1 = new Requisito()
             requisitoRPC2_5_1.numeroReferenciaMoreqJus = "RPC2.5.1"
             requisitoRPC2_5_1.obrigatorio = true
             requisitoRPC2_5_1.subGrupoRequisito = subGrupo_2_5
             requisitoRPC2_5_1.nome = "Gerenciar volumes para subdividir processos/dossiês,\n" +
                     "distinguindo entre processos/dossiês e volumes. "
-            requisitoRPC2_5_1.save(flush:true)
+            requisitoRPC2_5_1.save(flush: true)
         }
 
         def requisitoRPC2_5_2 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.5.2")
-        if(!requisitoRPC2_5_2){
+        if (!requisitoRPC2_5_2) {
             requisitoRPC2_5_2 = new Requisito()
             requisitoRPC2_5_2.numeroReferenciaMoreqJus = "RPC2.5.2"
             requisitoRPC2_5_2.obrigatorio = true
@@ -2455,11 +2439,11 @@ class BootStrap {
             requisitoRPC2_5_2.nome = "Permitir a associação de metadados aos volumes e restringir a\n" +
                     "inclusão e a alteração desses mesmos metadados somente a\n" +
                     "usuários autorizados. "
-            requisitoRPC2_5_2.save(flush:true)
+            requisitoRPC2_5_2.save(flush: true)
         }
 
         def requisitoRPC2_5_3 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.5.3")
-        if(!requisitoRPC2_5_3){
+        if (!requisitoRPC2_5_3) {
             requisitoRPC2_5_3 = new Requisito()
             requisitoRPC2_5_3.numeroReferenciaMoreqJus = "RPC2.5.3"
             requisitoRPC2_5_3.obrigatorio = true
@@ -2467,23 +2451,23 @@ class BootStrap {
             requisitoRPC2_5_3.nome = "<p>Permitir que um volume herde automaticamente do processo/dossi&ecirc; ao qual pertence determinados metadados predefinidos.</p>\n" +
                     "\n" +
                     "<p>Por exemplo: volume juntado em processo sigiloso tamb&eacute;m &eacute; sigiloso.</p>"
-            requisitoRPC2_5_3.save(flush:true)
+            requisitoRPC2_5_3.save(flush: true)
         }
 
 
         def requisitoRPC2_5_4 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.5.4")
-        if(!requisitoRPC2_5_4){
+        if (!requisitoRPC2_5_4) {
             requisitoRPC2_5_4 = new Requisito()
             requisitoRPC2_5_4.numeroReferenciaMoreqJus = "RPC2.5.4"
             requisitoRPC2_5_4.obrigatorio = true
             requisitoRPC2_5_4.subGrupoRequisito = subGrupo_2_5
             requisitoRPC2_5_4.nome = "Permitir a abertura de volumes a qualquer processo/dossiê que\n" +
                     "não esteja encerrado. "
-            requisitoRPC2_5_4.save(flush:true)
+            requisitoRPC2_5_4.save(flush: true)
         }
 
         def requisitoRPC2_5_5 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.5.5")
-        if(!requisitoRPC2_5_5){
+        if (!requisitoRPC2_5_5) {
             requisitoRPC2_5_5 = new Requisito()
             requisitoRPC2_5_5.numeroReferenciaMoreqJus = "RPC2.5.5"
             requisitoRPC2_5_5.obrigatorio = true
@@ -2491,24 +2475,24 @@ class BootStrap {
             requisitoRPC2_5_5.nome = "<p>Assegurar que, ao abrir um novo volume, o volume precedente seja automaticamente encerrado, registrando a data de encerramento.</p>\n" +
                     "\n" +
                     "<p>Apenas o volume produzido mais recentemente pode estar aberto; todos os outros volumes existentes nesse processo/dossi&ecirc; t&ecirc;m de estar fechados.</p>"
-            requisitoRPC2_5_5.save(flush:true)
+            requisitoRPC2_5_5.save(flush: true)
         }
 
 
         def requisitoRPC2_5_6 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.5.6")
-        if(!requisitoRPC2_5_6){
+        if (!requisitoRPC2_5_6) {
             requisitoRPC2_5_6 = new Requisito()
             requisitoRPC2_5_6.numeroReferenciaMoreqJus = "RPC2.5.6"
             requisitoRPC2_5_6.obrigatorio = true
             requisitoRPC2_5_6.subGrupoRequisito = subGrupo_2_5
             requisitoRPC2_5_6.nome = "Impedir a reabertura de um volume já encerrado para acréscimo\n" +
                     "de documentos. "
-            requisitoRPC2_5_6.save(flush:true)
+            requisitoRPC2_5_6.save(flush: true)
         }
 
 
         def requisitoRPC2_5_7 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.5.7")
-        if(!requisitoRPC2_5_7){
+        if (!requisitoRPC2_5_7) {
             requisitoRPC2_5_7 = new Requisito()
             requisitoRPC2_5_7.numeroReferenciaMoreqJus = "RPC2.5.7"
             requisitoRPC2_5_7.obrigatorio = true
@@ -2516,35 +2500,33 @@ class BootStrap {
             requisitoRPC2_5_7.nome = "Assegurar que um volume somente conterá documentos. Não é\n" +
                     "permitido que contenha outro volume ou um outro\n" +
                     "processo/dossiê. "
-            requisitoRPC2_5_7.save(flush:true)
+            requisitoRPC2_5_7.save(flush: true)
         }
 
         def requisitoRPC2_5_8 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.5.8")
-        if(!requisitoRPC2_5_8){
+        if (!requisitoRPC2_5_8) {
             requisitoRPC2_5_8 = new Requisito()
             requisitoRPC2_5_8.numeroReferenciaMoreqJus = "RPC2.5.8"
             requisitoRPC2_5_8.obrigatorio = true
             requisitoRPC2_5_8.subGrupoRequisito = subGrupo_2_5
             requisitoRPC2_5_8.nome = "Permitir que um volume seja encerrado por meio de\n" +
                     "procedimentos regulamentares. "
-            requisitoRPC2_5_8.save(flush:true)
+            requisitoRPC2_5_8.save(flush: true)
         }
-
-
 
 
         def subGrupo_2_6 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.6")
 
-        if(!subGrupo_2_6){
+        if (!subGrupo_2_6) {
             subGrupo_2_6 = new SubGrupoRequisito()
-            subGrupo_2_6.numeroReferenciaMoreqJus="2.6"
-            subGrupo_2_6.nome ="Manutenção de documentos institucionais nãodigitais e híbridos "
+            subGrupo_2_6.numeroReferenciaMoreqJus = "2.6"
+            subGrupo_2_6.nome = "Manutenção de documentos institucionais nãodigitais e híbridos "
             subGrupo_2_6.grupoRequisito = grupoRequisito_2
-            subGrupo_2_6.save(flush:true)
+            subGrupo_2_6.save(flush: true)
         }
 
         def requisitoRPC2_6_1 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.6.1")
-        if(!requisitoRPC2_6_1){
+        if (!requisitoRPC2_6_1) {
             requisitoRPC2_6_1 = new Requisito()
             requisitoRPC2_6_1.numeroReferenciaMoreqJus = "RPC2.6.1"
             requisitoRPC2_6_1.obrigatorio = true
@@ -2552,11 +2534,11 @@ class BootStrap {
             requisitoRPC2_6_1.nome = "<p>Capturar documentos ou processos/dossi&ecirc;s n&atilde;o-digitais e gerenci&aacute;-los como os digitais.</p>\n" +
                     "\n" +
                     "<p>Para conceito de captura veja cap&iacute;tulo 3.</p>"
-            requisitoRPC2_6_1.save(flush:true)
+            requisitoRPC2_6_1.save(flush: true)
         }
 
         def requisitoRPC2_6_2 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.6.2")
-        if(!requisitoRPC2_6_2){
+        if (!requisitoRPC2_6_2) {
             requisitoRPC2_6_2 = new Requisito()
             requisitoRPC2_6_2.numeroReferenciaMoreqJus = "RPC2.6.2"
             requisitoRPC2_6_2.obrigatorio = true
@@ -2565,23 +2547,23 @@ class BootStrap {
                     "híbridos, associando-as ao mesmo número identificador, atribuído\n" +
                     "pelo sistema, e título, além de indicar que se trata de um\n" +
                     "documento institucional híbrido. "
-            requisitoRPC2_6_2.save(flush:true)
+            requisitoRPC2_6_2.save(flush: true)
         }
 
         def requisitoRPC2_6_3 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.6.3")
-        if(!requisitoRPC2_6_3){
+        if (!requisitoRPC2_6_3) {
             requisitoRPC2_6_3 = new Requisito()
             requisitoRPC2_6_3.numeroReferenciaMoreqJus = "RPC2.6.3"
             requisitoRPC2_6_3.obrigatorio = true
             requisitoRPC2_6_3.subGrupoRequisito = subGrupo_2_6
             requisitoRPC2_6_3.nome = "Permitir que um conjunto específico de metadados seja\n" +
                     "configurado para os documentos ou processos/dossiês nãodigitais e incluir informações sobre o local onde se encontram. "
-            requisitoRPC2_6_3.save(flush:true)
+            requisitoRPC2_6_3.save(flush: true)
         }
 
 
         def requisitoRPC2_6_4 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.6.4")
-        if(!requisitoRPC2_6_4){
+        if (!requisitoRPC2_6_4) {
             requisitoRPC2_6_4 = new Requisito()
             requisitoRPC2_6_4.numeroReferenciaMoreqJus = "RPC2.6.4"
             requisitoRPC2_6_4.obrigatorio = true
@@ -2589,22 +2571,22 @@ class BootStrap {
             requisitoRPC2_6_4.nome = "Possuir mecanismos para acompanhar a movimentação do\n" +
                     "documento, processo/dossiê não-digital, de forma que se\n" +
                     "evidencie ao usuário a localização atual. "
-            requisitoRPC2_6_4.save(flush:true)
+            requisitoRPC2_6_4.save(flush: true)
         }
 
         def requisitoRPC2_6_5 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.6.5")
-        if(!requisitoRPC2_6_5){
+        if (!requisitoRPC2_6_5) {
             requisitoRPC2_6_5 = new Requisito()
             requisitoRPC2_6_5.numeroReferenciaMoreqJus = "RPC2.6.5"
             requisitoRPC2_6_5.obrigatorio = true
             requisitoRPC2_6_5.subGrupoRequisito = subGrupo_2_6
             requisitoRPC2_6_5.nome = "Oferecer ao usuário funcionalidades para solicitar vista, carga ou\n" +
                     "desarquivamento de um documento e/ou processo não-digital."
-            requisitoRPC2_6_5.save(flush:true)
+            requisitoRPC2_6_5.save(flush: true)
         }
 
         def requisitoRPC2_6_6 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.6.6")
-        if(!requisitoRPC2_6_6){
+        if (!requisitoRPC2_6_6) {
             requisitoRPC2_6_6 = new Requisito()
             requisitoRPC2_6_6.numeroReferenciaMoreqJus = "RPC2.6.6"
             requisitoRPC2_6_6.obrigatorio = true
@@ -2612,11 +2594,11 @@ class BootStrap {
             requisitoRPC2_6_6.nome = "Incluir mecanismos de impressão e reconhecimento de códigos\n" +
                     "de barra para automatizar a introdução de dados e acompanhar\n" +
                     "as movimentações de documentos ou processos/dossiês nãodigitais. "
-            requisitoRPC2_6_6.save(flush:true)
+            requisitoRPC2_6_6.save(flush: true)
         }
 
         def requisitoRPC2_6_7 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.6.7")
-        if(!requisitoRPC2_6_7){
+        if (!requisitoRPC2_6_7) {
             requisitoRPC2_6_7 = new Requisito()
             requisitoRPC2_6_7.numeroReferenciaMoreqJus = "RPC2.6.7"
             requisitoRPC2_6_7.obrigatorio = true
@@ -2624,12 +2606,12 @@ class BootStrap {
             requisitoRPC2_6_7.nome = "Assegurar que a recuperação de um documento ou\n" +
                     "processo/dossiê híbrido permita igualmente a recuperação dos\n" +
                     "metadados tanto da parte digital como da parte não-digital"
-            requisitoRPC2_6_7.save(flush:true)
+            requisitoRPC2_6_7.save(flush: true)
         }
 
 
         def requisitoRPC2_6_8 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.6.8")
-        if(!requisitoRPC2_6_8){
+        if (!requisitoRPC2_6_8) {
             requisitoRPC2_6_8 = new Requisito()
             requisitoRPC2_6_8.numeroReferenciaMoreqJus = "RPC2.6.8"
             requisitoRPC2_6_8.obrigatorio = true
@@ -2638,11 +2620,11 @@ class BootStrap {
                     "estiverem classificados quanto ao grau de sigilo, garantir que o\n" +
                     "grau de sigilo seja estendido ao todo ou à parte,\n" +
                     "independentemente do suporte. "
-            requisitoRPC2_6_8.save(flush:true)
+            requisitoRPC2_6_8.save(flush: true)
         }
 
         def requisitoRPC2_6_9 = Requisito.findByNumeroReferenciaMoreqJus("RPC2.6.9")
-        if(!requisitoRPC2_6_9){
+        if (!requisitoRPC2_6_9) {
             requisitoRPC2_6_9 = new Requisito()
             requisitoRPC2_6_9.numeroReferenciaMoreqJus = "RPC2.6.9"
             requisitoRPC2_6_9.obrigatorio = true
@@ -2650,12 +2632,10 @@ class BootStrap {
             requisitoRPC2_6_9.nome = "Registrar na trilha de auditoria todas as alterações efetuadas nos\n" +
                     "metadados dos documentos ou processos/dossiês não-digitais ou\n" +
                     "híbridos."
-            requisitoRPC2_6_9.save(flush:true)
+            requisitoRPC2_6_9.save(flush: true)
         }
 
-
-
-
+*/
     }
 
     def cargaTJTO(){
