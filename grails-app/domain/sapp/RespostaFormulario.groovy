@@ -6,6 +6,11 @@ class RespostaFormulario {
     Long id
     Requisito requisito
     Formulario formulario
+    /**
+     *  1 - Atende
+     *  2 - Não atende
+     *  3 - Não se aplica
+     */
     Integer resposta
 
     static constraints = {

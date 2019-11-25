@@ -49,11 +49,9 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-block">
-                %{--<div class="card-title-block">
-                    <h3 class="title"> Bar Chart Example </h3>
-                </div>--}%
+
                 <section class="example">
-                    <div id="container" style="width:100%; height:400px;"></div>
+                    <div id="containerPizza" style="width:100%; height:400px;"></div>
                 </section>
             </div>
         </div>
@@ -61,7 +59,7 @@
 </div>
 
 
-<div class="row">
+%{--<div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-block">
@@ -71,9 +69,9 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}%
 
-<div class="row">
+%{--<div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-block">
@@ -177,10 +175,10 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}%
 
 
-<div class="row">
+%{--<div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-block">
@@ -190,7 +188,7 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}%
 
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
@@ -224,37 +222,62 @@
                 }
             },
             credits: {
-                text: 'sdsdf',
-                href: 'http://site'
+                text: 'Sistema de Acompanhamento de Políticas de Preservação de Documentos Digitais ',
             }
         });
 
 
-        var myChart = Highcharts.chart('container', {
+        $("#sistema").change(function () {
+            var sistema = this.value;
+            $.getJSON('${request.contextPath}/dashboard/chamadaPizzaExtra/'+sistema, function(json) {
+                optionPizza.series = json;
+                optionPizza.title =  {
+                    text: 'Porcentagem de Conformidade em 2019'
+                }
+                var chartpizza = new Highcharts.Chart(optionPizza);
+                //chartpizza.redraw();
+            });
+        });
+
+        var optionPizza =  {
             chart: {
-                type: 'pie'
+                type: 'pie',
+                renderTo: 'containerPizza',
             },
             title: {
                 text: 'Porcentagem de Conformidade Atual'
             },
-            yAxis: {
-                title: {
-                    text: 'Fruit eaten'
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                    }
                 }
             },
             series: [{
                 type: 'pie',
                 name: 'Porcentagem de conformidade do sistema',
                 data: [
-                    ['Requisitos Atendidos', 50.0],
-                    ['Requisitos não atendisos', 40.0],
-                    ['Não se aplica', 10.0]
+
                 ]
             }]
-        });
+        };
 
 
-        Highcharts.chart('containerGraficoQuantidadeAtendidoNaoAtendido', {
+
+
+
+
+
+        /*Highcharts.chart('containerGraficoQuantidadeAtendidoNaoAtendido', {
             chart: {
                 type: 'column'
             },
@@ -315,10 +338,10 @@
                 name: 'Não Se aplica',
                 data: [25, 15, 10]
             }]
-        });
+        });*/
 
 
-        Highcharts.chart('containerGraficoEvolucao', {
+        /*Highcharts.chart('containerGraficoEvolucao', {
             chart: {
                 type: 'column'
             },
@@ -378,7 +401,7 @@
                 name: 'Não Se aplica',
                 data: [25, 15, 10]
             }]
-        });
+        });*/
 
 
     });
