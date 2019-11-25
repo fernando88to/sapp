@@ -59,7 +59,7 @@
 </div>
 
 
-%{--<div class="row">
+<div class="row">
     <div class="col-md-12">
         <div class="card">
             <div class="card-block">
@@ -69,7 +69,7 @@
             </div>
         </div>
     </div>
-</div>--}%
+</div>
 
 %{--<div class="row">
     <div class="col-md-12">
@@ -237,6 +237,79 @@
                 var chartpizza = new Highcharts.Chart(optionPizza);
                 //chartpizza.redraw();
             });
+
+
+            var optionsColuna = {
+                chart: {
+                    renderTo: 'containerGraficoQuantidadeAtendidoNaoAtendido',
+                    type: 'column'
+                },
+                title: {
+                    text: 'Raio X'
+                },
+                xAxis: {
+                    categories: ['Organização dos documentos (plano de classificação)',
+                        'Capitulo 3', 'Capitulo 4']
+                },
+                yAxis: {
+                    min: 0,
+                    title: {
+                        text: 'Quantidade de Requisitos'
+                    },
+                    stackLabels: {
+                        enabled: true,
+                        style: {
+                            fontWeight: 'bold',
+                            color: ( // theme
+                                Highcharts.defaultOptions.title.style &&
+                                Highcharts.defaultOptions.title.style.color
+                            ) || 'gray'
+                        }
+                    }
+                },
+                legend: {
+                    align: 'right',
+                    x: -30,
+                    verticalAlign: 'top',
+                    y: 25,
+                    floating: true,
+                    backgroundColor:
+                        Highcharts.defaultOptions.legend.backgroundColor || 'white',
+                    borderColor: '#CCC',
+                    borderWidth: 1,
+                    shadow: false
+                },
+                tooltip: {
+                    headerFormat: '<b>{point.x}</b><br/>',
+                    pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+                },
+                plotOptions: {
+                    column: {
+                        stacking: 'normal',
+                        dataLabels: {
+                            enabled: true
+                        }
+                    }
+                },
+
+                series: []
+
+            };
+
+            var chartColuna = new Highcharts.Chart(optionsColuna);
+            $.getJSON('${request.contextPath}/dashboard/raioxcoluna/'+sistema, function(json) {
+                var dados =json.dados;
+                for(i=0; i<dados.length; i++){
+                    chartColuna.addSeries({
+                        name: dados[i].name,
+                        data: dados[i].data
+                    }, true);
+                    chartColuna.xAxis[0].setCategories(json.categorias)
+
+                };
+                chartColuna.redraw();
+            });
+
         });
 
         var optionPizza =  {
@@ -279,7 +352,8 @@
 
         /*Highcharts.chart('containerGraficoQuantidadeAtendidoNaoAtendido', {
             chart: {
-                type: 'column'
+                type: 'column',
+                renderTo: 'containerGraficoQuantidadeAtendidoNaoAtendido',
             },
             title: {
                 text: 'Raio X'
@@ -328,16 +402,7 @@
                     }
                 }
             },
-            series: [{
-                name: 'Requisito Atendidos',
-                data: [25, 35, 80]
-            }, {
-                name: 'Requisitos Não Atendidos',
-                data: [50, 50, 20]
-            }, {
-                name: 'Não Se aplica',
-                data: [25, 15, 10]
-            }]
+            series: []
         });*/
 
 
