@@ -62,11 +62,25 @@
                             </div>
                             <g:actionSubmit action="avancarSelecaoSistema"
                                             class="btn btn-info" value="Avançar"></g:actionSubmit>
+                            <g:actionSubmit action="teste"
+                                            class="btn btn-info" value="Importar Dados da última avaliação"></g:actionSubmit>
                         </g:form>
 
                     </div>
                     <g:each in="${formulario.grupoRequisitoList}" var="grupoRequisito" status="i">
                         <div class="tab-pane container fade" id="menu${i + 2}">
+
+                            <g:form method="POST">
+                                <g:hiddenField name="menuatual" value="${i + 2}"/>
+                                <div class="form-group">
+                                    <g:actionSubmit action="voltar"
+                                                    class="btn btn-info" value="Voltar"></g:actionSubmit>
+                                    <g:actionSubmit action="avancar"
+                                                    class="btn btn-info" value="Avançar"></g:actionSubmit>
+                                    <g:actionSubmit action="finalizar"
+                                                    class="btn btn-info" value="Finalizar"></g:actionSubmit>
+                                </div>
+                            </g:form>
 
                             <div class="form-group">
                                 <h3>${grupoRequisito.nome} - ${grupoRequisito.numeroReferenciaMoreqJus}</h3>

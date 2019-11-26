@@ -20,7 +20,7 @@ class BootStrap {
         //concluido
         cargaGrupo2()
 
-        /*cargaGrupo3()
+        cargaGrupo3()
 
         cargaGrupo4()
 
@@ -45,7 +45,7 @@ class BootStrap {
         cargaGrupo13()
 
         cargaGrupo14()
-*/
+
 
         cargaTJTO()
 
@@ -610,6 +610,384 @@ class BootStrap {
             subGrupo_6_4.grupoRequisito = grupoRequisito_6
             subGrupo_6_4.save(flush:true)
 
+        }
+
+        def requisitoRSE_6_4_1 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.1")
+        if(!requisitoRSE_6_4_1){
+            requisitoRSE_6_4_1 = new Requisito()
+            requisitoRSE_6_4_1.numeroReferenciaMoreqJus = "RSE6.4.1"
+            requisitoRSE_6_4_1.obrigatorio = true
+            requisitoRSE_6_4_1.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_1.nome = "Assegurar que as informações da trilha de auditoria estejam\n" +
+                    "disponíveis para inspeção a fim de que uma ocorrência específica\n" +
+                    "possa ser identificada e que todas as respectivas informações\n" +
+                    "sejam claras e compreensíveis. "
+            requisitoRSE_6_4_1.save(flush:true)
+        }
+
+        def requisitoRSE_6_4_2 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.2")
+        if(!requisitoRSE_6_4_2){
+            requisitoRSE_6_4_2 = new Requisito()
+            requisitoRSE_6_4_2.numeroReferenciaMoreqJus = "RSE6.4.2"
+            requisitoRSE_6_4_2.obrigatorio = true
+            requisitoRSE_6_4_2.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_2.nome = "<p>Registrar na trilha de auditoria as informa&ccedil;&otilde;es:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Data e hora da captura de todos os documentos.</li>\n" +
+                    "\t<li>Respons&aacute;vel pela captura.</li>\n" +
+                    "\t<li>Altera&ccedil;&atilde;o do grau de sigilo de um documento ou de um processo/dossi&ecirc;, registrando as modifica&ccedil;&otilde;es efetuadas.</li>\n" +
+                    "\t<li>Qualquer altera&ccedil;&atilde;o nos instrumentos de classifica&ccedil;&atilde;o, temporalidade e destina&ccedil;&atilde;o da pol&iacute;tica de gest&atilde;o documental do Judici&aacute;rio brasileiro.</li>\n" +
+                    "\t<li>Qualquer a&ccedil;&atilde;o de reavalia&ccedil;&atilde;o de documentos.</li>\n" +
+                    "\t<li>Qualquer altera&ccedil;&atilde;o nos metadados associados a processos/dossi&ecirc;s ou documentos.</li>\n" +
+                    "\t<li>Data e hora de produ&ccedil;&atilde;o, aditamento e exclus&atilde;o de metadados.</li>\n" +
+                    "\t<li>Usu&aacute;rio, data e hora de acesso ou tentativa de acesso a documentos e ao Gest&atilde;oDoc.&nbsp;</li>\n" +
+                    "\t<li>Tentativas de acesso negado a qualquer documento.</li>\n" +
+                    "\t<li>A&ccedil;&otilde;es de exclus&atilde;o de qualquer documento e seus metadados.</li>\n" +
+                    "\t<li>Todas as a&ccedil;&otilde;es administrativas sobre os atributos de seguran&ccedil;a (pap&eacute;is, grupos, permiss&otilde;es etc.).</li>\n" +
+                    "\t<li>Todas as a&ccedil;&otilde;es administrativas sobre dados de usu&aacute;rios (cadastro, ativa&ccedil;&atilde;o, bloqueio, atualiza&ccedil;&atilde;o de dados e permiss&otilde;es, troca de senha etc.).</li>\n" +
+                    "\t<li>Todos os eventos de administra&ccedil;&atilde;o de manuten&ccedil;&atilde;o das trilhas de auditoria (alarmes, c&oacute;pias, configura&ccedil;&atilde;o de par&acirc;metros etc.).</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_4_2.save(flush:true)
+        }
+
+
+
+        def requisitoRSE_6_4_3 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.3")
+        if(!requisitoRSE_6_4_3){
+            requisitoRSE_6_4_3 = new Requisito()
+            requisitoRSE_6_4_3.numeroReferenciaMoreqJus = "RSE6.4.3"
+            requisitoRSE_6_4_3.obrigatorio = true
+            requisitoRSE_6_4_3.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_3.nome = "Registrar, em cada evento auditado, informações sobre a\n" +
+                    "identidade do usuário. "
+            requisitoRSE_6_4_3.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_4_4 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.4")
+        if(!requisitoRSE_6_4_4){
+            requisitoRSE_6_4_4 = new Requisito()
+            requisitoRSE_6_4_4.numeroReferenciaMoreqJus = "RSE6.4.4"
+            requisitoRSE_6_4_4.obrigatorio = true
+            requisitoRSE_6_4_4.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_4.nome = "Permitir a leitura das trilhas de auditoria apenas ao administrador\n" +
+                    "e ao auditor. "
+            requisitoRSE_6_4_4.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_4_5 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.5")
+        if(!requisitoRSE_6_4_5){
+            requisitoRSE_6_4_5 = new Requisito()
+            requisitoRSE_6_4_5.numeroReferenciaMoreqJus = "RSE6.4.5"
+            requisitoRSE_6_4_5.obrigatorio = true
+            requisitoRSE_6_4_5.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_5.nome = "Possuir mecanismos para a realização de buscas nos eventos\n" +
+                    "das trilhas de auditoria."
+            requisitoRSE_6_4_5.save(flush:true)
+        }
+
+        def requisitoRSE_6_4_6 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.6")
+        if(!requisitoRSE_6_4_6){
+            requisitoRSE_6_4_6 = new Requisito()
+            requisitoRSE_6_4_6.numeroReferenciaMoreqJus = "RSE6.4.6"
+            requisitoRSE_6_4_6.obrigatorio = true
+            requisitoRSE_6_4_6.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_6.nome = "Impedir qualquer modificação de conteúdo da trilha de auditoria"
+            requisitoRSE_6_4_6.save(flush:true)
+        }
+
+        def requisitoRSE_6_4_7 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.7")
+        if(!requisitoRSE_6_4_7){
+            requisitoRSE_6_4_7 = new Requisito()
+            requisitoRSE_6_4_7.numeroReferenciaMoreqJus = "RSE6.4.7"
+            requisitoRSE_6_4_7.obrigatorio = true
+            requisitoRSE_6_4_7.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_7.nome = "Permitir somente aos administradores a exportação e a\n" +
+                    "transferência das trilhas de um suporte de armazenamento para\n" +
+                    "outro, garantindo que em tais casos as informações não sejam\n" +
+                    "comprometidas."
+            requisitoRSE_6_4_7.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_4_8 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.8")
+        if(!requisitoRSE_6_4_8){
+            requisitoRSE_6_4_8 = new Requisito()
+            requisitoRSE_6_4_8.numeroReferenciaMoreqJus = "RSE6.4.8"
+            requisitoRSE_6_4_8.obrigatorio = true
+            requisitoRSE_6_4_8.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_8.nome = "Gerar um alarme, para os administradores, se o tamanho da trilha\n" +
+                    "de auditoria exceder um limite preestabelecido"
+            requisitoRSE_6_4_8.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_4_9 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.9")
+        if(!requisitoRSE_6_4_9){
+            requisitoRSE_6_4_9 = new Requisito()
+            requisitoRSE_6_4_9.numeroReferenciaMoreqJus = "RSE6.4.9"
+            requisitoRSE_6_4_9.obrigatorio = true
+            requisitoRSE_6_4_9.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_9.nome = "<p>Aplicar um conjunto de regras na monitora&ccedil;&atilde;o de eventos auditados e, com base nessas regras indicar a poss&iacute;vel viola&ccedil;&atilde;o da seguran&ccedil;a, como, por exemplo:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Acumula&ccedil;&atilde;o de um n&uacute;mero predeterminado de tentativas consecutivas de login com erro (autentica&ccedil;&atilde;o mal sucedida), conforme especificado pela pol&iacute;tica de seguran&ccedil;a das institui&ccedil;&otilde;es do Judici&aacute;rio.</li>\n" +
+                    "\t<li>Ocorr&ecirc;ncia de v&aacute;rios logins simult&acirc;neos do mesmo usu&aacute;rio em locais (computadores) diferentes.</li>\n" +
+                    "\t<li>Login do usu&aacute;rio fora do hor&aacute;rio autorizado, ap&oacute;s logoff no per&iacute;odo normal.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_4_9.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_4_10 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.10")
+        if(!requisitoRSE_6_4_10){
+            requisitoRSE_6_4_10 = new Requisito()
+            requisitoRSE_6_4_10.numeroReferenciaMoreqJus = "RSE6.4.10"
+            requisitoRSE_6_4_10.obrigatorio = true
+            requisitoRSE_6_4_10.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_10.nome = "Fornecer relatórios, em ordem cronológica, sobre as ações que\n" +
+                    "afetam processos/dossiês e documentos. "
+            requisitoRSE_6_4_10.save(flush:true)
+        }
+
+        def requisitoRSE_6_4_11 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.11")
+        if(!requisitoRSE_6_4_11){
+            requisitoRSE_6_4_11 = new Requisito()
+            requisitoRSE_6_4_11.numeroReferenciaMoreqJus = "RSE6.4.11"
+            requisitoRSE_6_4_11.obrigatorio = true
+            requisitoRSE_6_4_11.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_11.nome = "Garantir que somente administradores sejam capazes de\n" +
+                    "configurar o conjunto de eventos auditáveis e seus atributos. "
+            requisitoRSE_6_4_11.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_4_12 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.4.12")
+        if(!requisitoRSE_6_4_12){
+            requisitoRSE_6_4_12 = new Requisito()
+            requisitoRSE_6_4_12.numeroReferenciaMoreqJus = "RSE6.4.12"
+            requisitoRSE_6_4_12.obrigatorio = true
+            requisitoRSE_6_4_12.subGrupoRequisito = subGrupo_6_4
+            requisitoRSE_6_4_12.nome = "Documentar em trilha de auditoria as configurações do\n" +
+                    "GestãoDoc que redefinam o conjunto de eventos auditáveis."
+            requisitoRSE_6_4_12.save(flush:true)
+        }
+
+
+
+        def subGrupo_6_5 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("6.5")
+        if(!subGrupo_6_5){
+            subGrupo_6_5 = new SubGrupoRequisito()
+            subGrupo_6_5.numeroReferenciaMoreqJus="6.5"
+            subGrupo_6_5.nome ="Assinaturas digitais"
+            subGrupo_6_5.grupoRequisito = grupoRequisito_6
+            subGrupo_6_5.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_5_1 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.1")
+        if(!requisitoRSE_6_5_1){
+            requisitoRSE_6_5_1 = new Requisito()
+            requisitoRSE_6_5_1.numeroReferenciaMoreqJus = "RSE6.5.1"
+            requisitoRSE_6_5_1.obrigatorio = true
+            requisitoRSE_6_5_1.subGrupoRequisito = subGrupo_6_5
+            requisitoRSE_6_5_1.nome = "Garantir a origem e a integridade dos documentos com assinatura\n" +
+                    "digital."
+            requisitoRSE_6_5_1.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_5_2 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.2")
+        if(!requisitoRSE_6_5_2){
+            requisitoRSE_6_5_2 = new Requisito()
+            requisitoRSE_6_5_2.numeroReferenciaMoreqJus = "RSE6.5.2"
+            requisitoRSE_6_5_2.obrigatorio = true
+            requisitoRSE_6_5_2.subGrupoRequisito = subGrupo_6_5
+            requisitoRSE_6_5_2.nome = "Utilizar o padrão ICP-Brasil quando houver necessidade de\n" +
+                    "emprego de assinatura digital. "
+            requisitoRSE_6_5_2.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_5_3 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.3")
+        if(!requisitoRSE_6_5_3){
+            requisitoRSE_6_5_3 = new Requisito()
+            requisitoRSE_6_5_3.numeroReferenciaMoreqJus = "RSE6.5.3"
+            requisitoRSE_6_5_3.obrigatorio = true
+            requisitoRSE_6_5_3.subGrupoRequisito = subGrupo_6_5
+            requisitoRSE_6_5_3.nome = "Verificar a validade da assinatura digital no momento da captura\n" +
+                    "do documento, e caso não esteja válida, recusar a captura"
+            requisitoRSE_6_5_3.save(flush:true)
+        }
+
+        def requisitoRSE_6_5_4 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.4")
+        if(!requisitoRSE_6_5_4){
+            requisitoRSE_6_5_4 = new Requisito()
+            requisitoRSE_6_5_4.numeroReferenciaMoreqJus = "RSE6.5.4"
+            requisitoRSE_6_5_4.obrigatorio = true
+            requisitoRSE_6_5_4.subGrupoRequisito = subGrupo_6_5
+            requisitoRSE_6_5_4.nome = "<p>No processo de verifica&ccedil;&atilde;o da assinatura digital, registrar nos metadados do documento:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;Validade da assinatura verificada.</li>\n" +
+                    "\t<li>Autoridade certificadora do certificado digital.</li>\n" +
+                    "\t<li>&nbsp;Data e hora em que a verifica&ccedil;&atilde;o ocorreu.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_5_4.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_5_5 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.5")
+        if(!requisitoRSE_6_5_5){
+            requisitoRSE_6_5_5 = new Requisito()
+            requisitoRSE_6_5_5.numeroReferenciaMoreqJus = "RSE6.5.5"
+            requisitoRSE_6_5_5.obrigatorio = true
+            requisitoRSE_6_5_5.subGrupoRequisito = subGrupo_6_5
+            requisitoRSE_6_5_5.nome = "<p>Armazenar juntamente com o documento as informa&ccedil;&otilde;es de certifica&ccedil;&atilde;o:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;Assinatura digital.</li>\n" +
+                    "\t<li>&nbsp;Certificado digital (cadeia de certifica&ccedil;&atilde;o) usado na verifica&ccedil;&atilde;o da assinatura.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_5_5.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_5_6 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.6")
+        if(!requisitoRSE_6_5_6){
+            requisitoRSE_6_5_6 = new Requisito()
+            requisitoRSE_6_5_6.numeroReferenciaMoreqJus = "RSE6.5.6"
+            requisitoRSE_6_5_6.obrigatorio = true
+            requisitoRSE_6_5_6.subGrupoRequisito = subGrupo_6_5
+            requisitoRSE_6_5_6.nome = "Receber atualizações tecnológicas quanto à plataforma\n" +
+                    "criptográfica e padrões de assinatura digital. "
+            requisitoRSE_6_5_6.save(flush:true)
+        }
+
+        def requisitoRSE_6_5_7 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.7")
+        if(!requisitoRSE_6_5_7){
+            requisitoRSE_6_5_7 = new Requisito()
+            requisitoRSE_6_5_7.numeroReferenciaMoreqJus = "RSE6.5.7"
+            requisitoRSE_6_5_7.obrigatorio = true
+            requisitoRSE_6_5_7.subGrupoRequisito = subGrupo_6_5
+            requisitoRSE_6_5_7.nome = "Acessar relógios e carimbador de tempo oficiais para o seu\n" +
+                    "próprio uso. "
+            requisitoRSE_6_5_7.save(flush:true)
+        }
+
+
+        def subGrupo_6_6 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("6.6")
+        if(!subGrupo_6_6){
+            subGrupo_6_6 = new SubGrupoRequisito()
+            subGrupo_6_6.numeroReferenciaMoreqJus="6.6"
+            subGrupo_6_6.nome ="Criptografia"
+            subGrupo_6_6.grupoRequisito = grupoRequisito_6
+            subGrupo_6_6.save(flush:true)
+        }
+
+        def requisitoRSE_6_6_1 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.6.1")
+        if(!requisitoRSE_6_6_1){
+            requisitoRSE_6_6_1 = new Requisito()
+            requisitoRSE_6_6_1.numeroReferenciaMoreqJus = "RSE6.6.1"
+            requisitoRSE_6_6_1.obrigatorio = true
+            requisitoRSE_6_6_1.subGrupoRequisito = subGrupo_6_6
+            requisitoRSE_6_6_1.nome = "Utilizar a criptografia no armazenamento e na transmissão\n" +
+                    "de documentos digitais sigilosos."
+            requisitoRSE_6_6_1.save(flush:true)
+        }
+
+        def requisitoRSE_6_6_2 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.6.2")
+        if(!requisitoRSE_6_6_2){
+            requisitoRSE_6_6_2 = new Requisito()
+            requisitoRSE_6_6_2.numeroReferenciaMoreqJus = "RSE6.6.2"
+            requisitoRSE_6_6_2.obrigatorio = true
+            requisitoRSE_6_6_2.subGrupoRequisito = subGrupo_6_6
+            requisitoRSE_6_6_2.nome = "Limitar o acesso aos documentos cifrados àqueles usuários\n" +
+                    "portadores da chave de decifração. "
+            requisitoRSE_6_6_2.save(flush:true)
+        }
+
+        def requisitoRSE_6_6_3 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.6.3")
+        if(!requisitoRSE_6_6_3){
+            requisitoRSE_6_6_3 = new Requisito()
+            requisitoRSE_6_6_3.numeroReferenciaMoreqJus = "RSE6.6.3"
+            requisitoRSE_6_6_3.obrigatorio = true
+            requisitoRSE_6_6_3.subGrupoRequisito = subGrupo_6_6
+            requisitoRSE_6_6_3.nome = "<p>Registrar os seguintes metadados sobre um documento cifrado:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;Indica&ccedil;&atilde;o se est&aacute; cifrado ou n&atilde;o.</li>\n" +
+                    "\t<li>&nbsp;Algoritmos usados na cifra&ccedil;&atilde;o.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_6_3.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_6_4 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.6.4")
+        if(!requisitoRSE_6_6_4){
+            requisitoRSE_6_6_4 = new Requisito()
+            requisitoRSE_6_6_4.numeroReferenciaMoreqJus = "RSE6.6.4"
+            requisitoRSE_6_6_4.obrigatorio = false
+            requisitoRSE_6_6_4.subGrupoRequisito = subGrupo_6_6
+            requisitoRSE_6_6_4.nome = "Permitir a captura de documentos cifrados. "
+            requisitoRSE_6_6_4.save(flush:true)
+        }
+
+        def requisitoRSE_6_6_5 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.6.5")
+        if(!requisitoRSE_6_6_5){
+            requisitoRSE_6_6_5 = new Requisito()
+            requisitoRSE_6_6_5.numeroReferenciaMoreqJus = "RSE6.6.5"
+            requisitoRSE_6_6_5.obrigatorio = true
+            requisitoRSE_6_6_5.subGrupoRequisito = subGrupo_6_6
+            requisitoRSE_6_6_5.nome = "<p>Garantir que somente o administrador seja capaz de alterar caracter&iacute;sticas dos mecanismos criptogr&aacute;ficos internos. Em tais casos, dever&atilde;o obrigatoriamente ser registradas, em trilha de auditoria, as seguintes informa&ccedil;&otilde;es:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Descri&ccedil;&atilde;o t&eacute;cnica da altera&ccedil;&atilde;o.</li>\n" +
+                    "\t<li>Data e hora da altera&ccedil;&atilde;o.</li>\n" +
+                    "\t<li>Identifica&ccedil;&atilde;o do executor da opera&ccedil;&atilde;o.</li>\n" +
+                    "\t<li>Motivo da altera&ccedil;&atilde;o.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_6_5.save(flush:true)
+        }
+
+        def requisitoRSE_6_6_6 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.6.6")
+        if(!requisitoRSE_6_6_6){
+            requisitoRSE_6_6_6 = new Requisito()
+            requisitoRSE_6_6_6.numeroReferenciaMoreqJus = "RSE6.6.6"
+            requisitoRSE_6_6_6.obrigatorio = true
+            requisitoRSE_6_6_6.subGrupoRequisito = subGrupo_6_6
+            requisitoRSE_6_6_6.nome = "Nos casos de aplicação do item anterior, prover\n" +
+                    "mecanismos para convivência temporária de dois sistemas de\n" +
+                    "criptografia distintos.\n" +
+                    "O objetivo é viabilizar a transição para o novo sistema sem\n" +
+                    "indisponibilizar a operação do GestãoDoc. "
+            requisitoRSE_6_6_6.save(flush:true)
+        }
+
+        def requisitoRSE_6_6_7 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.6.7")
+        if(!requisitoRSE_6_6_7){
+            requisitoRSE_6_6_7 = new Requisito()
+            requisitoRSE_6_6_7.numeroReferenciaMoreqJus = "RSE6.6.7"
+            requisitoRSE_6_6_7.obrigatorio = true
+            requisitoRSE_6_6_7.subGrupoRequisito = subGrupo_6_6
+            requisitoRSE_6_6_7.nome = "<p>Impedir a abertura (disclosure) de senhas, bem como a remo&ccedil;&atilde;o de criptografia de documentos, mesmo para o administrador.</p>\n" +
+                    "\n" +
+                    "<p>Casos de conting&ecirc;ncia, no impedimento de recupera&ccedil;&atilde;o de informa&ccedil;&atilde;o sigilosa (por exemplo, pela morte do usu&aacute;rio detentor da senha) poder&atilde;o ser tratados em sistemas de cust&oacute;dia de senhas, externos ao Gest&atilde;oDoc.</p>"
+            requisitoRSE_6_6_7.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_6_8 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.6.8")
+        if(!requisitoRSE_6_6_8){
+            requisitoRSE_6_6_8 = new Requisito()
+            requisitoRSE_6_6_8.numeroReferenciaMoreqJus = "RSE6.6.8"
+            requisitoRSE_6_6_8.obrigatorio = true
+            requisitoRSE_6_6_8.subGrupoRequisito = subGrupo_6_6
+            requisitoRSE_6_6_8.nome = "Possuir uma arquitetura capaz de receber atualizações\n" +
+                    "tecnológicas quanto à plataforma criptográfica."
+            requisitoRSE_6_6_8.save(flush:true)
         }
 
     }
@@ -2030,7 +2408,7 @@ class BootStrap {
         }
 
 
-       /* def subGrupo_2_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.2")
+       def subGrupo_2_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("2.2")
         if (!subGrupo_2_2) {
             subGrupo_2_2 = new SubGrupoRequisito()
             subGrupo_2_2.numeroReferenciaMoreqJus = "2.2"
@@ -2635,7 +3013,7 @@ class BootStrap {
             requisitoRPC2_6_9.save(flush: true)
         }
 
-*/
+
     }
 
     def cargaTJTO(){
