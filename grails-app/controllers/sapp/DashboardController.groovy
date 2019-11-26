@@ -122,10 +122,58 @@ class DashboardController {
         render retorno as JSON
 
 
+    }
+
+    def evolucao(){
+        def sistema = Sistema.get(params.long("id"))
+        def lista = []
+
+        Set<Integer> anos = new TreeSet<Integer>()
+        def anoInicial = 2016
+        def anoAtual = new Integer(new Date().format("yyyy"))
+        anoAtual++
+        while(anoAtual >anoInicial){
+            anos+=anoAtual
+            anoAtual--
+        }
+
+
+        /*def requisitoAtendidos = [0, 0, 50, 55]
+        def naoseAPlica = [0, 0, 10, 10]
+        def requisitoNaoAtendidos = [0, 0, 40, 35]*/
+
+        def requisitoAtendidos = []
+        def naoseAPlica = []
+        def requisitoNaoAtendidos = []
+
+
+        for (ano in anos){
+            def formularioList = Formulario.executeQuery("select f from Formulario f where f.sistema=:sistema and year(f.dataFinalizacao) =:ano ",[sistema:sistema, ano:ano])
+            def formulario = formularioList ? formularioList.get(0) : null
+            if(formulario){
+                requisitoAtendidos.add estatisticaService.getQuantidadeRequisitos(formulario,
+                        TipoResposta.REQUISITO_ATENDIDO,null)
+                requisitoNaoAtendidos.add estatisticaService.getQuantidadeRequisitos(formulario,
+                        TipoResposta.REQUISITO_NAO_ATENDIDO,null)
+                naoseAPlica.add estatisticaService.getQuantidadeRequisitos(formulario,
+                        TipoResposta.NAO_SE_APLICA,null)
+            }else{
+                requisitoAtendidos.add(0)
+                requisitoNaoAtendidos.add(0)
+                naoseAPlica.add(0)
+
+
+            }
+        }
 
 
 
+        lista.add([name: 'Requisitos Atendidos', data: requisitoAtendidos])
 
+        lista.add([name: 'Requisitos Não Atendidos', data: requisitoNaoAtendidos])
+
+        lista.add([name: 'Não Se Aplica', data: naoseAPlica])
+        render lista as JSON
 
     }
 

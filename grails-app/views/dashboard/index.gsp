@@ -71,6 +71,24 @@
     </div>
 </div>
 
+
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-block">
+                <section class="example">
+                    <div id="containerGraficoEvolucao" style="width:100%; height:400px;"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
 %{--<div class="row">
     <div class="col-md-12">
         <div class="card">
@@ -228,6 +246,39 @@
 
 
         $("#sistema").change(function () {
+
+            var optionPizza =  {
+                chart: {
+                    type: 'pie',
+                    renderTo: 'containerPizza',
+                },
+                title: {
+                    text: 'Porcentagem de Conformidade Atual'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            color: '#000000',
+                            connectorColor: '#000000',
+                            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: 'Porcentagem de conformidade do sistema',
+                    data: [
+
+                    ]
+                }]
+            };
+
             var sistema = this.value;
             $.getJSON('${request.contextPath}/dashboard/chamadaPizzaExtra/'+sistema, function(json) {
                 optionPizza.series = json;
@@ -310,41 +361,52 @@
                 chartColuna.redraw();
             });
 
-        });
 
-        var optionPizza =  {
-            chart: {
-                type: 'pie',
-                renderTo: 'containerPizza',
-            },
-            title: {
-                text: 'Porcentagem de Conformidade Atual'
-            },
-            tooltip: {
-                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        color: '#000000',
-                        connectorColor: '#000000',
-                        format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+
+            var optionGraficoEvolucao =  {
+                chart: {
+                    renderTo: 'containerGraficoEvolucao',
+                },
+                title: {
+                    text: 'Evolução Anual dos Requisitos'
+                },
+
+
+
+                yAxis: {
+                    title: {
+                        text: 'Porcentagem'
                     }
-                }
-            },
-            series: [{
-                type: 'pie',
-                name: 'Porcentagem de conformidade do sistema',
-                data: [
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle'
+                },
+                plotOptions: {
+                    series: {
+                        label: {
+                            connectorAllowed: false
+                        },
+                        pointStart: 2017
+                    }
+                },
+                series: [],
+            };
 
-                ]
-            }]
-        };
 
 
+            var chartEvolucao = new Highcharts.Chart(optionGraficoEvolucao);
+            $.getJSON('${request.contextPath}/dashboard/evolucao/'+sistema, function(json) {
+                for(i=0; i<json.length; i++){
+                    chartEvolucao.addSeries({
+                        name: json[i].name,
+                        data: json[i].data
+                    }, true);
+                };
+                chartEvolucao.redraw();
+            });
+        });
 
 
 
