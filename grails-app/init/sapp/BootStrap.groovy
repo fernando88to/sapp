@@ -133,6 +133,42 @@ class BootStrap {
             grupoRequisito_8.save(flush: true)
 
         }
+
+        def subGrupo_8_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("8.1")
+        if(!subGrupo_8_1){
+            subGrupo_8_1 = new SubGrupoRequisito()
+            subGrupo_8_1.numeroReferenciaMoreqJus="8.1"
+            subGrupo_8_1.nome ="Configuração dos instrumentos de classificação,\n" +
+                    "temporalidade e destinação de documentos"
+            subGrupo_8_1.grupoRequisito = grupoRequisito_8
+            subGrupo_8_1.save(flush:true)
+        }
+
+
+        def requisitoRTF_8_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.1.1")
+        if(!requisitoRTF_8_1_1){
+            requisitoRTF_8_1_1 = new Requisito()
+            requisitoRTF_8_1_1.numeroReferenciaMoreqJus = "RAD8.1.1"
+            requisitoRTF_8_1_1.obrigatorio = true
+            requisitoRTF_8_1_1.subGrupoRequisito = subGrupo_8_1
+            requisitoRTF_8_1_1.nome = "<p>Prover funcionalidades para defini&ccedil;&atilde;o e manuten&ccedil;&atilde;o de todos os instrumentos de classifica&ccedil;&atilde;o, temporalidade e destina&ccedil;&atilde;o da pol&iacute;tica de gest&atilde;o documental.</p>\n" +
+                    "\n" +
+                    "<p>Exemplo1:</p>\n" +
+                    "\n" +
+                    "<p>Manter tabela de temporalidade e destina&ccedil;&atilde;o de documentos com as seguintes informa&ccedil;&otilde;es: identificador do &oacute;rg&atilde;o ou entidade, identificador da classe, prazo de guarda na fase corrente, prazo de guarda na fase intermedi&aacute;ria, destina&ccedil;&atilde;o final, observa&ccedil;&otilde;es, evento que determina o in&iacute;cio da contagem do prazo de reten&ccedil;&atilde;o na fase corrente e na fase intermedi&aacute;ria.</p>\n" +
+                    "\n" +
+                    "<p>Exemplo2:</p>\n" +
+                    "\n" +
+                    "<p>Prever que a defini&ccedil;&atilde;o dos prazos de guarda sejam expressos por:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>um n&uacute;mero inteiro de dias ou</li>\n" +
+                    "\t<li>um n&uacute;mero inteiro de meses ou</li>\n" +
+                    "\t<li>um n&uacute;mero inteiro de anos ou</li>\n" +
+                    "\t<li>uma combina&ccedil;&atilde;o de um n&uacute;mero inteiro de anos, meses e dias.</li>\n" +
+                    "</ul>"
+            requisitoRTF_8_1_1.save(flush:true)
+        }
     }
 
     def cargaGrupo7() {
@@ -145,6 +181,328 @@ class BootStrap {
             grupoRequisito_7.save(flush: true)
 
         }
+
+        def subGrupo_7_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("7.1")
+        if(!subGrupo_7_1){
+            subGrupo_7_1 = new SubGrupoRequisito()
+            subGrupo_7_1.numeroReferenciaMoreqJus="7.1"
+            subGrupo_7_1.nome ="Controle do fluxo de trabalho"
+            subGrupo_7_1.grupoRequisito = grupoRequisito_7
+            subGrupo_7_1.save(flush:true)
+        }
+
+
+        def requisitoRTF_7_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.1")
+        if(!requisitoRTF_7_1_1){
+            requisitoRTF_7_1_1 = new Requisito()
+            requisitoRTF_7_1_1.numeroReferenciaMoreqJus = "RTF7.1.1"
+            requisitoRTF_7_1_1.obrigatorio = true
+            requisitoRTF_7_1_1.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_1.nome = "Fornecer os passos necessários para o cumprimento de trâmites\n" +
+                    "preestabelecidos ou fluxos alternativos. Nesse caso, cada passo\n" +
+                    "significa o deslocamento de um documento ou processo/dossiê, a\n" +
+                    "fim de serem objeto de ações."
+            requisitoRTF_7_1_1.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.2")
+        if(!requisitoRTF_7_1_2){
+            requisitoRTF_7_1_2 = new Requisito()
+            requisitoRTF_7_1_2.numeroReferenciaMoreqJus = "RTF7.1.2"
+            requisitoRTF_7_1_2.obrigatorio = true
+            requisitoRTF_7_1_2.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_2.nome = "Possuir capacidade, sem limitações, para estabelecer o número\n" +
+                    "necessário de trâmites nos fluxos de trabalho. "
+            requisitoRTF_7_1_2.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_3 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.3")
+        if(!requisitoRTF_7_1_3){
+            requisitoRTF_7_1_3 = new Requisito()
+            requisitoRTF_7_1_3.numeroReferenciaMoreqJus = "RTF7.1.3"
+            requisitoRTF_7_1_3.obrigatorio = true
+            requisitoRTF_7_1_3.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_3.nome = "Disponibilizar uma função para avisar a um participante do fluxo\n" +
+                    "que um documento lhe foi enviado, especificando a ação\n" +
+                    "necessária. "
+            requisitoRTF_7_1_3.save(flush:true)
+        }
+
+
+        def requisitoRTF_7_1_4 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.4")
+        if(!requisitoRTF_7_1_4){
+            requisitoRTF_7_1_4 = new Requisito()
+            requisitoRTF_7_1_4.numeroReferenciaMoreqJus = "RTF7.1.4"
+            requisitoRTF_7_1_4.obrigatorio = false
+            requisitoRTF_7_1_4.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_4.nome = "Permitir a utilização de qualquer sistema de comunicação\n" +
+                    "eletrônica para que um usuário possa informar outros usuários\n" +
+                    "sobre documentos que requeiram sua atenção. "
+            requisitoRTF_7_1_4.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_5 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.5")
+        if(!requisitoRTF_7_1_5){
+            requisitoRTF_7_1_5 = new Requisito()
+            requisitoRTF_7_1_5.numeroReferenciaMoreqJus = "RTF7.1.5"
+            requisitoRTF_7_1_5.obrigatorio = true
+            requisitoRTF_7_1_5.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_5.nome = "Permitir que fluxos de trabalho pré-programados sejam definidos,\n" +
+                    "alterados e mantidos exclusivamente pelo gestor."
+            requisitoRTF_7_1_5.save(flush:true)
+        }
+
+
+        def requisitoRTF_7_1_6 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.6")
+        if(!requisitoRTF_7_1_6){
+            requisitoRTF_7_1_6 = new Requisito()
+            requisitoRTF_7_1_6.numeroReferenciaMoreqJus = "RTF7.1.6"
+            requisitoRTF_7_1_6.obrigatorio = true
+            requisitoRTF_7_1_6.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_6.nome = "<p>Possibilitar que tarefas e a&ccedil;&otilde;es sejam redistribu&iacute;das, quando necess&aacute;rio, em um fluxo de trabalho, a um usu&aacute;rio ou grupo diferente do que havia sido previsto.</p>\n" +
+                    "\n" +
+                    "<p>Um usu&aacute;rio pode precisar enviar um documento a outro usu&aacute;rio, em fun&ccedil;&atilde;o do conte&uacute;do daquele ou em raz&atilde;o de eventual afastamento do usu&aacute;rio respons&aacute;vel.</p>"
+            requisitoRTF_7_1_6.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_7 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.7")
+        if(!requisitoRTF_7_1_7){
+            requisitoRTF_7_1_7 = new Requisito()
+            requisitoRTF_7_1_7.numeroReferenciaMoreqJus = "RTF7.1.7"
+            requisitoRTF_7_1_7.obrigatorio = true
+            requisitoRTF_7_1_7.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_7.nome = "Registrar na trilha de auditoria todas as alterações ocorridas\n" +
+                    "nesse fluxo."
+            requisitoRTF_7_1_7.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_8 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.8")
+        if(!requisitoRTF_7_1_8){
+            requisitoRTF_7_1_8 = new Requisito()
+            requisitoRTF_7_1_8.numeroReferenciaMoreqJus = "RTF7.1.8"
+            requisitoRTF_7_1_8.obrigatorio = true
+            requisitoRTF_7_1_8.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_8.nome = "Registrar a tramitação de todos os documentos a fim de que os\n" +
+                    "usuários possam conhecer a situação de cada um deles no\n" +
+                    "processo. "
+            requisitoRTF_7_1_8.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_9 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.9")
+        if(!requisitoRTF_7_1_9){
+            requisitoRTF_7_1_9 = new Requisito()
+            requisitoRTF_7_1_9.numeroReferenciaMoreqJus = "RTF7.1.9"
+            requisitoRTF_7_1_9.obrigatorio = true
+            requisitoRTF_7_1_9.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_9.nome = "Efetuar a gestão dos documentos em filas de espera que possam\n" +
+                    "ser examinadas e controladas pelo gestor. "
+            requisitoRTF_7_1_9.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_10 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.10")
+        if(!requisitoRTF_7_1_10){
+            requisitoRTF_7_1_10 = new Requisito()
+            requisitoRTF_7_1_10.numeroReferenciaMoreqJus = "RTF7.1.10"
+            requisitoRTF_7_1_10.obrigatorio = true
+            requisitoRTF_7_1_10.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_10.nome = "Permitir que os usuários visualizem a fila de espera do trabalho a\n" +
+                    "eles destinado e que selecionem os itens a trabalhar. "
+            requisitoRTF_7_1_10.save(flush:true)
+        }
+
+
+        def requisitoRTF_7_1_11 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.11")
+        if(!requisitoRTF_7_1_11){
+            requisitoRTF_7_1_11 = new Requisito()
+            requisitoRTF_7_1_11.numeroReferenciaMoreqJus = "RTF7.1.11"
+            requisitoRTF_7_1_11.obrigatorio = false
+            requisitoRTF_7_1_11.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_11.nome = "<p>Fornecer fluxos condicionais de acordo com os dados de entrada do usu&aacute;rio ou os dados do sistema. Os fluxos que remetem o documento a um dos participantes dependem de uma condi&ccedil;&atilde;o determinada por um deles.</p>\n" +
+                    "\n" +
+                    "<p>Por exemplo, um fluxo pode levar um documento a um participante ou outro, conforme os dados de entrada do participante anterior; ou a defini&ccedil;&atilde;o do fluxo pode depender de um valor calculado pelo sistema.</p>"
+            requisitoRTF_7_1_11.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_12 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.12")
+        if(!requisitoRTF_7_1_12){
+            requisitoRTF_7_1_12 = new Requisito()
+            requisitoRTF_7_1_12.numeroReferenciaMoreqJus = "RTF7.1.12"
+            requisitoRTF_7_1_12.obrigatorio = true
+            requisitoRTF_7_1_12.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_12.nome = "<p>Fornecer um hist&oacute;rico de movimenta&ccedil;&atilde;o dos documentos.</p>\n" +
+                    "\n" +
+                    "<p>O hist&oacute;rico de movimenta&ccedil;&atilde;o corresponde a um conjunto de metadados de datas de entrada e sa&iacute;da; nomes de respons&aacute;veis; titulo do documento, provid&ecirc;ncias, etc.</p>"
+            requisitoRTF_7_1_12.save(flush:true)
+        }
+
+
+        def requisitoRTF_7_1_13 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.13")
+        if(!requisitoRTF_7_1_13){
+            requisitoRTF_7_1_13 = new Requisito()
+            requisitoRTF_7_1_13.numeroReferenciaMoreqJus = "RTF7.1.13"
+            requisitoRTF_7_1_13.obrigatorio = false
+            requisitoRTF_7_1_13.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_13.nome = "<p>Permitir que usu&aacute;rios autorizados interrompam ou suspendam temporariamente um fluxo com o objetivo de executar outro trabalho.</p>\n" +
+                    "\n" +
+                    "<p>O fluxo s&oacute; prosseguir&aacute; com a autoriza&ccedil;&atilde;o do usu&aacute;rio.</p>"
+            requisitoRTF_7_1_13.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_14 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.14")
+        if(!requisitoRTF_7_1_14){
+            requisitoRTF_7_1_14 = new Requisito()
+            requisitoRTF_7_1_14.numeroReferenciaMoreqJus = "RTF7.1.14"
+            requisitoRTF_7_1_14.obrigatorio = true
+            requisitoRTF_7_1_14.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_14.nome = "Incluir processamento condicional, permitindo que um fluxo de\n" +
+                    "trabalho seja suspenso para aguardar a chegada de um\n" +
+                    "documento e prossiga, como definido pelo próprio fluxo, quando o\n" +
+                    "documento é recebido. "
+            requisitoRTF_7_1_14.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_15 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.15")
+        if(!requisitoRTF_7_1_15){
+            requisitoRTF_7_1_15 = new Requisito()
+            requisitoRTF_7_1_15.numeroReferenciaMoreqJus = "RTF7.1.15"
+            requisitoRTF_7_1_15.obrigatorio = true
+            requisitoRTF_7_1_15.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_15.nome = "Associar limites de tempo a trâmites e/ou procedimentos\n" +
+                    "individuais em cada fluxo e comunicar os itens que expiraram, de\n" +
+                    "acordo com tais limites"
+            requisitoRTF_7_1_15.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_16 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.16")
+        if(!requisitoRTF_7_1_16){
+            requisitoRTF_7_1_16 = new Requisito()
+            requisitoRTF_7_1_16.numeroReferenciaMoreqJus = "RTF7.1.16"
+            requisitoRTF_7_1_16.obrigatorio = true
+            requisitoRTF_7_1_16.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_16.nome = "Reconhecer indivíduos e grupos de trabalho como participantes. "
+            requisitoRTF_7_1_16.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_17 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.17")
+        if(!requisitoRTF_7_1_17){
+            requisitoRTF_7_1_17 = new Requisito()
+            requisitoRTF_7_1_17.numeroReferenciaMoreqJus = "RTF7.1.17"
+            requisitoRTF_7_1_17.obrigatorio = true
+            requisitoRTF_7_1_17.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_17.nome = "Prever a forma de distribuição dos documentos entre os membros\n" +
+                    "do grupo, sempre que o participante for um grupo de trabalho."
+            requisitoRTF_7_1_17.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_18 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.18")
+        if(!requisitoRTF_7_1_18){
+            requisitoRTF_7_1_18 = new Requisito()
+            requisitoRTF_7_1_18.numeroReferenciaMoreqJus = "RTF7.1.18"
+            requisitoRTF_7_1_18.obrigatorio = true
+            requisitoRTF_7_1_18.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_18.nome = "Permitir que a captura de documentos desencadeie\n" +
+                    "automaticamente fluxos de trabalho. "
+            requisitoRTF_7_1_18.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_19 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.19")
+        if(!requisitoRTF_7_1_19){
+            requisitoRTF_7_1_19 = new Requisito()
+            requisitoRTF_7_1_19.numeroReferenciaMoreqJus = "RTF7.1.19"
+            requisitoRTF_7_1_19.obrigatorio = true
+            requisitoRTF_7_1_19.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_19.nome = "Fornecer meios de elaboração de relatórios completos para\n" +
+                    "permitir que gestores monitorem a tramitação dos documentos e o\n" +
+                    "desempenho dos participantes."
+            requisitoRTF_7_1_19.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_20 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.20")
+        if(!requisitoRTF_7_1_20){
+            requisitoRTF_7_1_20 = new Requisito()
+            requisitoRTF_7_1_20.numeroReferenciaMoreqJus = "RTF7.1.20"
+            requisitoRTF_7_1_20.obrigatorio = true
+            requisitoRTF_7_1_20.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_20.nome = "Registrar a tramitação de um documento em seus metadados. Os\n" +
+                    "metadados referentes à tramitação devem registrar, dentre outros,\n" +
+                    "data e hora de envio e de recebimento e identificação dos\n" +
+                    "usuários. "
+            requisitoRTF_7_1_20.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_21 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.21")
+        if(!requisitoRTF_7_1_21){
+            requisitoRTF_7_1_21 = new Requisito()
+            requisitoRTF_7_1_21.numeroReferenciaMoreqJus = "RTF7.1.21"
+            requisitoRTF_7_1_21.obrigatorio = true
+            requisitoRTF_7_1_21.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_21.nome = "Manter versões dos fluxos alterados e estabelecer vínculos entre\n" +
+                    "os documentos já processados ou em processamento nos fluxos\n" +
+                    "alterados. "
+            requisitoRTF_7_1_21.save(flush:true)
+        }
+
+        def requisitoRTF_7_1_22 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.1.22")
+        if(!requisitoRTF_7_1_22){
+            requisitoRTF_7_1_22 = new Requisito()
+            requisitoRTF_7_1_22.numeroReferenciaMoreqJus = "RTF7.1.22"
+            requisitoRTF_7_1_22.obrigatorio = true
+            requisitoRTF_7_1_22.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_1_22.nome = "Assegurar que qualquer modificação nos atributos dos fluxos,\n" +
+                    "como extinção ou ampliação do número de pessoas ou extinção\n" +
+                    "de autorização, leve em conta os documentos vinculados."
+            requisitoRTF_7_1_22.save(flush:true)
+        }
+
+
+
+        def subGrupo_7_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("7.2")
+        if(!subGrupo_7_2){
+            subGrupo_7_2 = new SubGrupoRequisito()
+            subGrupo_7_2.numeroReferenciaMoreqJus="7.2"
+            subGrupo_7_2.nome ="Controle de versões e do status do documento "
+            subGrupo_7_2.grupoRequisito = grupoRequisito_7
+            subGrupo_7_2.save(flush:true)
+        }
+
+
+        def requisitoRTF_7_2_1 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.2.1")
+        if(!requisitoRTF_7_2_1){
+            requisitoRTF_7_2_1 = new Requisito()
+            requisitoRTF_7_2_1.numeroReferenciaMoreqJus = "RTF7.2.1"
+            requisitoRTF_7_2_1.obrigatorio = true
+            requisitoRTF_7_2_1.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_2_1.nome = "Registrar o status de transmissão do documento: minuta ou via\n" +
+                    "original."
+            requisitoRTF_7_2_1.save(flush:true)
+        }
+
+        def requisitoRTF_7_2_2 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.2.2")
+        if(!requisitoRTF_7_2_2){
+            requisitoRTF_7_2_2 = new Requisito()
+            requisitoRTF_7_2_2.numeroReferenciaMoreqJus = "RTF7.2.2"
+            requisitoRTF_7_2_2.obrigatorio = true
+            requisitoRTF_7_2_2.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_2_2.nome = "Controlar as diversas versões de um documento em produção."
+            requisitoRTF_7_2_2.save(flush:true)
+        }
+
+
+        def requisitoRTF_7_2_3 = Requisito.findByNumeroReferenciaMoreqJus("RTF7.2.3")
+        if(!requisitoRTF_7_2_3){
+            requisitoRTF_7_2_3 = new Requisito()
+            requisitoRTF_7_2_3.numeroReferenciaMoreqJus = "RTF7.2.3"
+            requisitoRTF_7_2_3.obrigatorio = true
+            requisitoRTF_7_2_3.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_2_3.nome = "Manter o identificador único do documento e registrar, em\n" +
+                    "metadados específicos, o controle de versões."
+            requisitoRTF_7_2_3.save(flush:true)
+        }
+
+
+
+
+
     }
 
     def cargaGrupo6() {
@@ -989,6 +1347,274 @@ class BootStrap {
                     "tecnológicas quanto à plataforma criptográfica."
             requisitoRSE_6_6_8.save(flush:true)
         }
+
+
+        def subGrupo_6_7 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("6.7")
+        if(!subGrupo_6_7){
+            subGrupo_6_7 = new SubGrupoRequisito()
+            subGrupo_6_7.numeroReferenciaMoreqJus="6.7"
+            subGrupo_6_7.nome ="Marcas d'água digitais "
+            subGrupo_6_7.grupoRequisito = grupoRequisito_6
+            subGrupo_6_7.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_7_1 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.7.1")
+        if(!requisitoRSE_6_7_1){
+            requisitoRSE_6_7_1 = new Requisito()
+            requisitoRSE_6_7_1.numeroReferenciaMoreqJus = "RSE6.7.1"
+            requisitoRSE_6_7_1.obrigatorio = true
+            requisitoRSE_6_7_1.subGrupoRequisito = subGrupo_6_7
+            requisitoRSE_6_7_1.nome = "Recuperar informação contida em marcas d'água digitais,\n" +
+                    "mediante anuência do usuário autorizado. "
+            requisitoRSE_6_7_1.save(flush:true)
+        }
+
+        def requisitoRSE_6_7_2 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.7.2")
+        if(!requisitoRSE_6_7_2){
+            requisitoRSE_6_7_2 = new Requisito()
+            requisitoRSE_6_7_2.numeroReferenciaMoreqJus = "RSE6.7.2"
+            requisitoRSE_6_7_2.obrigatorio = true
+            requisitoRSE_6_7_2.subGrupoRequisito = subGrupo_6_7
+            requisitoRSE_6_7_2.nome = "Armazenar documentos institucionais digitais que\n" +
+                    "contenham marcas d'água digitais, assim como informação de\n" +
+                    "apoio relacionada à marca d'água. "
+            requisitoRSE_6_7_2.save(flush:true)
+        }
+
+        def requisitoRSE_6_7_3 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.7.3")
+        if(!requisitoRSE_6_7_3){
+            requisitoRSE_6_7_3 = new Requisito()
+            requisitoRSE_6_7_3.numeroReferenciaMoreqJus = "RSE6.7.3"
+            requisitoRSE_6_7_3.obrigatorio = true
+            requisitoRSE_6_7_3.subGrupoRequisito = subGrupo_6_7
+            requisitoRSE_6_7_3.nome = "Possuir uma arquitetura capaz de receber atualizações\n" +
+                    "tecnológicas quanto à plataforma de geração e de detecção de\n" +
+                    "marca d'água digital. "
+            requisitoRSE_6_7_3.save(flush:true)
+        }
+
+
+        def subGrupo_6_8 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("6.8")
+        if(!subGrupo_6_8){
+            subGrupo_6_8 = new SubGrupoRequisito()
+            subGrupo_6_8.numeroReferenciaMoreqJus="6.8"
+            subGrupo_6_8.nome ="Acompanhamento de transferência "
+            subGrupo_6_8.grupoRequisito = grupoRequisito_6
+            subGrupo_6_8.save(flush:true)
+        }
+
+        def requisitoRSE_6_8_1 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.8.1")
+        if(!requisitoRSE_6_8_1){
+            requisitoRSE_6_8_1 = new Requisito()
+            requisitoRSE_6_8_1.numeroReferenciaMoreqJus = "RSE6.8.1"
+            requisitoRSE_6_8_1.obrigatorio = true
+            requisitoRSE_6_8_1.subGrupoRequisito = subGrupo_6_8
+            requisitoRSE_6_8_1.nome = "Manter, para cada documento ou cada processo/dossiê, o\n" +
+                    "histórico das movimentações e transferências de mídia sofridas\n" +
+                    "por aquele documento ou processo/dossiê. "
+            requisitoRSE_6_8_1.save(flush:true)
+        }
+
+        def requisitoRSE_6_8_2 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.8.2")
+        if(!requisitoRSE_6_8_2){
+            requisitoRSE_6_8_2 = new Requisito()
+            requisitoRSE_6_8_2.numeroReferenciaMoreqJus = "RSE6.8.2"
+            requisitoRSE_6_8_2.obrigatorio = true
+            requisitoRSE_6_8_2.subGrupoRequisito = subGrupo_6_8
+            requisitoRSE_6_8_2.nome = "Monitorar e registrar informações acerca do local atual e da\n" +
+                    "transferência de processos/dossiês digitais e não-digitais. "
+            requisitoRSE_6_8_2.save(flush:true)
+        }
+
+        def requisitoRSE_6_8_3 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.8.3")
+        if(!requisitoRSE_6_8_3){
+            requisitoRSE_6_8_3 = new Requisito()
+            requisitoRSE_6_8_3.numeroReferenciaMoreqJus = "RSE6.8.3"
+            requisitoRSE_6_8_3.obrigatorio = true
+            requisitoRSE_6_8_3.subGrupoRequisito = subGrupo_6_8
+            requisitoRSE_6_8_3.nome = "<p>Registrar metadados que incluam:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>N&uacute;mero identificador dos documentos atribu&iacute;do pelo sistema.</li>\n" +
+                    "\t<li>Localiza&ccedil;&atilde;o atual e tamb&eacute;m as localiza&ccedil;&otilde;es anteriores, definidas pelo usu&aacute;rio.</li>\n" +
+                    "\t<li>Data e hora de envio/transfer&ecirc;ncia.</li>\n" +
+                    "\t<li>Data e hora da recep&ccedil;&atilde;o no novo local.</li>\n" +
+                    "\t<li>Destinat&aacute;rio.</li>\n" +
+                    "\t<li>Usu&aacute;rio respons&aacute;vel pela transfer&ecirc;ncia.</li>\n" +
+                    "\t<li>M&eacute;todo de transfer&ecirc;ncia.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_8_3.save(flush:true)
+        }
+
+
+        def subGrupo_6_9 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("6.9")
+        if(!subGrupo_6_9){
+            subGrupo_6_9 = new SubGrupoRequisito()
+            subGrupo_6_9.numeroReferenciaMoreqJus="6.9"
+            subGrupo_6_9.nome ="Autoproteção "
+            subGrupo_6_9.grupoRequisito = grupoRequisito_6
+            subGrupo_6_9.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_9_1 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.9.1")
+        if(!requisitoRSE_6_9_1){
+            requisitoRSE_6_9_1 = new Requisito()
+            requisitoRSE_6_9_1.numeroReferenciaMoreqJus = "RSE6.9.1"
+            requisitoRSE_6_9_1.obrigatorio = true
+            requisitoRSE_6_9_1.subGrupoRequisito = subGrupo_6_9
+            requisitoRSE_6_9_1.nome = "Negar a efetivação da captura sem a verificação de vírus ou\n" +
+                    "código malicioso."
+            requisitoRSE_6_9_1.save(flush:true)
+        }
+        def requisitoRSE_6_9_2 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.9.2")
+        if(!requisitoRSE_6_9_2){
+            requisitoRSE_6_9_2 = new Requisito()
+            requisitoRSE_6_9_2.numeroReferenciaMoreqJus = "RSE6.9.2"
+            requisitoRSE_6_9_2.obrigatorio = false
+            requisitoRSE_6_9_2.subGrupoRequisito = subGrupo_6_9
+            requisitoRSE_6_9_2.nome = "Possuir dispositivos e procedimentos que reduzam as\n" +
+                    "possibilidades de erros, falhas e descontinuidades no seu\n" +
+                    "funcionamento que causem danos ou perdas aos documentos\n" +
+                    "institucionais digitais. "
+            requisitoRSE_6_9_2.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_9_3 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.9.3")
+        if(!requisitoRSE_6_9_3){
+            requisitoRSE_6_9_3 = new Requisito()
+            requisitoRSE_6_9_3.numeroReferenciaMoreqJus = "RSE6.9.3"
+            requisitoRSE_6_9_3.obrigatorio = true
+            requisitoRSE_6_9_3.subGrupoRequisito = subGrupo_6_9
+            requisitoRSE_6_9_3.nome = "Entrar em modo de manutenção, no qual a possibilidade de restaurar o sistema para um estado seguro é oferecida, após falha ou descontinuidade do sistema, quando a recuperação automática não for possível. \n" +
+                    "\n" +
+                    "Na restauração ao estado seguro, um GestãoDoc deve recuperar informações no maior nível tecnicamente viável."
+            requisitoRSE_6_9_3.save(flush:true)
+        }
+
+        def requisitoRSE_6_9_4 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.9.4")
+        if(!requisitoRSE_6_9_4){
+            requisitoRSE_6_9_4 = new Requisito()
+            requisitoRSE_6_9_4.numeroReferenciaMoreqJus = "RSE6.9.4"
+            requisitoRSE_6_9_4.obrigatorio = true
+            requisitoRSE_6_9_4.subGrupoRequisito = subGrupo_6_9
+            requisitoRSE_6_9_4.nome = "<p>Garantir que os dados de seguran&ccedil;a, quando replicados, sejam consistentes.</p>\n" +
+                    "\n" +
+                    "<p>Permiss&otilde;es de controle de acesso, chaves criptogr&aacute;ficas e par&acirc;metros de algoritmos criptogr&aacute;ficos s&atilde;o exemplos de dados de seguran&ccedil;a.</p>"
+            requisitoRSE_6_9_4.save(flush:true)
+        }
+
+        def requisitoRSE_6_9_5 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.9.5")
+        if(!requisitoRSE_6_9_5){
+            requisitoRSE_6_9_5 = new Requisito()
+            requisitoRSE_6_9_5.numeroReferenciaMoreqJus = "RSE6.9.5"
+            requisitoRSE_6_9_5.obrigatorio = true
+            requisitoRSE_6_9_5.subGrupoRequisito = subGrupo_6_9
+            requisitoRSE_6_9_5.nome = "<p>Preservar um estado seguro de funcionamento, interrompendo completamente a intera&ccedil;&atilde;o com usu&aacute;rios, quando quaisquer dos seguintes erros ocorrerem:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Falha de comunica&ccedil;&atilde;o entre cliente e servidor.</li>\n" +
+                    "\t<li>Perda de integridade das informa&ccedil;&otilde;es de controle de acesso.</li>\n" +
+                    "\t<li>Impossibilidade de registro em trilha de auditoria.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_9_5.save(flush:true)
+        }
+
+        def requisitoRSE_6_9_6 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.9.6")
+        if(!requisitoRSE_6_9_6){
+            requisitoRSE_6_9_6 = new Requisito()
+            requisitoRSE_6_9_6.numeroReferenciaMoreqJus = "RSE6.9.6"
+            requisitoRSE_6_9_6.obrigatorio = true
+            requisitoRSE_6_9_6.subGrupoRequisito = subGrupo_6_9
+            requisitoRSE_6_9_6.nome = "Permitir ao gestor a definição do limite de tentativas de\n" +
+                    "acesso. Quando esse valor for atingido, o acesso deve ser\n" +
+                    "bloqueado. "
+            requisitoRSE_6_9_6.save(flush:true)
+        }
+
+
+
+
+        def subGrupo_6_10 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("6.10")
+        if(!subGrupo_6_10){
+            subGrupo_6_10 = new SubGrupoRequisito()
+            subGrupo_6_10.numeroReferenciaMoreqJus="6.10"
+            subGrupo_6_10.nome ="Alteração, ocultação e exclusão de documentos\n" +
+                    "institucionais"
+            subGrupo_6_10.grupoRequisito = grupoRequisito_6
+            subGrupo_6_10.save(flush:true)
+        }
+
+        def requisitoRSE_6_10_1 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.10.1")
+        if(!requisitoRSE_6_10_1){
+            requisitoRSE_6_10_1 = new Requisito()
+            requisitoRSE_6_10_1.numeroReferenciaMoreqJus = "RSE6.10.1"
+            requisitoRSE_6_10_1.obrigatorio = true
+            requisitoRSE_6_10_1.subGrupoRequisito = subGrupo_6_10
+            requisitoRSE_6_10_1.nome = "<p>Permitir a anula&ccedil;&atilde;o da opera&ccedil;&atilde;o em caso de erro do usu&aacute;rio, de acordo com as normas vigentes. Essa anula&ccedil;&atilde;o tem que ser registrada nos metadados. Exemplos:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Ap&oacute;s a distribui&ccedil;&atilde;o do processo judicial, o ato n&atilde;o poder&aacute; ser anulado. A corre&ccedil;&atilde;o se dar&aacute; pelo lan&ccedil;amento de evento baixa definitiva por erro de distribui&ccedil;&atilde;o.</li>\n" +
+                    "\t<li>&nbsp;No caso de documento juntado a processo errado, a a&ccedil;&atilde;o adequada &eacute; o desentranhamento.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_10_1.save(flush:true)
+        }
+
+        def requisitoRSE_6_10_2 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.10.2")
+        if(!requisitoRSE_6_10_2){
+            requisitoRSE_6_10_2 = new Requisito()
+            requisitoRSE_6_10_2.numeroReferenciaMoreqJus = "RSE6.10.2"
+            requisitoRSE_6_10_2.obrigatorio = true
+            requisitoRSE_6_10_2.subGrupoRequisito = subGrupo_6_10
+            requisitoRSE_6_10_2.nome = "<p>Impedir a exclus&atilde;o (permanente ou l&oacute;gica) de documentos ou lotes de documentos fora do processo regular de elimina&ccedil;&atilde;o.</p>\n" +
+                    "\n" +
+                    "<p>O processo regular de elimina&ccedil;&atilde;o &eacute; aquele previsto no programa de gest&atilde;o documental.</p>"
+            requisitoRSE_6_10_2.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_10_3 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.10.3")
+        if(!requisitoRSE_6_10_3){
+            requisitoRSE_6_10_3 = new Requisito()
+            requisitoRSE_6_10_3.numeroReferenciaMoreqJus = "RSE6.10.3"
+            requisitoRSE_6_10_3.obrigatorio = true
+            requisitoRSE_6_10_3.subGrupoRequisito = subGrupo_6_10
+            requisitoRSE_6_10_3.nome = "Permitir aos usuários autorizados a retificação dos metadados,\n" +
+                    "com registro inclusive, na trilha de auditoria."
+            requisitoRSE_6_10_3.save(flush:true)
+        }
+
+
+        def requisitoRSE_6_10_4 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.10.4")
+        if(!requisitoRSE_6_10_4){
+            requisitoRSE_6_10_4 = new Requisito()
+            requisitoRSE_6_10_4.numeroReferenciaMoreqJus = "RSE6.10.4"
+            requisitoRSE_6_10_4.obrigatorio = false
+            requisitoRSE_6_10_4.subGrupoRequisito = subGrupo_6_10
+            requisitoRSE_6_10_4.nome = "<p>Permitir a oculta&ccedil;&atilde;o de dados ou partes do documento para visualiza&ccedil;&atilde;o ou consulta em casos de sigilo/segredo de justi&ccedil;a. As formas de oculta&ccedil;&atilde;o devem compreender:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Omiss&atilde;o de p&aacute;ginas de um documento.</li>\n" +
+                    "\t<li>Adi&ccedil;&atilde;o de ret&acirc;ngulos opacos para ocultar nomes ou palavras sens&iacute;veis.</li>\n" +
+                    "\t<li>Outros recursos necess&aacute;rios para formatos de v&iacute;deo ou de &aacute;udio.</li>\n" +
+                    "</ul>"
+            requisitoRSE_6_10_4.save(flush:true)
+        }
+
+        def requisitoRSE_6_10_5 = Requisito.findByNumeroReferenciaMoreqJus("RSE6.10.5")
+        if(!requisitoRSE_6_10_5){
+            requisitoRSE_6_10_5 = new Requisito()
+            requisitoRSE_6_10_5.numeroReferenciaMoreqJus = "RSE6.10.5"
+            requisitoRSE_6_10_5.obrigatorio = true
+            requisitoRSE_6_10_5.subGrupoRequisito = subGrupo_6_10
+            requisitoRSE_6_10_5.nome = "Quando uma cópia truncada é produzida, registrar essa ação nos\n" +
+                    "metadados do documento, incluindo, pelo menos, a data, a hora,\n" +
+                    "o motivo, e a pessoa que a produziu."
+            requisitoRSE_6_10_5.save(flush:true)
+        }
+
 
     }
 
