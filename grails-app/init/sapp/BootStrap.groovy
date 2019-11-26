@@ -169,6 +169,345 @@ class BootStrap {
                     "</ul>"
             requisitoRTF_8_1_1.save(flush:true)
         }
+
+        def requisitoRTF_8_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.1.2")
+        if(!requisitoRTF_8_1_2){
+            requisitoRTF_8_1_2 = new Requisito()
+            requisitoRTF_8_1_2.numeroReferenciaMoreqJus = "RAD8.1.2"
+            requisitoRTF_8_1_2.obrigatorio = true
+            requisitoRTF_8_1_2.subGrupoRequisito = subGrupo_8_1
+            requisitoRTF_8_1_2.nome = "Associar automaticamente a um documento, processo/dossiê\n" +
+                    "administrativo e judicial a classificação, a temporalidade e a\n" +
+                    "destinação previstas nos instrumentos de gestão documental. "
+            requisitoRTF_8_1_2.save(flush:true)
+        }
+
+        def requisitoRTF_8_1_3 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.1.3")
+        if(!requisitoRTF_8_1_3){
+            requisitoRTF_8_1_3 = new Requisito()
+            requisitoRTF_8_1_3.numeroReferenciaMoreqJus = "RAD8.1.3"
+            requisitoRTF_8_1_3.obrigatorio = false
+            requisitoRTF_8_1_3.subGrupoRequisito = subGrupo_8_1
+            requisitoRTF_8_1_3.nome = "Associar automaticamente a um processo judicial passível de\n" +
+                    "eliminação, os critérios definidos pelo programa de gestão\n" +
+                    "documental. "
+            requisitoRTF_8_1_3.save(flush:true)
+        }
+
+        def requisitoRTF_8_1_4 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.1.4")
+        if(!requisitoRTF_8_1_4){
+            requisitoRTF_8_1_4 = new Requisito()
+            requisitoRTF_8_1_4.numeroReferenciaMoreqJus = "RAD8.1.4"
+            requisitoRTF_8_1_4.obrigatorio = true
+            requisitoRTF_8_1_4.subGrupoRequisito = subGrupo_8_1
+            requisitoRTF_8_1_4.nome = "Prever atividades de destinação documental como: reavaliação,\n" +
+                    "eliminação, transferência e recolhimento para a unidade de\n" +
+                    "arquivo. "
+            requisitoRTF_8_1_4.save(flush:true)
+        }
+
+        def requisitoRTF_8_1_5 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.1.5")
+        if(!requisitoRTF_8_1_5){
+            requisitoRTF_8_1_5 = new Requisito()
+            requisitoRTF_8_1_5.numeroReferenciaMoreqJus = "RAD8.1.5"
+            requisitoRTF_8_1_5.obrigatorio = true
+            requisitoRTF_8_1_5.subGrupoRequisito = subGrupo_8_1
+            requisitoRTF_8_1_5.nome = "<p>Prever a inicia&ccedil;&atilde;o autom&aacute;tica da contagem dos prazos de guarda referenciados nos instrumentos de classifica&ccedil;&atilde;o, temporalidade e destina&ccedil;&atilde;o do programa de gest&atilde;o documental a partir do &uacute;ltimo arquivamento.</p>\n" +
+                    "\n" +
+                    "<p>Acontecimentos espec&iacute;ficos n&atilde;o-detect&aacute;veis automaticamente pelo sistema devem ser informados ao Gest&atilde;oDoc por usu&aacute;rio autorizado como, por exemplo, &ldquo;documento que poder&aacute; ser eliminado 6 anos ap&oacute;s an&aacute;lise e do Tribunal de Contas da Uni&atilde;o&rdquo;, conforme determina os instrumentos de avalia&ccedil;&atilde;o documental.</p>"
+            requisitoRTF_8_1_5.save(flush:true)
+        }
+
+
+        def requisitoRTF_8_1_6 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.1.6")
+        if(!requisitoRTF_8_1_6){
+            requisitoRTF_8_1_6 = new Requisito()
+            requisitoRTF_8_1_6.numeroReferenciaMoreqJus = "RAD8.1.6"
+            requisitoRTF_8_1_6.obrigatorio = true
+            requisitoRTF_8_1_6.subGrupoRequisito = subGrupo_8_1
+            requisitoRTF_8_1_6.nome = "Limitar ao gestor a definição e a manutenção (alteração, inclusão\n" +
+                    "e exclusão) dos instrumentos de classificação, temporalidade e\n" +
+                    "destinação da política de gestão documental. "
+            requisitoRTF_8_1_6.save(flush:true)
+        }
+
+        def requisitoRTF_8_1_7 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.1.7")
+        if(!requisitoRTF_8_1_7){
+            requisitoRTF_8_1_7 = new Requisito()
+            requisitoRTF_8_1_7.numeroReferenciaMoreqJus = "RAD8.1.7"
+            requisitoRTF_8_1_7.obrigatorio = true
+            requisitoRTF_8_1_7.subGrupoRequisito = subGrupo_8_1
+            requisitoRTF_8_1_7.nome = "<p>Permitir que um gestor altere o prazo, destina&ccedil;&atilde;o ou classifica&ccedil;&atilde;o prevista em algum item dos instrumentos de classifica&ccedil;&atilde;o, temporalidade e destina&ccedil;&atilde;o da pol&iacute;tica de gest&atilde;o documental e garantir que a altera&ccedil;&atilde;o tenha efeito em todos os documentos ou processos/dossi&ecirc;s associados &agrave;quele item.</p>\n" +
+                    "\n" +
+                    "<p>As altera&ccedil;&otilde;es nos instrumentos de classifica&ccedil;&atilde;o, temporalidade e destina&ccedil;&atilde;o de documentos das institui&ccedil;&otilde;es do Judici&aacute;rio s&oacute; poder&atilde;o ser feitas ap&oacute;s a aprova&ccedil;&atilde;o dessas altera&ccedil;&otilde;es pelos &oacute;rg&atilde;os respons&aacute;veis pela aprova&ccedil;&atilde;o desses instrumentos.</p>"
+            requisitoRTF_8_1_7.save(flush:true)
+        }
+        def requisitoRTF_8_1_8 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.1.8")
+        if(!requisitoRTF_8_1_8){
+            requisitoRTF_8_1_8 = new Requisito()
+            requisitoRTF_8_1_8.numeroReferenciaMoreqJus = "RAD8.1.8"
+            requisitoRTF_8_1_8.obrigatorio = true
+            requisitoRTF_8_1_8.subGrupoRequisito = subGrupo_8_1
+            requisitoRTF_8_1_8.nome = "Manter o histórico das alterações realizadas nos instrumentos de\n" +
+                    "classificação, temporalidade e destinação de documentos. "
+            requisitoRTF_8_1_8.save(flush:true)
+        }
+        def requisitoRTF_8_1_9 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.1.9")
+        if(!requisitoRTF_8_1_9){
+            requisitoRTF_8_1_9 = new Requisito()
+            requisitoRTF_8_1_9.numeroReferenciaMoreqJus = "RAD8.1.9"
+            requisitoRTF_8_1_9.obrigatorio = true
+            requisitoRTF_8_1_9.subGrupoRequisito = subGrupo_8_1
+            requisitoRTF_8_1_9.nome = "Importar e exportar total ou parcialmente um instrumento de\n" +
+                    "classificação, temporalidade e destinação de documentos. "
+            requisitoRTF_8_1_9.save(flush:true)
+        }
+
+        def requisitoRTF_8_1_10 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.1.10")
+        if(!requisitoRTF_8_1_10){
+            requisitoRTF_8_1_10 = new Requisito()
+            requisitoRTF_8_1_10.numeroReferenciaMoreqJus = "RAD8.1.10"
+            requisitoRTF_8_1_10.obrigatorio = true
+            requisitoRTF_8_1_10.subGrupoRequisito = subGrupo_8_1
+            requisitoRTF_8_1_10.nome = "<p>Prover funcionalidades para a elabora&ccedil;&atilde;o de relat&oacute;rios que ap&oacute;iem a gest&atilde;o dos instrumentos de classifica&ccedil;&atilde;o, temporalidade e destina&ccedil;&atilde;o de documentos. incluindo a capacidade de:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Gerar relat&oacute;rio completo do instrumento de classifica&ccedil;&atilde;o, temporalidade e destina&ccedil;&atilde;o de documentos.</li>\n" +
+                    "\t<li>Gerar relat&oacute;rio parcial do instrumento de classifica&ccedil;&atilde;o, temporalidade e destina&ccedil;&atilde;o de documentos a partir de um ponto determinado na hierarquia do plano de classifica&ccedil;&atilde;o.&nbsp;</li>\n" +
+                    "\t<li>Gerar relat&oacute;rio dos documentos ou processos/dossi&ecirc;s aos quais est&aacute; atribu&iacute;do um determinado prazo de guarda.</li>\n" +
+                    "\t<li>Identificar as inconsist&ecirc;ncias existentes entre os instrumentos de classifica&ccedil;&atilde;o, temporalidade e destina&ccedil;&atilde;o de documentos e o plano de classifica&ccedil;&atilde;o.</li>\n" +
+                    "</ul>"
+            requisitoRTF_8_1_10.save(flush:true)
+        }
+
+        def subGrupo_8_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("8.2")
+        if(!subGrupo_8_2){
+            subGrupo_8_2 = new SubGrupoRequisito()
+            subGrupo_8_2.numeroReferenciaMoreqJus="8.2"
+            subGrupo_8_2.nome ="Aplicação dos instrumentos de classificação,\n" +
+                    "temporalidade e destinação de documentos"
+            subGrupo_8_2.grupoRequisito = grupoRequisito_8
+            subGrupo_8_2.save(flush:true)
+        }
+
+        def requisitoRTF_8_2_1 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.2.1")
+        if(!requisitoRTF_8_2_1){
+            requisitoRTF_8_2_1 = new Requisito()
+            requisitoRTF_8_2_1.numeroReferenciaMoreqJus = "RAD8.2.1"
+            requisitoRTF_8_2_1.obrigatorio = true
+            requisitoRTF_8_2_1.subGrupoRequisito = subGrupo_8_2
+            requisitoRTF_8_2_1.nome = "Prover funcionalidades para informar o usuário autorizado sobre\n" +
+                    "os documentos ou processos/dossiês que já cumpriram ou estão\n" +
+                    "para cumprir o prazo de guarda previsto. "
+            requisitoRTF_8_2_1.save(flush:true)
+        }
+
+        def requisitoRTF_8_2_2 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.2.2")
+        if(!requisitoRTF_8_2_2){
+            requisitoRTF_8_2_2 = new Requisito()
+            requisitoRTF_8_2_2.numeroReferenciaMoreqJus = "RAD8.2.2"
+            requisitoRTF_8_2_2.obrigatorio = true
+            requisitoRTF_8_2_2.subGrupoRequisito = subGrupo_8_2
+            requisitoRTF_8_2_2.nome = "Prover funcionalidades para informar o usuário autorizado sobre\n" +
+                    "os documentos ou processos/dossiês que já cumpriram ou estão\n" +
+                    "para cumprir o prazo de guarda previsto. "
+            requisitoRTF_8_2_2.save(flush:true)
+        }
+
+        def requisitoRTF_8_2_3 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.2.3")
+        if(!requisitoRTF_8_2_3){
+            requisitoRTF_8_2_3 = new Requisito()
+            requisitoRTF_8_2_3.numeroReferenciaMoreqJus = "RAD8.2.3"
+            requisitoRTF_8_2_3.obrigatorio = true
+            requisitoRTF_8_2_3.subGrupoRequisito = subGrupo_8_2
+            requisitoRTF_8_2_3.nome = "Restringir as funcionalidades de destinação a usuários\n" +
+                    "autorizados da unidade de arquivo"
+            requisitoRTF_8_2_3.save(flush:true)
+        }
+
+
+        def requisitoRTF_8_2_4 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.2.4")
+        if(!requisitoRTF_8_2_4){
+            requisitoRTF_8_2_4 = new Requisito()
+            requisitoRTF_8_2_4.numeroReferenciaMoreqJus = "RAD8.2.4"
+            requisitoRTF_8_2_4.obrigatorio = true
+            requisitoRTF_8_2_4.subGrupoRequisito = subGrupo_8_2
+            requisitoRTF_8_2_4.nome = "Quando um usuário autorizado reclassifica documentos ou\n" +
+                    "processos/dossiês de uma classe ou assunto para outro, adotar\n" +
+                    "automaticamente a temporalidade e a destinação vigentes na\n" +
+                    "nova classe ou assunto."
+            requisitoRTF_8_2_4.save(flush:true)
+        }
+
+        def requisitoRTF_8_2_5 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.2.5")
+        if(!requisitoRTF_8_2_5){
+            requisitoRTF_8_2_5 = new Requisito()
+            requisitoRTF_8_2_5.numeroReferenciaMoreqJus = "RAD8.2.5"
+            requisitoRTF_8_2_5.obrigatorio = true
+            requisitoRTF_8_2_5.subGrupoRequisito = subGrupo_8_2
+            requisitoRTF_8_2_5.nome = "Os documentos previamente definidos pelo Programa de Gestão\n" +
+                    "Documental como de guarda permanente (sentenças, inteiro teor\n" +
+                    "de acórdão, etc.) deverão ter sua guarda garantida."
+            requisitoRTF_8_2_5.save(flush:true)
+        }
+
+        def requisitoRTF_8_2_6 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.2.6")
+        if(!requisitoRTF_8_2_6){
+            requisitoRTF_8_2_6 = new Requisito()
+            requisitoRTF_8_2_6.numeroReferenciaMoreqJus = "RAD8.2.6"
+            requisitoRTF_8_2_6.obrigatorio = true
+            requisitoRTF_8_2_6.subGrupoRequisito = subGrupo_8_2
+            requisitoRTF_8_2_6.nome = "<p>Quando um documento digital &mdash; n&atilde;o previamente definido pelo Programa de Gest&atilde;o Documental como de guarda permanente &mdash; estiver associado a mais de um dossi&ecirc; ou processo, e tiver prazos de guarda diferentes associados a ele, esse prazo dever&aacute; ser o mais abrangente.</p>\n" +
+                    "\n" +
+                    "<p>Quando um documento digital estiver associado a mais de um dossi&ecirc; ou processo, o Gest&atilde;oDoc dever&aacute; criar um registro para cada refer&ecirc;ncia desse documento. Cada registro estar&aacute; vinculado ao mesmo objeto digital.</p>\n" +
+                    "\n" +
+                    "<p>O objeto digital n&atilde;o poder&aacute; ser eliminado sem antes ter ocorrido a verifica&ccedil;&atilde;o da temporalidade de todas as refer&ecirc;ncias associadas a ele. O objeto digital s&oacute; poder&aacute; ser eliminado quando os prazos de guarda de todas as refer&ecirc;ncias tiverem sido cumpridos. Antes disso, s&oacute; se pode fazer a elimina&ccedil;&atilde;o de cada registro individualmente.</p>"
+            requisitoRTF_8_2_6.save(flush:true)
+        }
+
+
+        def subGrupo_8_3 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("8.3")
+        if(!subGrupo_8_3){
+            subGrupo_8_3 = new SubGrupoRequisito()
+            subGrupo_8_3.numeroReferenciaMoreqJus="8.3"
+            subGrupo_8_3.nome ="Exportação de documentos"
+            subGrupo_8_3.grupoRequisito = grupoRequisito_8
+            subGrupo_8_3.save(flush:true)
+        }
+
+        def requisitoRTF_8_3_1 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.3.1")
+        if(!requisitoRTF_8_3_1){
+            requisitoRTF_8_3_1 = new Requisito()
+            requisitoRTF_8_3_1.numeroReferenciaMoreqJus = "RAD8.3.1"
+            requisitoRTF_8_3_1.obrigatorio = true
+            requisitoRTF_8_3_1.subGrupoRequisito = subGrupo_8_3
+            requisitoRTF_8_3_1.nome = "Exportar documentos e processos/dossiês digitais e seus\n" +
+                    "metadados para outro sistema, dentro ou fora do órgão. "
+            requisitoRTF_8_3_1.save(flush:true)
+        }
+
+        def requisitoRTF_8_3_2 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.3.2")
+        if(!requisitoRTF_8_3_2){
+            requisitoRTF_8_3_2 = new Requisito()
+            requisitoRTF_8_3_2.numeroReferenciaMoreqJus = "RAD8.3.2"
+            requisitoRTF_8_3_2.obrigatorio = true
+            requisitoRTF_8_3_2.subGrupoRequisito = subGrupo_8_3
+            requisitoRTF_8_3_2.nome = "<p>Exportar um documento e processo/dossi&ecirc; ou grupo de documentos e processos/dossi&ecirc;s numa seq&uuml;&ecirc;ncia de opera&ccedil;&otilde;es, de modo que:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>O conte&uacute;do, o contexto e a estrutura dos seus documentos n&atilde;o se degradem.</li>\n" +
+                    "\t<li>Todos os componentes de um documento digital sejam exportados como uma unidade.</li>\n" +
+                    "\t<li>Todos os metadados do documento sejam relacionados a ele, de forma que os v&iacute;nculos sejam mantidos no novo sistema.</li>\n" +
+                    "\t<li>Todas as liga&ccedil;&otilde;es entre documentos, volumes e processos/dossi&ecirc;s sejam mantidas.</li>\n" +
+                    "</ul>"
+            requisitoRTF_8_3_2.save(flush:true)
+        }
+
+        def requisitoRTF_8_3_3 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.3.3")
+        if(!requisitoRTF_8_3_3){
+            requisitoRTF_8_3_3 = new Requisito()
+            requisitoRTF_8_3_3.numeroReferenciaMoreqJus = "RAD8.3.3"
+            requisitoRTF_8_3_3.obrigatorio = true
+            requisitoRTF_8_3_3.subGrupoRequisito = subGrupo_8_3
+            requisitoRTF_8_3_3.nome = "<p>Exportar processos/dossi&ecirc;s:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Em seu formato nativo ou no formato para o qual foi migrado.</li>\n" +
+                    "\t<li>De acordo com os formatos definidos em padr&otilde;es de interoperabilidade adotados pelo Judici&aacute;rio brasileiro.</li>\n" +
+                    "</ul>"
+            requisitoRTF_8_3_3.save(flush:true)
+        }
+
+
+        def requisitoRTF_8_3_4 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.3.4")
+        if(!requisitoRTF_8_3_4){
+            requisitoRTF_8_3_4 = new Requisito()
+            requisitoRTF_8_3_4.numeroReferenciaMoreqJus = "RAD8.3.4"
+            requisitoRTF_8_3_4.obrigatorio = false
+            requisitoRTF_8_3_4.subGrupoRequisito = subGrupo_8_3
+            requisitoRTF_8_3_4.nome = "<p>Exportar processos/dossi&ecirc;s:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Em seu formato nativo ou no formato para o qual foi migrado.</li>\n" +
+                    "\t<li>De acordo com os formatos definidos em padr&otilde;es de interoperabilidade adotados pelo Judici&aacute;rio brasileiro.</li>\n" +
+                    "</ul>"
+            requisitoRTF_8_3_4.save(flush:true)
+        }
+
+        def requisitoRTF_8_3_5 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.3.5")
+        if(!requisitoRTF_8_3_5){
+            requisitoRTF_8_3_5 = new Requisito()
+            requisitoRTF_8_3_5.numeroReferenciaMoreqJus = "RAD8.3.5"
+            requisitoRTF_8_3_5.obrigatorio = true
+            requisitoRTF_8_3_5.subGrupoRequisito = subGrupo_8_3
+            requisitoRTF_8_3_5.nome = "Produzir um relatório detalhado sobre qualquer falha que ocorra\n" +
+                    "durante uma exportação. O relatório tem de identificar os\n" +
+                    "documentos e processos/dossiês que tenham originado erros de\n" +
+                    "processamento ou cuja exportação não tenha sido bem sucedida"
+            requisitoRTF_8_3_5.save(flush:true)
+        }
+
+
+
+        def requisitoRTF_8_3_6 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.3.6")
+        if(!requisitoRTF_8_3_6){
+            requisitoRTF_8_3_6 = new Requisito()
+            requisitoRTF_8_3_6.numeroReferenciaMoreqJus = "RAD8.3.6"
+            requisitoRTF_8_3_6.obrigatorio = true
+            requisitoRTF_8_3_6.subGrupoRequisito = subGrupo_8_3
+            requisitoRTF_8_3_6.nome = "Conservar todos os documentos e processos/dossiês digitais que\n" +
+                    "tiverem sido exportados, pelo menos até que tenham sido\n" +
+                    "importados no sistema destinatário com êxito. "
+            requisitoRTF_8_3_6.save(flush:true)
+        }
+
+        def requisitoRTF_8_3_7 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.3.7")
+        if(!requisitoRTF_8_3_7){
+            requisitoRTF_8_3_7 = new Requisito()
+            requisitoRTF_8_3_7.numeroReferenciaMoreqJus = "RAD8.3.7"
+            requisitoRTF_8_3_7.obrigatorio = true
+            requisitoRTF_8_3_7.subGrupoRequisito = subGrupo_8_3
+            requisitoRTF_8_3_7.nome = "Manter metadados relativos a documentos e processos/dossiês\n" +
+                    "exportados. "
+            requisitoRTF_8_3_7.save(flush:true)
+        }
+
+        def requisitoRTF_8_3_8 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.3.8")
+        if(!requisitoRTF_8_3_8){
+            requisitoRTF_8_3_8 = new Requisito()
+            requisitoRTF_8_3_8.numeroReferenciaMoreqJus = "RAD8.3.8"
+            requisitoRTF_8_3_8.obrigatorio = false
+            requisitoRTF_8_3_8.subGrupoRequisito = subGrupo_8_3
+            requisitoRTF_8_3_8.nome = "Possibilitar a ordenação dos documentos e processos/dossiês\n" +
+                    "digitais a serem exportados de acordo com elementos de\n" +
+                    "metadados selecionados pelo usuário. "
+            requisitoRTF_8_3_8.save(flush:true)
+        }
+
+        def requisitoRTF_8_3_9 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.3.9")
+        if(!requisitoRTF_8_3_9){
+            requisitoRTF_8_3_9 = new Requisito()
+            requisitoRTF_8_3_9.numeroReferenciaMoreqJus = "RAD8.3.9"
+            requisitoRTF_8_3_9.obrigatorio = true
+            requisitoRTF_8_3_9.subGrupoRequisito = subGrupo_8_3
+            requisitoRTF_8_3_9.nome = "Exigir do usuário autorizado, ao exportar documentos e\n" +
+                    "processos/dossiês híbridos, a confirmação de que a parte nãodigital dos mesmos documentos e processos/dossiês tenha sido\n" +
+                    "recebida adequadamente antes de confirmar a exportação da\n" +
+                    "parte sob forma digital. "
+            requisitoRTF_8_3_9.save(flush:true)
+        }
+
+        def requisitoRTF_8_3_10 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.3.10")
+        if(!requisitoRTF_8_3_10){
+            requisitoRTF_8_3_10 = new Requisito()
+            requisitoRTF_8_3_10.numeroReferenciaMoreqJus = "RAD8.3.10"
+            requisitoRTF_8_3_10.obrigatorio = true
+            requisitoRTF_8_3_10.subGrupoRequisito = subGrupo_8_3
+            requisitoRTF_8_3_10.nome = "<p>Permitir que documentos sejam exportados mais de uma vez.</p>\n" +
+                    "\n" +
+                    "<p>Exemplo: O magistrado determina a remessa de processo eletr&ocirc;nico para o Superior Tribunal de Justi&ccedil;a (STJ) e tamb&eacute;m para o Supremo Tribunal Federal (STF).</p>"
+            requisitoRTF_8_3_10.save(flush:true)
+        }
     }
 
     def cargaGrupo7() {
