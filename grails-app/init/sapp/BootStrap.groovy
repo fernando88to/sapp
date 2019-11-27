@@ -61,6 +61,76 @@ class BootStrap {
             grupoRequisito_14.save(flush: true)
 
         }
+
+        def subGrupo_14_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("14.1")
+        if(!subGrupo_14_1){
+            subGrupo_14_1 = new SubGrupoRequisito()
+            subGrupo_14_1.numeroReferenciaMoreqJus="14.1"
+            subGrupo_14_1.nome ="Desempenho e escalabilidade"
+            subGrupo_14_1.grupoRequisito = grupoRequisito_14
+            subGrupo_14_1.save(flush:true)
+        }
+
+
+
+        def requisitoRDE_14_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RDE14.1.1")
+        if(!requisitoRDE_14_1_1){
+            requisitoRDE_14_1_1 = new Requisito()
+            requisitoRDE_14_1_1.numeroReferenciaMoreqJus = "RDE14.1.1"
+            requisitoRDE_14_1_1.obrigatorio = false
+            requisitoRDE_14_1_1.subGrupoRequisito = subGrupo_14_1
+            requisitoRDE_14_1_1.nome = "Manter estatísticas dos tempos de atendimento, discriminados por tipo de operação. "
+            requisitoRDE_14_1_1.save(flush:true)
+        }
+
+        def requisitoRDE_14_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RDE14.1.2")
+        if(!requisitoRDE_14_1_2){
+            requisitoRDE_14_1_2 = new Requisito()
+            requisitoRDE_14_1_2.numeroReferenciaMoreqJus = "RDE14.1.2"
+            requisitoRDE_14_1_2.obrigatorio = true
+            requisitoRDE_14_1_2.subGrupoRequisito = subGrupo_14_1
+            requisitoRDE_14_1_2.nome = "Ser expansível até comportar um número máximo preestabelecido de usuários simultâneos, provendo continuidade efetiva de serviços."
+            requisitoRDE_14_1_2.save(flush:true)
+        }
+
+        def requisitoRDE_14_1_3 = Requisito.findByNumeroReferenciaMoreqJus("RDE14.1.3")
+        if(!requisitoRDE_14_1_3){
+            requisitoRDE_14_1_3 = new Requisito()
+            requisitoRDE_14_1_3.numeroReferenciaMoreqJus = "RDE14.1.3"
+            requisitoRDE_14_1_3.obrigatorio = true
+            requisitoRDE_14_1_3.subGrupoRequisito = subGrupo_14_1
+            requisitoRDE_14_1_3.nome = "Ser expansível até comportar um número máximo preestabelecido de usuários simultâneos, provendo continuidade efetiva de serviços."
+            requisitoRDE_14_1_3.save(flush:true)
+        }
+
+        def requisitoRDE_14_1_4 = Requisito.findByNumeroReferenciaMoreqJus("RDE14.1.4")
+        if(!requisitoRDE_14_1_4){
+            requisitoRDE_14_1_4 = new Requisito()
+            requisitoRDE_14_1_4.numeroReferenciaMoreqJus = "RDE14.1.4"
+            requisitoRDE_14_1_4.obrigatorio = false
+            requisitoRDE_14_1_4.subGrupoRequisito = subGrupo_14_1
+            requisitoRDE_14_1_4.nome = "Permitir adaptação a instituições de estruturas similares, mas de diferentes tamanhos."
+            requisitoRDE_14_1_4.save(flush:true)
+        }
+
+        def requisitoRDE_14_1_5 = Requisito.findByNumeroReferenciaMoreqJus("RDE14.1.5")
+        if(!requisitoRDE_14_1_5){
+            requisitoRDE_14_1_5 = new Requisito()
+            requisitoRDE_14_1_5.numeroReferenciaMoreqJus = "RDE14.1.5"
+            requisitoRDE_14_1_5.obrigatorio = false
+            requisitoRDE_14_1_5.subGrupoRequisito = subGrupo_14_1
+            requisitoRDE_14_1_5.nome = "<p>Fornecer evid&ecirc;ncias do grau de escalabilidade ao longo do tempo, mantendo avalia&ccedil;&otilde;es quantitativas de:&nbsp;</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;N&uacute;mero m&aacute;ximo de sites remotos suportados com desempenho adequado.</li>\n" +
+                    "\t<li>Tamanho m&aacute;ximo do reposit&oacute;rio.</li>\n" +
+                    "\t<li>N&uacute;mero m&aacute;ximo de usu&aacute;rios simult&acirc;neos que possam ser atendidos com desempenho adequado.</li>\n" +
+                    "\t<li>Sobrecarga administrativa, expectativa de crescimento do n&uacute;mero de usu&aacute;rios.</li>\n" +
+                    "\t<li>Expectativa de crescimento das bases de dados.</li>\n" +
+                    "\t<li>Expectativa de crescimento do n&uacute;mero de esta&ccedil;&otilde;es.</li>\n" +
+                    "</ul>"
+            requisitoRDE_14_1_5.save(flush:true)
+        }
     }
 
     def cargaGrupo13() {
@@ -72,6 +142,27 @@ class BootStrap {
             grupoRequisito_13.numeroReferenciaMoreqJus = 13
             grupoRequisito_13.save(flush: true)
 
+        }
+
+        def subGrupo_13_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("13.1")
+        if(!subGrupo_13_1){
+            subGrupo_13_1 = new SubGrupoRequisito()
+            subGrupo_13_1.numeroReferenciaMoreqJus="13.1"
+            subGrupo_13_1.nome ="Interoperabilidade"
+            subGrupo_13_1.grupoRequisito = grupoRequisito_13
+            subGrupo_13_1.save(flush:true)
+        }
+
+
+
+        def requisitoRDI_13_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RDI13.1.1")
+        if(!requisitoRDI_13_1_1){
+            requisitoRDI_13_1_1 = new Requisito()
+            requisitoRDI_13_1_1.numeroReferenciaMoreqJus = "RDI13.1.1"
+            requisitoRDI_13_1_1.obrigatorio = true
+            requisitoRDI_13_1_1.subGrupoRequisito = subGrupo_13_1
+            requisitoRDI_13_1_1.nome = "<p>Garantir disponibilidade de opera&ccedil;&atilde;o durante o per&iacute;odo definido pela institui&ccedil;&atilde;o, ressalvadas as falhas causadas por problemas de infra-estrutura</p>"
+            requisitoRDI_13_1_1.save(flush:true)
         }
     }
 
