@@ -85,6 +85,60 @@ class BootStrap {
             grupoRequisito_12.save(flush: true)
 
         }
+
+
+        def subGrupo_12_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("12.1")
+        if(!subGrupo_12_1){
+            subGrupo_12_1 = new SubGrupoRequisito()
+            subGrupo_12_1.numeroReferenciaMoreqJus="12.1"
+            subGrupo_12_1.nome ="Interoperabilidade"
+            subGrupo_12_1.grupoRequisito = grupoRequisito_12
+            subGrupo_12_1.save(flush:true)
+        }
+
+
+
+        def requisitoRIN_12_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RIN12.1.1")
+        if(!requisitoRIN_12_1_1){
+            requisitoRIN_12_1_1 = new Requisito()
+            requisitoRIN_12_1_1.numeroReferenciaMoreqJus = "RIN12.1.1"
+            requisitoRIN_12_1_1.obrigatorio = true
+            requisitoRIN_12_1_1.subGrupoRequisito = subGrupo_12_1
+            requisitoRIN_12_1_1.nome = "<p>Interoperar com outros sistemas, permitindo pelo menos consulta, recupera&ccedil;&atilde;o, importa&ccedil;&atilde;o e exporta&ccedil;&atilde;o de documentos e seus metadados.</p>\n" +
+                    "\n" +
+                    "<p>As opera&ccedil;&otilde;es de interoperabilidade devem respeitar a legisla&ccedil;&atilde;o vigente e a pol&iacute;tica de seguran&ccedil;a da informa&ccedil;&atilde;o das institui&ccedil;&otilde;es do Judici&aacute;rio.</p>"
+            requisitoRIN_12_1_1.save(flush:true)
+        }
+
+
+        def requisitoRIN_12_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RIN12.1.2")
+        if(!requisitoRIN_12_1_2){
+            requisitoRIN_12_1_2 = new Requisito()
+            requisitoRIN_12_1_2.numeroReferenciaMoreqJus = "RIN12.1.2"
+            requisitoRIN_12_1_2.obrigatorio = true
+            requisitoRIN_12_1_2.subGrupoRequisito = subGrupo_12_1
+            requisitoRIN_12_1_2.nome = "<p>Interoperar com outros sistemas por interm&eacute;dio de padr&otilde;es abertos de interoperabilidade que dever&atilde;o ser regulamentados pelo CNJ.</p>"
+            requisitoRIN_12_1_2.save(flush:true)
+        }
+
+
+        def requisitoRIN_12_1_3 = Requisito.findByNumeroReferenciaMoreqJus("RIN12.1.3")
+        if(!requisitoRIN_12_1_3){
+            requisitoRIN_12_1_3 = new Requisito()
+            requisitoRIN_12_1_3.numeroReferenciaMoreqJus = "RIN12.1.3"
+            requisitoRIN_12_1_3.obrigatorio = true
+            requisitoRIN_12_1_3.subGrupoRequisito = subGrupo_12_1
+            requisitoRIN_12_1_3.nome = "<p>Aplicar os requisitos de seguran&ccedil;a descritos neste documento para execu&ccedil;&atilde;o das opera&ccedil;&otilde;es de interoperabilidade.</p>\n" +
+                    "\n" +
+                    "<p>Isso &eacute; fundamental para que as opera&ccedil;&otilde;es, feitas em ambiente com interoperabilidade, n&atilde;o afetem a integridade dos documentos e impossibilitem acessos n&atilde;o autorizados.</p>"
+            requisitoRIN_12_1_3.save(flush:true)
+        }
+
+
+
+
+
+
     }
 
     def cargaGrupo11() {
