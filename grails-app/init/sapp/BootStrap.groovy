@@ -97,6 +97,290 @@ class BootStrap {
             grupoRequisito_11.save(flush: true)
 
         }
+
+        def subGrupo_11_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("11.1")
+        if(!subGrupo_11_1){
+            subGrupo_11_1 = new SubGrupoRequisito()
+            subGrupo_11_1.numeroReferenciaMoreqJus="11.1"
+            subGrupo_11_1.nome ="Usabilidade"
+            subGrupo_11_1.grupoRequisito = grupoRequisito_11
+            subGrupo_11_1.save(flush:true)
+        }
+
+
+
+        def requisitoRUS_11_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.1")
+        if(!requisitoRUS_11_1_1){
+            requisitoRUS_11_1_1 = new Requisito()
+            requisitoRUS_11_1_1.numeroReferenciaMoreqJus = "RUS11.1.1"
+            requisitoRUS_11_1_1.obrigatorio = true
+            requisitoRUS_11_1_1.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_1.nome = "Possuir documentação completa, clara, inteligível e organizada\n" +
+                    "para utilização do software. "
+            requisitoRUS_11_1_1.save(flush:true)
+        }
+
+        def requisitoRUS_11_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.2")
+        if(!requisitoRUS_11_1_2){
+            requisitoRUS_11_1_2 = new Requisito()
+            requisitoRUS_11_1_2.numeroReferenciaMoreqJus = "RUS11.1.2"
+            requisitoRUS_11_1_2.obrigatorio = true
+            requisitoRUS_11_1_2.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_2.nome = "Possuir sistema de ajuda on-line."
+            requisitoRUS_11_1_2.save(flush:true)
+        }
+
+        def requisitoRUS_11_1_3 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.3")
+        if(!requisitoRUS_11_1_3){
+            requisitoRUS_11_1_3 = new Requisito()
+            requisitoRUS_11_1_3.numeroReferenciaMoreqJus = "RUS11.1.3"
+            requisitoRUS_11_1_3.obrigatorio = false
+            requisitoRUS_11_1_3.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_3.nome = "<p>Vincular o sistema de ajuda on-line &agrave; fun&ccedil;&atilde;o ou tarefa executada (sens&iacute;vel ao contexto).</p>\n" +
+                    "\n" +
+                    "<p>Exemplo: Quando se executa uma opera&ccedil;&atilde;o de edi&ccedil;&atilde;o, uma vez acionada a ajuda, ela deve remeter para o t&oacute;pico de ajuda da edi&ccedil;&atilde;o.</p>"
+            requisitoRUS_11_1_3.save(flush:true)
+        }
+
+
+        def requisitoRUS_11_1_4 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.4")
+        if(!requisitoRUS_11_1_4){
+            requisitoRUS_11_1_4 = new Requisito()
+            requisitoRUS_11_1_4.numeroReferenciaMoreqJus = "RUS11.1.4"
+            requisitoRUS_11_1_4.obrigatorio = false
+            requisitoRUS_11_1_4.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_4.nome = "<p>Permitir ao gestor a personaliza&ccedil;&atilde;o de conte&uacute;do de ajuda on-line por adi&ccedil;&atilde;o de texto ou edi&ccedil;&atilde;o do texto existente.</p>\n" +
+                    "\n" +
+                    "<p>Exemplo: O respons&aacute;vel pela gest&atilde;o do conte&uacute;do da ajuda pode adicionar esclarecimentos ou alterar o conte&uacute;do das descri&ccedil;&otilde;es, de modo a facilitar o entendimento das fun&ccedil;&otilde;es.</p>"
+            requisitoRUS_11_1_4.save(flush:true)
+        }
+
+        def requisitoRUS_11_1_5 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.5")
+        if(!requisitoRUS_11_1_5){
+            requisitoRUS_11_1_5 = new Requisito()
+            requisitoRUS_11_1_5.numeroReferenciaMoreqJus = "RUS11.1.5"
+            requisitoRUS_11_1_5.obrigatorio = true
+            requisitoRUS_11_1_5.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_5.nome = "Toda mensagem de erro produzida deve ser clara e significativa,\n" +
+                    "de modo a permitir ao usuário corrigir ou cancelar a operação. "
+            requisitoRUS_11_1_5.save(flush:true)
+        }
+
+        def requisitoRUS_11_1_6 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.6")
+        if(!requisitoRUS_11_1_6){
+            requisitoRUS_11_1_6 = new Requisito()
+            requisitoRUS_11_1_6.numeroReferenciaMoreqJus = "RUS11.1.6"
+            requisitoRUS_11_1_6.obrigatorio = true
+            requisitoRUS_11_1_6.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_6.nome = "<p>A interface deve seguir padr&otilde;es preestabelecidos e consolidados como boas pr&aacute;ticas de projeto gr&aacute;fico, validados cientificamente.</p>\n" +
+                    "\n" +
+                    "<p>Normas ou regras de interface podem ser relativas &agrave; utiliza&ccedil;&atilde;o de padr&atilde;o de identidade visual (ligado &agrave; &ldquo;marca&rdquo; da institui&ccedil;&atilde;o ou alguma legisla&ccedil;&atilde;o espec&iacute;fica do Judici&aacute;rio brasileiro), bem como a utiliza&ccedil;&atilde;o de guias de estilo para implementa&ccedil;&atilde;o e verifica&ccedil;&atilde;o da padroniza&ccedil;&atilde;o da interface, desde que n&atilde;o interfira nos princ&iacute;pios b&aacute;sicos da ergonomia cognitiva.</p>"
+            requisitoRUS_11_1_6.save(flush:true)
+        }
+
+        def requisitoRUS_11_1_7 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.7")
+        if(!requisitoRUS_11_1_7){
+            requisitoRUS_11_1_7 = new Requisito()
+            requisitoRUS_11_1_7.numeroReferenciaMoreqJus = "RUS11.1.7"
+            requisitoRUS_11_1_7.obrigatorio = true
+            requisitoRUS_11_1_7.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_7.nome = "<p>Utiliza&ccedil;&atilde;o de um conjunto simples e consistente de regras de interface, privilegiando a facilidade de aprendizado de opera&ccedil;&atilde;o pelos seus usu&aacute;rios.</p>\n" +
+                    "\n" +
+                    "<p>A utiliza&ccedil;&atilde;o de um conjunto de regras consistentes com o ambiente operacional em que o Gest&atilde;oDoc ser&aacute; executado permite que ele apresente menus, comandos e outras facilidades consistentes em toda aplica&ccedil;&atilde;o.</p>\n" +
+                    "\n" +
+                    "<p>Essas regras de interface, quando compat&iacute;veis com outras aplica&ccedil;&otilde;es principais j&aacute; instaladas, levam &agrave; padroniza&ccedil;&atilde;o da terminologia utilizada para fun&ccedil;&otilde;es, r&oacute;tulos e a&ccedil;&otilde;es consistentes em toda a aplica&ccedil;&atilde;o.</p>"
+            requisitoRUS_11_1_7.save(flush:true)
+        }
+
+
+        def requisitoRUS_11_1_8 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.8")
+        if(!requisitoRUS_11_1_8){
+            requisitoRUS_11_1_8 = new Requisito()
+            requisitoRUS_11_1_8.numeroReferenciaMoreqJus = "RUS11.1.8"
+            requisitoRUS_11_1_8.obrigatorio = false
+            requisitoRUS_11_1_8.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_8.nome = "A interface de visualização dos documentos institucionais deve\n" +
+                    "fornecer o recurso de arrastar e soltar, se apropriado no ambiente\n" +
+                    "operacional do GestãoDoc"
+            requisitoRUS_11_1_8.save(flush:true)
+        }
+
+        def requisitoRUS_11_1_9 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.9")
+        if(!requisitoRUS_11_1_9){
+            requisitoRUS_11_1_9 = new Requisito()
+            requisitoRUS_11_1_9.numeroReferenciaMoreqJus = "RUS11.1.9"
+            requisitoRUS_11_1_9.obrigatorio = false
+            requisitoRUS_11_1_9.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_9.nome = "Permitir que a estrutura de classes, assuntos e processos/dossiês\n" +
+                    "seja visualizada em diferentes formas de apresentação. "
+            requisitoRUS_11_1_9.save(flush:true)
+        }
+
+        def requisitoRUS_11_1_10 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.10")
+        if(!requisitoRUS_11_1_10){
+            requisitoRUS_11_1_10 = new Requisito()
+            requisitoRUS_11_1_10.numeroReferenciaMoreqJus = "RUS11.1.10"
+            requisitoRUS_11_1_10.obrigatorio = false
+            requisitoRUS_11_1_10.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_10.nome = "<p>Personalizar a interface gr&aacute;fica, quanto aos seguintes aspectos:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Conte&uacute;dos de menus.</li>\n" +
+                    "\t<li>Formatos de telas.</li>\n" +
+                    "\t<li>Utiliza&ccedil;&atilde;o de teclas de fun&ccedil;&atilde;o.</li>\n" +
+                    "\t<li>Altera&ccedil;&atilde;o de cores, fontes e tamanhos de fontes em telas e janelas dentro de par&acirc;metros ergon&ocirc;micos.</li>\n" +
+                    "\t<li>Avisos sonoros, incluindo tom e volume.</li>\n" +
+                    "</ul>"
+            requisitoRUS_11_1_10.save(flush:true)
+        }
+
+
+
+        def requisitoRUS_11_1_11 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.11")
+        if(!requisitoRUS_11_1_11){
+            requisitoRUS_11_1_11 = new Requisito()
+            requisitoRUS_11_1_11.numeroReferenciaMoreqJus = "RUS11.1.11"
+            requisitoRUS_11_1_11.obrigatorio = false
+            requisitoRUS_11_1_11.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_11.nome = "Utilizar barras de ferramentas, permitindo ao usuário a\n" +
+                    "possibilidade de configuração e de habilitar/desabilitar esse tipo\n" +
+                    "de recurso. Porém, de forma a não infringir a recomendação de\n" +
+                    "utilização de um conjunto simples e consistente de regras de\n" +
+                    "interface. "
+            requisitoRUS_11_1_11.save(flush:true)
+        }
+
+
+        def requisitoRUS_11_1_12 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.12")
+        if(!requisitoRUS_11_1_12){
+            requisitoRUS_11_1_12 = new Requisito()
+            requisitoRUS_11_1_12.numeroReferenciaMoreqJus = "RUS11.1.12"
+            requisitoRUS_11_1_12.obrigatorio = false
+            requisitoRUS_11_1_12.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_12.nome = "Permitir a utilização de janelas, sua movimentação,\n" +
+                    "redimensionamento e gravação das modificações da aparência,\n" +
+                    "possibilitando a personalização por perfil de usuário dentro de\n" +
+                    "parâmetros ergonômicos."
+            requisitoRUS_11_1_12.save(flush:true)
+        }
+
+
+        def requisitoRUS_11_1_13 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.13")
+        if(!requisitoRUS_11_1_13){
+            requisitoRUS_11_1_13 = new Requisito()
+            requisitoRUS_11_1_13.numeroReferenciaMoreqJus = "RUS11.1.13"
+            requisitoRUS_11_1_13.obrigatorio = false
+            requisitoRUS_11_1_13.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_13.nome = "<p>Permitir a grava&ccedil;&atilde;o de op&ccedil;&otilde;es default para entrada de dados de configura&ccedil;&atilde;o:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Valores iguais aos de um item anterior.</li>\n" +
+                    "\t<li>Valores que possam ser selecionados de uma lista configur&aacute;vel.</li>\n" +
+                    "\t<li>Valores derivados do contexto, como data, refer&ecirc;ncia do processo/dossi&ecirc;, identificador do usu&aacute;rio.</li>\n" +
+                    "\t<li>Valores predefinidos por um administrador (para campos de metadados como, por exemplo, o nome da organiza&ccedil;&atilde;o que est&aacute; utilizando o sistema).</li>\n" +
+                    "</ul>"
+            requisitoRUS_11_1_13.save(flush:true)
+        }
+
+
+        def requisitoRUS_11_1_14 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.14")
+        if(!requisitoRUS_11_1_14){
+            requisitoRUS_11_1_14 = new Requisito()
+            requisitoRUS_11_1_14.numeroReferenciaMoreqJus = "RUS11.1.14"
+            requisitoRUS_11_1_14.obrigatorio = true
+            requisitoRUS_11_1_14.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_14.nome = "A interface tem de possibilitar a utilização às pessoas portadoras\n" +
+                    "de necessidades especiais, de modo a atender o Decreto 5.296,\n" +
+                    "de 2004. "
+            requisitoRUS_11_1_14.save(flush:true)
+        }
+
+
+        def requisitoRUS_11_1_15 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.15")
+        if(!requisitoRUS_11_1_15){
+            requisitoRUS_11_1_15 = new Requisito()
+            requisitoRUS_11_1_15.numeroReferenciaMoreqJus = "RUS11.1.15"
+            requisitoRUS_11_1_15.obrigatorio = true
+            requisitoRUS_11_1_15.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_15.nome = "A interação deve permitir a interface com leitores de telas para\n" +
+                    "portadores de deficiências visuais."
+            requisitoRUS_11_1_15.save(flush:true)
+        }
+
+
+
+        def requisitoRUS_11_1_16 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.16")
+        if(!requisitoRUS_11_1_16){
+            requisitoRUS_11_1_16 = new Requisito()
+            requisitoRUS_11_1_16.numeroReferenciaMoreqJus = "RUS11.1.16"
+            requisitoRUS_11_1_16.obrigatorio = true
+            requisitoRUS_11_1_16.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_16.nome = "A utilização não tem de tornar obrigatório o uso de aparelho\n" +
+                    "selecionador específico (mouse, por exemplo). "
+            requisitoRUS_11_1_16.save(flush:true)
+        }
+
+
+        def requisitoRUS_11_1_17 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.17")
+        if(!requisitoRUS_11_1_17){
+            requisitoRUS_11_1_17 = new Requisito()
+            requisitoRUS_11_1_17.numeroReferenciaMoreqJus = "RUS11.1.17"
+            requisitoRUS_11_1_17.obrigatorio = false
+            requisitoRUS_11_1_17.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_17.nome = "Permitir a realização de transações ou tarefas mais freqüentemente executadas com um pequeno número de iterações (cliques de mouse, por exemplo) e sem mudanças excessivas de contexto."
+            requisitoRUS_11_1_17.save(flush:true)
+        }
+
+        def requisitoRUS_11_1_18 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.18")
+        if(!requisitoRUS_11_1_18){
+            requisitoRUS_11_1_18 = new Requisito()
+            requisitoRUS_11_1_18.numeroReferenciaMoreqJus = "RUS11.1.18"
+            requisitoRUS_11_1_18.obrigatorio = false
+            requisitoRUS_11_1_18.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_18.nome = "<p>Integra&ccedil;&atilde;o com o sistema de comunica&ccedil;&atilde;o eletr&ocirc;nica da organiza&ccedil;&atilde;o, de forma a permitir a gera&ccedil;&atilde;o de mensagens com possibilidade de manipular documentos digitais, sem necessidade de sair do Gest&atilde;oDoc.</p>"
+            requisitoRUS_11_1_18.save(flush:true)
+        }
+
+
+        def requisitoRUS_11_1_19 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.19")
+        if(!requisitoRUS_11_1_19){
+            requisitoRUS_11_1_19 = new Requisito()
+            requisitoRUS_11_1_19.numeroReferenciaMoreqJus = "RUS11.1.19"
+            requisitoRUS_11_1_19.obrigatorio = false
+            requisitoRUS_11_1_19.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_19.nome = "<p>No caso de integra&ccedil;&atilde;o com o sistema de comunica&ccedil;&atilde;o eletr&ocirc;nica, deve ser poss&iacute;vel fazer refer&ecirc;ncias a documentos institucionais sem necessidade de envio de c&oacute;pias adicionais.</p>"
+            requisitoRUS_11_1_19.save(flush:true)
+        }
+
+        def requisitoRUS_11_1_20 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.20")
+        if(!requisitoRUS_11_1_20){
+            requisitoRUS_11_1_20 = new Requisito()
+            requisitoRUS_11_1_20.numeroReferenciaMoreqJus = "RUS11.1.20"
+            requisitoRUS_11_1_20.obrigatorio = false
+            requisitoRUS_11_1_20.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_20.nome = "Possuir integração com o sistema padrão de edição de documentos."
+            requisitoRUS_11_1_20.save(flush:true)
+        }
+
+        def requisitoRUS_11_1_21 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.21")
+        if(!requisitoRUS_11_1_21){
+            requisitoRUS_11_1_21 = new Requisito()
+            requisitoRUS_11_1_21.numeroReferenciaMoreqJus = "RUS11.1.21"
+            requisitoRUS_11_1_21.obrigatorio = false
+            requisitoRUS_11_1_21.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_21.nome = "<p>Permitir a defini&ccedil;&atilde;o e utiliza&ccedil;&atilde;o de refer&ecirc;ncias cruzadas entre documentos institucionais digitais correlacionados, possibilitando uma f&aacute;cil navega&ccedil;&atilde;o entre eles, inclusive com uso de hyperlinks.</p>"
+            requisitoRUS_11_1_21.save(flush:true)
+        }
+
+        def requisitoRUS_11_1_22 = Requisito.findByNumeroReferenciaMoreqJus("RUS11.1.22")
+        if(!requisitoRUS_11_1_22){
+            requisitoRUS_11_1_22 = new Requisito()
+            requisitoRUS_11_1_22.numeroReferenciaMoreqJus = "RUS11.1.22"
+            requisitoRUS_11_1_22.obrigatorio = true
+            requisitoRUS_11_1_22.subGrupoRequisito = subGrupo_11_1
+            requisitoRUS_11_1_22.nome = "Restringir o acesso às funcionalidades administrativas impossibilitando sua visualização ao usuário. "
+            requisitoRUS_11_1_22.save(flush:true)
+        }
     }
 
     def cargaGrupo10() {
