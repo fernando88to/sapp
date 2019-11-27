@@ -109,6 +109,101 @@ class BootStrap {
             grupoRequisito_10.save(flush: true)
 
         }
+
+
+        def subGrupo_10_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("10.1")
+        if(!subGrupo_10_1){
+            subGrupo_10_1 = new SubGrupoRequisito()
+            subGrupo_10_1.numeroReferenciaMoreqJus="10.1"
+            subGrupo_10_1.nome ="Monitoração do sistema"
+            subGrupo_10_1.grupoRequisito = grupoRequisito_10
+            subGrupo_10_1.save(flush:true)
+        }
+
+        def requisitoRFA_10_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RFA10.1.1")
+        if(!requisitoRFA_10_1_1){
+            requisitoRFA_10_1_1 = new Requisito()
+            requisitoRFA_10_1_1.numeroReferenciaMoreqJus = "RFA10.1.1"
+            requisitoRFA_10_1_1.obrigatorio = true
+            requisitoRFA_10_1_1.subGrupoRequisito = subGrupo_10_1
+            requisitoRFA_10_1_1.nome = "<p>Permitir que o gestor, de maneira controlada e sem esfor&ccedil;o excessivo, recupere, identifique, visualize e reconfigure os par&acirc;metros do sistema e os atributos dos perfis dos usu&aacute;rios.</p>"
+            requisitoRFA_10_1_1.save(flush:true)
+        }
+
+        def requisitoRFA_10_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RFA10.1.2")
+        if(!requisitoRFA_10_1_2){
+            requisitoRFA_10_1_2 = new Requisito()
+            requisitoRFA_10_1_2.numeroReferenciaMoreqJus = "RFA10.1.2"
+            requisitoRFA_10_1_2.obrigatorio = true
+            requisitoRFA_10_1_2.subGrupoRequisito = subGrupo_10_1
+            requisitoRFA_10_1_2.nome = "<p>Fornecer ao gestor relat&oacute;rios flex&iacute;veis para o gerenciamento dos volumes e itens e sua utiliza&ccedil;&atilde;o, que apresentem no m&iacute;nimo:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Quantidade de processos/dossi&ecirc;s, volumes e itens a partir de par&acirc;metros ou atributos definidos (tempo, classe, unidade administrativa etc.).</li>\n" +
+                    "\t<li>Estat&iacute;sticas de opera&ccedil;&otilde;es relativas a processos/dossi&ecirc;s, volumes e itens.</li>\n" +
+                    "\t<li>Relat&oacute;rios de opera&ccedil;&otilde;es por usu&aacute;rio.</li>\n" +
+                    "</ul>"
+            requisitoRFA_10_1_2.save(flush:true)
+        }
+
+
+        def requisitoRFA_10_1_3 = Requisito.findByNumeroReferenciaMoreqJus("RFA10.1.3")
+        if(!requisitoRFA_10_1_3){
+            requisitoRFA_10_1_3 = new Requisito()
+            requisitoRFA_10_1_3.numeroReferenciaMoreqJus = "RFA10.1.3"
+            requisitoRFA_10_1_3.obrigatorio = true
+            requisitoRFA_10_1_3.subGrupoRequisito = subGrupo_10_1
+            requisitoRFA_10_1_3.nome = "<p>Prover documenta&ccedil;&atilde;o cobrindo aspectos de administra&ccedil;&atilde;o do sistema. A documenta&ccedil;&atilde;o deve incluir todas as informa&ccedil;&otilde;es necess&aacute;rias para o correto gerenciamento do sistema</p>"
+            requisitoRFA_10_1_3.save(flush:true)
+        }
+
+
+        def subGrupo_10_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("10.2")
+        if(!subGrupo_10_2){
+            subGrupo_10_2 = new SubGrupoRequisito()
+            subGrupo_10_2.numeroReferenciaMoreqJus="10.2"
+            subGrupo_10_2.nome ="Manutenção e evolução "
+            subGrupo_10_2.grupoRequisito = grupoRequisito_10
+            subGrupo_10_2.save(flush:true)
+        }
+
+
+
+        def requisitoRFA_10_2_1 = Requisito.findByNumeroReferenciaMoreqJus("RFA10.2.1")
+        if(!requisitoRFA_10_2_1){
+            requisitoRFA_10_2_1 = new Requisito()
+            requisitoRFA_10_2_1.numeroReferenciaMoreqJus = "RFA10.2.1"
+            requisitoRFA_10_2_1.obrigatorio = true
+            requisitoRFA_10_2_1.subGrupoRequisito = subGrupo_10_2
+            requisitoRFA_10_2_1.nome = "Possuir documentação de implementação. "
+            requisitoRFA_10_2_1.save(flush:true)
+        }
+        def requisitoRFA_10_2_2 = Requisito.findByNumeroReferenciaMoreqJus("RFA10.2.2")
+        if(!requisitoRFA_10_2_2){
+            requisitoRFA_10_2_2 = new Requisito()
+            requisitoRFA_10_2_2.numeroReferenciaMoreqJus = "RFA10.2.2"
+            requisitoRFA_10_2_2.obrigatorio = true
+            requisitoRFA_10_2_2.subGrupoRequisito = subGrupo_10_2
+            requisitoRFA_10_2_2.nome = "Ser aderente à normatização do CNJ nos aspectos de processo\n" +
+                    "de desenvolvimento de software.  "
+            requisitoRFA_10_2_2.save(flush:true)
+        }
+
+
+        def requisitoRFA_10_2_3 = Requisito.findByNumeroReferenciaMoreqJus("RFA10.2.3")
+        if(!requisitoRFA_10_2_3){
+            requisitoRFA_10_2_3 = new Requisito()
+            requisitoRFA_10_2_3.numeroReferenciaMoreqJus = "RFA10.2.3"
+            requisitoRFA_10_2_3.obrigatorio = true
+            requisitoRFA_10_2_3.subGrupoRequisito = subGrupo_10_2
+            requisitoRFA_10_2_3.nome = "<p>Possuir um ambiente de homologa&ccedil;&atilde;o para avalia&ccedil;&atilde;o de novas vers&otilde;es de software, que permita testes:&nbsp;</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Funcionais</li>\n" +
+                    "\t<li>De preserva&ccedil;&atilde;o da integridade do acervo digital</li>\n" +
+                    "</ul>"
+            requisitoRFA_10_2_3.save(flush:true)
+        }
     }
 
     def cargaGrupo9() {
@@ -121,6 +216,425 @@ class BootStrap {
             grupoRequisito_9.save(flush: true)
 
         }
+
+
+        def subGrupo_9_1 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("9.1")
+        if(!subGrupo_9_1){
+            subGrupo_9_1 = new SubGrupoRequisito()
+            subGrupo_9_1.numeroReferenciaMoreqJus="9.1"
+            subGrupo_9_1.nome ="Recuperação de informação "
+            subGrupo_9_1.grupoRequisito = grupoRequisito_9
+            subGrupo_9_1.save(flush:true)
+        }
+
+
+        def requisitoRTF_9_1_1 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.1.1")
+        if(!requisitoRTF_9_1_1){
+            requisitoRTF_9_1_1 = new Requisito()
+            requisitoRTF_9_1_1.numeroReferenciaMoreqJus = "RPL9.1.1"
+            requisitoRTF_9_1_1.obrigatorio = true
+            requisitoRTF_9_1_1.subGrupoRequisito = subGrupo_9_1
+            requisitoRTF_9_1_1.nome = "Fornecer facilidades para pesquisa, localização e apresentação\n" +
+                    "dos documentos. "
+            requisitoRTF_9_1_1.save(flush:true)
+        }
+
+        def requisitoRTF_9_1_2 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.1.2")
+        if(!requisitoRTF_9_1_2){
+            requisitoRTF_9_1_2 = new Requisito()
+            requisitoRTF_9_1_2.numeroReferenciaMoreqJus = "RPL9.1.2"
+            requisitoRTF_9_1_2.obrigatorio = false
+            requisitoRTF_9_1_2.subGrupoRequisito = subGrupo_9_1
+            requisitoRTF_9_1_2.nome = "Fornecer interface de pesquisa, localização e apresentação\n" +
+                    "opcionais via um ambiente Web"
+            requisitoRTF_9_1_2.save(flush:true)
+        }
+
+        def requisitoRTF_9_1_3 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.1.3")
+        if(!requisitoRTF_9_1_3){
+            requisitoRTF_9_1_3 = new Requisito()
+            requisitoRTF_9_1_3.numeroReferenciaMoreqJus = "RPL9.1.3"
+            requisitoRTF_9_1_3.obrigatorio = false
+            requisitoRTF_9_1_3.subGrupoRequisito = subGrupo_9_1
+            requisitoRTF_9_1_3.nome = "Prever a navegação gráfica do plano de classificação, a\n" +
+                    "navegação direta de uma classe ou assunto, para os documentos\n" +
+                    "institucionais criados nessa classe ou assunto, e a seleção,\n" +
+                    "recuperação e apresentação direta dos documentos institucionais\n" +
+                    "e de seus conteúdos por meio desse mecanismo"
+            requisitoRTF_9_1_3.save(flush:true)
+        }
+        def requisitoRTF_9_1_4 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.1.4")
+        if(!requisitoRTF_9_1_4){
+            requisitoRTF_9_1_4 = new Requisito()
+            requisitoRTF_9_1_4.numeroReferenciaMoreqJus = "RPL9.1.4"
+            requisitoRTF_9_1_4.obrigatorio = true
+            requisitoRTF_9_1_4.subGrupoRequisito = subGrupo_9_1
+            requisitoRTF_9_1_4.nome = "Restringir a recuperação de informações de documentos e\n" +
+                    "processos/dossiês sigilosos e em segredo de justiça aos usuários\n" +
+                    "que possuam credencial de segurança adequada."
+            requisitoRTF_9_1_4.save(flush:true)
+        }
+
+
+        def subGrupo_9_2 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("9.2")
+        if(!subGrupo_9_2){
+            subGrupo_9_2 = new SubGrupoRequisito()
+            subGrupo_9_2.numeroReferenciaMoreqJus="9.2"
+            subGrupo_9_2.nome ="Pesquisa e localização"
+            subGrupo_9_2.grupoRequisito = grupoRequisito_9
+            subGrupo_9_2.save(flush:true)
+        }
+
+        def requisitoRTF_9_2_1 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.1")
+        if(!requisitoRTF_9_2_1){
+            requisitoRTF_9_2_1 = new Requisito()
+            requisitoRTF_9_2_1.numeroReferenciaMoreqJus = "RPL9.2.1"
+            requisitoRTF_9_2_1.obrigatorio = true
+            requisitoRTF_9_2_1.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_1.nome = "Fornecer uma série de funções que atuem sobre os metadados\n" +
+                    "relacionados com os diversos níveis de agregação (documento,\n" +
+                    "unidade de arquivamento e classe) e sobre os conteúdos dos\n" +
+                    "documentos institucionais, por meio de parâmetros definidos pelo\n" +
+                    "usuário, com o objetivo de localizar e acessar os documentos\n" +
+                    "e/ou metadados, quer individualmente quer reunidos em grupo. "
+            requisitoRTF_9_2_1.save(flush:true)
+        }
+
+
+        def requisitoRTF_9_2_2 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.2")
+        if(!requisitoRTF_9_2_2){
+            requisitoRTF_9_2_2 = new Requisito()
+            requisitoRTF_9_2_2.numeroReferenciaMoreqJus = "RPL9.2.2"
+            requisitoRTF_9_2_2.obrigatorio = true
+            requisitoRTF_9_2_2.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_2.nome = "Permitir a pesquisa regional de forma integrada, apresentando\n" +
+                    "todos os documentos e processos/dossiês, sejam eles digitais,\n" +
+                    "híbridos ou não-digitais, que satisfaçam aos parâmetros da\n" +
+                    "pesquisa. "
+            requisitoRTF_9_2_2.save(flush:true)
+        }
+
+        def requisitoRTF_9_2_3 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.3")
+        if(!requisitoRTF_9_2_3){
+            requisitoRTF_9_2_3 = new Requisito()
+            requisitoRTF_9_2_3.numeroReferenciaMoreqJus = "RPL9.2.3"
+            requisitoRTF_9_2_3.obrigatorio = false
+            requisitoRTF_9_2_3.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_3.nome = "Permitir a pesquisa nacional de forma integrada, apresentando\n" +
+                    "todos os documentos e processos/dossiês, sejam eles digitais,\n" +
+                    "híbridos ou não-digitais, que satisfaçam aos parâmetros da\n" +
+                    "pesquisa. "
+            requisitoRTF_9_2_3.save(flush:true)
+        }
+
+        def requisitoRTF_9_2_4 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.4")
+        if(!requisitoRTF_9_2_4){
+            requisitoRTF_9_2_4 = new Requisito()
+            requisitoRTF_9_2_4.numeroReferenciaMoreqJus = "RPL9.2.4"
+            requisitoRTF_9_2_4.obrigatorio = true
+            requisitoRTF_9_2_4.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_4.nome = "Permitir que todos os metadados de gestão de um documento ou\n" +
+                    "processo/dossiê sejam pesquisados.\n" +
+                    "O usuário deve ser informado quando a pesquisa não obtiver\n" +
+                    "resultado."
+            requisitoRTF_9_2_4.save(flush:true)
+        }
+
+        def requisitoRTF_9_2_5 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.5")
+        if(!requisitoRTF_9_2_5){
+            requisitoRTF_9_2_5 = new Requisito()
+            requisitoRTF_9_2_5.numeroReferenciaMoreqJus = "RPL9.2.5"
+            requisitoRTF_9_2_5.obrigatorio = false
+            requisitoRTF_9_2_5.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_5.nome = "<p>Permitir que os conte&uacute;dos sob a forma de texto dos documentos sejam pesquisados.</p>\n" +
+                    "\n" +
+                    "<p>O usu&aacute;rio deve ser informado quando a pesquisa n&atilde;o obtiver resultado.</p>"
+            requisitoRTF_9_2_5.save(flush:true)
+        }
+
+
+        def requisitoRTF_9_2_6 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.6")
+        if(!requisitoRTF_9_2_6){
+            requisitoRTF_9_2_6 = new Requisito()
+            requisitoRTF_9_2_6.numeroReferenciaMoreqJus = "RPL9.2.6"
+            requisitoRTF_9_2_6.obrigatorio = true
+            requisitoRTF_9_2_6.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_6.nome = "<p>Permitir que um documento ou processo/dossi&ecirc; seja recuperado por meio de todas as formas de identifica&ccedil;&atilde;o implementadas, incluindo no m&iacute;nimo:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Identificador</li>\n" +
+                    "\t<li>T&iacute;tulo ou descri&ccedil;&atilde;o abreviada</li>\n" +
+                    "\t<li>Datas</li>\n" +
+                    "\t<li>Unidade de origem/destino</li>\n" +
+                    "\t<li>Signat&aacute;rio/redator/parte/advogado/magistrado/interessado</li>\n" +
+                    "\t<li>Classifica&ccedil;&atilde;o de acordo com os instrumentos de classifica&ccedil;&atilde;o</li>\n" +
+                    "</ul>"
+            requisitoRTF_9_2_6.save(flush:true)
+        }
+
+
+
+        def requisitoRTF_9_2_7 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.7")
+        if(!requisitoRTF_9_2_7){
+            requisitoRTF_9_2_7 = new Requisito()
+            requisitoRTF_9_2_7.numeroReferenciaMoreqJus = "RPL9.2.7"
+            requisitoRTF_9_2_7.obrigatorio = false
+            requisitoRTF_9_2_7.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_7.nome = "Fornecer uma interface que possibilite a pesquisa combinada de metadados e de conteúdo do documento por meio dos operadores lógicos: “E”, “OU” e “NÃO”."
+            requisitoRTF_9_2_7.save(flush:true)
+        }
+
+        def requisitoRTF_9_2_8 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.8")
+        if(!requisitoRTF_9_2_8){
+            requisitoRTF_9_2_8 = new Requisito()
+            requisitoRTF_9_2_8.numeroReferenciaMoreqJus = "RPL9.2.8"
+            requisitoRTF_9_2_8.obrigatorio = false
+            requisitoRTF_9_2_8.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_8.nome = "Permitir que os termos utilizados na pesquisa sejam qualificados,\n" +
+                    "especificando-se um metadado ou o conteúdo do documento\n" +
+                    "como fonte de busca."
+            requisitoRTF_9_2_8.save(flush:true)
+        }
+
+
+        def requisitoRTF_9_2_9 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.9")
+        if(!requisitoRTF_9_2_9){
+            requisitoRTF_9_2_9 = new Requisito()
+            requisitoRTF_9_2_9.numeroReferenciaMoreqJus = "RPL9.2.9"
+            requisitoRTF_9_2_9.obrigatorio = false
+            requisitoRTF_9_2_9.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_9.nome = "Permitir a utilização de caracteres coringa e busca fonética para a\n" +
+                    "pesquisa de metadados. "
+            requisitoRTF_9_2_9.save(flush:true)
+        }
+
+        def requisitoRTF_9_2_10 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.10")
+        if(!requisitoRTF_9_2_10){
+            requisitoRTF_9_2_10 = new Requisito()
+            requisitoRTF_9_2_10.numeroReferenciaMoreqJus = "RPL9.2.10"
+            requisitoRTF_9_2_10.obrigatorio = false
+            requisitoRTF_9_2_10.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_10.nome = "Permitir que os usuários possam refinar as pesquisas já\n" +
+                    "realizadas."
+            requisitoRTF_9_2_10.save(flush:true)
+        }
+
+
+        def requisitoRTF_9_2_11 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.11")
+        if(!requisitoRTF_9_2_11){
+            requisitoRTF_9_2_11 = new Requisito()
+            requisitoRTF_9_2_11.numeroReferenciaMoreqJus = "RPL9.2.11"
+            requisitoRTF_9_2_11.obrigatorio = false
+            requisitoRTF_9_2_11.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_11.nome = "Quando o órgão utilizar tesauros ou vocabulário controlado,\n" +
+                    "realizar pesquisa dos documentos e processos/dossiês por meio\n" +
+                    "da navegação destes instrumentos. "
+            requisitoRTF_9_2_11.save(flush:true)
+        }
+
+
+        def requisitoRTF_9_2_12 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.12")
+        if(!requisitoRTF_9_2_12){
+            requisitoRTF_9_2_12 = new Requisito()
+            requisitoRTF_9_2_12.numeroReferenciaMoreqJus = "RPL9.2.12"
+            requisitoRTF_9_2_12.obrigatorio = true
+            requisitoRTF_9_2_12.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_12.nome = "Permitir a pesquisa previamente parametrizada, de acordo com o\n" +
+                    "perfil ou necessidade do usuário"
+            requisitoRTF_9_2_12.save(flush:true)
+        }
+
+        def requisitoRTF_9_2_13 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.2.13")
+        if(!requisitoRTF_9_2_13){
+            requisitoRTF_9_2_13 = new Requisito()
+            requisitoRTF_9_2_13.numeroReferenciaMoreqJus = "RPL9.2.13"
+            requisitoRTF_9_2_13.obrigatorio = true
+            requisitoRTF_9_2_13.subGrupoRequisito = subGrupo_9_2
+            requisitoRTF_9_2_13.nome = "Permitir a pesquisa e recuperação de uma unidade de\n" +
+                    "arquivamento e exibir a lista de todos os documentos que o\n" +
+                    "compõem. "
+            requisitoRTF_9_2_13.save(flush:true)
+        }
+
+
+
+
+        def subGrupo_9_3 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("9.3")
+        if(!subGrupo_9_3){
+            subGrupo_9_3 = new SubGrupoRequisito()
+            subGrupo_9_3.numeroReferenciaMoreqJus="9.3"
+            subGrupo_9_3.nome ="Apresentação: texto, imagem, som e vídeo "
+            subGrupo_9_3.grupoRequisito = grupoRequisito_9
+            subGrupo_9_3.save(flush:true)
+        }
+
+        def requisitoRTF_9_3_1 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.1")
+        if(!requisitoRTF_9_3_1){
+            requisitoRTF_9_3_1 = new Requisito()
+            requisitoRTF_9_3_1.numeroReferenciaMoreqJus = "RPL9.3.1"
+            requisitoRTF_9_3_1.obrigatorio = true
+            requisitoRTF_9_3_1.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_1.nome = "Apresentar o resultado da pesquisa como uma lista de\n" +
+                    "documentos e processos/dossiês digitais, não-digitais ou híbridos\n" +
+                    "que cumpram os parâmetros daquela"
+            requisitoRTF_9_3_1.save(flush:true)
+        }
+
+
+        def requisitoRTF_9_3_2 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.2")
+        if(!requisitoRTF_9_3_2){
+            requisitoRTF_9_3_2 = new Requisito()
+            requisitoRTF_9_3_2.numeroReferenciaMoreqJus = "RPL9.3.2"
+            requisitoRTF_9_3_2.obrigatorio = true
+            requisitoRTF_9_3_2.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_2.nome = "<p>Ap&oacute;s apresentar o resultado da pesquisa, al&eacute;m de informar a quantidade de itens recuperados, deve-se permitir ao usu&aacute;rio as seguintes op&ccedil;&otilde;es:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Acessar os documentos e processos/dossi&ecirc;s resultantes da pesquisa.</li>\n" +
+                    "\t<li>Redefinir os par&acirc;metros de pesquisa e fazer nova consulta.</li>\n" +
+                    "</ul>"
+            requisitoRTF_9_3_2.save(flush:true)
+        }
+
+
+        def requisitoRTF_9_3_3 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.3")
+        if(!requisitoRTF_9_3_3){
+            requisitoRTF_9_3_3 = new Requisito()
+            requisitoRTF_9_3_3.numeroReferenciaMoreqJus = "RPL9.3.3"
+            requisitoRTF_9_3_3.obrigatorio = false
+            requisitoRTF_9_3_3.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_3.nome = "Permitir que os documentos e processos/dossiês apresentados\n" +
+                    "em uma lista de resultados sejam selecionados e, em seguida,\n" +
+                    "abertos. "
+            requisitoRTF_9_3_3.save(flush:true)
+        }
+
+
+        def requisitoRTF_9_3_4 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.4")
+        if(!requisitoRTF_9_3_4){
+            requisitoRTF_9_3_4 = new Requisito()
+            requisitoRTF_9_3_4.numeroReferenciaMoreqJus = "RPL9.3.4"
+            requisitoRTF_9_3_4.obrigatorio = false
+            requisitoRTF_9_3_4.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_4.nome = "<p>Permitir ao gestor a configura&ccedil;&atilde;o de pesquisas, possibilitando as seguintes parametriza&ccedil;&otilde;es:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>&nbsp;Determina&ccedil;&atilde;o do n&uacute;mero m&aacute;ximo de itens recuper&aacute;veis em uma pesquisa.</li>\n" +
+                    "\t<li>&nbsp;Defini&ccedil;&atilde;o dos metadados que devem ser exibidos nas listas de resultados de pesquisa.</li>\n" +
+                    "</ul>"
+            requisitoRTF_9_3_4.save(flush:true)
+        }
+
+        def requisitoRTF_9_3_5 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.5")
+        if(!requisitoRTF_9_3_5){
+            requisitoRTF_9_3_5 = new Requisito()
+            requisitoRTF_9_3_5.numeroReferenciaMoreqJus = "RPL9.3.5"
+            requisitoRTF_9_3_5.obrigatorio = false
+            requisitoRTF_9_3_5.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_5.nome = "<p>Permitir a configura&ccedil;&atilde;o do formato da lista de resultados de pesquisa pelo usu&aacute;rio incluindo as funcionalidades:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Sele&ccedil;&atilde;o da ordem em que os resultados de pesquisa s&atilde;o apresentados.</li>\n" +
+                    "\t<li>Determina&ccedil;&atilde;o do n&uacute;mero de resultados de pesquisa exibidos na tela de cada vez.&nbsp;</li>\n" +
+                    "\t<li>Armazenamento dos resultados de uma pesquisa.</li>\n" +
+                    "</ul>"
+            requisitoRTF_9_3_5.save(flush:true)
+        }
+
+
+        def requisitoRTF_9_3_6 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.6")
+        if(!requisitoRTF_9_3_6){
+            requisitoRTF_9_3_6 = new Requisito()
+            requisitoRTF_9_3_6.numeroReferenciaMoreqJus = "RPL9.3.6"
+            requisitoRTF_9_3_6.obrigatorio = false
+            requisitoRTF_9_3_6.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_6.nome = "<p>Fornecer recursos que permitam a um usu&aacute;rio &ldquo;navegar&rdquo; para o n&iacute;vel imediatamente superior ou inferior, como, por exemplo:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>De um documento para a unidade de arquivamento em que est&aacute; inclu&iacute;do.</li>\n" +
+                    "\t<li>De uma unidade de arquivamento para os documentos nela inclu&iacute;dos.</li>\n" +
+                    "\t<li>De uma unidade de arquivamento para a classe respectiva.</li>\n" +
+                    "\t<li>&nbsp;De uma classe para as unidades de arquivamento a ela relacionadas.</li>\n" +
+                    "</ul>"
+            requisitoRTF_9_3_6.save(flush:true)
+        }
+
+        def requisitoRTF_9_3_7 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.7")
+        if(!requisitoRTF_9_3_7){
+            requisitoRTF_9_3_7 = new Requisito()
+            requisitoRTF_9_3_7.numeroReferenciaMoreqJus = "RPL9.3.7"
+            requisitoRTF_9_3_7.obrigatorio = true
+            requisitoRTF_9_3_7.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_7.nome = "Apresentar o conteúdo de todos os tipos de documentos\n" +
+                    "institucionais digitais capturados, preservando as características e\n" +
+                    "os formatos."
+            requisitoRTF_9_3_7.save(flush:true)
+        }
+
+        def requisitoRTF_9_3_8 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.8")
+        if(!requisitoRTF_9_3_8){
+            requisitoRTF_9_3_8 = new Requisito()
+            requisitoRTF_9_3_8.numeroReferenciaMoreqJus = "RPL9.3.8"
+            requisitoRTF_9_3_8.obrigatorio = true
+            requisitoRTF_9_3_8.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_8.nome = "Reproduzir os documentos capturados, preservando o formato\n" +
+                    "produzido pelas aplicações geradoras."
+            requisitoRTF_9_3_8.save(flush:true)
+        }
+
+        def requisitoRTF_9_3_9 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.9")
+        if(!requisitoRTF_9_3_9){
+            requisitoRTF_9_3_9 = new Requisito()
+            requisitoRTF_9_3_9.numeroReferenciaMoreqJus = "RPL9.3.9"
+            requisitoRTF_9_3_9.obrigatorio = true
+            requisitoRTF_9_3_9.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_9.nome = "Permitir que todos os documentos de um processo/dossiê sejam\n" +
+                    "impressos ou armazenados em uma única operação, na\n" +
+                    "seqüência determinada pelo usuário. "
+            requisitoRTF_9_3_9.save(flush:true)
+        }
+
+
+        def requisitoRTF_9_3_10 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.10")
+        if(!requisitoRTF_9_3_10){
+            requisitoRTF_9_3_10 = new Requisito()
+            requisitoRTF_9_3_10.numeroReferenciaMoreqJus = "RPL9.3.10"
+            requisitoRTF_9_3_10.obrigatorio = true
+            requisitoRTF_9_3_10.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_10.nome = "Apresentar os documentos institucionais em formatos\n" +
+                    "padronizados para publicação digital e interoperabilidade, além do\n" +
+                    "formato nativo.\n" +
+                    "No que se refere à interoperabilidade com outros sistemas, ver\n" +
+                    "Capítulo 12, Interoperabilidade."
+            requisitoRTF_9_3_10.save(flush:true)
+        }
+
+        def requisitoRTF_9_3_11 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.11")
+        if(!requisitoRTF_9_3_11){
+            requisitoRTF_9_3_11 = new Requisito()
+            requisitoRTF_9_3_11.numeroReferenciaMoreqJus = "RPL9.3.11"
+            requisitoRTF_9_3_11.obrigatorio = true
+            requisitoRTF_9_3_11.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_11.nome = "Realizar pesquisa e exibição de documentos e processos/dossiês\n" +
+                    "simultaneamente para diversos usuários"
+            requisitoRTF_9_3_11.save(flush:true)
+        }
+
+        def requisitoRTF_9_3_13 = Requisito.findByNumeroReferenciaMoreqJus("RPL9.3.13")
+        if(!requisitoRTF_9_3_13){
+            requisitoRTF_9_3_13 = new Requisito()
+            requisitoRTF_9_3_13.numeroReferenciaMoreqJus = "RPL9.3.13"
+            requisitoRTF_9_3_13.obrigatorio = true
+            requisitoRTF_9_3_13.subGrupoRequisito = subGrupo_9_3
+            requisitoRTF_9_3_13.nome = "Permitir ao gestor o estabelecimento de permissões para\n" +
+                    "armazenamento e reprodução de documentos,\n" +
+                    "processos/dossiês. "
+            requisitoRTF_9_3_13.save(flush:true)
+        }
+
+
+
+
     }
 
     def cargaGrupo8() {
@@ -508,6 +1022,198 @@ class BootStrap {
                     "<p>Exemplo: O magistrado determina a remessa de processo eletr&ocirc;nico para o Superior Tribunal de Justi&ccedil;a (STJ) e tamb&eacute;m para o Supremo Tribunal Federal (STF).</p>"
             requisitoRTF_8_3_10.save(flush:true)
         }
+
+
+
+        def subGrupo_8_4 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("8.4")
+        if(!subGrupo_8_4){
+            subGrupo_8_4 = new SubGrupoRequisito()
+            subGrupo_8_4.numeroReferenciaMoreqJus="8.4"
+            subGrupo_8_4.nome ="Eliminação"
+            subGrupo_8_4.grupoRequisito = grupoRequisito_8
+            subGrupo_8_4.save(flush:true)
+        }
+
+        def requisitoRTF_8_4_1 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.4.1")
+        if(!requisitoRTF_8_4_1){
+            requisitoRTF_8_4_1 = new Requisito()
+            requisitoRTF_8_4_1.numeroReferenciaMoreqJus = "RAD8.4.1"
+            requisitoRTF_8_4_1.obrigatorio = true
+            requisitoRTF_8_4_1.subGrupoRequisito = subGrupo_8_4
+            requisitoRTF_8_4_1.nome = "Restringir a função de eliminação de documentos ou\n" +
+                    "processos/dossiês a usuários autorizados. "
+            requisitoRTF_8_4_1.save(flush:true)
+        }
+
+        def requisitoRTF_8_4_2 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.4.2")
+        if(!requisitoRTF_8_4_2){
+            requisitoRTF_8_4_2 = new Requisito()
+            requisitoRTF_8_4_2.numeroReferenciaMoreqJus = "RAD8.4.2"
+            requisitoRTF_8_4_2.obrigatorio = true
+            requisitoRTF_8_4_2.subGrupoRequisito = subGrupo_8_4
+            requisitoRTF_8_4_2.nome = "Solicitar confirmação da eliminação a um usuário autorizado antes\n" +
+                    "que qualquer ação seja tomada com relação ao documento e\n" +
+                    "processo/dossiê."
+            requisitoRTF_8_4_2.save(flush:true)
+        }
+
+
+
+        def requisitoRTF_8_4_3 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.4.3")
+        if(!requisitoRTF_8_4_3){
+            requisitoRTF_8_4_3 = new Requisito()
+            requisitoRTF_8_4_3.numeroReferenciaMoreqJus = "RAD8.4.3"
+            requisitoRTF_8_4_3.obrigatorio = true
+            requisitoRTF_8_4_3.subGrupoRequisito = subGrupo_8_4
+            requisitoRTF_8_4_3.nome = "Avisar o usuário autorizado quando um documento ou\n" +
+                    "processo/dossiê passível de eliminação encontrar-se\n" +
+                    "relacionado a outro documento ou processo/dossiê"
+            requisitoRTF_8_4_3.save(flush:true)
+        }
+
+
+        def requisitoRTF_8_4_4 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.4.4")
+        if(!requisitoRTF_8_4_4){
+            requisitoRTF_8_4_4 = new Requisito()
+            requisitoRTF_8_4_4.numeroReferenciaMoreqJus = "RAD8.4.4"
+            requisitoRTF_8_4_4.obrigatorio = true
+            requisitoRTF_8_4_4.subGrupoRequisito = subGrupo_8_4
+            requisitoRTF_8_4_4.nome = "Permitir a eliminação de documentos ou processos/dossiês de\n" +
+                    "forma irreversível, a fim de que não possam ser restaurados por\n" +
+                    "meio da utilização normal do GestãoDoc. "
+            requisitoRTF_8_4_4.save(flush:true)
+        }
+
+        def requisitoRTF_8_4_5 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.4.5")
+        if(!requisitoRTF_8_4_5){
+            requisitoRTF_8_4_5 = new Requisito()
+            requisitoRTF_8_4_5.numeroReferenciaMoreqJus = "RAD8.4.5"
+            requisitoRTF_8_4_5.obrigatorio = true
+            requisitoRTF_8_4_5.subGrupoRequisito = subGrupo_8_4
+            requisitoRTF_8_4_5.nome = "Quando um documento tiver várias referências armazenadas no\n" +
+                    "sistema, garantir que todas essas referências sejam verificadas\n" +
+                    "antes de eliminar o objeto digital.\n" +
+                    "Ver RAD8.2.6"
+            requisitoRTF_8_4_5.save(flush:true)
+        }
+
+        def requisitoRTF_8_4_6 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.4.6")
+        if(!requisitoRTF_8_4_6){
+            requisitoRTF_8_4_6 = new Requisito()
+            requisitoRTF_8_4_6.numeroReferenciaMoreqJus = "RAD8.4.6"
+            requisitoRTF_8_4_6.obrigatorio = true
+            requisitoRTF_8_4_6.subGrupoRequisito = subGrupo_8_4
+            requisitoRTF_8_4_6.nome = "Produzir um relatório detalhando qualquer falha que ocorra\n" +
+                    "durante uma eliminação. O relatório deverá identificar os\n" +
+                    "documentos cuja eliminação não tenha sido bem sucedida. "
+            requisitoRTF_8_4_6.save(flush:true)
+        }
+
+        def requisitoRTF_8_4_7 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.4.7")
+        if(!requisitoRTF_8_4_7){
+            requisitoRTF_8_4_7 = new Requisito()
+            requisitoRTF_8_4_7.numeroReferenciaMoreqJus = "RAD8.4.7"
+            requisitoRTF_8_4_7.obrigatorio = true
+            requisitoRTF_8_4_7.subGrupoRequisito = subGrupo_8_4
+            requisitoRTF_8_4_7.nome = "Quando eliminar documentos ou processos/dossiês\n" +
+                    "híbridos, exigir do usuário autorizado a confirmação de que a\n" +
+                    "parte não-digital dos mesmos tenha sido eliminada também antes\n" +
+                    "de confirmar a eliminação da parte sob forma digital. "
+            requisitoRTF_8_4_7.save(flush:true)
+        }
+
+        def requisitoRTF_8_4_8 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.4.8")
+        if(!requisitoRTF_8_4_8){
+            requisitoRTF_8_4_8 = new Requisito()
+            requisitoRTF_8_4_8.numeroReferenciaMoreqJus = "RAD8.4.8"
+            requisitoRTF_8_4_8.obrigatorio = true
+            requisitoRTF_8_4_8.subGrupoRequisito = subGrupo_8_4
+            requisitoRTF_8_4_8.nome = "<p>Gerar relat&oacute;rio com os documentos e processos/dossi&ecirc;s:</p>\n" +
+                    "\n" +
+                    "<ul>\n" +
+                    "\t<li>Pass&iacute;veis de elimina&ccedil;&atilde;o (edital).</li>\n" +
+                    "\t<li>Selecionados para guarda permanente pela aplica&ccedil;&atilde;o do plano amostral.</li>\n" +
+                    "\t<li>Definitivamente eliminados (termo de elimina&ccedil;&atilde;o).</li>\n" +
+                    "</ul>"
+            requisitoRTF_8_4_8.save(flush:true)
+        }
+
+
+        def requisitoRTF_8_4_9 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.4.9")
+        if(!requisitoRTF_8_4_9){
+            requisitoRTF_8_4_9 = new Requisito()
+            requisitoRTF_8_4_9.numeroReferenciaMoreqJus = "RAD8.4.9"
+            requisitoRTF_8_4_9.obrigatorio = true
+            requisitoRTF_8_4_9.subGrupoRequisito = subGrupo_8_4
+            requisitoRTF_8_4_9.nome = "Manter metadados relativos a documentos e\n" +
+                    "processos/dossiês eliminados. "
+            requisitoRTF_8_4_9.save(flush:true)
+        }
+
+
+
+        def subGrupo_8_5 = SubGrupoRequisito.findByNumeroReferenciaMoreqJus("8.5")
+        if(!subGrupo_8_5){
+            subGrupo_8_5 = new SubGrupoRequisito()
+            subGrupo_8_5.numeroReferenciaMoreqJus="8.5"
+            subGrupo_8_5.nome ="Avaliação e destinação de documentos\n" +
+                    "institucionais não-digitais e híbridos "
+            subGrupo_8_5.grupoRequisito = grupoRequisito_8
+            subGrupo_8_5.save(flush:true)
+        }
+
+
+        def requisitoRTF_8_5_1 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.5.1")
+        if(!requisitoRTF_8_5_1){
+            requisitoRTF_8_5_1 = new Requisito()
+            requisitoRTF_8_5_1.numeroReferenciaMoreqJus = "RAD8.5.1"
+            requisitoRTF_8_5_1.obrigatorio = true
+            requisitoRTF_8_5_1.subGrupoRequisito = subGrupo_8_5
+            requisitoRTF_8_5_1.nome = "Aplicar os mesmos instrumentos de classificação, temporalidade\n" +
+                    "e destinação de documentos para os documentos não-digitais,\n" +
+                    "digitais ou híbridos."
+            requisitoRTF_8_5_1.save(flush:true)
+        }
+
+
+
+        def requisitoRTF_8_5_2 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.5.2")
+        if(!requisitoRTF_8_5_2){
+            requisitoRTF_8_5_2 = new Requisito()
+            requisitoRTF_8_5_2.numeroReferenciaMoreqJus = "RAD8.5.2"
+            requisitoRTF_8_5_2.obrigatorio = true
+            requisitoRTF_8_5_2.subGrupoRequisito = subGrupo_8_5
+            requisitoRTF_8_5_2.nome = "Alertar ao usuário autorizado sobre a existência e localização de\n" +
+                    "uma parte não-digital associada a um documento híbrido que\n" +
+                    "esteja destinado a ser exportado, transferido ou eliminado. "
+            requisitoRTF_8_5_2.save(flush:true)
+        }
+
+        def requisitoRTF_8_5_3 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.5.3")
+        if(!requisitoRTF_8_5_3){
+            requisitoRTF_8_5_3 = new Requisito()
+            requisitoRTF_8_5_3.numeroReferenciaMoreqJus = "RAD8.5.3"
+            requisitoRTF_8_5_3.obrigatorio = true
+            requisitoRTF_8_5_3.subGrupoRequisito = subGrupo_8_5
+            requisitoRTF_8_5_3.nome = "Permitir a exportação de metadados de documentos e\n" +
+                    "processos/dossiês não-digitais"
+            requisitoRTF_8_5_3.save(flush:true)
+        }
+
+        def requisitoRTF_8_5_4 = Requisito.findByNumeroReferenciaMoreqJus("RAD8.5.4")
+        if(!requisitoRTF_8_5_4){
+            requisitoRTF_8_5_4 = new Requisito()
+            requisitoRTF_8_5_4.numeroReferenciaMoreqJus = "RAD8.5.4"
+            requisitoRTF_8_5_4.obrigatorio = true
+            requisitoRTF_8_5_4.subGrupoRequisito = subGrupo_8_5
+            requisitoRTF_8_5_4.nome = "<p>Permitir ao usu&aacute;rio autorizado selecionar outra destina&ccedil;&atilde;o final aos processos/dossi&ecirc;s e documentos diferente daquela originalmente existente da tabela de temporalidade, somente quando a nova destina&ccedil;&atilde;o for a guarda permanente.</p>\n" +
+                    "\n" +
+                    "<p>Estes casos s&atilde;o v&aacute;lidos para realiza&ccedil;&atilde;o de amostragem antecedente &agrave; elimina&ccedil;&atilde;o e aliena&ccedil;&atilde;o.</p>"
+            requisitoRTF_8_5_4.save(flush:true)
+        }
+
+
+
     }
 
     def cargaGrupo7() {
