@@ -62,7 +62,7 @@
                             </div>
                             <g:actionSubmit action="avancarSelecaoSistema"
                                             class="btn btn-info" value="Avançar"></g:actionSubmit>
-                            <g:actionSubmit action="teste"
+                            <g:actionSubmit action="importarDadosDaUltimoFormulario"
                                             class="btn btn-info" value="Importar Dados da última avaliação"></g:actionSubmit>
                         </g:form>
 

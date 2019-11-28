@@ -105,4 +105,19 @@ class FormularioController {
     }
 
 
+    def importarDadosDaUltimoFormulario(){
+
+
+
+        def formulario = formularioService.getFormularioEmTrabalho()
+
+        formulario.sistema = Sistema.get(params.long("sistema"))
+        formularioService.salvar(formulario)
+
+        formularioService.importarDadosUltimoFormulario(formulario)
+
+        flash.message = "Dados importados do último questionário"
+        redirect(controller:"formulario", action: "index")
+
+    }
 }

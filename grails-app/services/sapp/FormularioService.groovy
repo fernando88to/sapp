@@ -169,6 +169,45 @@ abstract class FormularioService implements IFormularioService {
     }
 
 
+    void importarDadosUltimoFormulario(Formulario formulario){
+
+        def formularioAnterior = Formulario.createCriteria().get {
+            if(formulario.id){
+                ne("id", formulario.id)
+            }
+
+            eq("sistema", formulario.sistema)
+            eq("finalizado", true)
+            order("dataFinalizacao","desc")
+            maxResults(1)
+        }
+
+        if(formularioAnterior){
+
+            def respostaDoAnteriorList =  RespostaFormulario.createCriteria().list {
+                eq("formulario", formularioAnterior)
+            }
+
+            for(respostaDoAnterior in respostaDoAnteriorList){
+                RespostaFormulario respostaAtual =  RespostaFormulario.createCriteria().get {
+                    eq("formulario", formulario)
+                    eq("requisito", respostaDoAnterior.requisito)
+                }
+                if(respostaAtual){
+                    respostaAtual.delete(flush: true)
+                }
+                respostaAtual = new RespostaFormulario()
+                respostaAtual.requisito = respostaDoAnterior.requisito
+                respostaAtual.formulario = formulario
+                respostaAtual.resposta = respostaDoAnterior.resposta
+                respostaAtual.save(flush:true)
+            }
+
+
+        }
+
+    }
+
 }
 
 
