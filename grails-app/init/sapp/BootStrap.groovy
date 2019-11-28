@@ -1945,7 +1945,7 @@ class BootStrap {
             requisitoRTF_7_2_1 = new Requisito()
             requisitoRTF_7_2_1.numeroReferenciaMoreqJus = "RTF7.2.1"
             requisitoRTF_7_2_1.obrigatorio = true
-            requisitoRTF_7_2_1.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_2_1.subGrupoRequisito = subGrupo_7_2
             requisitoRTF_7_2_1.nome = "Registrar o status de transmissão do documento: minuta ou via\n" +
                     "original."
             requisitoRTF_7_2_1.save(flush:true)
@@ -1956,7 +1956,7 @@ class BootStrap {
             requisitoRTF_7_2_2 = new Requisito()
             requisitoRTF_7_2_2.numeroReferenciaMoreqJus = "RTF7.2.2"
             requisitoRTF_7_2_2.obrigatorio = true
-            requisitoRTF_7_2_2.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_2_2.subGrupoRequisito = subGrupo_7_2
             requisitoRTF_7_2_2.nome = "Controlar as diversas versões de um documento em produção."
             requisitoRTF_7_2_2.save(flush:true)
         }
@@ -1967,7 +1967,7 @@ class BootStrap {
             requisitoRTF_7_2_3 = new Requisito()
             requisitoRTF_7_2_3.numeroReferenciaMoreqJus = "RTF7.2.3"
             requisitoRTF_7_2_3.obrigatorio = true
-            requisitoRTF_7_2_3.subGrupoRequisito = subGrupo_7_1
+            requisitoRTF_7_2_3.subGrupoRequisito = subGrupo_7_2
             requisitoRTF_7_2_3.nome = "Manter o identificador único do documento e registrar, em\n" +
                     "metadados específicos, o controle de versões."
             requisitoRTF_7_2_3.save(flush:true)
