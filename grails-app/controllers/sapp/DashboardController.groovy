@@ -105,15 +105,15 @@ class DashboardController {
 
         lista.add([
                 name: 'Requisito Atendidos',
-                data: [requisitoAtendidosList]]
+                data: requisitoAtendidosList]
         )
         lista.add([name: 'Requisitos Não Atendidos',
-                   data: [requisitoNaoAtendidosList]
+                   data: requisitoNaoAtendidosList
         ])
 
         lista.add([
                 name: 'Não Se aplica',
-                data: [naoseAplicaList]
+                data: naoseAplicaList
         ])
 
 

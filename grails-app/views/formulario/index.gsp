@@ -173,7 +173,7 @@
 
 
     $(document).ready(function () {
-        $("#menu_sistemas").addClass("active open");
+        $("#menu_bash_board").addClass("active open");
         $('.nav-tabs a[href="${params.menu ? params.menu : '#menu1' }"]').tab('show');
 
 
