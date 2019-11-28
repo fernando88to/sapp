@@ -91,4 +91,18 @@ class FormularioController {
     }
 
 
+    def atualizarEmLote(){
+        def formulario = formularioService.getFormularioEmTrabalho()
+        SubGrupoRequisito subGrupoRequisito = params.long("subgrupo") ? SubGrupoRequisito.get(params.long("subgrupo")) : null
+        TipoResposta tipoResposta = params.tiporesposta ? TipoResposta.getEnum(params.int("tiporesposta")) : null
+
+
+        formularioService.atualizarSubGrupoEmLote(formulario,subGrupoRequisito, tipoResposta )
+        render [:] as JSON
+
+
+
+    }
+
+
 }

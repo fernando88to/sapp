@@ -7,8 +7,14 @@ class DashboardController {
 
 
     def index() {
-        def sistemasList = Sistema.createCriteria().list {
-            order("nome")
+        def sistemasList = Formulario.createCriteria().list {
+            eq "finalizado", true
+            projections {
+                distinct("sistema")
+            }
+
+
+
         }
         model:[sistemasList: sistemasList]
     }

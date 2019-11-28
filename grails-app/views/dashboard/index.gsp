@@ -23,7 +23,7 @@
         <div class="card">
             <div class="card-block">
                 <div class="card-title-block">
-                    <h3 class="title">Selecione um Sistema</h3>
+                    <h3 class="title">Gerar estatística</h3>
                 </div>
                 <section class="example">
 

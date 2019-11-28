@@ -12,5 +12,15 @@ enum TipoResposta {
         value
     }
 
+    static TipoResposta getEnum(Integer value){
+        def lista = TipoResposta.values()
+        for(e in lista){
+            if(e.value==value){
+                return e
+            }
+        }
+        return null
+    }
+
 
 }

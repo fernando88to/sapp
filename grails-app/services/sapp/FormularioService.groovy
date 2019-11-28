@@ -137,6 +137,37 @@ abstract class FormularioService implements IFormularioService {
 
     }
 
+    void atualizarSubGrupoEmLote(Formulario formulario, SubGrupoRequisito subGrupoRequisitoFiltro, TipoResposta tipoResposta){
+        for (GrupoRequisito g in formulario.grupoRequisitoList) {
+            for (SubGrupoRequisito sub in g.subGrupoRequisitoList) {
+
+                if(sub.id== subGrupoRequisitoFiltro?.id){
+                    for (Requisito r in sub.requisitoList) {
+                        RespostaFormulario respostaBancoDados = RespostaFormulario.createCriteria().get {
+                            eq("formulario", formulario)
+                            eq("requisito", r)
+                        }
+
+                        if (!respostaBancoDados) {
+                            respostaBancoDados = new RespostaFormulario()
+                            respostaBancoDados.requisito = r
+                            respostaBancoDados.formulario = formulario
+                            respostaBancoDados.resposta = tipoResposta.value
+                        } else {
+                            respostaBancoDados.resposta = tipoResposta.value
+                        }
+                        respostaBancoDados.save(flush: true)
+
+                    }
+                }
+
+
+
+            }
+        }
+
+    }
+
 
 }
 

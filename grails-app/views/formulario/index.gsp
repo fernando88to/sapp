@@ -87,11 +87,28 @@
                             </div>
 
                             <g:each in="${grupoRequisito.subGrupoRequisitoList}" var="subGrupo" status="j">
-                                <h5>${subGrupo.numeroReferenciaMoreqJus} ${subGrupo.nome} <a href="#" class="clickable"
-                                                                                             data-target="#tabela${j}"
-                                                                                             data-toggle="collapse"
-                                ><em
-                                            class="fa fa-unsorted"></em></a></h5>
+
+                                <g:form method="POST" action="#">
+                                    <h5>${subGrupo.numeroReferenciaMoreqJus} ${subGrupo.nome}
+                                    <input type="hidden" name="subGrupo" id="subGrupo"  value="${subGrupo.id}" />
+                                        <a href="#" class="clickable" data-target="#tabela${j}"
+                                           title="Maximizar/Minimizar o Grupo"
+                                           data-toggle="collapse">
+                                            <em class="fa fa-unsorted"></em>
+                                        </a>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <a href="#" class="marcarGrupoAtende" title="Marca o grupo todo como Atende" data-value="${subGrupo.id}">
+                                            <em class="fa fa-thumbs-up"></em>
+                                        </a>
+                                        <a href="#" title="Marca o grupo todo como Não Atende">
+                                            <em class="fa fa-thumbs-down"></em>
+                                        </a>
+                                        <a href="#" title="Marca o grupo todo como Não se aplica">
+                                            <em class="fa fa-times"></em>
+                                        </a>
+                                </g:form>
+
+                                </h5>
 
                                 <table class="table table-striped">
                                     <tbody class="collapse show" id="tabela${j}">
@@ -106,7 +123,7 @@
                                                 <td style="width: 10%;"
                                                     class="align-middle">${r.obrigatorio ? 'Obrigatório' : 'Opcional'}</td>
                                                 <td style="width: 20%;" class="align-middle"><g:select
-                                                        class="form-control form-control-sm campo_resposta"
+                                                        class="form-control form-control-sm campo_resposta grupo_resposta${subGrupo.id}"
                                                         name="resposta" from="${opcaoRespostaList}" optionKey="id"
                                                         value="${r.resposta}"
                                                         optionValue="descricao"/></td>
@@ -166,6 +183,42 @@
             show:false
         });
 
+
+        $(".marcarGrupoAtende").click(function () {
+
+
+
+
+            var subgrupo = $(this).attr("data-value")
+            var selectDoGrupo = '.grupo_resposta'+ subgrupo ;
+            var tiporesposta = "1";
+
+            $.ajax({
+                type: "POST",
+                url: "${request.contextPath}/formulario/atualizarEmLote",
+                data: {
+                    subgrupo: subgrupo,
+                    tiporesposta: tiporesposta
+                },
+                success: function(dado){
+                    $(selectDoGrupo).val(tiporesposta);
+
+
+
+
+                }, beforeSend: function(){
+
+                }
+
+            }).done(function (dado) {
+
+            });
+
+
+
+            return;
+
+        });
 
 
         //quando mudar o campo do select ele envia automaticamente o formulario
