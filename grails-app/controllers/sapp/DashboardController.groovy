@@ -215,7 +215,7 @@ class DashboardController {
     def mudardata(){
         def formulario = params.id ? Formulario.get(params.id) : null
         use(TimeCategory) {
-            formulario.dataFinalizacao = formulario.dataFinalizacao + 1.year
+            formulario.dataFinalizacao = formulario.dataFinalizacao - 1.year
             formulario.save(flush:true)
 
         }
