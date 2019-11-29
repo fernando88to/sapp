@@ -355,7 +355,7 @@
                         name: dados[i].name,
                         data: dados[i].data
                     }, true);
-                    console.log(json.categorias);
+
                     chartColuna.xAxis[0].setCategories(json.categorias);
 
                 };

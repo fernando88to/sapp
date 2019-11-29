@@ -1,6 +1,7 @@
 package sapp
 
 import grails.converters.JSON
+import groovy.time.TimeCategory
 
 class DashboardController {
     def estatisticaService
@@ -194,6 +195,31 @@ class DashboardController {
         def metadados = estatisticaService.getMetadados(formularioMaisRecente)
         render metadados as JSON
 
+    }
+
+    def formularios(){
+        def sistema =  params.id ? Sistema.get(params.long("id")) : null
+
+        if(!sistema){
+            render [] as JSON
+        }
+
+        def formulariosList = Formulario.createCriteria().list {
+            eq("sistema", sistema)
+        }
+
+
+        render formulariosList as JSON
+    }
+
+    def mudardata(){
+        def formulario = params.id ? Formulario.get(params.id) : null
+        use(TimeCategory) {
+            formulario.dataFinalizacao = formulario.dataFinalizacao + 1.year
+            formulario.save(flush:true)
+
+        }
+        render "ok"
     }
 
 }
