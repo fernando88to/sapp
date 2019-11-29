@@ -57,16 +57,16 @@
                             <div class="item-row">
 
                                 <div class="item-col fixed item-col-img md">
-                                    <a href="item-editor.html">
+
                                         ${r.numeroReferenciaMoreqJus}
-                                    </a>
+
                                 </div>
                                 <div class="item-col fixed pull-left item-col-title">
                                     <div class="item-heading">Nome</div>
                                     <div>
-                                        <a href="item-editor.html" class="">
-                                            <h4 class="item-title"> ${r.nome}</h4>
-                                        </a>
+
+                                            <h4 class="item-title"> ${r.nome.encodeAsRaw()}</h4>
+
                                     </div>
                                 </div>
 
