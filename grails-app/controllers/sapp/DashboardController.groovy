@@ -183,4 +183,17 @@ class DashboardController {
 
     }
 
+    def metados(){
+        def sistema = Sistema.get(params.long("id"))
+        def formularioMaisRecente = Formulario.createCriteria().get {
+            eq("sistema", sistema)
+            eq("finalizado", true)
+            order("dataFinalizacao","desc")
+            maxResults(1)
+        }
+        def metadados = estatisticaService.getMetadados(formularioMaisRecente)
+        render metadados as JSON
+
+    }
+
 }

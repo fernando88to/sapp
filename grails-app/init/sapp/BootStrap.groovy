@@ -49,6 +49,113 @@ class BootStrap {
 
         cargaTJTO()
 
+        cargaMetadado()
+
+
+    }
+
+    def cargaMetadado(){
+        def metadado_MSG1_1_1 = Metadados.findByNumeroReferenciaMoreqJus("MSG1.1.1")
+        if(!metadado_MSG1_1_1){
+            metadado_MSG1_1_1 = new Metadados()
+            metadado_MSG1_1_1.numeroReferenciaMoreqJus = "MSG1.1.1"
+            metadado_MSG1_1_1.nome = "Assinatura_digital_data"
+            metadado_MSG1_1_1.definicao = "Data e hora da verificação da assinatura digital de um\n" +
+                    "documento."
+            metadado_MSG1_1_1.obrigatorio = true
+            metadado_MSG1_1_1.save(flush:true)
+
+            def requisitoMetadado = new RequisitoMetadados()
+            requisitoMetadado.requisito = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.1")
+            requisitoMetadado.metadados = metadado_MSG1_1_1
+            requisitoMetadado.save(flush:true)
+
+
+            def requisitoMetadado_1 = new RequisitoMetadados()
+            requisitoMetadado_1.requisito = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.3")
+            requisitoMetadado_1.metadados = metadado_MSG1_1_1
+            requisitoMetadado_1.save(flush:true)
+
+            def requisitoMetadado_2 = new RequisitoMetadados()
+            requisitoMetadado_2.requisito = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.4")
+            requisitoMetadado_2.metadados = metadado_MSG1_1_1
+            requisitoMetadado_2.save(flush:true)
+
+
+
+        }
+
+
+        def metadado_MSG1_1_2 = Metadados.findByNumeroReferenciaMoreqJus("MSG1.1.2")
+        if(!metadado_MSG1_1_2){
+            metadado_MSG1_1_2 = new Metadados()
+            metadado_MSG1_1_2.numeroReferenciaMoreqJus = "MSG1.1.2"
+            metadado_MSG1_1_2.nome = "Assinatura_digital_validação"
+            metadado_MSG1_1_2.definicao = "Registro de que a assinatura digital foi verificada com\n" +
+                    "sucesso."
+            metadado_MSG1_1_2.obrigatorio = true
+            metadado_MSG1_1_2.save(flush:true)
+
+            def requisitoMetadado = new RequisitoMetadados()
+            requisitoMetadado.requisito = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.1")
+            requisitoMetadado.metadados = metadado_MSG1_1_2
+            requisitoMetadado.save(flush:true)
+
+
+            def requisitoMetadado_1 = new RequisitoMetadados()
+            requisitoMetadado_1.requisito = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.3")
+            requisitoMetadado_1.metadados = metadado_MSG1_1_2
+            requisitoMetadado_1.save(flush:true)
+
+            def requisitoMetadado_2 = new RequisitoMetadados()
+            requisitoMetadado_2.requisito = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.4")
+            requisitoMetadado_2.metadados = metadado_MSG1_1_2
+            requisitoMetadado_2.save(flush:true)
+
+
+
+        }
+
+
+        def metadado_MSG1_1_3 = Metadados.findByNumeroReferenciaMoreqJus("MSG1.1.3")
+        if(!metadado_MSG1_1_3){
+            metadado_MSG1_1_3 = new Metadados()
+            metadado_MSG1_1_3.numeroReferenciaMoreqJus = "MSG1.1.3"
+            metadado_MSG1_1_3.nome = "Certificado_digital"
+            metadado_MSG1_1_3.definicao = "O certificado digital do signatário"
+            metadado_MSG1_1_3.obrigatorio = true
+            metadado_MSG1_1_3.save(flush:true)
+
+            def requisitoMetadado = new RequisitoMetadados()
+            requisitoMetadado.requisito = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.2")
+            requisitoMetadado.metadados = metadado_MSG1_1_3
+            requisitoMetadado.save(flush:true)
+
+
+            def requisitoMetadado_1 = new RequisitoMetadados()
+
+            requisitoMetadado_1.requisito = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.5")
+            requisitoMetadado_1.metadados = metadado_MSG1_1_3
+            requisitoMetadado_1.save(flush:true)
+
+        }
+
+
+        def metadado_MSG1_1_4 = Metadados.findByNumeroReferenciaMoreqJus("MSG1.1.4")
+        if(!metadado_MSG1_1_4){
+            metadado_MSG1_1_4 = new Metadados()
+            metadado_MSG1_1_4.numeroReferenciaMoreqJus = "MSG1.1.4"
+            metadado_MSG1_1_4.nome = "Assinatura_digital_assinatura"
+            metadado_MSG1_1_4.definicao = "Cópia da assinatura digital recebida com o documento."
+            metadado_MSG1_1_4.obrigatorio = true
+            metadado_MSG1_1_4.save(flush:true)
+
+            def requisitoMetadado = new RequisitoMetadados()
+            requisitoMetadado.requisito = Requisito.findByNumeroReferenciaMoreqJus("RSE6.5.5")
+            requisitoMetadado.metadados = metadado_MSG1_1_4
+            requisitoMetadado.save(flush:true)
+        }
+
     }
 
     def cargaGrupo14() {
