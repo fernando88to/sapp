@@ -10,6 +10,7 @@ class Metadados {
      * ele é opcional
      */
     Boolean obrigatorio
+    TipoMetadado tipoMetadado
 
 
     static constraints = {
@@ -17,6 +18,7 @@ class Metadados {
         definicao nullable: false, maxSize: 255
         obrigatorio nullable: false
         numeroReferenciaMoreqJus nullable: false, maxSize: 500, unique: true
+        tipoMetadado nullable: true
     }
 
     static mapping = {

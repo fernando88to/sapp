@@ -87,6 +87,32 @@
 
 
 
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-block">
+                <div class="card-title-block">
+                    <h3 class="title"> Metadados </h3>
+                </div>
+                <section class="example">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Metadado</th>
+
+                        </tr>
+                        </thead>
+                        <tbody id="tbodymetadados">
+
+
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 %{--<div class="row">
@@ -407,7 +433,31 @@
                 };
                 chartEvolucao.redraw();
             });
+
+
+
+            $("#tbodymetadados").empty();
+
+
+            $.getJSON('${request.contextPath}/dashboard/metadados/'+sistema, function(json) {
+                for(i=0; i<json.length; i++){
+                    $("#tbodymetadados").append(
+                        "<tr scope=\"row\">" +
+                            "<td>"+ json[i].numeroReferenciaMoreqJus + "</td>" +
+                            "<td>"+json[i].definicao+"</td>" +
+                        " </tr>"
+                    );
+
+                };
+
+            });
+
+
+
+
         });
+
+
 
 
 

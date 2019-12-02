@@ -184,7 +184,7 @@ class DashboardController {
 
     }
 
-    def metados(){
+    def metadados(){
         def sistema = Sistema.get(params.long("id"))
         def formularioMaisRecente = Formulario.createCriteria().get {
             eq("sistema", sistema)

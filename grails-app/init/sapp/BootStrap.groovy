@@ -63,6 +63,7 @@ class BootStrap {
             metadado_MSG1_1_1.definicao = "Data e hora da verificação da assinatura digital de um\n" +
                     "documento."
             metadado_MSG1_1_1.obrigatorio = true
+            metadado_MSG1_1_1.tipoMetadado = TipoMetadado.SEGURANCA
             metadado_MSG1_1_1.save(flush:true)
 
             def requisitoMetadado = new RequisitoMetadados()
@@ -94,6 +95,7 @@ class BootStrap {
             metadado_MSG1_1_2.definicao = "Registro de que a assinatura digital foi verificada com\n" +
                     "sucesso."
             metadado_MSG1_1_2.obrigatorio = true
+            metadado_MSG1_1_2.tipoMetadado = TipoMetadado.SEGURANCA
             metadado_MSG1_1_2.save(flush:true)
 
             def requisitoMetadado = new RequisitoMetadados()
@@ -124,6 +126,7 @@ class BootStrap {
             metadado_MSG1_1_3.nome = "Certificado_digital"
             metadado_MSG1_1_3.definicao = "O certificado digital do signatário"
             metadado_MSG1_1_3.obrigatorio = true
+            metadado_MSG1_1_3.tipoMetadado = TipoMetadado.SEGURANCA
             metadado_MSG1_1_3.save(flush:true)
 
             def requisitoMetadado = new RequisitoMetadados()
@@ -148,6 +151,7 @@ class BootStrap {
             metadado_MSG1_1_4.nome = "Assinatura_digital_assinatura"
             metadado_MSG1_1_4.definicao = "Cópia da assinatura digital recebida com o documento."
             metadado_MSG1_1_4.obrigatorio = true
+            metadado_MSG1_1_4.tipoMetadado = TipoMetadado.SEGURANCA
             metadado_MSG1_1_4.save(flush:true)
 
             def requisitoMetadado = new RequisitoMetadados()
