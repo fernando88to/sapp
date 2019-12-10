@@ -18,7 +18,7 @@ $ java -Dgrails.env=prod -jar distribuicao/sapp-0.1.jar
 
 Caso queira testar o sistema sem instalar pode-se utilizar a versão abaixo.
 
-http://sapp-env.jpzw6tmcfx.us-west-2.elasticbeanstalk.com/
+http://ec2-54-185-47-126.us-west-2.compute.amazonaws.com/
 
 
 
