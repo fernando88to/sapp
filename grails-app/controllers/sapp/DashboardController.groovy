@@ -222,4 +222,14 @@ class DashboardController {
         render "ok"
     }
 
+
+    def mapaGeral(){
+
+    }
+
+    def mapaSistema(){
+
+    }
+
+
 }
