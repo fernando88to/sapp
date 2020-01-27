@@ -4,10 +4,13 @@
     <title>Mapa</title>
     <style>
     #networkgraphdiv {
-        min-width: 320px;
-        max-width: 800px;
+
+
+        /*min-width: 320px;*/
+        /*max-width: 800px;*/
         margin: 0 auto;
-        height: 500px;
+        height: 600px;
+        width: 100%;
     }
     </style>
 </head>
@@ -77,7 +80,7 @@
         let integration = "verlet";
         //let integration = "euler";
         //let linkLength = 10;
-        let linkLength = 100;
+        let linkLength = 150;
         Highcharts.chart("networkgraphdiv", {
             chart: {
                 type: 'networkgraph',

@@ -4,10 +4,11 @@
     <title>Mapa</title>
     <style>
     #networkgraphdiv {
-        min-width: 320px;
-        max-width: 800px;
+        /*min-width: 320px;*/
+        /*max-width: 800px;*/
         margin: 0 auto;
-        height: 500px;
+        height: 600px;
+        width: 100%;
     }
     </style>
 </head>
