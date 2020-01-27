@@ -24,6 +24,10 @@
 <div>
     <section class="example">
         <div id="networkgraphdiv" ></div>
+        <div >
+
+            <a href="#" onclick="window.history.back();">Voltar</a>
+        </div>
     </section>
 </div>
 
@@ -130,12 +134,20 @@
                             linkFormat: '',
                             allowOverlap: false
                         },
+                        marker: {
+
+                            fillColor: '#064C7F'
+                        },
                     },{
                         id: 'judicial',
                         name:'Judicial',
                         dataLabels: {
                             enabled: true
-                        }
+                        },
+                        marker: {
+
+                            fillColor: '#BA1200'
+                        },
 
                     },{
                         id: 'extrajudicial',
@@ -143,7 +155,11 @@
                         dataLabels: {
                             enabled: true
 
-                        }
+                        },
+                        marker: {
+
+                            fillColor: '#626267'
+                        },
 
                     },
                         {
@@ -152,6 +168,8 @@
                             dataLabels: {
                                 enabled: true
 
+                            },marker: {
+                                fillColor: '#ECFEAA'
                             }
 
                         }
@@ -159,7 +177,13 @@
                     data: [
                         ['judicial', 'tjto'],
                         ['extrajudicial', 'tjto'],
-                        ['administrativo', 'tjto']
+                        ['administrativo', 'tjto'],
+                        ['e-proc', 'judicial'],
+                        ['RH', 'administrativo'],
+                        ['SEI', 'administrativo'],
+                        ['Controle Frequência', 'administrativo'],
+                        ['GISE', 'extrajudicial'],
+
 
 
                     ],
