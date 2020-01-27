@@ -230,6 +230,9 @@ class DashboardController {
     def mapaSistema(){
 
     }
+    def detalhaSistema_1(){
+
+    }
 
 
 }

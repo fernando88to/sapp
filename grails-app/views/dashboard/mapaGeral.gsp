@@ -103,9 +103,16 @@
                     cursor: 'pointer',
                     events: {
                         click: function(event) {
-                            if(event.point.id==='sistema'){
+                            if(event.point.id==='tjto'){
                                 window.location.href = "../dashboard/mapaSistema";
+                            }else if(event.point.id==='atende'){
+
+                            }else if(event.point.id==='nao_atende'){
+
+                            }else{
+                                window.location.href = "../dashboard/detalhaSistema_1";
                             }
+
                         }
                     }
                 }
@@ -141,8 +148,8 @@
                             fillColor: 'green'
                         }
                     }, {
-                        id: 'sistema',
-                        name:'Sistema',
+                        id: 'tjto',
+                        name:'Tribunal de Justiça do Tocantins',
                         dataLabels: {
                             enabled: true
 
@@ -155,8 +162,8 @@
                     }
                     ],
                     data: [
-                        ['nao_atende', 'sistema'],
-                        ['atende', 'sistema'],
+                        ['nao_atende', 'tjto'],
+                        ['atende', 'tjto'],
 
                         ['Sistema 1', 'nao_atende'],
                         ['Sistema 2', 'nao_atende'],

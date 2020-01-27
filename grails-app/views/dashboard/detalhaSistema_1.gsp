@@ -84,11 +84,11 @@
                 plotBorderWidth: 1
             },
             title: {
-                text: 'Phrasal verbs'
+                text: 'Sistema'
             },
-            subtitle: {
+            /*subtitle: {
                 text: 'Integration: ' + integration
-            },
+            },*/
             plotOptions: {
                 networkgraph: {
                     layoutAlgorithm: {
@@ -107,12 +107,15 @@
                     cursor: 'pointer',
                     events: {
                         click: function(event) {
-                            //window.location.href = "../dashboard";
-                            if(event.point.id==='sistema'){
-                                console.log("nó de sistemas");
-                            }
-                            //console.log(event.point);
-                            console.log(event.point.id);
+                            /*if(event.point.id==='sistema'){
+                                window.location.href = "../dashboard/mapaSistema";
+                            }else if(event.point.id==='atende'){
+
+                            }else if(event.point.id==='nao_atende'){
+
+                            }else{
+                                window.location.href = "../dashboard/detalhaSistema_1";
+                            }*/
 
                         }
                     }
@@ -124,8 +127,8 @@
             series: [
                 {
                     nodes: [{
-                        id: 'tjto',
-                        name:'Tribunal de Justiça do Tocantins',
+                        id: 'nao_atende',
+                        name:'Não Atende',
                         dataLabels: {
                             enabled: true,
                             textPath: {
@@ -136,53 +139,51 @@
                         },
                         marker: {
 
-                            fillColor: '#064C7F'
-                        },
-                    },{
-                        id: 'judicial',
-                        name:'Judicial',
+                            fillColor: 'red'
+                        }
+                    }, {
+                        id: 'atende',
+                        name:'Atende',
                         dataLabels: {
                             enabled: true
                         },
                         marker: {
 
-                            fillColor: '#BA1200'
-                        },
-
-                    },{
-                        id: 'extrajudicial',
-                        name: 'Extra-Judicial',
+                            fillColor: 'green'
+                        }
+                    }, {
+                        id: 'sistema',
+                        name:'E-Proc',
                         dataLabels: {
                             enabled: true
 
                         },
                         marker: {
 
-                            fillColor: '#626267'
-                        },
-
-                    },
-                        {
-                            id: 'administrativo',
-                            name: 'Administrativo',
-                            dataLabels: {
-                                enabled: true
-
-                            },marker: {
-                                fillColor: '#ECFEAA'
-                            }
+                            fillColor:'brown'
 
                         }
+                    }
                     ],
                     data: [
-                        ['judicial', 'tjto'],
-                        ['extrajudicial', 'tjto'],
-                        ['administrativo', 'tjto'],
-                        ['e-proc', 'judicial'],
-                        ['RH', 'administrativo'],
-                        ['SEI', 'administrativo'],
-                        ['Controle Frequência', 'administrativo'],
-                        ['GISE', 'extrajudicial'],
+                        ['nao_atende', 'sistema'],
+                        ['atende', 'sistema'],
+
+                        ['Capítulo 2', 'nao_atende'],
+                        ['Capítulo  3', 'nao_atende'],
+                        ['Capítulo 4', 'nao_atende'],
+                        ['Capítulo 5', 'nao_atende'],
+                        ['Capítulo 6', 'nao_atende'],
+                        ['Capítulo 7', 'nao_atende'],
+
+                        ['Capítulo 8', 'atende'],
+                        ['Capítulo 9', 'atende'],
+                        ['Capítulo 10', 'atende'],
+                        ['Capítulo 11', 'atende'],
+                        ['Capítulo 12', 'atende'],
+                        ['Capítulo 13', 'atende'],
+                        ['Capítulo 14', 'atende'],
+
 
 
 
