@@ -84,7 +84,7 @@
                 plotBorderWidth: 1
             },
             title: {
-                text: 'Sistema'
+                text: 'Sistema 2'
             },
             /*subtitle: {
                 text: 'Integration: ' + integration
@@ -107,15 +107,15 @@
                     cursor: 'pointer',
                     events: {
                         click: function(event) {
-                            if(event.point.id==='sistema'){
+                            /*if(event.point.id==='sistema'){
                                 window.location.href = "../dashboard/mapaSistema";
                             }else if(event.point.id==='atende'){
 
                             }else if(event.point.id==='nao_atende'){
 
                             }else{
-                                window.location.href = "../dashboard/detalheSistema_2";
-                            }
+                                window.location.href = "../dashboard/detalhaSistema_1";
+                            }*/
 
                         }
                     }
@@ -135,7 +135,7 @@
                                 enabled: false
                             },
                             linkFormat: '',
-                            allowOverlap: false
+                            allowOverlap: true
                         },
                         marker: {
 
@@ -145,7 +145,8 @@
                         id: 'atende',
                         name:'Atende',
                         dataLabels: {
-                            enabled: true
+                            enabled: true,
+                            allowOverlap: true
                         },
                         marker: {
 
@@ -155,7 +156,8 @@
                         id: 'sistema',
                         name:'E-Proc',
                         dataLabels: {
-                            enabled: true
+                            enabled: true,
+                            allowOverlap: true
 
                         },
                         marker: {
@@ -169,21 +171,12 @@
                         ['nao_atende', 'sistema'],
                         ['atende', 'sistema'],
 
-                        ['Organização dos documentos institucionais: plano de classificação e manutenção dos documentos', 'nao_atende'],
-                        ['Captura', 'nao_atende'],
-                        ['Armazenamento', 'nao_atende'],
-                        ['Preservação', 'nao_atende'],
-                        ['Segurança', 'nao_atende'],
-                        ['Tramitação e fluxo de trabalho', 'nao_atende'],
-
-                        ['Avaliação e destinação', 'atende'],
-                        ['Pesquisa, localização e apresentação de documentos', 'atende'],
-                        ['Funções administrativas', 'atende'],
-                        ['Usabilidade', 'atende'],
-                        ['Interoperabilidade', 'atende'],
-                        ['Disponibilidade 13', 'atende'],
-                        ['Desempenho e escalabilidade 14', 'atende'],
-
+                        ['Configuração e administração do plano de classificação no GestãoDoc', 'nao_atende'],
+                        ['Classificacao e metadados dos processos/dossiês', 'nao_atende'],
+                        ['Gerenciamento dos processos/dossiês', 'nao_atende'],
+                        ['Processos', 'atende'],
+                        ['Volumes: abertura, encerramento e metadados', 'atende'],
+                        ['Manutenção de documentos institucionais nãodigitais e híbridos', 'atende'],
 
 
 
@@ -196,10 +189,10 @@
                     dataLabels: {
                         enabled: true,
                         textPath: {
-                            enabled: false
+                            enabled: true
                         },
                         linkFormat: '',
-                        allowOverlap: true
+                        allowOverlap: false
                     }
 
 

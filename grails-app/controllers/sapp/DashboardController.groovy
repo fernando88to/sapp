@@ -234,5 +234,9 @@ class DashboardController {
 
     }
 
+    def detalheSistema_2(){
+
+    }
+
 
 }
