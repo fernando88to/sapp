@@ -34,6 +34,13 @@
                 <label class="control-label">Url</label>
                 <input type="text" name="url" class="form-control underlined" value="${sistema.url}" maxlength="255">
             </div>
+            <div class="form-group">
+                <label class="control-label">Categoria</label>
+                <g:select class="form-control form-control-sm campo_resposta"
+                          name="categoriaSistema" from="${sapp.CategoriaSistema.list()}" optionKey="id"
+                          value="" noSelection="${['': 'Selecione...']}"
+                          optionValue="nome"/>
+            </div>
 
             <div class="form-group">
                 <g:actionSubmit action="save" name="create" class="btn btn-primary" value="${message(code: 'default.button.create.label', default: 'Create')}" />

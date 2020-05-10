@@ -8,6 +8,9 @@ class DashboardController {
 
 
     def index() {
+
+    }
+    def estatistica() {
         def sistemasList = Formulario.createCriteria().list {
             eq "finalizado", true
             projections {

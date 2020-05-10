@@ -49,6 +49,7 @@
                                 <th>Nome</th>
                                 <th>Sigla</th>
                                 <th>Url</th>
+                                <th>Categoria</th>
                                 <th></th>
                             </tr>
                             </thead>
@@ -59,6 +60,7 @@
                                     <td>${u.nome}</td>
                                     <td>${u.sigla}</td>
                                     <td>${u.url}</td>
+                                    <td>${u.categoriaSistema.nome}</td>
                                     <td>
                                         <g:link controller="sistema" action="edit" params="[id:u.id]"><i class="fa fa-pencil"></i> </g:link>&nbsp;&nbsp;&nbsp;&nbsp;
                                         <g:link controller="sistema" action="show" params="[id:u.id]"><i class="fa fa-eye"></i> </g:link>

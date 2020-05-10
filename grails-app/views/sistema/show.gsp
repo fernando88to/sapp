@@ -45,6 +45,12 @@
                readonly="readonly">
     </div>
 
+    <div class="form-group">
+        <label class="control-label">Categoria</label>
+        <input type="text" name="url" class="form-control underlined" value="${sistema.categoriaSistema.nome}" maxlength="255"
+               readonly="readonly">
+    </div>
+
 
     <div class="form-group">
         <g:actionSubmit action="edit" name="edit" class="btn btn-primary"

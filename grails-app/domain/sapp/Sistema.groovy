@@ -6,12 +6,14 @@ class Sistema {
     String sigla
     String url
     Instituicao instituicao
+    CategoriaSistema categoriaSistema
 
     static constraints = {
         nome nullable: true, maxSize: 255, unique: true
         sigla nullable: true, maxSize: 255
         url nullable: true, maxSize: 255
         instituicao nullable: false
+        categoriaSistema nullable: false
 
     }
 

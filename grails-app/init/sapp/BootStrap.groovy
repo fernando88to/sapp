@@ -15,6 +15,20 @@ class BootStrap {
             usuario.email = "email@teste.com.br"
             usuario.save(flush:true)
         }
+        def categoriaJudicial = CategoriaSistema.findByNome("Judicial")
+        if(!categoriaJudicial){
+            categoriaJudicial = new CategoriaSistema()
+            categoriaJudicial.nome = "Judicial"
+            categoriaJudicial.save(flush:true)
+        }
+
+        def categoriaAdministrativo = CategoriaSistema.findByNome("Administrativo")
+        if(!categoriaAdministrativo){
+            categoriaAdministrativo = new CategoriaSistema()
+            categoriaAdministrativo.nome = "Administrativo"
+            categoriaAdministrativo.save(flush:true)
+        }
+
 
 
         //concluido
