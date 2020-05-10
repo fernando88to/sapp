@@ -241,5 +241,14 @@ class DashboardController {
 
     }
 
+    def abrirSelos(){
+
+    }
+
+    def gerarProbalidadeSelos(){
+
+
+    }
+
 
 }

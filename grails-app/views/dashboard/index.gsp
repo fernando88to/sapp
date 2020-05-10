@@ -90,7 +90,12 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
                 </div>
 
-                <div class="card-footer">Acessar</div>
+                <div class="card-footer">
+                    <g:link controller="dashboard" action="abrirSelos">
+                        Acessar
+                    </g:link>
+
+                </div>
             </div>
         </div>
         <!-- /.col-xl-4 -->
