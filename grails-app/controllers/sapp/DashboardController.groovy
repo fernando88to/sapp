@@ -10,6 +10,7 @@ class DashboardController {
     def index() {
 
     }
+
     def estatistica() {
         def sistemasList = Formulario.createCriteria().list {
             eq "finalizado", true
@@ -18,22 +19,21 @@ class DashboardController {
             }
 
 
-
         }
-        model:[sistemasList: sistemasList]
+        model:
+        [sistemasList: sistemasList]
     }
 
     def json() {
-        def questionario= Formulario.createCriteria().get {
+        def questionario = Formulario.createCriteria().get {
             maxResults(1)
         }
 
         render questionario as JSON
     }
 
-    def chamadaPizzaExtra(){
+    def chamadaPizzaExtra() {
         def lista = []
-
 
 
         def requisitosAtendidos = 0
@@ -46,14 +46,12 @@ class DashboardController {
         def formulario = Formulario.createCriteria().get {
             eq("sistema", sistema)
             eq("finalizado", true)
-            order("dataFinalizacao","desc")
+            order("dataFinalizacao", "desc")
             maxResults(1)
         }
 
 
-
-
-        requisitosAtendidos= estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.REQUISITO_ATENDIDO, null)
+        requisitosAtendidos = estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.REQUISITO_ATENDIDO, null)
         requisitosNaoAtendidos = estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.REQUISITO_NAO_ATENDIDO, null)
         //naoSeAplica = estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.NAO_SE_APLICA, null)
         lista.add(['Requisitos Atendidos', requisitosAtendidos])
@@ -67,7 +65,7 @@ class DashboardController {
     }
 
 
-    def raioxcoluna(){
+    def raioxcoluna() {
         def lista = []
 
 
@@ -76,13 +74,13 @@ class DashboardController {
         def formulario = Formulario.createCriteria().get {
             eq("sistema", sistema)
             eq("finalizado", true)
-            order("dataFinalizacao","desc")
+            order("dataFinalizacao", "desc")
             maxResults(1)
         }
 
 
-        def categorias  = RespostaFormulario.createCriteria().list {
-            createAlias("requisito","r")
+        def categorias = RespostaFormulario.createCriteria().list {
+            createAlias("requisito", "r")
             createAlias("r.subGrupoRequisito", "sr")
             //createAlias("sr.grupoRequisito","gr")
             eq("formulario", formulario)
@@ -99,10 +97,10 @@ class DashboardController {
         def requisitoNaoAtendidosList = []
         def naoseAplicaList = []
 
-        for(GrupoRequisito gr in categorias){
-            requisitoAtendidosList.add  estatisticaService.getQuantidadeRequisitos(formulario,TipoResposta.REQUISITO_ATENDIDO, gr)
-            requisitoNaoAtendidosList.add estatisticaService.getQuantidadeRequisitos(formulario,TipoResposta.REQUISITO_NAO_ATENDIDO, gr)
-            naoseAplicaList.add estatisticaService.getQuantidadeRequisitos(formulario,TipoResposta.NAO_SE_APLICA, gr)
+        for (GrupoRequisito gr in categorias) {
+            requisitoAtendidosList.add estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.REQUISITO_ATENDIDO, gr)
+            requisitoNaoAtendidosList.add estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.REQUISITO_NAO_ATENDIDO, gr)
+            naoseAplicaList.add estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.NAO_SE_APLICA, gr)
 
 
         }
@@ -123,18 +121,18 @@ class DashboardController {
 
         def retorno = [:]
         def categoriasString = []
-        for(String c in categorias.numeroReferenciaMoreqJus){
-            categoriasString+="Cap. ${c}"
+        for (String c in categorias.numeroReferenciaMoreqJus) {
+            categoriasString += "Cap. ${c}"
         }
 
-        retorno.categorias= categoriasString
-        retorno.dados  = lista
+        retorno.categorias = categoriasString
+        retorno.dados = lista
         render retorno as JSON
 
 
     }
 
-    def evolucao(){
+    def evolucao() {
         def sistema = Sistema.get(params.long("id"))
         def lista = []
 
@@ -142,8 +140,8 @@ class DashboardController {
         def anoInicial = 2016
         def anoAtual = new Integer(new Date().format("yyyy"))
         anoAtual++
-        while(anoAtual >anoInicial){
-            anos+=anoAtual
+        while (anoAtual > anoInicial) {
+            anos += anoAtual
             anoAtual--
         }
 
@@ -157,17 +155,17 @@ class DashboardController {
         def requisitoNaoAtendidos = []
 
 
-        for (ano in anos){
-            def formularioList = Formulario.executeQuery("select f from Formulario f where f.sistema=:sistema and year(f.dataFinalizacao) =:ano ",[sistema:sistema, ano:ano])
+        for (ano in anos) {
+            def formularioList = Formulario.executeQuery("select f from Formulario f where f.sistema=:sistema and year(f.dataFinalizacao) =:ano ", [sistema: sistema, ano: ano])
             def formulario = formularioList ? formularioList.get(0) : null
-            if(formulario){
+            if (formulario) {
                 requisitoAtendidos.add estatisticaService.getQuantidadeRequisitos(formulario,
-                        TipoResposta.REQUISITO_ATENDIDO,null)
+                        TipoResposta.REQUISITO_ATENDIDO, null)
                 requisitoNaoAtendidos.add estatisticaService.getQuantidadeRequisitos(formulario,
-                        TipoResposta.REQUISITO_NAO_ATENDIDO,null)
+                        TipoResposta.REQUISITO_NAO_ATENDIDO, null)
                 naoseAPlica.add estatisticaService.getQuantidadeRequisitos(formulario,
-                        TipoResposta.NAO_SE_APLICA,null)
-            }else{
+                        TipoResposta.NAO_SE_APLICA, null)
+            } else {
                 requisitoAtendidos.add(0)
                 requisitoNaoAtendidos.add(0)
                 naoseAPlica.add(0)
@@ -175,7 +173,6 @@ class DashboardController {
 
             }
         }
-
 
 
         lista.add([name: 'Requisitos Atendidos', data: requisitoAtendidos])
@@ -187,12 +184,12 @@ class DashboardController {
 
     }
 
-    def metadados(){
+    def metadados() {
         def sistema = Sistema.get(params.long("id"))
         def formularioMaisRecente = Formulario.createCriteria().get {
             eq("sistema", sistema)
             eq("finalizado", true)
-            order("dataFinalizacao","desc")
+            order("dataFinalizacao", "desc")
             maxResults(1)
         }
         def metadados = estatisticaService.getMetadados(formularioMaisRecente)
@@ -200,11 +197,11 @@ class DashboardController {
 
     }
 
-    def formularios(){
-        def sistema =  params.id ? Sistema.get(params.long("id")) : null
+    def formularios() {
+        def sistema = params.id ? Sistema.get(params.long("id")) : null
 
-        if(!sistema){
-            render [] as JSON
+        if (!sistema) {
+            render[] as JSON
         }
 
         def formulariosList = Formulario.createCriteria().list {
@@ -215,37 +212,58 @@ class DashboardController {
         render formulariosList as JSON
     }
 
-    def mudardata(){
+    def mudardata() {
         def formulario = params.id ? Formulario.get(params.id) : null
         use(TimeCategory) {
             formulario.dataFinalizacao = formulario.dataFinalizacao - 1.year
-            formulario.save(flush:true)
+            formulario.save(flush: true)
 
         }
         render "ok"
     }
 
 
-    def mapaGeral(){
+    def mapaGeral() {
 
     }
 
-    def mapaSistema(){
-
-    }
-    def detalhaSistema_1(){
+    def mapaSistema() {
 
     }
 
-    def detalheSistema_2(){
+    def detalhaSistema_1() {
 
     }
 
-    def abrirSelos(){
+    def detalheSistema_2() {
 
     }
 
-    def gerarProbalidadeSelos(){
+    def abrirSelos() {
+
+    }
+
+    def gerarProbalidadeSelos() {
+        def categoriaInstance = CategoriaSistema.findById(params.id)
+
+
+
+        def categorias = CategoriaSistema.list()
+
+
+
+        def teorema = new TeoremaBayes(categorias)
+         [
+                probabilidadeBronze : teorema.probabilidadeSistema(categoriaInstance, SeloMoreqJus.BRONZE),
+                probabilidadePrata : teorema.probabilidadeSistema(categoriaInstance, SeloMoreqJus.PRATA),
+                probabilidadeOuro : teorema.probabilidadeSistema(categoriaInstance, SeloMoreqJus.OURO),
+                probabilidadePlatina : teorema.probabilidadeSistema(categoriaInstance, SeloMoreqJus.PLATINA)
+         ]
+
+
+    }
+
+    /*def gerarProbalidadeSelos(){
         def categoriaInstance = CategoriaSistema.findById(params.id)
 
 
@@ -259,7 +277,17 @@ class DashboardController {
             def totalDaCategoria = Sistema.createCriteria().count {
                 eq("categoriaSistema", c)
             }
-            categoriasPorcentagemList+=[categoria:c, porcentagem: (100*totalDaCategoria/totalSistemas)]
+            def sistemasList = Sistema.createCriteria().list {
+                eq("categoriaSistema", c)
+            }
+
+
+
+            categoriasPorcentagemList+=[categoria:c, porcentagem: (100*totalDaCategoria/totalSistemas), sistemas:sistemasList]
+
+
+
+
 
         }
 
@@ -274,7 +302,7 @@ class DashboardController {
 
 
 
-    }
+    }*/
 
 
 }

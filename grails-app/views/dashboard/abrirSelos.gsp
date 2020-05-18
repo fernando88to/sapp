@@ -79,7 +79,7 @@
 
         $("#sistema").change(function () {
 
-            $.post('${request.contextPath}/dashboard/gerarProbalidadeSelos/'+1, function(date) {
+            $.post('${request.contextPath}/dashboard/gerarProbalidadeSelos/'+this.value, function(date) {
                //$("#retornoAjax").append(json);
                 //console.log("teste")
                 //console.log(json);

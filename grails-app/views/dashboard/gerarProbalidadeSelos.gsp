@@ -5,11 +5,10 @@
             <div class="card-block">
                 <asset:image src="selo_bronze.png" />
             </div>
-
-
             <div class="card-footer" style="text-align: center">
 
-                    75%
+                <g:formatNumber number="${probabilidadeBronze}" type="number" maxFractionDigits="5" />
+
 
             </div>
         </div>
@@ -25,7 +24,7 @@
 
             <div class="card-footer" style="text-align: center">
 
-                    75%
+                    <g:formatNumber number="${probabilidadePrata}" type="number" maxFractionDigits="5" />
 
             </div>
         </div>
@@ -40,7 +39,8 @@
 
             <div class="card-footer" style="text-align: center">
 
-                    75%
+
+                    <g:formatNumber number="${probabilidadeOuro}" type="number" maxFractionDigits="5" />
 
             </div>
         </div>
@@ -55,7 +55,8 @@
 
             <div class="card-footer" style="text-align: center">
 
-                    75%
+
+                <g:formatNumber number="${probabilidadePlatina}" type="number" maxFractionDigits="5" />
 
             </div>
         </div>
