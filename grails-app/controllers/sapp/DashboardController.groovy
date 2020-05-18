@@ -55,10 +55,10 @@ class DashboardController {
 
         requisitosAtendidos= estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.REQUISITO_ATENDIDO, null)
         requisitosNaoAtendidos = estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.REQUISITO_NAO_ATENDIDO, null)
-        naoSeAplica = estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.NAO_SE_APLICA, null)
+        //naoSeAplica = estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.NAO_SE_APLICA, null)
         lista.add(['Requisitos Atendidos', requisitosAtendidos])
         lista.add(['Requisitos não atendisos', requisitosNaoAtendidos])
-        lista.add(['Não se aplica',naoSeAplica])
+        //lista.add(['Não se aplica',naoSeAplica])
 
 
         render """[{"type" : "pie","name" : "Quantidade","data" : ${lista as JSON}   }]"""
@@ -246,6 +246,32 @@ class DashboardController {
     }
 
     def gerarProbalidadeSelos(){
+        def categoriaInstance = CategoriaSistema.findById(params.id)
+
+
+        def categoriasList = CategoriaSistema.list()
+        def categoriasPorcentagemList = []
+
+        def totalSistemas = Sistema.count()
+
+
+        for(c in categoriasList){
+            def totalDaCategoria = Sistema.createCriteria().count {
+                eq("categoriaSistema", c)
+            }
+            categoriasPorcentagemList+=[categoria:c, porcentagem: (100*totalDaCategoria/totalSistemas)]
+
+        }
+
+
+
+        println ""
+
+
+
+
+
+
 
 
     }

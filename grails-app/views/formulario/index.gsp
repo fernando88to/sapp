@@ -100,7 +100,7 @@
                                         <a href="#" class="marcarGrupoAtende" title="Marca o grupo todo como Atende" data-value="${subGrupo.id}">
                                             <em class="fa fa-thumbs-up"></em>
                                         </a>
-                                        <a href="#" title="Marca o grupo todo como Não Atende">
+                                        <a href="#" title="Marca o grupo todo como Não Atende" class="marcarGrupoNaoAtende" data-value="${subGrupo.id}">
                                             <em class="fa fa-thumbs-down"></em>
                                         </a>
                                         <a href="#" title="Marca o grupo todo como Não se aplica">
@@ -186,12 +186,42 @@
 
         $(".marcarGrupoAtende").click(function () {
 
-
-
-
             var subgrupo = $(this).attr("data-value")
             var selectDoGrupo = '.grupo_resposta'+ subgrupo ;
             var tiporesposta = "1";
+
+            $.ajax({
+                type: "POST",
+                url: "${request.contextPath}/formulario/atualizarEmLote",
+                data: {
+                    subgrupo: subgrupo,
+                    tiporesposta: tiporesposta
+                },
+                success: function(dado){
+                    $(selectDoGrupo).val(tiporesposta);
+
+
+
+
+                }, beforeSend: function(){
+
+                }
+
+            }).done(function (dado) {
+
+            });
+
+
+
+            return;
+
+        });
+
+        $(".marcarGrupoNaoAtende").click(function () {
+
+            var subgrupo = $(this).attr("data-value")
+            var selectDoGrupo = '.grupo_resposta'+ subgrupo ;
+            var tiporesposta = "2";
 
             $.ajax({
                 type: "POST",
