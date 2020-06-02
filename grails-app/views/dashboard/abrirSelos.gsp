@@ -32,8 +32,15 @@
 
                     <section class="example" >
                         <div id="retornoAjax"></div>
-
                     </section>
+
+
+                    <section class="example2" >
+                        <p>Observação*: Os selos foram foram instituidos pelo CNJ</p>
+                        <p>Observação**: A probabilidade vai de 0 a 1, quanto mais próxima de 1, maior a chance do evento ocorrer.</p>
+                    </section>
+
+
                 </div>
             </div>
         </div>
@@ -75,8 +82,7 @@
     $(document).ready(function () {
         $("#menu_bash_board").addClass("active open");
 
-
-
+        $(".example2").hide();
         $("#sistema").change(function () {
 
             $.post('${request.contextPath}/dashboard/gerarProbalidadeSelos/'+this.value, function(date) {
@@ -85,6 +91,7 @@
                 //console.log(json);
                 //$("#retornoAjax").append("<p>Foi</p>");
                 $("#retornoAjax").html(date);
+                $(".example2").show();
             });
 
         });
