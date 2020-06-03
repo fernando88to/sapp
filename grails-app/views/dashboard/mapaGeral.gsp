@@ -15,18 +15,11 @@
 
 <body>
 
-
-
-
-
-
-
-
-            <div>
-                <section class="example">
-                    <div id="networkgraphdiv" ></div>
-                </section>
-            </div>
+<div>
+    <section class="example">
+        <div id="networkgraphdiv"></div>
+    </section>
+</div>
 
 
 
@@ -40,7 +33,6 @@
 <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
-
 
 
         Highcharts.setOptions({
@@ -75,8 +67,155 @@
         //let integration = "euler";
         //let linkLength = 10;
         let linkLength = 100;
-        Highcharts.chart("networkgraphdiv", {
+        /*Highcharts.chart("networkgraphdiv", {
             chart: {
+                type: 'networkgraph',
+                plotBorderWidth: 1
+            },
+            title: {
+                text: 'Geral'
+            },
+            /!*subtitle: {
+                text: 'Integration: ' + integration
+            },*!/
+            plotOptions: {
+                networkgraph: {
+                    layoutAlgorithm: {
+                        enableSimulation: true,
+                        integration: integration,
+                        linkLength: linkLength
+                    },
+                    keys: ['from', 'to'],
+                    marker: {
+                        radius: 5,
+                        lineWidth: 1
+                    }
+
+                },
+                series: {
+                    cursor: 'pointer',
+                    events: {
+                        click: function (event) {
+                            /!*if(event.point.id==='tjto'){
+                                window.location.href = "../dashboard/mapaSistema";
+                            }else if(event.point.id==='atende'){
+
+                            }else if(event.point.id==='nao_atende'){
+
+                            }else{
+                                window.location.href = "../dashboard/detalhaSistema_1";
+                            }*!/
+
+                        }
+                    }
+                }
+            },
+            point: {},
+            series: [
+                {
+                    nodes: [{
+                        id: 'selo_bronze',
+                        name: 'Selo Bronze',
+                        dataLabels: {
+                            enabled: true,
+                            textPath: {
+                                enabled: false
+                            },
+                            linkFormat: '',
+                            allowOverlap: false
+                        },
+                        marker: {
+                            fillColor: '#e76f51'
+                        }
+                    }, {
+                        id: 'selo_prata',
+                        name: 'Selo Prata',
+                        dataLabels: {
+                            enabled: true
+                        },
+                        marker: {
+
+                            fillColor: '#264653'
+                        }
+                    }, {
+                        id: 'selo_ouro',
+                        name: 'Selo Ouro',
+                        dataLabels: {
+                            enabled: true
+                        },
+                        marker: {
+
+                            fillColor: '#a8dadc'
+                        }
+                    }, {
+                        id: 'selo_platina',
+                        name: 'Selo Platina',
+                        dataLabels: {
+                            enabled: true
+                        },
+                        marker: {
+
+                            fillColor: '#457b9d'
+                        }
+                    }, {
+                        id: 'tjto',
+                        name: 'Tribunal de Justiça do Tocantins',
+                        dataLabels: {
+                            enabled: true
+
+                        },
+                        marker: {
+
+                            fillColor: 'brown'
+
+                        }
+                    }
+                    ],
+                    data: [
+
+                        ['selo_bronze', 'tjto'],
+                        ['selo_prata', 'tjto'],
+                        ['selo_ouro', 'tjto'],
+                        ['selo_platina', 'tjto'],
+
+
+                        ['Sistema 1', 'selo_bronze'],
+                        ['Sistema 2', 'selo_bronze'],
+
+
+                        ['Sistema 3', 'selo_prata'],
+                        ['Sistema 7', 'selo_prata'],
+                        ['Sistema 8', 'selo_prata'],
+
+                        ['Sistema 9', 'selo_ouro'],
+                        ['Sistema 4', 'selo_ouro'],
+                        ['Sistema 5', 'selo_ouro'],
+                        ['Sistema 6', 'selo_ouro'],
+
+
+                    ],
+
+
+                    marker: {
+                        radius: 13
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        textPath: {
+                            enabled: false
+                        },
+                        linkFormat: '',
+                        allowOverlap: true
+                    }
+
+
+                }]
+        });*/
+
+
+        var options = {
+            chart: {
+                renderTo: 'networkgraphdiv',
                 type: 'networkgraph',
                 plotBorderWidth: 1
             },
@@ -103,8 +242,8 @@
                 series: {
                     cursor: 'pointer',
                     events: {
-                        click: function(event) {
-                            if(event.point.id==='tjto'){
+                        click: function (event) {
+                            /*if(event.point.id==='tjto'){
                                 window.location.href = "../dashboard/mapaSistema";
                             }else if(event.point.id==='atende'){
 
@@ -112,20 +251,19 @@
 
                             }else{
                                 window.location.href = "../dashboard/detalhaSistema_1";
-                            }
+                            }*/
 
                         }
                     }
                 }
             },
-            point:{
-
-            },
+            point: {},
             series: [
                 {
-                    nodes: [{
-                        id: 'nao_atende',
-                        name:'Não Atende',
+                    nodes: [
+                        {
+                        id: 'selo_bronze',
+                        name: 'Selo Bronze',
                         dataLabels: {
                             enabled: true,
                             textPath: {
@@ -135,52 +273,60 @@
                             allowOverlap: false
                         },
                         marker: {
-
-                            fillColor: 'red'
+                            fillColor: '#e76f51'
                         }
-                    }, {
-                        id: 'atende',
-                        name:'Atende',
+                    },
+                        {
+                        id: 'selo_prata',
+                        name: 'Selo Prata',
                         dataLabels: {
                             enabled: true
                         },
                         marker: {
 
-                            fillColor: 'green'
+                            fillColor: '#264653'
                         }
-                    }, {
+                    },
+                        {
+                        id: 'selo_ouro',
+                        name: 'Selo Ouro',
+                        dataLabels: {
+                            enabled: true
+                        },
+                        marker: {
+
+                            fillColor: '#a8dadc'
+                        }
+                    },
+                        {
+                        id: 'selo_platina',
+                        name: 'Selo Platina',
+                        dataLabels: {
+                            enabled: true
+                        },
+                        marker: {
+
+                            fillColor: '#457b9d'
+                        }
+                    },
+                        {
                         id: 'tjto',
-                        name:'Tribunal de Justiça do Tocantins',
+                        name: 'Tribunal de Justiça do Tocantins',
                         dataLabels: {
                             enabled: true
 
                         },
                         marker: {
 
-                            fillColor:'brown'
+                            fillColor: 'brown'
 
                         }
                     }
                     ],
                     data: [
-                        ['nao_atende', 'tjto'],
-                        ['atende', 'tjto'],
-
-                        ['Sistema 1', 'nao_atende'],
-                        ['Sistema 2', 'nao_atende'],
-                        ['Sistema 3', 'nao_atende'],
-                        ['Sistema 7', 'nao_atende'],
-                        ['Sistema 8', 'nao_atende'],
-                        ['Sistema 9', 'nao_atende'],
-
-
-
-                        ['Sistema 4', 'atende'],
-                        ['Sistema 5', 'atende'],
-                        ['Sistema 6', 'atende'],
-
-
-
+/*
+                        ['selo_bronze', 'tjto'],
+                        ['selo_prata', 'tjto']*/
 
                     ],
 
@@ -198,26 +344,33 @@
                     }
 
 
-
                 }]
+        };
+
+
+        var chart = new Highcharts.Chart(options);
+
+        $.ajax({
+            url: "mapaGeralAjax",
+            dataType: "json",
+            success: function (json) {
+
+                for(let j in json){
+                    chart.series[0].addPoint([json[j].id, json[j].to]);
+                }
+
+
+            },
+            beforeSend: function () {
+                chart.showLoading();
+            },
+            complete: function () {
+                chart.hideLoading();
+            }
         });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    });
+    })
+    ;
 </script>
 
 </body>

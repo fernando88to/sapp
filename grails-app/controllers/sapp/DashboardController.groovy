@@ -227,6 +227,103 @@ class DashboardController {
 
     }
 
+    def mapaGeralAjax(){
+
+
+
+        def sistemas = new ArrayList<Sistema>()
+        for(sistemaBanco in Sistema.list()){
+            def formularioRespondido = Formulario.createCriteria().get {
+                eq("sistema", sistemaBanco)
+                eq("finalizado", true)
+                order("dataFinalizacao", "desc")
+                maxResults(1)
+            }
+
+            if(formularioRespondido){
+                sistemas +=sistemaBanco
+            }
+        }
+
+
+        for (sistema in sistemas) {
+
+
+
+            def requisitosAtendidos = sistema.getQuantidadeRequisitos( TipoResposta.REQUISITO_ATENDIDO, null)
+            def requisitosNaoAtendidos = sistema.getQuantidadeRequisitos(TipoResposta.REQUISITO_NAO_ATENDIDO, null)
+            def totalRequisitos = requisitosAtendidos + requisitosNaoAtendidos
+            sistema.porcentagemConformidade = requisitosAtendidos * 100 / totalRequisitos
+            if(sistema.porcentagemConformidade >= 0.0d && sistema.porcentagemConformidade <=40.00d){
+                sistema.seloMoreqJus = SeloMoreqJus.BRONZE
+            }else if(sistema.porcentagemConformidade > 40.00d && sistema.porcentagemConformidade <=70.00d){
+                sistema.seloMoreqJus = SeloMoreqJus.PRATA
+            }else if(sistema.porcentagemConformidade > 70.00d && sistema.porcentagemConformidade <=90.00d){
+                sistema.seloMoreqJus = SeloMoreqJus.OURO
+            }else if(sistema.porcentagemConformidade > 90.00d && sistema.porcentagemConformidade <=100.00d){
+                sistema.seloMoreqJus = SeloMoreqJus.PLATINA
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+       def lista = []
+
+       lista+= [id:'selo_bronze', to:'tjto']
+        lista+=[id:'selo_prata', to: 'tjto']
+        lista+=[id:'selo_ouro', to:'tjto']
+        lista+=[id:'selo_platina', to:'tjto']
+
+
+        for(sistema in sistemas){
+            def selo  = ""
+
+
+            if(sistema.seloMoreqJus== SeloMoreqJus.BRONZE){
+                selo = "selo_bronze"
+            }else if(sistema.seloMoreqJus== SeloMoreqJus.PRATA){
+                selo = "selo_prata"
+            }else if(sistema.seloMoreqJus== SeloMoreqJus.OURO){
+                selo = "selo_ouro"
+            }else if(sistema.seloMoreqJus== SeloMoreqJus.PLATINA){
+                selo = "selo_platina"
+            }
+
+
+
+
+
+            lista+=[id:sistema.nome, to:selo]
+        }
+
+
+
+
+      /*  lista+=[id:'Sistema 1', to:'selo_bronze']
+        lista+=[id:'Sistema 2', to:'selo_bronze']
+
+
+        lista+=[id:'Sistema 3', to:'selo_prata']
+        lista+=[id:'Sistema 7', to:'selo_prata']
+        lista+=[id:'Sistema 8', to:'selo_prata']
+
+        lista+=[id:'Sistema 9', to:'selo_ouro']
+        lista+=[id:'Sistema 4', to:'selo_ouro']
+        lista+=[id:'Sistema 5', to:'selo_ouro']
+        lista+=[id:'Sistema 6', to:'selo_ouro']*/
+
+        render lista as JSON
+
+
+    }
+
     def mapaSistema() {
 
     }
