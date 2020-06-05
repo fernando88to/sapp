@@ -402,4 +402,71 @@ class DashboardController {
     }*/
 
 
+
+    def detalhaSistema_1_ajax(){
+
+        def lista = []
+
+
+        def sistema = Sistema.findByNome(params.nome)
+
+        def formulario = Formulario.createCriteria().get {
+            eq("sistema", sistema)
+            eq("finalizado", true)
+            order("dataFinalizacao", "desc")
+            maxResults(1)
+        }
+
+
+        def categorias = RespostaFormulario.createCriteria().list {
+            createAlias("requisito", "r")
+            createAlias("r.subGrupoRequisito", "sr")
+            //createAlias("sr.grupoRequisito","gr")
+            eq("formulario", formulario)
+
+            projections {
+                distinct("sr.grupoRequisito")
+            }
+
+
+        }
+
+
+        def requisitoAtendidosList = []
+        def requisitoNaoAtendidosList = []
+        def naoseAplicaList = []
+        def listaRetorno = []
+
+        for (GrupoRequisito gr in categorias) {
+            def quantidadeRequisitoAtendido = estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.REQUISITO_ATENDIDO, gr)
+            def quantidadeRequisitoNaoAtendido  = estatisticaService.getQuantidadeRequisitos(formulario, TipoResposta.REQUISITO_NAO_ATENDIDO, gr)
+            listaRetorno+=[id:gr.nome, to: quantidadeRequisitoNaoAtendido > 0 ? 'nao_atende' : 'atende']
+
+
+
+
+
+        }
+        render listaRetorno as JSON
+
+    }
+    def detalhaSistema_2_ajax(){
+
+
+        def lista = []
+
+
+
+        lista+=[id:'Configuração e administração do plano de classificação no GestãoDoc', to: 'nao_atende']
+        lista+=[id:'Classificacao e metadados dos processos/dossiês',to: 'nao_atende']
+        lista+=[id:'Gerenciamento dos processos/dossiês',to:'nao_atende']
+        lista+=[id:'Processos', to:'atende']
+        lista+=[id:'Volumes: abertura, encerramento e metadados', to:'atende']
+        lista+=[id:'Manutenção de documentos institucionais nãodigitais e híbridos', to:'atende']
+
+
+        render lista as JSON
+
+    }
+
 }

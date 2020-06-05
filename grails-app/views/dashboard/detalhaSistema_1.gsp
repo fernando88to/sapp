@@ -81,8 +81,9 @@
         //let integration = "euler";
         //let linkLength = 10;
         let linkLength = 150;
-        Highcharts.chart("networkgraphdiv", {
+        let options = {
             chart: {
+                renderTo: 'networkgraphdiv',
                 type: 'networkgraph',
                 plotBorderWidth: 1
             },
@@ -170,22 +171,7 @@
                     ],
                     data: [
                         ['nao_atende', 'sistema'],
-                        ['atende', 'sistema'],
-
-                        ['Organização dos documentos institucionais: plano de classificação e manutenção dos documentos', 'nao_atende'],
-                        ['Captura', 'nao_atende'],
-                        ['Armazenamento', 'nao_atende'],
-                        ['Preservação', 'nao_atende'],
-                        ['Segurança', 'nao_atende'],
-                        ['Tramitação e fluxo de trabalho', 'nao_atende'],
-
-                        ['Avaliação e destinação', 'atende'],
-                        ['Pesquisa, localização e apresentação de documentos', 'atende'],
-                        ['Funções administrativas', 'atende'],
-                        ['Usabilidade', 'atende'],
-                        ['Interoperabilidade', 'atende'],
-                        ['Disponibilidade 13', 'atende'],
-                        ['Desempenho e escalabilidade 14', 'atende'],
+                        ['atende', 'sistema']
 
 
 
@@ -208,7 +194,32 @@
 
 
                 }]
+        };
+
+        var chart = new Highcharts.Chart(options);
+
+        $.ajax({
+            url: "detalhaSistema_1_ajax",
+            dataType: "json",
+            data:{nome:"${params.nome}"},
+            success: function (json) {
+
+                for(let j in json){
+                    chart.series[0].addPoint([json[j].id, json[j].to]);
+                }
+
+
+            },
+            beforeSend: function () {
+                chart.showLoading();
+            },
+            complete: function () {
+                chart.hideLoading();
+            }
         });
+
+
+
 
 
 

@@ -78,8 +78,11 @@
         //let integration = "euler";
         //let linkLength = 10;
         let linkLength = 100;
-        Highcharts.chart("networkgraphdiv", {
+
+
+        let options = {
             chart: {
+                renderTo: 'networkgraphdiv',
                 type: 'networkgraph',
                 plotBorderWidth: 1
             },
@@ -169,14 +172,9 @@
                     ],
                     data: [
                         ['nao_atende', 'sistema'],
-                        ['atende', 'sistema'],
+                        ['atende', 'sistema']
 
-                        ['Configuração e administração do plano de classificação no GestãoDoc', 'nao_atende'],
-                        ['Classificacao e metadados dos processos/dossiês', 'nao_atende'],
-                        ['Gerenciamento dos processos/dossiês', 'nao_atende'],
-                        ['Processos', 'atende'],
-                        ['Volumes: abertura, encerramento e metadados', 'atende'],
-                        ['Manutenção de documentos institucionais nãodigitais e híbridos', 'atende'],
+
 
 
 
@@ -198,7 +196,29 @@
 
 
                 }]
+        };
+
+        var chart = new Highcharts.Chart(options);
+
+        $.ajax({
+            url: "detalhaSistema_2_ajax",
+            dataType: "json",
+            success: function (json) {
+
+                for(let j in json){
+                    chart.series[0].addPoint([json[j].id, json[j].to]);
+                }
+
+
+            },
+            beforeSend: function () {
+                chart.showLoading();
+            },
+            complete: function () {
+                chart.hideLoading();
+            }
         });
+
 
 
 
