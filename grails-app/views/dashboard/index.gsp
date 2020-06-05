@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="card-block">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                    <p>Responda o formulário do Moreq-Jus e descubra o grau de adesão do sistema</p>
                 </div>
 
 
@@ -48,8 +48,9 @@
                         <p class="title">Estatística</p>
                     </div>
                 </div>
+
                 <div class="card-block">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                    <p>Depois de respondido o formulário do Moreq-Jus é possível visualizar algumas estatísticas do sistema selecionado.</p>
                 </div>
 
                 <div class="card-footer">
@@ -69,10 +70,14 @@
                 </div>
 
                 <div class="card-block">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                    <p>Essa opção permite visualizar a relação entre os sistemas e os requisitos.</p>
                 </div>
 
-                <div class="card-footer">Acessar</div>
+                <div class="card-footer">
+                    <g:link controller="dashboard" action="mapaGeral">
+                        Acessar
+                    </g:link>
+                </div>
             </div>
         </div>
         <!-- /.col-xl-4 -->
@@ -86,8 +91,10 @@
                         <p class="title">Selos</p>
                     </div>
                 </div>
+
                 <div class="card-block">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum tincidunt est vitae ultrices accumsan. Aliquam ornare lacus adipiscing, posuere lectus et, fringilla augue.</p>
+                    <p>Descubra qual é a probalidade dos sistemas da sua instituição alcançar determinado Selo de Adesão, o qual foi
+                    instítuido pelo CNJ.</p>
                 </div>
 
                 <div class="card-footer">
