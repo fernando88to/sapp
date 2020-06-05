@@ -22,6 +22,14 @@
 </div>
 
 
+<div>
+            <a href="#" onclick="window.history.back();">Voltar</a>
+
+
+</div>
+
+
+
 
 
 
@@ -220,7 +228,7 @@
                 plotBorderWidth: 1
             },
             title: {
-                text: 'Geral'
+                text: 'Grafo Geral'
             },
             /*subtitle: {
                 text: 'Integration: ' + integration
@@ -243,15 +251,15 @@
                     cursor: 'pointer',
                     events: {
                         click: function (event) {
-                            /*if(event.point.id==='tjto'){
+                            if(event.point.id==='tjto'){
                                 window.location.href = "../dashboard/mapaSistema";
-                            }else if(event.point.id==='atende'){
-
-                            }else if(event.point.id==='nao_atende'){
-
+                            }else if(event.point.id==='selo_bronze'){
+                            }else if(event.point.id==='selo_prata'){
+                            }else if(event.point.id==='selo_ouro'){
+                            }else if(event.point.id==='selo_platina'){
                             }else{
                                 window.location.href = "../dashboard/detalhaSistema_1";
-                            }*/
+                            }
 
                         }
                     }
