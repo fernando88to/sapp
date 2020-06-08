@@ -118,7 +118,7 @@
                             }else if(event.point.id==='nao_atende'){
 
                             }else{
-                                window.location.href = "../dashboard/detalheSistema_2";
+                                window.location.href = "../dashboard/detalheSistema_2?sistema="+"${params.nome}"+"&grupoRequisito="+event.point.name;
                             }
 
                         }
@@ -157,7 +157,7 @@
                         }
                     }, {
                         id: 'sistema',
-                        name:'E-Proc',
+                        name:'${params.nome}',
                         dataLabels: {
                             enabled: true
 

@@ -157,7 +157,7 @@
                         }
                     }, {
                         id: 'sistema',
-                        name:'E-Proc',
+                        name:'${sistema.nome}',
                         dataLabels: {
                             enabled: true,
                             allowOverlap: true
@@ -203,6 +203,7 @@
         $.ajax({
             url: "detalhaSistema_2_ajax",
             dataType: "json",
+            data:{sistema:"${sistema.id}", grupo_requisito:"${grupoRequisito.id}"},
             success: function (json) {
 
                 for(let j in json){

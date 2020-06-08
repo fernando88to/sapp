@@ -333,6 +333,12 @@ class DashboardController {
     }
 
     def detalheSistema_2() {
+        def sistema = Sistema.findByNome(params.sistema)
+        def grupoRequisito = GrupoRequisito.findByNome(params.grupoRequisito)
+
+
+
+        [sistema: sistema, grupoRequisito:grupoRequisito]
 
     }
 
@@ -452,18 +458,35 @@ class DashboardController {
     }
     def detalhaSistema_2_ajax(){
 
+        def grupoRequisito = GrupoRequisito.findById(params.grupo_requisito)
+        def sistema = Sistema.findById(params.sistema)
+        def formulario = Formulario.createCriteria().get {
+            eq("sistema", sistema)
+            eq("finalizado", true)
+            order("dataFinalizacao", "desc")
+            maxResults(1)
+        }
 
+
+
+        def subGrupoRequisitoList = SubGrupoRequisito.findAllByGrupoRequisito(grupoRequisito)
         def lista = []
+        for(r in subGrupoRequisitoList){
+            def quantidadeRequisitoNaoAtendido  = estatisticaService.getQuantidadePorItemRequisitos(formulario, TipoResposta.REQUISITO_NAO_ATENDIDO, r)
+            lista+=[id:r.nome, to: quantidadeRequisitoNaoAtendido > 0 ? 'nao_atende' : 'atende']
+        }
 
 
 
-        lista+=[id:'Configuração e administração do plano de classificação no GestãoDoc', to: 'nao_atende']
+
+
+        /*lista+=[id:'Configuração e administração do plano de classificação no GestãoDoc', to: 'nao_atende']
         lista+=[id:'Classificacao e metadados dos processos/dossiês',to: 'nao_atende']
         lista+=[id:'Gerenciamento dos processos/dossiês',to:'nao_atende']
         lista+=[id:'Processos', to:'atende']
         lista+=[id:'Volumes: abertura, encerramento e metadados', to:'atende']
         lista+=[id:'Manutenção de documentos institucionais nãodigitais e híbridos', to:'atende']
-
+*/
 
         render lista as JSON
 
