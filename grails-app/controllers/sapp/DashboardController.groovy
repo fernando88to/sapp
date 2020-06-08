@@ -329,7 +329,8 @@ class DashboardController {
     }
 
     def detalhaSistema_1() {
-
+        def sistema = Sistema.findByNome(params.sistema)
+        [sistema: sistema]
     }
 
     def detalheSistema_2() {
@@ -339,6 +340,16 @@ class DashboardController {
 
 
         [sistema: sistema, grupoRequisito:grupoRequisito]
+
+    }
+
+    def detalheSistema_3() {
+        def sistema = Sistema.findByNome(params.sistema)
+        def grupoRequisito = GrupoRequisito.findByNome(params.grupoRequisito)
+        def subGrupoRequisito = SubGrupoRequisito.findByNome(params.subGrupoRequisito)
+
+
+        [sistema: sistema, grupoRequisito:grupoRequisito,subGrupoRequisito:subGrupoRequisito]
 
     }
 
@@ -456,6 +467,7 @@ class DashboardController {
         render listaRetorno as JSON
 
     }
+
     def detalhaSistema_2_ajax(){
 
         def grupoRequisito = GrupoRequisito.findById(params.grupo_requisito)
@@ -472,7 +484,7 @@ class DashboardController {
         def subGrupoRequisitoList = SubGrupoRequisito.findAllByGrupoRequisito(grupoRequisito)
         def lista = []
         for(r in subGrupoRequisitoList){
-            def quantidadeRequisitoNaoAtendido  = estatisticaService.getQuantidadePorItemRequisitos(formulario, TipoResposta.REQUISITO_NAO_ATENDIDO, r)
+            def quantidadeRequisitoNaoAtendido  = estatisticaService.getQuantidadeSubGrupoRequisitos(formulario, TipoResposta.REQUISITO_NAO_ATENDIDO, r)
             lista+=[id:r.nome, to: quantidadeRequisitoNaoAtendido > 0 ? 'nao_atende' : 'atende']
         }
 
@@ -490,6 +502,56 @@ class DashboardController {
 
         render lista as JSON
 
+    }
+
+    def detalhaSistema_3_ajax(){
+
+        def grupoRequisito = GrupoRequisito.findById(params.grupo_requisito)
+        def subGrupo = SubGrupoRequisito.findById(params.sub_grupo)
+        def sistema = Sistema.findById(params.sistema)
+
+        def formulario = Formulario.createCriteria().get {
+            eq("sistema", sistema)
+            eq("finalizado", true)
+            order("dataFinalizacao", "desc")
+            maxResults(1)
+        }
+
+
+
+        def requisitosList = Requisito.findAllBySubGrupoRequisito(subGrupo)
+
+        def lista = []
+        for(r in requisitosList){
+            def quantidadeRequisitoNaoAtendido  = estatisticaService.getQuantidadeItemRequisitos(formulario, TipoResposta.REQUISITO_NAO_ATENDIDO, subGrupo, r)
+            lista+=[id:r.nome, to: quantidadeRequisitoNaoAtendido > 0 ? 'nao_atende' : 'atende']
+        }
+
+
+
+
+
+
+        render lista as JSON
+
+    }
+
+    def update(){
+        def item = SubGrupoRequisito.findByNome("Manutenção de documentos institucionais nãodigitais e híbridos ")
+        if(item){
+            item.nome = item.nome.trim()
+            item.save(flush:true)
+        }
+
+
+        def item2 = SubGrupoRequisito.findByNome("Durabilidade ")
+        if(item2){
+            item2.nome = item2.nome.trim()
+            item2.save(flush:true)
+        }
+
+
+        render "foi"
     }
 
 }

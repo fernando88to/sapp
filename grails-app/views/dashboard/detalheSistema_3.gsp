@@ -4,13 +4,10 @@
     <title>Mapa</title>
     <style>
     #networkgraphdiv {
-
-
-        /*min-width: 320px;*/
-        /*max-width: 800px;*/
+        min-width: 320px;
+        max-width: 800px;
         margin: 0 auto;
-        height: 600px;
-        width: 100%;
+        height: 500px;
     }
     </style>
 </head>
@@ -80,7 +77,9 @@
         let integration = "verlet";
         //let integration = "euler";
         //let linkLength = 10;
-        let linkLength = 150;
+        let linkLength = 100;
+
+
         let options = {
             chart: {
                 renderTo: 'networkgraphdiv',
@@ -88,7 +87,7 @@
                 plotBorderWidth: 1
             },
             title: {
-                text: 'Sistema ${params.nome}'
+                text: 'Sistema ${sistema?.nome} - Capítulo ${grupoRequisito?.nome} - Sub Capítulo ${subGrupoRequisito?.nome}'
             },
             /*subtitle: {
                 text: 'Integration: ' + integration
@@ -111,15 +110,15 @@
                     cursor: 'pointer',
                     events: {
                         click: function(event) {
-                            if(event.point.id==='sistema'){
+                            /*if(event.point.id==='sistema'){
                                 window.location.href = "../dashboard/mapaSistema";
                             }else if(event.point.id==='atende'){
 
                             }else if(event.point.id==='nao_atende'){
 
                             }else{
-                                window.location.href = "../dashboard/detalheSistema_2?sistema="+"${params.nome}"+"&grupoRequisito="+event.point.name;
-                            }
+                                window.location.href = "../dashboard/detalhaSistema_1";
+                            }*/
 
                         }
                     }
@@ -139,7 +138,7 @@
                                 enabled: false
                             },
                             linkFormat: '',
-                            allowOverlap: false
+                            allowOverlap: true
                         },
                         marker: {
 
@@ -149,7 +148,8 @@
                         id: 'atende',
                         name:'Atende',
                         dataLabels: {
-                            enabled: true
+                            enabled: true,
+                            allowOverlap: true
                         },
                         marker: {
 
@@ -157,9 +157,10 @@
                         }
                     }, {
                         id: 'sistema',
-                        name:'${params.nome}',
+                        name:'${params.sistema}',
                         dataLabels: {
-                            enabled: true
+                            enabled: true,
+                            allowOverlap: true
 
                         },
                         marker: {
@@ -176,6 +177,7 @@
 
 
 
+
                     ],
 
 
@@ -185,10 +187,10 @@
                     dataLabels: {
                         enabled: true,
                         textPath: {
-                            enabled: false
+                            enabled: true
                         },
                         linkFormat: '',
-                        allowOverlap: true
+                        allowOverlap: false
                     }
 
 
@@ -199,9 +201,9 @@
         var chart = new Highcharts.Chart(options);
 
         $.ajax({
-            url: "detalhaSistema_1_ajax",
+            url: "detalhaSistema_3_ajax",
             dataType: "json",
-            data:{nome:"${params.nome}"},
+            data:{sistema:"${sistema.id}", grupo_requisito:"${grupoRequisito.id}", sub_grupo:"${subGrupoRequisito.id}"},
             success: function (json) {
 
                 for(let j in json){
@@ -217,8 +219,6 @@
                 chart.hideLoading();
             }
         });
-
-
 
 
 

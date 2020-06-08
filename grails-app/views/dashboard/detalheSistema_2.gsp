@@ -87,7 +87,7 @@
                 plotBorderWidth: 1
             },
             title: {
-                text: 'Sistema 2'
+                text: 'Sistema ${sistema.nome} - Capítulo ${grupoRequisito.nome}'
             },
             /*subtitle: {
                 text: 'Integration: ' + integration
@@ -110,15 +110,15 @@
                     cursor: 'pointer',
                     events: {
                         click: function(event) {
-                            /*if(event.point.id==='sistema'){
-                                window.location.href = "../dashboard/mapaSistema";
+                            if(event.point.id==='sistema'){
+                                //window.location.href = "../dashboard/mapaSistema";
                             }else if(event.point.id==='atende'){
 
                             }else if(event.point.id==='nao_atende'){
 
                             }else{
-                                window.location.href = "../dashboard/detalhaSistema_1";
-                            }*/
+                                window.location.href = "../dashboard/detalheSistema_3?sistema="+"${params.sistema}"+"&grupoRequisito="+"${params.grupoRequisito}"+"&subGrupoRequisito="+event.point.name;
+                            }
 
                         }
                     }

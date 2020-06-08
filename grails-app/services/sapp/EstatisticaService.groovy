@@ -23,7 +23,7 @@ class EstatisticaService {
          }
      }
 
-    Integer getQuantidadePorItemRequisitos(Formulario formulario, TipoResposta resposta, SubGrupoRequisito subGrupoRequisito){
+    Integer getQuantidadeSubGrupoRequisitos(Formulario formulario, TipoResposta resposta, SubGrupoRequisito subGrupoRequisito){
         RespostaFormulario.createCriteria().count {
             createAlias("requisito","r")
             createAlias("r.subGrupoRequisito", "sr")
@@ -36,6 +36,30 @@ class EstatisticaService {
 
             if(subGrupoRequisito){
                 eq "r.subGrupoRequisito", subGrupoRequisito
+            }
+
+        }
+    }
+
+    Integer getQuantidadeItemRequisitos(Formulario formulario, TipoResposta resposta, SubGrupoRequisito subGrupoRequisito, Requisito requisito){
+        RespostaFormulario.createCriteria().count {
+            createAlias("requisito","r")
+            createAlias("r.subGrupoRequisito", "sr")
+            eq("formulario", formulario)
+
+            if(resposta){
+                eq("resposta",resposta.getValue())
+            }
+
+
+
+            if(subGrupoRequisito){
+                eq "r.subGrupoRequisito", subGrupoRequisito
+            }
+
+            if(requisito){
+                eq "requisito", requisito
+
             }
 
         }

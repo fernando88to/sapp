@@ -3484,7 +3484,7 @@ class BootStrap {
         if(!subGrupo_4_1){
             subGrupo_4_1 = new SubGrupoRequisito()
             subGrupo_4_1.numeroReferenciaMoreqJus="4.1"
-            subGrupo_4_1.nome ="Durabilidade "
+            subGrupo_4_1.nome ="Durabilidade"
             subGrupo_4_1.grupoRequisito = grupoRequisito_4
             subGrupo_4_1.save(flush:true)
 
@@ -5123,7 +5123,7 @@ class BootStrap {
         if (!subGrupo_2_6) {
             subGrupo_2_6 = new SubGrupoRequisito()
             subGrupo_2_6.numeroReferenciaMoreqJus = "2.6"
-            subGrupo_2_6.nome = "Manutenção de documentos institucionais nãodigitais e híbridos "
+            subGrupo_2_6.nome = "Manutenção de documentos institucionais nãodigitais e híbridos"
             subGrupo_2_6.grupoRequisito = grupoRequisito_2
             subGrupo_2_6.save(flush: true)
         }
