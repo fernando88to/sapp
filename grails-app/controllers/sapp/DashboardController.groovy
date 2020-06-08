@@ -549,6 +549,21 @@ class DashboardController {
             item2.nome = item2.nome.trim()
             item2.save(flush:true)
         }
+        def item3 = SubGrupoRequisito.findByNome("Manutenção e evolução ")
+        if(item3){
+            item3.nome = item3.nome.trim()
+            item3.save(flush:true)
+        }
+        def item4 = SubGrupoRequisito.findByNome("Autoproteção ")
+        if(item4){
+            item4.nome = item4.nome.trim()
+            item4.save(flush:true)
+        }
+        def item5 = SubGrupoRequisito.findByNome("Marcas d'água digitais ")
+        if(item5){
+            item5.nome = item5.nome.trim()
+            item5.save(flush:true)
+        }
 
 
         render "foi"

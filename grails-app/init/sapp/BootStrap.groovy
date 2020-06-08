@@ -716,7 +716,7 @@ class BootStrap {
         if(!subGrupo_10_2){
             subGrupo_10_2 = new SubGrupoRequisito()
             subGrupo_10_2.numeroReferenciaMoreqJus="10.2"
-            subGrupo_10_2.nome ="Manutenção e evolução "
+            subGrupo_10_2.nome ="Manutenção e evolução"
             subGrupo_10_2.grupoRequisito = grupoRequisito_10
             subGrupo_10_2.save(flush:true)
         }
@@ -2952,7 +2952,7 @@ class BootStrap {
         if(!subGrupo_6_7){
             subGrupo_6_7 = new SubGrupoRequisito()
             subGrupo_6_7.numeroReferenciaMoreqJus="6.7"
-            subGrupo_6_7.nome ="Marcas d'água digitais "
+            subGrupo_6_7.nome ="Marcas d'água digitais"
             subGrupo_6_7.grupoRequisito = grupoRequisito_6
             subGrupo_6_7.save(flush:true)
         }
@@ -3051,7 +3051,7 @@ class BootStrap {
         if(!subGrupo_6_9){
             subGrupo_6_9 = new SubGrupoRequisito()
             subGrupo_6_9.numeroReferenciaMoreqJus="6.9"
-            subGrupo_6_9.nome ="Autoproteção "
+            subGrupo_6_9.nome ="Autoproteção"
             subGrupo_6_9.grupoRequisito = grupoRequisito_6
             subGrupo_6_9.save(flush:true)
         }
