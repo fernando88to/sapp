@@ -6,15 +6,17 @@ import grails.gorm.services.Service
 abstract class FormularioService implements IFormularioService {
 
 
-    Formulario getFormularioEmTrabalho() {
+    Formulario getFormularioEmTrabalho(Sistema sistema) {
         def formulario = Formulario.createCriteria().get {
             eq("finalizado", false)
+            eq("sistema", sistema)
         }
 
 
         if (!formulario) {
             formulario = new Formulario()
             formulario.finalizado = false
+            formulario.sistema = sistema
             formulario.save(flush: true)
         }
 

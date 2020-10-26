@@ -10,7 +10,7 @@ class FormularioController {
 
     def index() {
 
-        def formulario = formularioService.getFormularioEmTrabalho()
+        def formulario = null
         def opcaoRespostaList = getOpcoesResposta()
 
         model:[formulario: formulario, opcaoRespostaList: opcaoRespostaList]
@@ -28,19 +28,19 @@ class FormularioController {
     }
 
     def avancarSelecaoSistema() {
-        def formulario = formularioService.getFormularioEmTrabalho()
-        formulario.sistema = Sistema.get(params.long("sistema"))
+        def sistemaSelecioando = Sistema.get(params.long("sistema"))
+        def formulario = formularioService.getFormularioEmTrabalho(sistemaSelecioando)
+        formulario.sistema = sistemaSelecioando
         formularioService.salvar(formulario)
-
-        redirect(action: "index", params: [menu: "#menu2"])
-
+        def opcaoRespostaList = getOpcoesResposta()
+        params.menu = "#menu2"
+        render(view: "index", model: [formulario: formulario, opcaoRespostaList: opcaoRespostaList])
 
     }
 
     def finalizar() {
-        def formulario = formularioService.getFormularioEmTrabalho()
-
-
+        def sistemaSelecioando = Sistema.get(params.long("sistema"))
+        def formulario = formularioService.getFormularioEmTrabalho(sistemaSelecioando)
         boolean formularioValido = formularioService.validarFormulario(formulario)
 
 
@@ -69,21 +69,29 @@ class FormularioController {
 
     def voltar() {
         def menuatual = params.int("menuatual")
-        def menu_que_vai = "#menu${menuatual - 1}";
-        redirect(action: "index", params: [menu: menu_que_vai])
+        def menu_que_vai = "#menu${menuatual - 1}"
+        def sistemaSelecioando = Sistema.get(params.long("sistema"))
+        def formulario = formularioService.getFormularioEmTrabalho(sistemaSelecioando)
+        def opcaoRespostaList = getOpcoesResposta()
+        params.menu = menu_que_vai
+        render(view: "index", model: [formulario: formulario, opcaoRespostaList: opcaoRespostaList])
     }
 
     def avancar() {
+        def sistemaSelecioando = Sistema.get(params.long("sistema"))
         def menuatual = params.int("menuatual")
         def menu_que_vai = "#menu${menuatual < 14 ? menuatual + 1 : menuatual}"
-
-
-        redirect(action: "index", params: [menu: menu_que_vai])
+        def formulario = formularioService.getFormularioEmTrabalho(sistemaSelecioando)
+        def opcaoRespostaList = getOpcoesResposta()
+        params.menu = menu_que_vai
+        render(view: "index", model: [formulario: formulario, opcaoRespostaList: opcaoRespostaList])
+        //redirect(action: "index", params: [menu: menu_que_vai])
     }
 
     def salvarRegistro() {
         def requisitoSelecionado = params.long("requisito")
-        def formulario = formularioService.getFormularioEmTrabalho()
+        def sistemaSelecioando = Sistema.get(params.long("sistema"))
+        def formulario = formularioService.getFormularioEmTrabalho(sistemaSelecioando)
         formularioService.salvarResposta(formulario,  requisitoSelecionado, params.int("resposta"))
         def retorno = ['mensagem': 'oi']
         render retorno as JSON
@@ -92,16 +100,14 @@ class FormularioController {
 
 
     def atualizarEmLote(){
-        def formulario = formularioService.getFormularioEmTrabalho()
+        def sistemaSelecioando = Sistema.get(params.long("sistema"))
+        def formulario = formularioService.getFormularioEmTrabalho(sistemaSelecioando)
         SubGrupoRequisito subGrupoRequisito = params.long("subgrupo") ? SubGrupoRequisito.get(params.long("subgrupo")) : null
         TipoResposta tipoResposta = params.tiporesposta ? TipoResposta.getEnum(params.int("tiporesposta")) : null
 
 
         formularioService.atualizarSubGrupoEmLote(formulario,subGrupoRequisito, tipoResposta )
         render [:] as JSON
-
-
-
     }
 
 

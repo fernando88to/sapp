@@ -41,7 +41,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="#menu1">1</a>
                     </li>
-                    <g:each in="${formulario.grupoRequisitoList}" var="grupoRequisito" status="i">
+                    <g:each in="${formulario?.grupoRequisitoList}" var="grupoRequisito" status="i">
                         <li class="nav-item">
                             <!--tirei a opção  data-toggle="tab", assim só pode navegar entre com os botoes -->
                             <a class="nav-link" href="#menu${i + 2}">${i + 2}</a>
@@ -56,7 +56,9 @@
                             <div class="form-group">
                                 <label class="control-label">Selecione o sistema</label>
                                 <g:select name="sistema" class="form-control underlined"
-                                          from="${formulario.sistemaList}" optionKey="id"
+                                          from="${sapp.Sistema.createCriteria().list {
+                                              order("nome")
+                                          }}" optionKey="id"
                                           value="${formulario?.sistema?.id}"
                                           optionValue="${{ it.nome + " - " + it.sigla }}"/>
                             </div>
@@ -67,11 +69,12 @@
                         </g:form>
 
                     </div>
-                    <g:each in="${formulario.grupoRequisitoList}" var="grupoRequisito" status="i">
+                    <g:each in="${formulario?.grupoRequisitoList}" var="grupoRequisito" status="i">
                         <div class="tab-pane container fade" id="menu${i + 2}">
 
                             <g:form method="POST">
                                 <g:hiddenField name="menuatual" value="${i + 2}"/>
+                                <g:hiddenField name="sistema" value="${formulario.sistema.id}"/>
                                 <div class="form-group">
                                     <g:actionSubmit action="voltar"
                                                     class="btn btn-info" value="Voltar"></g:actionSubmit>
@@ -97,13 +100,13 @@
                                             <em class="fa fa-unsorted"></em>
                                         </a>
                                         &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <a href="#" class="marcarGrupoAtende" title="Marca o grupo todo como Atende" data-value="${subGrupo.id}">
+                                        <a href="#" class="marcarGrupoAtende" title="Marca o grupo todo como Atende" data-value="${subGrupo.id}" data-sistema="${formulario.sistema.id}">
                                             <em class="fa fa-thumbs-up"></em>
                                         </a>
-                                        <a href="#" title="Marca o grupo todo como Não Atende" class="marcarGrupoNaoAtende" data-value="${subGrupo.id}">
+                                        <a href="#" title="Marca o grupo todo como Não Atende" class="marcarGrupoNaoAtende" data-value="${subGrupo.id}" data-sistema="${formulario.sistema.id}">
                                             <em class="fa fa-thumbs-down"></em>
                                         </a>
-                                        <a href="#" title="Marca o grupo todo como Não se aplica">
+                                        <a href="#" title="Marca o grupo todo como Não se aplica" class="marcarGrupoNaoSeAplica" data-value="${subGrupo.id}" data-sistema="${formulario.sistema.id}">
                                             <em class="fa fa-times"></em>
                                         </a>
                                 </g:form>
@@ -116,6 +119,7 @@
                                         <g:form class="formulario_envio_requisito" action="salvarRegistro"
                                                 method="POST">
                                             <g:hiddenField name="requisito" value="${r.id}"/>
+                                            <g:hiddenField name="sistema" value="${formulario?.sistema?.id}"/>
                                             <tr>
                                                 <td style="width: 70%;">
                                                     ${r.numeroReferenciaMoreqJus} - ${r.nome.encodeAsRaw()}
@@ -137,6 +141,7 @@
 
                             <g:form method="POST">
                                 <g:hiddenField name="menuatual" value="${i + 2}"/>
+                                <g:hiddenField name="sistema" value="${formulario.sistema.id}"/>
                                 <div class="form-group">
                                     <g:actionSubmit action="voltar"
                                                     class="btn btn-info" value="Voltar"></g:actionSubmit>
@@ -186,7 +191,8 @@
 
         $(".marcarGrupoAtende").click(function () {
 
-            var subgrupo = $(this).attr("data-value")
+            var subgrupo = $(this).attr("data-value");
+            var sistema = $(this).attr("data-sistema");
             var selectDoGrupo = '.grupo_resposta'+ subgrupo ;
             var tiporesposta = "1";
 
@@ -195,7 +201,8 @@
                 url: "${request.contextPath}/formulario/atualizarEmLote",
                 data: {
                     subgrupo: subgrupo,
-                    tiporesposta: tiporesposta
+                    tiporesposta: tiporesposta,
+                    sistema: sistema
                 },
                 success: function(dado){
                     $(selectDoGrupo).val(tiporesposta);
@@ -219,7 +226,8 @@
 
         $(".marcarGrupoNaoAtende").click(function () {
 
-            var subgrupo = $(this).attr("data-value")
+            var subgrupo = $(this).attr("data-value");
+            var sistema = $(this).attr("data-sistema");
             var selectDoGrupo = '.grupo_resposta'+ subgrupo ;
             var tiporesposta = "2";
 
@@ -228,7 +236,42 @@
                 url: "${request.contextPath}/formulario/atualizarEmLote",
                 data: {
                     subgrupo: subgrupo,
-                    tiporesposta: tiporesposta
+                    tiporesposta: tiporesposta,
+                    sistema:sistema
+                },
+                success: function(dado){
+                    $(selectDoGrupo).val(tiporesposta);
+
+
+
+
+                }, beforeSend: function(){
+
+                }
+
+            }).done(function (dado) {
+
+            });
+
+
+
+            return;
+
+        });
+        $(".marcarGrupoNaoSeAplica").click(function () {
+
+            var subgrupo = $(this).attr("data-value");
+            var sistema = $(this).attr("data-sistema");
+            var selectDoGrupo = '.grupo_resposta'+ subgrupo ;
+            var tiporesposta = "3";
+
+            $.ajax({
+                type: "POST",
+                url: "${request.contextPath}/formulario/atualizarEmLote",
+                data: {
+                    subgrupo: subgrupo,
+                    tiporesposta: tiporesposta,
+                    sistema:sistema
                 },
                 success: function(dado){
                     $(selectDoGrupo).val(tiporesposta);
@@ -255,6 +298,7 @@
         $(".campo_resposta").change(function () {
             var requisito = this.form.requisito.value;
             var resposta = this.form.resposta.value;
+            var sistema = this.form.sistema.value;
 
 
             $.ajax({
@@ -262,7 +306,8 @@
                 url: "${request.contextPath}/formulario/salvarRegistro",
                 data: {
                     requisito: requisito,
-                    resposta: resposta
+                    resposta: resposta,
+                    sistema:sistema
                 },
                 success: function(dado){
                    //$('#carregando').modal('hide');
