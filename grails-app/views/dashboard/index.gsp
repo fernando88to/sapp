@@ -65,7 +65,7 @@
             <div class="card card-success">
                 <div class="card-header">
                     <div class="header-block">
-                        <p class="title">Grafos</p>
+                        <p class="title">Redes de Interação</p>
                     </div>
                 </div>
 

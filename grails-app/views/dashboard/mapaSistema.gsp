@@ -84,7 +84,7 @@
                 plotBorderWidth: 1
             },
             title: {
-                text: 'Phrasal verbs'
+                text: 'Rede de Interação'
             },
             subtitle: {
                 text: 'Integration: ' + integration

@@ -329,7 +329,7 @@ class DashboardController {
     }
 
     def detalhaSistema_1() {
-        def sistema = Sistema.findByNome(params.sistema)
+        def sistema = Sistema.findByNomeLike("%${params.sistema}%")
         [sistema: sistema]
     }
 
@@ -345,8 +345,10 @@ class DashboardController {
 
     def detalheSistema_3() {
         def sistema = Sistema.findByNome(params.sistema)
-        def grupoRequisito = GrupoRequisito.findByNome(params.grupoRequisito)
-        def subGrupoRequisito = SubGrupoRequisito.findByNome(params.subGrupoRequisito)
+        def grupoRequisito = GrupoRequisito.findByNomeLike("%${params.grupoRequisito}%")
+
+
+        def subGrupoRequisito = SubGrupoRequisito.findByNomeLike("%${params.subGrupoRequisito}%")
 
 
         [sistema: sistema, grupoRequisito:grupoRequisito,subGrupoRequisito:subGrupoRequisito]
